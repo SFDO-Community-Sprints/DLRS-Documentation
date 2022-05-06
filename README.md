@@ -1,4 +1,4 @@
-![Logo](images/logo.png)# Introduction to DLRS (Declarative Lookup Rollup Summaries)
+# Introduction to DLRS (Declarative Lookup Rollup Summaries)
 
 ## What do these 4 words mean?
 
