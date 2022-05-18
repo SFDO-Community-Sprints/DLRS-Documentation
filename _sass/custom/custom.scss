@@ -11,19 +11,8 @@ a {
 .site-header {
   min-height: 282px;
   max-height: 282px;
-  background-color: #27262B;
 }
 
 .main-content a {
   white-space: normal;
-}
-
-
-.main-content-wrap, .main-header {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#261f4f+0,3e3d44+100 */
-  background: #201c38; /* Old browsers */
-  background: -moz-linear-gradient(left, #201c38 0%, #222128 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #201c38 0%, #222128 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #201c38 0%, #222128 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#201c38', endColorstr='#222128', GradientType=1); /* IE6-9 */
 }
