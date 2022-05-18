@@ -1,0 +1,31 @@
+# Salesforce / SFDX / CCI
+.cci
+.sfdx
+/src.orig
+/src
+
+# Python
+*.pyc
+__pycache__
+
+# Robot Framework results
+robot/EASY-Open-Source-Solution/results/
+
+# Editors
+*.sublime-project
+*.sublime-workspace
+.vscode
+.idea
+.project
+.settings
+
+# Misc
+.DS_Store
+
+# Illuminated Cloud (IntelliJ IDEA)
+IlluminatedCloud
+out
+*.iml
+
+# CumulusCI
+/test_results.*
