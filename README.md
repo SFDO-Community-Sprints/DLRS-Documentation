@@ -1,6 +1,7 @@
 ---
 title: Introduction
 nav_order: 1
+permalink: /
 ---
 
 # Introduction to DLRS (Declarative Lookup Rollup Summaries)
