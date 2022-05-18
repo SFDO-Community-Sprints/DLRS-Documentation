@@ -13,9 +13,6 @@ color_scheme: light
 # Set a path/url to a logo that will be displayed instead of the title
 logo: "/asset/images/DLRS_logo.png"
 
-permalink: pretty
-exclude: [ "node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "docs/tests/" ]
-
 # Enable or disable the site search
 # Supports true (default) or false
 search_enabled: true
@@ -61,4 +58,36 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # gh_edit_branch: "main" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 # gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
+
+plugins:
+  - jekyll-seo-tag
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: [ ]
+  blanklines: false
+  profile: false
+  # ignore:
+  #   envs: all
+
+# Google Analytics Tracking (optional)
+# e.g, UA-1234567-89
+# ga_tracking: UA-2709176-10
+# ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
+
+# Aux links for the upper right navigation
+aux_links:
+  "Documentation Repository":
+    - "//github.com/SFDO-Community-Sprints/DLRS-Documentation/"
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true
+
+
 
