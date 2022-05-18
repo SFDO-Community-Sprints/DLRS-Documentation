@@ -1,3 +1,8 @@
+---
+title: Introduction
+nav_order: 1
+---
+
 # Introduction to DLRS (Declarative Lookup Rollup Summaries)
 
 ## What do these 4 words mean?
