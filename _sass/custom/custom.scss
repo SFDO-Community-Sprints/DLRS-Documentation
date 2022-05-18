@@ -5,13 +5,16 @@
 }
 
 .site-title {
-  padding-right: 0;
-  padding-left:0;
+  padding: 0;
+}
+
+a {
+  color: #547544;
 }
 
 .site-header {
-  min-height: 282px;
-  max-height: 282px;
+  min-height: 175px;
+  max-height: 175px;
 }
 
 .main-content a {
