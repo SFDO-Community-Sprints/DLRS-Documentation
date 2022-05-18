@@ -1,6 +1,6 @@
 ---
 title: Labor Of Love
-parent: Cookbooks Page
+parent: Cookbook Page
 nav_order: 3
 ---
 

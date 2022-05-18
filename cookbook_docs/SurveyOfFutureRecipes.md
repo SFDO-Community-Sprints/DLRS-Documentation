@@ -1,6 +1,6 @@
 ---
 title: Survey of Future Recipes
-parent: Cookbooks Page
+parent: Cookbook Page
 nav_order: 4
 ---
 
