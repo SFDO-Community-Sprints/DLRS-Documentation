@@ -1,4 +1,4 @@
-![Logo](images/logo.png)
+![Logo](images/Graphic for DLRS.png)
 
 |Our new DLRS (also known as DeLoReS) site aims to create a window into both the current as well as the future features and communications of the DLRS application. 
 |The DLRS application and its cooresponding communications portal is a proud sponsor of the Salesforce.org Open Source Commons initiative.
