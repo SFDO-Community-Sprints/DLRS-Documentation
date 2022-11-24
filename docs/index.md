@@ -7,6 +7,8 @@ has_children: false
 
 [Join the DLRS Trailblazer Community - Today!](https://trailhead.salesforce.com/trailblazer-community/groups/0F9300000009O5pCAE){: .btn .btn-green }
 
+![Logo](docs/assets/images/DLRS_New_Badge_2022.png)
+
 # What is Declarative Lookup Rollup Summaries?
 
 DLRS is a mechanism for aggregating or summarizing data from child objects and displaying it on a parent object. It serves the same purpose as Rollup Summary fields, but it is much more flexible with the kind of data that can be rolled up and how criteria are formed.
