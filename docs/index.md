@@ -7,7 +7,7 @@ has_children: false
 
 [Join the DLRS Trailblazer Community - Today!](https://trailhead.salesforce.com/trailblazer-community/groups/0F9300000009O5pCAE){: .btn .btn-green }
 
-![Logo](docs/assets/images/DLRS_New_Badge_2022.png)
+![Logo](assets/images/DLRS_New_Badge_2022.png)
 
 # What is Declarative Lookup Rollup Summaries?
 
