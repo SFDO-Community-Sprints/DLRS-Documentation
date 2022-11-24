@@ -70,7 +70,7 @@ If you would like to filter the Child Object records that get summarized enter t
 
 e.g. `Amount > 200 AND Stage = 'Closed Won'`
 
-[Examples & Details](<https://github.com/afawcett/declarative-lookup-rollup-summaries/wiki/Relationship-Criteria-(SOQL-Queries)>)
+[Examples & Details](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/relationship-critera.html)
 
 ### Relationship Criteria Fields
 
@@ -106,7 +106,7 @@ Must be set to Active to Calculate manually now or to set as Realtime. In order 
 
 ### Calculation Mode
 
-Choose your calculation mode carefully. **Using realtime can run into performance issues and Apex CPU limits.** See [Scheduling](https://github.com/afawcett/declarative-lookup-rollup-summaries/wiki/What-you-need-to-know-about-Scheduling-Rollups) and [Performance Issues FAQ](https://github.com/afawcett/declarative-lookup-rollup-summaries/wiki/FAQs#how-do-i-optimize-dlrs-i-am-running-into-apex-cpu-limits-or-other-performance-issues)
+Choose your calculation mode carefully. **Using realtime can run into performance issues and Apex CPU limits.** See [Scheduling](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/scheduling_rollups.html) and [Performance Issues FAQ](https://sfdo-community-sprints.github.io/DLRS-Documentation/Issues/#how-do-i-optimize-dlrs-i-am-running-into-apex-cpu-limits-or-other-performance-issues)
 
 Using Scheduled Incremental Calculation or using Process Builder with a Scheduled Action are good ways to avoid issues.
 
