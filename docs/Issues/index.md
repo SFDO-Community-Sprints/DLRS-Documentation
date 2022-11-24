@@ -63,3 +63,23 @@ related issue [#138](https://github.com/afawcett/declarative-lookup-rollup-summa
 DLRS usually queries from the perspective of the parents, retrieving all of the child records that match the given criteria. If the parents in a given batch have an average of 250 (50,000 / 200) children, have many DLRS jobs configured, or have lots of cascading rollups (rollup from grandchild to parent to grandparent) then DLRS can easily request a total of >50,000 records in the given transaction.
 
 If this is happening during a scheduled calculation or a full calculation batch job then you can adjust the batch size in the Declarative Lookup Rollup Summaries hierarchy custom setting. It defaults to 200.
+
+## Attention: Need to delete unused field on dlrs__LookupRollupSummaryScheduleItems__c"
+
+**What is this?**
+
+The field ``dlrs__LookupRollupSummary__c`` on the Custom Object ``dlrs__LookupRollupSummaryScheduleItems__c`` is no longer required and has been removed from this tools package going forward. However it still exists in your org and needs to be manually removed for optimal configuration and performance.
+
+Also note that if you have configured a new rollup since installing this version of the tool you may also be seeing this error when working with child records associated with Scheduled rollups. This error is also resolved by following the steps below. 
+
+```dlrs.RollupService.RollupValidationException: Scheduled rollups are running in legacy mode and are unable to resolve corresponding shadow rollups. Please visit the Lookup Rollup Summary Tools tab for more information and steps to resolve.``` 
+
+**What do I do?**
+
+- Run a report or create list view on the **Lookup Rollup Summary Schedule Items** object that filters for records that do not contain a value in the ``Lookup Rollup Summary 2`` field. If you have records like this its possible they are very old, since this field has been being populated since v1.15 and beyond. If you want you can delete these records and re-run a full calculate for the associated Rollups.
+- Next you need to go to the **Object Manager** in **Setup** and find the **Lookup Rollup Summary Schedule Items** object. Locate the field **Lookup Rollup Summary** (its a Master-Detail) with the API name ``dlrs__LookupRollupSummary__c``. 
+- Delete this field and don't worry about accidentally deleting others the platform will block this. This will not effect any other data in your org as it is was purely used for the operation of the tool in prior releases and is now no longer needed. 
+
+**Note:** If you do not see the Delete option for the above field - try switching to Salesforce Classic UI mode.
+
+
