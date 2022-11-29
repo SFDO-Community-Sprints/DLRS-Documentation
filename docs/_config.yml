@@ -5,8 +5,12 @@ color_scheme: "light"
 
 # Aux links for the upper right navigation
 aux_links:
-  "Declarative Lookup Rollup Summaries on GitHub":
+  "Go to DLRS Packaging Repo on GitHub":
     - "//github.com/SFDO-Community/declarative-lookup-rollup-summaries"
+aux_links_new_tab: true
+
+  "Go to DLRS Pages Documentation Repo on GitHub":
+    - "//github.com/SFDO-Community-Sprints/DLRS-Documentation"
 aux_links_new_tab: true
 
 # Heading anchor links appear on hover over h1-h6 tags in page content
