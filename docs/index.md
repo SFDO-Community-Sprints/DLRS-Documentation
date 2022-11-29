@@ -41,7 +41,7 @@ Additionally - the metrics available with RUS fields - are limited to sum, minim
 ## Follow the DLRS Journey via community posts
 
 <br/>
-**NOTE:** The links below are older material that is no longer considered accurate as many new version of the app have been released since many of the articles were written. If you choose to review them regardless, they are presented are in chronological order (read from the bottom upwards).
+**NOTE:** The links below are older material that is no longer considered accurate as many new versions of the app have been released since many of the articles were written. If you choose to review them regardless, they are presented are in chronological order (read from the bottom upwards).
 
 - [Declarative Rollup Summary Tool Update for v2.12](https://andyinthecloud.com/2020/04/05/declarative-rollup-summary-tool-update/)
 - [Salesforce Rollup Summary on Lookup Relationship - DLRS Tutorial](https://www.youtube.com/watch?v=sjRlou2-N6I&feature=youtu.be)
