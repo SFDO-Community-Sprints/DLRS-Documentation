@@ -7,7 +7,6 @@ color_scheme: "light"
 aux_links:
   "Go to DLRS Packaging Repo on GitHub":
     - "//github.com/SFDO-Community/declarative-lookup-rollup-summaries"
-aux_links_new_tab: true
 
   "Go to DLRS Pages Documentation Repo on GitHub":
     - "//github.com/SFDO-Community-Sprints/DLRS-Documentation"
