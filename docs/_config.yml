@@ -5,10 +5,10 @@ color_scheme: "light"
 
 # Aux links for the upper right navigation
 aux_links:
-  "Go to DLRS Packaging Repo on GitHub":
+  "View DLRS Package Repo":
     - "//github.com/SFDO-Community/declarative-lookup-rollup-summaries"
 
-  "Go to DLRS Pages Documentation Repo on GitHub":
+  "View DLRS Docs Repo":
     - "//github.com/SFDO-Community-Sprints/DLRS-Documentation"
 aux_links_new_tab: true
 
