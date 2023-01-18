@@ -28,7 +28,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Define filter criteria on rollups for example Rollup Amount on Opportunity onto Account for Closed Won
 - Supports Realtime, Scheduled and Developer API modes
 - Open source, available in code and managed package form.
-- Managed package has passed Salesforce Security Review and is Aloha enabled
+- Managed package has passed Salesforce Security Review and is Aloha enabled (which means the package does not count against limits in the Salesforce org, such as number of custom objects) 
 - Supports Custom Metadata, rollups can be included in Change Sets and Packages for easier deployment
 
 ## DLRS Misconceptions
