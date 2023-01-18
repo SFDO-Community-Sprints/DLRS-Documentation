@@ -5,6 +5,12 @@ parent: Cookbook
 nav_order: 1
 ---
 
+# Table of Contents
+* [Contact: Count Current Board Member Affiliation](#contact-count-current-board-member-affiliation)
+* [Contact: Count Relationships to Accounts](#contact-count-relationships-to-accounts)
+* [Account: Count Number of Contacts](#account-count-number-of-contacts)
+* [Account: Address Type Count](#account-address-type-count)
+
 # Contact: Count Current Board Member Affiliation
 
 **Description**
