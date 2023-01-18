@@ -15,11 +15,11 @@ DLRS is a mechanism for aggregating or summarizing data from child objects and d
 
 ## What business problems does DLRS solve?
 
-In Salesforce, there are “Rollup Summary Fields” that exist as standard fields in your instance and allow you to calculate metrics on a related list record (child object) and then show that value on the parent object. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance. Some examples may be Total Closed Won Amount.
+In Salesforce, there are “Rollup Summary Fields” (RSF) that exist as standard fields in your instance and allow you to calculate metrics on a related list record (child object) and then show that value on the parent object. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance. Some examples may be Total Closed Won Amount.
 
-There is a limit to how many “RUS” fields that Salesforce permits you to create. With DLRS - there is no such limit - you can create as many of them as needed.
+There is a limit to how many RSFs that Salesforce permits you to create. With DLRS there is no such limit - you can create as many of them as needed.
 
-Additionally - the metrics available with RUS fields - are limited to sum, minimum value, or maximum value as a calculated metric. There are extended “Operations” that can be performed with DLRS.
+Additionally, the metrics available with RSFs, are limited to sum, minimum value, or maximum value as a calculated metric. There are extended “Operations” that can be performed with DLRS.
 
 ## Features Summary
 
