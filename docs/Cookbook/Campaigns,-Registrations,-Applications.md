@@ -4,6 +4,12 @@ title: Campaigns, Registrations, Applications
 parent: Cookbook
 nav_order: 2
 ---
+# Table of Contents 
+* [Contact: Count Campaign Memberships](#contact-count-campaign-memberships)
+* [Contact: Campaign of First Donation](#contact-campaign-of-first-donation)
+* [Account: First Event Purchased Date](#account-first-event-purchased-date)
+* [Contact: Current Program Engagement Status](#contact-current-program-engagement-status)
+* [Contact: List of Years Engaged in Programs](#contact-list-of-years-engaged-in-programs)
 
 # Contact: Count Campaign Memberships
 
