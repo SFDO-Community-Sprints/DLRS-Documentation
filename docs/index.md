@@ -31,12 +31,13 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Managed package has passed Salesforce Security Review and is Aloha enabled (which means the package does not count against limits in the Salesforce org, such as number of custom objects) 
 - Supports Custom Metadata, rollups can be included in Change Sets and Packages for easier deployment
 
-## DLRS Misconceptions
+## How and when DLRS Calculates
 
-- Real-time trigger - Set Lookup Rollup to `Realtime` Calculation Mode. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+[Understanding when DLRS Calculates](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+- Real-time trigger - Set Lookup Rollup to `Realtime` Calculation Mode.
+- Async trigger based calculations - Set Lookup Rollup to `Scheduled` Calculation Mode.
+- Scheduled full calculations - There is a button to schedule full calculations.
 - Invocable from Flow or Process Builder - This is what allows DLRS to run in Professional Edition. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Installation/configuration.html#implementation-considerations)
-- Scheduled full calculations - There is a button to schedule full calculations. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
-- Async trigger based calculations - This is a feature of `Scheduled` Calculation Mode. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
 
 ## DLRS History 
 [Learn about the dlrs journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
