@@ -4,14 +4,14 @@ title: Outbound Funds
 parent: Cookbook
 nav_order: 5
 ---
-# Table of Contents
+# Outbound Funds Recipes
 * [Funding Program: Count Applications Submitted](#funding-program-count-applications-submitted)
 * [Funding Program: Sum of Recommended Amount](#funding-program-sum-of-recommended-amount)
 * [Account: Sum of Awarded Grants](#account-sum-of-awarded-grants)
 * [Account: Largest Grant Received](#account-largest-grant-received)
 * [Account: Last Grant Received](#account-last-grant-received)
 
-# Funding Program: Count Applications Submitted
+## Funding Program: Count Applications Submitted
 
 **Description**
 
@@ -39,7 +39,7 @@ nav_order: 5
 
 **Contributed By** Serkan Bilgi, [Traction on Demand](https://www.tractionondemand.com/)
 
-# Funding Program: Sum of Recommended Amount
+## Funding Program: Sum of Recommended Amount
 
 **Description**
 
@@ -67,7 +67,7 @@ nav_order: 5
 
 **Contributed By** Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-# Account: Sum of Awarded Grants
+## Account: Sum of Awarded Grants
 
 **Description**
 
@@ -97,7 +97,7 @@ nav_order: 5
 **Contributed By**
 Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-# Account: Largest Grant Received
+## Account: Largest Grant Received
 
 **Description**
 
@@ -125,7 +125,7 @@ Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 **Contributed By**
 Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-# Account: Last Grant Received
+## Account: Last Grant Received
 
 **Description**
 
