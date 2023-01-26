@@ -5,12 +5,12 @@ parent: Cookbook
 nav_order: 3
 ---
 
-# Table of Contents 
+# Files and Activities Recipes
 * [Object: Count Attached Files with Certain Text in their Name](#object-count-attached-files-with-certain-text-in-their-name)
 * [Contact: Completed Log-a-Call Activities LastYear](#contact-completed-log-a-call-activities-lastyear)
 * [Require Receipts on Expense Reports](#require-receipts-on-expense-reports)
 
-# Object: Count Attached Files with Certain Text in their Name
+## Object: Count Attached Files with Certain Text in their Name
 
 **Description**
 
@@ -41,7 +41,7 @@ nav_order: 3
 
 **Contributed by** Jon LaRosa, [LaRosa Consulting](https://trailblazer.me/id/jonlarosa)
 
-# Contact: Completed Log-a-Call Activities LastYear
+## Contact: Completed Log-a-Call Activities LastYear
 
 **Description**
 
@@ -76,7 +76,7 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 <!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
-# Require Receipts on Expense Reports
+## Require Receipts on Expense Reports
 
 **Description**
 
