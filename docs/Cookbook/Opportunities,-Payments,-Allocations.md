@@ -4,14 +4,14 @@ title: Opportunities, Payments, Allocations
 parent: Cookbook
 nav_order: 4
 ---
-# Table of Contents
+# Opportunities, Payments and Allocations Recipes
 * [Opportunity: Sum of Paid Payments This Financial Year](#opportunity-sum-of-paid-payments-this-financial-year)
 * [Opportunity: List GAU Allocations](#opportunity-list-gau-allocations)
 * [Contact: Sum of won Tribute Gifts](#contact-sum-of-won-tribute-gifts)
 * [Campaign: Total Amount Won from Opportunity Record Type or Lead Source](#campaign-total-amount-won-from-opportunity-record-type-or-lead-source)
 * [Contact: Current Active Recurring Donations](#contact-current-active-recurring-donations)
 
-# Opportunity: Sum of Paid Payments This Financial Year
+## Opportunity: Sum of Paid Payments This Financial Year
 
 **Description**
 
@@ -45,7 +45,7 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 
 **Contributed By** Jared Henning, [Salesforce.com](https://salesforce.com/)
 
-# Opportunity: List GAU Allocations
+## Opportunity: List GAU Allocations
 
 **Description**
 
@@ -77,7 +77,7 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 **Contributed By**
 Rachel Sinex, [Pedal Lucid](https://www.pedallucid.com/) _and_ Maida Rider, [Jesuit Refugee Service](https://jrsusa.org/)
 
-# Contact: Sum of won Tribute Gifts
+## Contact: Sum of won Tribute Gifts
 
 **Description**
 
@@ -100,7 +100,7 @@ Rachel Sinex, [Pedal Lucid](https://www.pedallucid.com/) _and_ Maida Rider, [Jes
 **Contributed By**
 Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
-# Campaign: Total Amount Won from Opportunity Record Type or Lead Source
+## Campaign: Total Amount Won from Opportunity Record Type or Lead Source
 
 **Description**
 
@@ -128,7 +128,7 @@ Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
 **Contributed By** Laurel Taylor, [Town Hall Seattle](https://townhallseattle.org/) _and_ Amy Utkan, [BRDPro](https://brdpro.com/)
 
-# Contact: Current Active Recurring Donations
+## Contact: Current Active Recurring Donations
 
 **Description**
 
