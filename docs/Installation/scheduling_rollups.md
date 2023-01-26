@@ -2,7 +2,7 @@
 layout: default
 title: What you need to know about Scheduling Rollups
 nav_order: 2
-parent: Installation
+parent: User Guide
 has_children: false
 ---
 
