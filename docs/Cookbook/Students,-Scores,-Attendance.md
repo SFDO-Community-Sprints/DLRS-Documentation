@@ -4,6 +4,11 @@ title: Students, Scores, Attendance
 parent: Cookbook
 nav_order: 6
 ---
+# Table of Contents
+* [Account: Count of Student Applications This Year](#account-count-of-student-applications-this-year)
+* [Contact: Current Traction Rec Membership Type](#contact-current-traction-rec-membership-type)
+* [Contact: Authorized Pickup Contacts](#contact-authorized-pickup-contacts)
+* [Report Card: Calculate Grade Point Average (GPA)](#report-card-calculate-grade-point-average-gpa)
 
 # Account: Count of Student Applications This Year
 
