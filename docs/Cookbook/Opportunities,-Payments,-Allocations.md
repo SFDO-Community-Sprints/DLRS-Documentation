@@ -4,6 +4,12 @@ title: Opportunities, Payments, Allocations
 parent: Cookbook
 nav_order: 4
 ---
+# Table of Contents
+* [Opportunity: Sum of Paid Payments This Financial Year](#opportunity-sum-of-paid-payments-this-financial-year)
+* [Opportunity: List GAU Allocations](#opportunity-list-gau-allocations)
+* [Contact: Sum of won Tribute Gifts](#contact-sum-of-won-tribute-gifts)
+* [Campaign: Total Amount Won from Opportunity Record Type or Lead Source](#campaign-total-amount-won-from-opportunity-record-type-or-lead-source)
+* [Contact: Current Active Recurring Donations](#contact-current-active-recurring-donations)
 
 # Opportunity: Sum of Paid Payments This Financial Year
 
