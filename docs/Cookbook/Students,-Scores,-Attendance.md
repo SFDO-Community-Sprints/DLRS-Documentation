@@ -4,13 +4,13 @@ title: Students, Scores, Attendance
 parent: Cookbook
 nav_order: 6
 ---
-# Table of Contents
+# Students, Scores and Attendance Recipes
 * [Account: Count of Student Applications This Year](#account-count-of-student-applications-this-year)
 * [Contact: Current Traction Rec Membership Type](#contact-current-traction-rec-membership-type)
 * [Contact: Authorized Pickup Contacts](#contact-authorized-pickup-contacts)
 * [Report Card: Calculate Grade Point Average (GPA)](#report-card-calculate-grade-point-average-gpa)
 
-# Account: Count of Student Applications This Year
+## Account: Count of Student Applications This Year
 
 **Description**
 
@@ -42,7 +42,7 @@ nav_order: 6
 
 **Contributed By** Michael Kolodner, [Kolodner.com LLC](https://kolodner.com/) for client: [The Academy Group](https://theacademygroup.com/)
 
-# Contact: Current Traction Rec Membership Type
+## Contact: Current Traction Rec Membership Type
 
 **Description**
 
@@ -69,7 +69,7 @@ nav_order: 6
 **Contributed By**
 John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
-# Contact: Authorized Pickup Contacts
+## Contact: Authorized Pickup Contacts
 
 **Description**
 
@@ -92,7 +92,7 @@ John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 **Contributed By**
 John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
-# Report Card: Calculate Grade Point Average (GPA)
+## Report Card: Calculate Grade Point Average (GPA)
 
 **Description**
 
