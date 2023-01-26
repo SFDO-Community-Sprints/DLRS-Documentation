@@ -5,6 +5,11 @@ parent: Cookbook
 nav_order: 3
 ---
 
+#Table of Contents 
+* [Object: Count Attached Files with Certain Text in their Name](#object-count-attached-files-with-certain-text-in-their-name)
+* [Contact: Completed Log-a-Call Activities LastYear](#contact-completed-log-a-call-activities-lastyear)
+* [Require Receipts on Expense Reports](#require-receipts-on-expense-reports)
+
 # Object: Count Attached Files with Certain Text in their Name
 
 **Description**
