@@ -5,13 +5,13 @@ parent: Cookbook
 nav_order: 1
 ---
 
-# Table of Contents
+# Affiliations, Relationships, Accounts and Contacts Recipes
 * [Contact: Count Current Board Member Affiliation](#contact-count-current-board-member-affiliation)
 * [Contact: Count Relationships to Accounts](#contact-count-relationships-to-accounts)
 * [Account: Count Number of Contacts](#account-count-number-of-contacts)
 * [Account: Address Type Count](#account-address-type-count)
 
-# Contact: Count Current Board Member Affiliation
+## Contact: Count Current Board Member Affiliation
 
 **Description**
 
@@ -44,7 +44,7 @@ nav_order: 1
 
 **Contributed By** Hua Ping Tan, [Belmar Consulting Group](https://www.belmar.ca/)
 
-# Contact: Count Relationships to Accounts
+## Contact: Count Relationships to Accounts
 
 **Description**
 
@@ -73,7 +73,7 @@ nav_order: 1
 **Contributed By**
 Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
 
-# Account: Count Number of Contacts
+## Account: Count Number of Contacts
 
 **Description**
 
@@ -96,7 +96,7 @@ Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
 **Contributed By**
 Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 
-# Account: Address Type Count
+## Account: Address Type Count
 
 **Description**
 
