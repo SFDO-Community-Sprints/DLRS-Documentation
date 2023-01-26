@@ -31,7 +31,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Managed package has passed Salesforce Security Review and is Aloha enabled (which means the package does not count against limits in the Salesforce org, such as number of custom objects) 
 - Supports Custom Metadata, rollups can be included in Change Sets and Packages for easier deployment
 
-## How and when DLRS Calculates
+## How and When DLRS Calculates
 
 [Understanding when DLRS Calculates](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
 - Real-time trigger - Set Lookup Rollup to `Realtime` Calculation Mode.
