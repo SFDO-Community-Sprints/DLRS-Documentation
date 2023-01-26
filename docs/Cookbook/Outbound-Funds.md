@@ -4,8 +4,14 @@ title: Outbound Funds
 parent: Cookbook
 nav_order: 5
 ---
+# Table of Contents
+* [Funding Program: Count Applications Submitted](#funding-program-count-applications-submitted)
+* [Funding Program: Sum of Recommended Amount](#funding-program-sum-of-recommended-amount)
+* [Account: Sum of Awarded Grants](#account-sum-of-awarded-grants)
+* [Account: Largest Grant Received](#account-largest-grant-received)
+* [Account: Last Grant Received](#account-last-grant-received)
 
-# FundingProgram: Count Applications Submitted
+# Funding Program: Count Applications Submitted
 
 **Description**
 
@@ -33,7 +39,7 @@ nav_order: 5
 
 **Contributed By** Serkan Bilgi, [Traction on Demand](https://www.tractionondemand.com/)
 
-# FundingProgram: Sum of Recommended Amount
+# Funding Program: Sum of Recommended Amount
 
 **Description**
 
