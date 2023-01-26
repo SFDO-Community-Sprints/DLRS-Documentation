@@ -4,14 +4,14 @@ title: Campaigns, Registrations, Applications
 parent: Cookbook
 nav_order: 2
 ---
-# Table of Contents 
+# Campaign, Registrations, and Applications Recipes
 * [Contact: Count Campaign Memberships](#contact-count-campaign-memberships)
 * [Contact: Campaign of First Donation](#contact-campaign-of-first-donation)
 * [Account: First Event Purchased Date](#account-first-event-purchased-date)
 * [Contact: Current Program Engagement Status](#contact-current-program-engagement-status)
 * [Contact: List of Years Engaged in Programs](#contact-list-of-years-engaged-in-programs)
 
-# Contact: Count Campaign Memberships
+## Contact: Count Campaign Memberships
 
 **Description**
 
@@ -44,7 +44,7 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 <!-- Edited by Kathy Waterworth 05/05/2022 -->
 
-# Contact: Campaign of First Donation
+## Contact: Campaign of First Donation
 
 **Description**
 
@@ -77,7 +77,7 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 **Contributed by** Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
-# Account: First Event Purchased Date
+## Account: First Event Purchased Date
 
 **Description**
 
@@ -111,7 +111,7 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 **Contributed by** Caroline Renard, [Data Geeks Lab](https://www.datageekslab.com)
 
-# Contact: Current Program Engagement Status
+## Contact: Current Program Engagement Status
 
 **Description**
 
@@ -146,7 +146,7 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 <!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
-# Contact: List of Years Engaged in Programs
+## Contact: List of Years Engaged in Programs
 
 **Description**
 
