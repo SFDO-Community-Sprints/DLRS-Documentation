@@ -36,7 +36,7 @@ Depending on your needs there are three ways to schedule, please read carefully.
 
 - **Scheduled Full Calculate**, also know as **Schedule Calculate** is just setting up automation to press the Calculate button for you
 - **Scheduled Incremental Calculate**, also known as **Calculation Mode - Schedule** is to have DLRS not run in realtime but in batches based on when you run an Apex job.
-- **Process Builder - Scheduled Action**, is to have Process Builder call a specific rollup in a Scheduled Action
+- **Process Builder - Scheduled Action**, is to have Process Builder or Flow call a specific rollup in a Scheduled Action
 
 ## IMPORTANT NOTE
 
@@ -69,4 +69,4 @@ This is like pressing the "Calculate" button. It does an entire recalculation of
 # Process Builder - Scheduled Actions
 
 **Calculate Mode field set to Process Builder, No Trigger Required**
-You can use Process Builder with a Scheduled Action, instead of an Immediate Action, and control the delay in processing. It will call the Parent account and recalculate the specified rollup. Create a `Call Apex` action in Process Builder and select the DLRS `Calculates a rollup` class.
+You can use Process Builder or Flow with a Scheduled Action, instead of an Immediate Action, and control the delay in processing. It will call the Parent account and recalculate the specified rollup. Create a `Call Apex` action in Process Builder or Flow and select the DLRS `Calculates a rollup` class.
