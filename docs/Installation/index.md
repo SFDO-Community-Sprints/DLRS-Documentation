@@ -17,28 +17,35 @@ Here is the App and Objects that are installed. You can see there are two permis
 
 ## Permissions
 
-You can install the package for Admins only and open up permissions for all users/profiles with the options below or install for all users.
+When selecting what users to instal for, you have 2 options: 
+1. Install the package for Admins only and open up permissions for all users/profiles who need to access to edit and/or invoke rollups (outlined below)
+2. Install for all users.
 
 ![Install for Admins](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Install-Admins-Only.PNG)
 
-There are two types of DLRS Users:
+### DLRS User Types
 
-### Admin
+**Admin**
+- Can configure, activate and deploy rollups 
+- Needs full read/write access to all objects in the package
 
-Kind of a tool admin user that both configures and activates the rollups (this has to be an admin to deploy and manage the trigger for example). This user also needs full read/write access to all the objects in the package.
+**User**
+- Indirectly invokes the rollups
+- Need read access to all objects 
 
-### User
+### Assigning Permission Set
 
-Then there is the users that don't directly use the tool, but indirectly invoke its rollups. These users need read access to all the objects in the package. You don't however need to give them access to the app, tabs or Visualforce pages for example since they don't need to be able to access the tools admin UI.
-
-### Assigning Permissions
-
-- You can click on Permission itself **Lookup Rollup Summaries - Process Rollups** and there is a button **Manage Assignments**. From the page that is displayed you can create a List View to filter for the users you want, tick them and click **Add Assignments**.
+- In Setup, search for "Permission Set" in QuickFind
+- Once in the Permission Set area, click on the **Lookup Rollup Summaries - Process Rollups**
+- In the permission set, click on **Manage Assignments** button. 
+- From the page that is displayed you can create a List View to filter for the users you want, tick them and click **Add Assignments**.
   ![Process Rollups Permission Set](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Process-Rollups.PNG)
-- You can update a **Profile** by giving **Read** access to the following objects, **Lookup Rollup Summaries**, **Lookup Rollup Summary Logs** and **Lookup Rollup Summary Schedule Items**.
-- Finally, if you didn't find the first option useful enough, you may want can try out the free The Permissioner tool on [AppExchange](https://appexchange.salesforce.com/listingDetail?listingId=a0N30000008XYMlEAO).
+  
+- As needed, update **Profiles** by giving **Read** access to the following objects, **Lookup Rollup Summaries**, **Lookup Rollup Summary Logs** and **Lookup Rollup Summary Schedule Items**.
 
-You can also [Read the Salesforce documentation on installing and permissions](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/packaging_install.htm)
+**Additional Resources**
+- If you need a more detailed view of permissions, try out the free The Permissioner tool on [AppExchange](https://appexchange.salesforce.com/listingDetail?listingId=a0N30000008XYMlEAO).
+- You can also [Read the Salesforce documentation on installing and permissions](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/packaging_install.htm)
 
 ## Professional Edition
 
