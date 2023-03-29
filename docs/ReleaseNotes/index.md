@@ -5,7 +5,7 @@ nav_order: 7
 has_children: true
 ---
 
-# Packaged Release History
+# Current Release Notes
 
 You can install a packaged version of the tool into your production org (sandbox testing as always recommended).
 
