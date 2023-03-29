@@ -12,7 +12,10 @@ Install the latest version (2.17) of DLRS into your production, sandbox, or scra
 [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest){: .btn .btn-blue }
 <br/>
 
-Here is the App and Objects that are installed. You can see there are two permission sets that can be used to give access.
+(See below for [instructions for installing in professional edition (PE)](#professional-edition))
+
+
+**Installed Components, including two permission sets that can be used to give access**
 ![Installed Components](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/InstalledComponents.PNG)
 
 ## Permissions
@@ -49,7 +52,16 @@ When selecting what users to instal for, you have 2 options:
 
 ## Professional Edition
 
-It is now possible to install the managed package in a Lightning Professional Edition and configure entries to trigger Process Builder to action the declarative roll up summary. (per [341](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/341))
+Use the links below to install into a Professional Edition of Salesforce:
+
+Sandbox & Scratch Orgs:  
+https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS
+
+Production & Developer Edition Orgs:  
+https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS
+
+Note: Only the Process Builder calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
 ![Process Builder Sharing Mode](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Process-Builder-Sharing-Mode.PNG)
+
 
