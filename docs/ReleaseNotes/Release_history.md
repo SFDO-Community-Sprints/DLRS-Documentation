@@ -2,7 +2,7 @@
 layout: default
 title: Release History
 nav_order: 2
-parent: Changelog
+parent: ReleaseNotes
 has_children: false
 ---
 
