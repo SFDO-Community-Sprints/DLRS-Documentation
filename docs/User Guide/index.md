@@ -8,7 +8,7 @@ has_children: true
 # User Guide
 ## Creating a New Lookup Rollup Summary
 
-![Manage_Lookup_Rollup_Screen_1](/DLRS-Documentation/assets/images/Addnew1.png)
+![Manage Lookup Rollup Screen 1](/images/Addnew1.png)
 
 ![Manage Lookup Rollups Screen](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Manage-Lookups.PNG)
 
