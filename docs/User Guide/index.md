@@ -8,8 +8,6 @@ has_children: true
 # User Guide
 ## Creating a New Lookup Rollup Summary
 
-![Manage Lookup Rollup Screen 1](/images/Addnew1.png)
-
 ![Manage Lookup Rollups Screen](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Manage-Lookups.PNG)
 
 ### Lookup Relationship
