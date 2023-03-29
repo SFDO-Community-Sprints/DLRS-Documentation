@@ -57,7 +57,7 @@ Use the links below to install into a Professional Edition of Salesforce:
 **Sandbox & Scratch Orgs:**  
 https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS
 
-**Production & Developer Edition Orgs: ** 
+**Production & Developer Edition Orgs:**  
 https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS
 
 Note: Only the Process Builder calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
