@@ -1,1 +1,9 @@
+---
+layout: default
+title: New Page
+nav_order: 2
+parent: User Guide
+has_children: false
+---
+
 Add Details in Markdown
