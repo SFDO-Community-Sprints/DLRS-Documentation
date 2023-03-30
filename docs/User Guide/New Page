@@ -1,0 +1,10 @@
+---
+layout: default
+title: New Page
+nav_order: 1
+parent: User Guide
+has_children: false
+---
+
+Add details in markdown for page. You will add lots of information here.
+
