@@ -13,7 +13,7 @@ has_children: false
 
 DLRS is a mechanism for aggregating or summarizing data from child objects and displaying it on a parent object. It serves the same purpose as Rollup Summary fields, but it is much more flexible with the kind of data that can be rolled up and how criteria are formed.
 
-## What business problems does DLRS solve?
+## What Business Problems Does DLRS Solve?
 
 In Salesforce, there are “Rollup Summary Fields” (RSFs) that exist as standard fields in your instance and allow you to calculate metrics on a related list record (child object) and then show that value on the parent object. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance. Some examples may be Total Closed Won Amount.
 
