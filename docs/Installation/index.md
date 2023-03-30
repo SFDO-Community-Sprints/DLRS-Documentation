@@ -20,7 +20,7 @@ Install the latest version (2.17) of DLRS into your production, sandbox, or scra
 
 ## Permissions
 
-When selecting what users to instal for, you have 2 options: 
+When selecting what users to install for, you have 2 options: 
 1. Install the package for Admins only and open up permissions for all users/profiles who need to access to edit and/or invoke rollups (outlined below)
 2. Install for all users.
 
