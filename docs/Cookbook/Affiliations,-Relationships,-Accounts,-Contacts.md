@@ -38,7 +38,7 @@ nav_order: 1
 
 **Variations**
 
-- Use different roles for the rollup, such as sponsor. If you only want to rollup the role from the Contact’s Primary Affiliation, you can add “AND npe5**Primary**c=TRUE” to the Relationship Criteria SOQL query.
+- Use different roles for the rollup, such as sponsor. If you only want to rollup the role from the Contact’s Primary Affiliation, you can add “AND npe5_Primary__c=TRUE” to the Relationship Criteria SOQL query.
 
 - You could also have a checkbox formula field on the contact object for easy reporting. If the rollup value >=1, then the checkbox is checked (true), meaning they are a board member. If the rollup is 0, then the checkbox is unchecked (false).
 
