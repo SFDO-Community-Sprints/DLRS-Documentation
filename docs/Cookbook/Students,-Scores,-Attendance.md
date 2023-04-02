@@ -2,7 +2,7 @@
 layout: default
 title: Students, Scores, Attendance
 parent: Cookbook
-nav_order: 6
+nav_order: 7
 ---
 # Students, Scores and Attendance Recipes
 * [Account: Count of Student Applications This Year](#account-count-of-student-applications-this-year)
