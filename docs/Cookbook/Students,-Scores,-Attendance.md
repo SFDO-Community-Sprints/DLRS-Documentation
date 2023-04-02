@@ -4,7 +4,7 @@ title: Students, Scores, Attendance
 parent: Cookbook
 nav_order: 7
 ---
-# Students, Scores and Attendance Recipes
+# Students, Scores and Attendance Recipes using Custom Objects
 * [Account: Count of Student Applications This Year](#account-count-of-student-applications-this-year)
 * [Contact: Current Traction Rec Membership Type](#contact-current-traction-rec-membership-type)
 * [Contact: Authorized Pickup Contacts](#contact-authorized-pickup-contacts)
