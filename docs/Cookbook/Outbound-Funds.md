@@ -75,8 +75,8 @@ nav_order: 5
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                                                              |
-| ---------------------------------- | ------------------------------------------------------------------------ |
+|                        Field | Value                               |
+| ---------------------------: | ----------------------------------- |
 | Parent Object                      | `Account`                                                                |
 | Child Object                       | `outfunds__Funding_Request__c`                                           |
 | Relationship Field                 | `Account__c`                                                             |
@@ -103,8 +103,8 @@ Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
 > Shows the largest amount awarded to an Applying Organization (Account).
 
-| Fields                             | Description                       |
-| ---------------------------------- | --------------------------------- |
+|                        Field | Value                               |
+| ---------------------------: | ----------------------------------- |
 | Parent Object                      | `Account`                         |
 | Child Object                       | `outfunds__Funding_Request__c`    |
 | Relationship Field                 | `Account__c`                      |
@@ -131,8 +131,8 @@ Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
 > Shows the last or most recent amount awarded to an Applying Organization (Account).
 
-| Fields                             | Description                       |
-| ---------------------------------- | --------------------------------- |
+|                        Field | Value                               |
+| ---------------------------: | ----------------------------------- |
 | Parent Object                      | `Account`                         |
 | Child Object                       | `outfunds__Funding_Request__c`    |
 | Relationship Field                 | `Account__c`                      |
