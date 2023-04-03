@@ -5,7 +5,7 @@ parent: Cookbook
 nav_order: 2
 ---
 # Campaign, Registrations, and Applications Recipes
-* [Contact: Count All Campaign Memberships](#contact-count-campaign-memberships)
+* [Contact: Count All Campaign Memberships](#contact-count-all-campaign-memberships)
 * [Contact: Count Campaign Memberships by Type](#contact-count-campaign-memberships-by-type)
 * [Contact: Campaign of First Donation](#contact-campaign-of-first-donation)
 * [Account: First Event Purchased Date](#account-first-event-purchased-date)
