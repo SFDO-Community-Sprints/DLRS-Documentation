@@ -6,7 +6,7 @@ nav_order: 4
 ---
 # Opportunities, Payments and Allocations Recipes
 * [Opportunity: Sum of Paid Payments This Financial Year](#opportunity-sum-of-paid-payments-this-financial-year)
-* [Opportunity: Sum of Paid Payments This Relative Fiscal Year]((#opportunity-sum-of-paid-payments-this-relative-fiscal-year)
+* [Opportunity: Sum of Paid Payments This Relative Fiscal Year](#opportunity-sum-of-paid-payments-this-relative-fiscal-year)
 * [Opportunity: List GAU Allocations](#opportunity-list-gau-allocations)
 * [Contact: Sum of won Tribute Gifts](#contact-sum-of-won-tribute-gifts)
 * [Campaign: Total Amount Won from Opportunity Record Type or Lead Source](#campaign-total-amount-won-from-opportunity-record-type-or-lead-source)
