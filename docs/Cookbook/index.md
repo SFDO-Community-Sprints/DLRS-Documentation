@@ -95,7 +95,7 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 ### Credits
 
-> Thanks to the top chefs/editing team for their time and commitment to this project: especially _Marc Baizman_, _Beth Hintze_, _Michael Kolodner_, _Nick Lindberg_, _Jodi Nemser-Abrahams_, _Jillian Nii_, _Caroline Renard_, _Rachel Sinex_, _Amanda Styles_ and _Kathy Waterworth_.
+> Thanks to the top chefs/editing team for their time and commitment to this project: especially _Marc Baizman_, _Shari Carlson_, _Beth Hintze_, _Michael Kolodner_, _Nick Lindberg_, _Jodi Nemser-Abrahams_, _Jillian Nii_, _Caroline Renard_, _Rachel Sinex_, _Amanda Styles_ and _Kathy Waterworth_.
 >
 > Tip of the hat to _Ruth Mar Tam_ for the inspiration of the headings from her wonderful [Baked to Order Cookbook](https://cooktildelicious.com/baked-to-order-cookbook/)
 >
