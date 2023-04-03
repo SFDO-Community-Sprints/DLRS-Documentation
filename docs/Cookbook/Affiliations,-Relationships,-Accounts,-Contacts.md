@@ -7,7 +7,7 @@ nav_order: 1
 
 # Affiliations, Relationships, Accounts and Contacts Recipes
 * [Contact: Count Current Board Member Affiliation](#contact-count-current-board-member-affiliation)
-* [Contact: Special Relationship to Org](#contact-special-relationship-to-org)
+* [Contact: Concatenate Special Relationship to Org](#contact-concatenate-special-relationship-to-organization)
 * [Contact: Count Relationships to Accounts](#contact-count-relationships-to-accounts)
 * [Account: Count Number of Contacts](#account-count-number-of-contacts)
 * [Account: Address Type Count](#account-address-type-count)
@@ -46,7 +46,7 @@ nav_order: 1
 **Contributed By** Hua Ping Tan, [Belmar Consulting Group](https://www.belmar.ca/)
 
 
-## Contact: Special Relationship to Organization
+## Contact: Concatenate Special Relationship to Organization
 **Description**
 >This is a variation on the board member count rollup using text instead of count. This can help track from a contact level who is on the board, staff, and volunteers if those are being tracked by affiliations. This rollup is generally good for end users to see a quick list of important interactions with your org and for ease of use with reporting. 
 
