@@ -5,7 +5,7 @@ parent: Cookbook
 nav_order: 6
 ---
 
-# Education Data Architecture
+# Education Data Architecture Recipes
 * [ Contact: Finding Last Program Enrollment](#contact-finding-last-program-enrollment)
 * [Contact: Finding Count of Program Enrollment](#contact-finding-count-of-program-enrollment)
 * [Course: Finding Next Course Offering Date](#course-finding-next-course-offering-date)
