@@ -6,6 +6,14 @@ nav_order: 6
 ---
 
 # Education Data Architecture
+* [ Contact: Finding Last Program Enrollment](#contact-finding-last-program-enrollment)
+* [Contact: Finding Count of Program Enrollment](#contact-finding-count-of-program-enrollment)
+* [Course: Finding Next Course Offering Date](#course-finding-next-course-offering-date)
+* [Contact: Find Completed Courses](#contact-find-completed-courses)
+* [Course Offering: Find Total Enrollment Count](#course-offering-find-total-enrollment-count)
+
+
+
 ## Contact: Finding Last Program Enrollment
 
 **Description:**
