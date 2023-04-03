@@ -18,18 +18,18 @@ nav_order: 7
 
 **Objects, Fields, Relationships**
 
-|                              Field | Value                                                                                                                           |
-| ---------------------------------: | ------------------------------------------------------------------------------------------------------------------------------- |
-|                      Parent Object | `Account`                                                                                                                       |
-|                       Child Object | `CollegeApp__c`                                                                                                                 |
-|                 Relationship Field | `AccountId`                                                                                                                     |
-| Relationship Criteria (SOQL Query) | `Year_of_Application_Date__c = N_Fiscal_Years_Ago AND IsApplied__c = true`                                                      |
-|       Relationship Criteria Fields | `Year_of_Application_Date__c` `N_Fiscal_Years_Ago` `IsApplied__c`                                                               |
-|                 Field to Aggregate | `Id`                                                                                                                            |
-|                  Field to Order By | n/a                                                                                                                             |
-|                Aggregate Operation | `COUNT`                                                                                                                         |
-|             Aggregate Result Field | `DLRS_Applications_This_Year__c`                                                                                                |
-|                   Calculation Mode | `Scheduled`                                                                                                                     |
+|                              Field | Value                                                                                                               
+| ---------------------------------: | ------------------------------------- |
+|                      Parent Object | `Account`                        |
+|                       Child Object | `CollegeApp__c`    |
+|                 Relationship Field | `AccountId`      |
+| Relationship Criteria (SOQL Query) | `Year_of_Application_Date__c = N_Fiscal_Years_Ago AND IsApplied__c = true`         |
+|       Relationship Criteria Fields | `Year_of_Application_Date__c` `N_Fiscal_Years_Ago` `IsApplied__c`       |
+|                 Field to Aggregate | `Id`      |
+|                  Field to Order By | n/a              |
+|                Aggregate Operation | `COUNT`              |
+|             Aggregate Result Field | `DLRS_Applications_This_Year__c`   |
+|                   Calculation Mode | `Scheduled`    |
 |          Schedule vs Child Trigger | `Deploy the Child Trigger, and also set using the DLRS scheduler to recalculate monthly (to keep the relative date up-to-date)` |
 
 **Preparation**
@@ -48,19 +48,19 @@ nav_order: 7
 
 > Rolls up the Type of the current membership to the contact for easy access. This is a part of a managed package called [Traction Rec](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000FYE1kUAH&msclkid=5bfeec30cbe311ec88624bc25754db7d).
 
-| Fields                             | Description                                                                                                                          |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| Parent Object                      | `Contact`                                                                                                                            |
-| Child Object                       | `TREX1__Membership__c`                                                                                                               |
-| Relationship Field                 | `TREX1__Contact__c`                                                                                                                  |
+|                              Field | Value                                                                                                               
+| ---------------------------------: | ------------------------------------- |
+| Parent Object                      | `Contact`            |
+| Child Object                       | `TREX1__Membership__c`    |
+| Relationship Field                 | `TREX1__Contact__c`   |
 | Relationship Criteria (SOQL Query) | `RecordTypeId = '012f4000000DdFgAAK' AND TREX1__Status__c IN ('Active', 'Pending Active', 'Pending Withdrawal', 'Pending Transfer')` |
-| Relationship Criteria Fields       | `RecordTypeId, TREX1__Status__c`                                                                                                     |
-| Field to Aggregate                 | `TREX1__Type__c`                                                                                                                     |
-| Order By Field                     | `TREX1__Start_Date__c`                                                                                                               |
-| Aggregate Operation                | `CONCATENATE DISTINCT`                                                                                                               |
-| Aggregate Result Field             | `Current_Membership_Type__c`                                                                                                         |
-| Calculation Mode                   | `Realtime`                                                                                                                           |
-| Schedule vs Child Trigger          | `Child Trigger deployed`                                                                                                             |
+| Relationship Criteria Fields       | `RecordTypeId, TREX1__Status__c`      |
+| Field to Aggregate                 | `TREX1__Type__c`    |
+| Order By Field                     | `TREX1__Start_Date__c`     |
+| Aggregate Operation                | `CONCATENATE DISTINCT`    |
+| Aggregate Result Field             | `Current_Membership_Type__c`     |
+| Calculation Mode                   | `Realtime`    |
+| Schedule vs Child Trigger          | `Child Trigger deployed`   |
 
 **Variations**
 
@@ -75,8 +75,8 @@ John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
 > We often need to see a list of key contacts (authorized to pick up students) - in a short field on the student Contact record to review in one place. Using the concatenate operator can list all of this information in one field. The child objects here are part of a managed package called [Traction Rec](https://appexchange.salesforce.com/listingDetail?listingId=a0N3A00000FYE1kUAH&msclkid=5bfeec30cbe311ec88624bc25754db7d)
 
-| Fields                             | Description                                                |
-| ---------------------------------- | ---------------------------------------------------------- |
+|                              Field | Value                                                                                                               
+| ---------------------------------: | ------------------------------------- |
 | Parent Object                      | `Contact`                                                  |
 | Child Object                       | `TREX1__Authorized_Pickup__c`                              |
 | Relationship Field                 | `ContactId`                                                |
@@ -102,8 +102,8 @@ John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
 > The School Report Card custom object has a child object, Grade. The field GPA_Pts**c is a formula that translates a letter grade into points on a 4-point GPA scale (leaving pass/fail grades blank). Grades also have a field Course_Type**c that is a picklist to choose English, Math, Art, etc. The field Interim_Final\_\_c tells us if this is a final grade or an interim report.
 
-| Fields                             | Description                                                                                                     |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+|                              Field | Value                                                                                                               
+| ---------------------------------: | ------------------------------------- |
 | Parent Object                      | `School_Report_Card__c`                                                                                         |
 | Child Object                       | `Grade__c`                                                                                                      |
 | Relationship Field                 | `School_Report_Card__c`                                                                                         |
