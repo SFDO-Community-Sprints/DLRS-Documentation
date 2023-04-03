@@ -64,7 +64,7 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 | Aggregate Operation | `COUNT` |
 | Aggregate Result Field |  `DLRS_Count_of_<direct_mail>_Campaign_Responses__c` |
 | Calculation Mode | `Scheduled`
-| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furious campaign members can come in.
+| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furiously campaign members can come in.
 
 **Any test code or other preparations needed:**
 > Adding the picklist values you want to use for Campaign Type. 
