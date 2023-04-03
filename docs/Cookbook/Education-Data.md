@@ -21,7 +21,7 @@ nav_order: 6
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
+| Field | Value |
 | ------- | -------- |
 | Parent Object | `Contact` |
 | Child Object | `hed__Program_Enrollment__c` |
@@ -51,7 +51,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
+| Field | Value |
 | ------- | -------- |
 | Parent Object | `Contact` |
 | Child Object | `hed__Program_Enrollment__c` |
@@ -80,7 +80,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
+| Field | Value |
 | ------- | -------- |
 | Parent Object | `hed__Course__c` |
 | Child Object | `hed__Course_Offering__c` |
@@ -105,7 +105,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
+| Field | Value |
 | ------- | -------- |
 | Parent Object | `Contact` |
 | Child Object | `hed__Course_Enrollment__c` |
@@ -132,7 +132,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
+| Field | Value |
 | ------- | -------- |
 | Parent Object | `hed__Course_Offering__c` |
 | Child Object | `hed__Course_Enrollment__c` |
