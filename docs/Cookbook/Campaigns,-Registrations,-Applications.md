@@ -5,13 +5,14 @@ parent: Cookbook
 nav_order: 2
 ---
 # Campaign, Registrations, and Applications Recipes
-* [Contact: Count Campaign Memberships](#contact-count-campaign-memberships)
+* [Contact: Count All Campaign Memberships](#contact-count-campaign-memberships)
+* [Contact: Count Campaign Memberships by Type](#contact-count-campaign-memberships-by-type)
 * [Contact: Campaign of First Donation](#contact-campaign-of-first-donation)
 * [Account: First Event Purchased Date](#account-first-event-purchased-date)
 * [Contact: Current Program Engagement Status](#contact-current-program-engagement-status)
 * [Contact: List of Years Engaged in Programs](#contact-list-of-years-engaged-in-programs)
 
-## Contact: Count Campaign Memberships
+## Contact: Count All Campaign Memberships
 
 **Description**
 
@@ -19,8 +20,8 @@ nav_order: 2
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                   |
-| ---------------------------------- | ----------------------------- |
+| Field | Value |
+| ------- | -------- |
 | Parent Object                      | `Contact`                     |
 | Child Object                       | `CampaignMember`              |
 | Relationship Field                 | `ContactId`                   |
@@ -37,12 +38,44 @@ nav_order: 2
 
 - You could count only the number of "responded" statuses using SOQL criteria "HasResponded = true"
 - If your org standardizes campaign member status options, you could also make counts of memberships in various statuses.
-- You could also count specific types of Campaigns, by adding criteria for Campaign Type.
+- You could also count specific types of Campaigns, by adding criteria for Campaign Type - see next recipe.
 
 **Contributed By**
 Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 <!-- Edited by Kathy Waterworth 05/05/2022 -->
+
+## Contact: Count Campaign Memberships by Type
+
+**Description:**
+> This is a variation of the overall campaign type counts. This is just one recipe, but it could be used for several different variations such as Direct Mail Fundraising; Email Fundraising; Social Fundraising; Advocacy; etc.
+
+**Objects, Fields, Relationships**
+
+| Field | Value |
+| ------- | -------- |
+| Parent Object | `Contact` |
+| Child Object | `CampaignMember` |
+| Relationship Field |`ContactId` |
+| Relationship Criteria (SOQL Query) |`Campaign Type = ‘Direct Mail’ AND HasResponded = ‘TRUE’`
+| Relationship Criteria Fields | `Campaign Type, HasResponded` |
+| Field to Aggregate |`Id` |
+| Order By Field | n/a |
+| Aggregate Operation | `COUNT` |
+| Aggregate Result Field |  `DLRS_Count_of_<direct_mail>_Campaign_Responses__c` |
+| Calculation Mode | `Scheduled`
+| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furious campaign members can come in.
+
+**Any test code or other preparations needed:**
+> Adding the picklist values you want to use for Campaign Type. 
+
+**Variations:**
+>You could use other Campaign Type values, such as Email Fundraising, Social Fundraising, Event, etc. and set up the fields as a suite for segmentation.
+
+**Contributed By**
+Beth Hintze, [Attain Partners](https://attainpartners.com/)
+
+<!-- Edited by Caroline Renard 04/02/2023 -->
 
 ## Contact: Campaign of First Donation
 
@@ -52,8 +85,8 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 **Objects, Fields, Relationships**
 
-|                     Field | Value                                                                                                                                                                                        |
-| ------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field | Value |
+| ------- | -------- |
 |             Parent Object | `Contact`                                                                                                                                                                                    |
 |              Child Object | `Opportunity`                                                                                                                                                                                |
 |        Relationship Field | `Primary Contact`                                                                                                                                                                            |
@@ -85,8 +118,8 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 **Objects, Fields, Relationships**
 
-|                              Field | Value                                                                                                                                                                                                                                                  |
-| ---------------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Field | Value |
+| ------- | -------- |
 |                      Parent Object | `Account`                                                                                                                                                                                                                                              |
 |                       Child Object | `PatronTicket__TicketOrderItem__c`                                                                                                                                                                                                                     |
 |                 Relationship Field | `PatronTicket__Account__c`                                                                                                                                                                                                                             |
@@ -119,8 +152,8 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                              |
-| ---------------------------------- | ---------------------------------------- |
+| Field | Value |
+| ------- | -------- |
 | Parent Object                      | `Contact`                                |
 | Child Object                       | `Program_Engagement__c`                  |
 | Relationship Field                 | `Member__c` (this is the contact lookup) |
@@ -156,8 +189,8 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                                      |
-| ---------------------------------- | ------------------------------------------------ |
+| Field | Value |
+| ------- | -------- |
 | Parent Object                      | `Contact`                                        |
 | Child Object                       | `Program_Engagement__c`                          |
 | Relationship Field                 | `Member__c` (this is the contact lookup)         |
