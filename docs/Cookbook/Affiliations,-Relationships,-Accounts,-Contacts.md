@@ -52,8 +52,8 @@ nav_order: 1
 
 **Objects, Fields, Relationships**
 
-| Fields | Description |
-| ------- | -------- |
+| Field                             | Value          |
+| ---------------------------------- | --------------------------- |
 | Parent Object | `Contact` |
 | Child Object | `npe5__Affiliation__c` |
 | Relationship Field |`npe5__Contact__c` |
@@ -86,7 +86,7 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                 |
+| Field                             | Value          |
 | ---------------------------------- | --------------------------- |
 | Parent Object                      | `Contact`                   |
 | Child Object                       | `AccountContactRelation`    |
@@ -113,7 +113,7 @@ Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
 
 > Count number of Contacts associated with an Account.
 
-| Fields                             | Description              |
+| Field                             | Value          |
 | ---------------------------------- | ------------------------ |
 | Parent Object                      | `Account`                |
 | Child Object                       | `Contact`                |
@@ -136,7 +136,7 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 
 > Counts the number of Address Types associated with an Account. We use the Address Type field to indicate specific purposes for addresses, including Acknowledgements, Direct Mail, and Event Invitations. This rollup counts how many addresses have a specific type value, 'Direct Mail' in this case, to check that the value exists.
 
-| Fields                             | Description                             |
+| Field                             | Value                             |
 | ---------------------------------- | --------------------------------------- |
 | Parent Object                      | `Account`                               |
 | Child Object                       | `npsp__Address__c`                      |
