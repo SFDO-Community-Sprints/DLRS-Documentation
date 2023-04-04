@@ -6,18 +6,18 @@ nav_order: 6
 ---
 
 # Education Data Architecture Recipes
-* [ Contact: Finding Last Program Enrollment](#contact-finding-last-program-enrollment)
-* [Contact: Finding Count of Program Enrollment](#contact-finding-count-of-program-enrollment)
+* [Contact: Finding Last Completed Program Enrollment](#contact-finding-last-completed-program-enrollment)
+* [Contact: Finding Count of Completed Program Enrollments](#contact-finding-count-of-completed-program-enrollments)
 * [Course: Finding Next Course Offering Date](#course-finding-next-course-offering-date)
 * [Contact: Find Completed Courses](#contact-find-completed-courses)
 * [Course Offering: Find Total Enrollment Count](#course-offering-find-total-enrollment-count)
 
 
 
-## Contact: Finding Last Program Enrollment
+## Contact: Finding Last Completed Program Enrollment
 
 **Description:**
-> On Contact, show date of most recent program enrollment for the student.
+> On Contact, show date of most recently completed program enrollment for the student.
 
 **Objects, Fields, Relationships**
 
@@ -39,15 +39,15 @@ nav_order: 6
 > The rollup can also be scheduled to run nightly if a child record is deleted for some reason.  
 
 **Variations:**
-> Show the date of the first program enrollment by using the FIRST aggregate operation.
+> Show the date of the first completed program enrollment by using the FIRST aggregate operation.
 
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
 
-## Contact: Finding Count of Program Enrollment
+## Contact: Finding Count of Completed Program Enrollments
 
 **Description:**
-> On Contact, show the count of complete program enrollments for the student.
+> On Contact, show the count of completed program enrollments for the student.
 
 **Objects, Fields, Relationships**
 
@@ -69,7 +69,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 > The rollup can also be scheduled to run nightly if a child record is deleted for some reason.  
 
 **Variations:**
-> Show the count of all completed and incomplete enrollments by adjusting the Relationship Criteria.
+> Show the count of all completed and incomplete enrollments by adjusting the Relationship Criteria (!= 'Completed', for example).
 
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
@@ -120,7 +120,7 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 | Schedule vs Child Trigger | `Child Trigger deployed`
 
 **Variations:**
-> Show the count of incomplete courses by adjusting the Relationship Criteria.
+> Show the count of incomplete courses by adjusting the Relationship Criteria (!= 'Completed', for example).
 
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
