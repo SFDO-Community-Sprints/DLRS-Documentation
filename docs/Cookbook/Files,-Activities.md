@@ -49,7 +49,7 @@ nav_order: 3
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                                                            |
+| Field                            | Value                                                        |
 | ---------------------------------- | ---------------------------------------------------------------------- |
 | Parent Object                      | `Contact`                                                              |
 | Child Object                       | `Task`                                                                 |
@@ -86,7 +86,7 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 **Objects, Fields, Relationships**
 
-| Fields                             | Description                       |
+| Field                            | Value                       |
 | ---------------------------------- | --------------------------------- |
 | Parent Object                      | `Expense_Report__c`               |
 | Child Object                       | `ContentDocumentLink`             |
