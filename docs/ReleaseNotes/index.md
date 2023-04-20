@@ -8,25 +8,46 @@ has_children: true
 # Current Release Notes
 
 You can install a packaged version of the tool into your production org (sandbox testing as always recommended).
-
 <br/>
-**Latest Release Version 2.17**
+**Latest Release Version 2.18**
 
 ---
 
-Install DLRS 2.17 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
+Install DLRS 2.18 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
 
-- Feature - [New creation wizard: Custom UI for creation of Lookup Rollup Summaries](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1113).
-- Feature - [List view for Rollup records within lightning app: Shows all rollups including information to quickly see if a rollup is scheduled and the schedule date](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1131).
-- Feature - [Detect NPSP/TDTM during deployment of DLRS test code. No configuration required. We disable TDTM triggers during the deployment of DLRS test code](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1171).
-- Performance - [Reduced number of SOQL queries made by using custom metadata methods for Rollup Summaries Selector](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1049).
-- Enhancement - [Added `Clone` Button on main Rollup creation page to quickly copy lookup rollup summaries](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1121).
-- Enhancement - [Added `Schedule` Full Calculate field to rollup creation page – Adds ability to track next scheduled full calculate on rollup](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1126).
-- Enhancement - [Added error and informational messages to guide user through rollup activation](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1123).
-- Enhancement - [Added ability to sort fields by label instead of API name in New Wizard](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1130).
-- Bug - [Fixed issue preventing scheduled rollups from working if different child objects and the same parent object](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/802).
-- Bug - [Fixed broken image link on app homepage](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1170).
-- Bug - [Fixed missing namespace in trigger test code](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1177).
-- Bug - [Add global access modifier for NPSP](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1180).
-- Bug - [New Wizard throwing error if picklist exceeds 1000 objects](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1223)
+In Release 2.18, you will find several small updates and fixes, some underlying technical and security updates, a widget to notify admins of scheduled items that need attention, and an update that will reduce performance-based problems like record lock and CPU timeout errors.
 
+You only need to install version 2.18 of the package. There are no other steps you need to take to have access to the updates in this release. 
+
+## Features
+
+* Rollups will now only execute DML if it would change the parent's value. (Issue #1269, #340)
+  * When a child record is modified and that modification is a field that triggers a rollup calculation, DLRS will execute the aggregate query then query the parent to ensure the DML is necessary. Any parent already holding the correct values will be excluded from the DML. 
+  * This will significantly reduce record lock, CPU Timeout and other performance-based problems. 
+  * This feature will be enabled automatically, but you can disable it by navigating to Custom Settings in Setup.
+    * Click on Manage in front of the Declarative Lookup Rollup Summaries setting. 
+    * Click on Edit. 
+    * Check the box “Disable Parent DML Check”. Click on Save
+
+* Added a widget to the Lookup Rollup Summaries Tool to notify DLRS admins that the Scheduled Items are building up and either need to be scheduled or deleted. This updated widget can be found on the Lookup Rollup Summaries Tool tab. (Issue #1271, #735, #566) 
+* In the wizard, the following fields were updated: (Issue #1236)
+  * Lookup Rollup Summary name changed to Lookup Rollup Summary Label
+  * Unique Name changed to Lookup Rollup Summary API Name
+  * Lookup Rollup Summary Label and Lookup Rollup Summary API name are both limited to 40 characters to avoid error on save. 
+  * Lookup Rollup Summary API Name is auto-populated from Lookup Rollup Summary Label field. 
+* Updated scheduled error email subject to match real time email subject (includes Org Id and Name). (Issue #1219)
+* Updated package API version to v57.0. There should be no impact to users. (Issue #1294)
+* Several test trigger, security, and packaging updates. These are necessary technical updates to allow for the packaging of the release. There should be no impact to users.
+
+## Fixes
+* Corrected Lookup Rollup List View: Maximum view state size limit error. The error was corrected by filtering out Deleted Cron Triggers in the selectAll query. (Issue #1253)
+* Updated ReadMe and Wiki to remove outdated information. All documentation and installation instructions can be found on the Documentation website. 
+* Updated link to documentation on the Welcome page (Issue #1235)
+
+## Code Contributors
+* Scott Fenton
+* David Reed
+* Christian Szandor Knapp
+* Anthony Heber
+* Ezra LaFleur
+* Jim Bartek
