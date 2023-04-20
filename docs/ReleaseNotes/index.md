@@ -9,9 +9,8 @@ has_children: true
 
 You can install a packaged version of the tool into your production org (sandbox testing as always recommended).
 <br/>
-**Latest Release Version 2.18**
 
----
+## Latest Release Version 2.18
 
 Install DLRS 2.18 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
 
