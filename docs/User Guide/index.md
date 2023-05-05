@@ -62,17 +62,13 @@ has_children: true
 
 4. Click 'Save.'
 
-# Activating New Lookup Rollup Summary
+##  Activating New Lookup Rollup Summary
 
 If your calculation mode is anything other than “Process Builder”, follow the steps below to activate your rollup.
-
-
 
 1. Scroll to the top of the page and click 'Manage Child Trigger'.
 
 Manage Trigger Page: 
-
-
 
 2.  The 'Manage Trigger' page will open up. Scroll to the bottom of the page and click 'Deploy'.
 3.  Wait for deployment. Once deployed, 'Deployment Complete' will appear in a gray box at the top of the page.
@@ -80,16 +76,12 @@ Manage Trigger Page:
 
 Manage Lookup Rollup Summary Page:
 
-
-
 5. Under the section 'Rollup Details', click 'Active'.
 6. Click 'Save' again.
 
 **Calculation Modes - How the Roll-up is Triggered**
 
 In order for the roll-up field to update those setting up the roll-up can choose from 4 different calculation modes which trigger it. An Apex Trigger (which the app creates) must be deployed to use Realtime and Scheduled mode however, no Trigger is required for the other methods.
-
-
 
 * Realtime: Triggers the calculation of roll-ups every time a child record is edited.
     * If realtime roll-ups are enabled you can also run the roll-up on a Schedule Full Calculate to catch merges.
