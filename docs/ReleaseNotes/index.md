@@ -28,7 +28,7 @@ You only need to install version 2.18 of the package. There are no other steps y
     * Click on Edit. 
     * Check the box “Disable Parent DML Check”. Click on Save
 
-    ![dlrsCustomSettingScreenshot](/DLRS-Documentation/assets/dlrsCustomSetting.png | width=450)
+    ![dlrsCustomSettingScreenshot](/DLRS-Documentation/assets/dlrsCustomSetting.png|width=450)
 
 * Added a widget to the Lookup Rollup Summaries Tool to notify DLRS admins that the Scheduled Items are building up and either need to be scheduled or deleted. This updated widget can be found on the Lookup Rollup Summaries Tool tab. (Issue #[1271](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1271), #[735](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/735), #[566](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/566)) 
 * In the wizard, the following fields were updated: (Issue #[1236](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1236))
