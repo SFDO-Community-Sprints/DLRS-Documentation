@@ -5,7 +5,7 @@ nav_order: 3
 has_children: true
 ---
 
-# User Guide
+# Getting Started
 ## Creating a New Lookup Rollup Summary
 
 1. Open the DLRS (Declarative Lookup Rollup Summaries) App. Click the third tab 'Manage Lookup Rollup Summaries'.
