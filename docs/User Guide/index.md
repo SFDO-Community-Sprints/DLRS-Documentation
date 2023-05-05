@@ -15,16 +15,16 @@ has_children: true
 2. At the top of the page, in the dropdown for ‘Select Lookup Rollup Summary’ select ‘Create new…’. 
 
 3. Fill out the following fields. These are required to create a new Lookup Rollup Summary:<br>
-        a. Lookup Rollup Summary Name<br>
-        b. Lookup Rollup Summary Unique Name (This field does not auto-populate when manually creating a rollup. Tip: Include a unique name without spaces. Try                  copying your Lookup Rollup Summary Name and replacing spaces for underscores.) <br>
-        c. Parent Object<br>
-        d. Child Object<br>
-        e. Relationship Field<br>
-        f. Field to Aggregate<br>
-        g. Aggregate Operation<br>
-        h. Aggregate Result Field<br>
-        i. Calculation Mode<br>
-        j. Calculation Sharing Mode<br>
+        - Lookup Rollup Summary Name<br>
+        - Lookup Rollup Summary Unique Name (This field does not auto-populate when manually creating a rollup. Tip: Include a unique name without spaces. Try                  copying your Lookup Rollup Summary Name and replacing spaces for underscores.) <br>
+        - Parent Object<br>
+        - Child Object<br>
+        - Relationship Field<br>
+        - Field to Aggregate<br>
+        - Aggregate Operation<br>
+        - Aggregate Result Field<br>
+        - Calculation Mode<br>
+        - Calculation Sharing Mode<br>
 
     All fields, both required and optional, that appear on this page are defined in the chart below.
 
