@@ -1,3 +1,11 @@
+---
+layout: default
+title: App Tour
+nav_order: 3
+parent: User Guide
+has_children: false
+---
+
 # App Tour
 
 ## Declarative Lookup Rollup Summary
