@@ -1,8 +1,6 @@
 ---
-layout: default
-title: Change Log
-nav_order: 8
-has_children: false
+layout: forward
+target: https://sfdo-community-sprints.github.io/DLRS-Documentation/ReleaseNotes/
 ---
 
 # Current Release Notes
