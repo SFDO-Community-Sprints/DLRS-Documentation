@@ -10,7 +10,7 @@ has_children: true
 
 1. Open the DLRS (Declarative Lookup Rollup Summaries) App. Click the third tab 'Manage Lookup Rollup Summaries'.
 
-![DLRS Lookup Relation Fields](/DLRS-Documentation/assets/images/DLRSLookupRelationFields.png)
+![DLRS Lookup Relation Fields](/DLRS-Documentation/assets/DLRSLookupRelationFields.png)
 
 2. At the top of the page, in the dropdown for ‘Select Lookup Rollup Summary’ select ‘Create new…’. 
 
@@ -38,7 +38,7 @@ has_children: true
 |_Relationship Criteria (optional)_| If you want to filter the Child Object records enter the SOQL WHERE query here, e.g. Amount >200 AND Stage  = ‘Closed Won’|
 |_Relationship Criteria Fields (optional)_|Enter any field that will be used in the Criteria from above, enter one field per line e.g.<br>Amount<br>Stage<br>_If you are referencing RecordType.Name or RecordType.DeveloperName in your WHERE clause, exclude them from the Relationship Criteria fields as it will result in an error._|
 
-![DLRS Rollup Detail Fields](/DLRS-Documentation/assets/images/DLRSRollupDetailFields.png)  
+![DLRS Rollup Detail Fields](/DLRS-Documentation/assets/DLRSRollupDetailFields.png)  
 
 ## Rollup Details Fields
 
@@ -64,7 +64,7 @@ has_children: true
 
 4. Click 'Save.'
 
-![DLRS Advanced Fields](/DLRS-Documentation/assets/images/DLRSAdvancedFields.png)
+![DLRS Advanced Fields](/DLRS-Documentation/assets/DLRSAdvancedFields.png)
 
 ##  Activating New Lookup Rollup Summary
 
