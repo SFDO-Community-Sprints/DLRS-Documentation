@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Cookbook
+title: Rollup Cookbook
 nav_order: 4
 has_children: true
 ---
