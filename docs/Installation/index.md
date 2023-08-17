@@ -7,7 +7,7 @@ has_children: true
 
 # Installation
 
-Install the latest version (2.17) of DLRS into your production, sandbox, or scratch org via:
+Install the latest version (2.19) of DLRS into your production, sandbox, or scratch org via:
 <br/><br/>
 [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest){: .btn .btn-blue }
 <br/>
@@ -55,10 +55,10 @@ When selecting what users to install for, you have 2 options:
 Use the links below to install into a Professional Edition of Salesforce:
 
 **Sandbox & Scratch Orgs:**  
-[https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS)
+[https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC)
 
 **Production & Developer Edition Orgs:**  
-[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000XdcIAAS)
+[https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC)
 
 Note: Only the Process Builder calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
