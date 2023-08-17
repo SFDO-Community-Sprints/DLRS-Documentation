@@ -8,14 +8,58 @@ has_children: false
 
 # Packaged Release History
 
-You can install a packaged version of the tool into your production org (sandbox testing as always recommended).
+<br/>
+
+## Version 2.18
+
+
+
+Install DLRS 2.18 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
+
+In Release 2.18, you will find several small updates and fixes, some underlying technical and security updates, a widget to notify admins of scheduled items that need attention, and an update that will reduce performance-based problems like record lock and CPU timeout errors.
+
+You only need to install version 2.18 of the package. There are no other steps you need to take to have access to the updates in this release. 
+
+**Features**
+
+* Rollups will now only execute DML if it would change the parent's value. (Issue #[1269](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1269), #[340](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/340))
+  * When a child record is modified and that modification is a field that triggers a rollup calculation, DLRS will execute the aggregate query then query the parent to ensure the DML is necessary. Any parent already holding the correct values will be excluded from the DML. 
+  * This will significantly reduce record lock, CPU Timeout and other performance-based problems. 
+  * This feature will be enabled automatically, but you can disable it by navigating to Custom Settings in Setup.
+    * Click on Manage in front of the Declarative Lookup Rollup Summaries setting. 
+    * Click on Edit. 
+    * Check the box “Disable Parent DML Check”. Click on Save
+
+    ![dlrsCustomSettingScreenshot](/DLRS-Documentation/assets/dlrsCustomSetting.png)
+
+* Added a widget to the Lookup Rollup Summaries Tool to notify DLRS admins that the Scheduled Items are building up and either need to be scheduled or deleted. This updated widget can be found on the Lookup Rollup Summaries Tool tab. (Issue #[1271](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1271), #[735](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/735), #[566](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/566)) 
+* In the wizard, the following fields were updated: (Issue #[1236](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1236))
+  * Lookup Rollup Summary name changed to Lookup Rollup Summary Label
+  * Unique Name changed to Lookup Rollup Summary API Name
+  * Lookup Rollup Summary Label and Lookup Rollup Summary API name are both limited to 40 characters to avoid error on save. 
+  * Lookup Rollup Summary API Name is auto-populated from Lookup Rollup Summary Label field. 
+* Updated scheduled error email subject to match real time email subject (includes Org Id and Name). (Issue #[1219](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1219))
+* Updated package API version to v57.0. There should be no impact to users. (Issue #[1294](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1294))
+* Several test trigger, security, and packaging updates. These are necessary technical updates to allow for the packaging of the release. There should be no impact to users.
+
+**Fixes**
+* Corrected Lookup Rollup List View: Maximum view state size limit error. The error was corrected by filtering out Deleted Cron Triggers in the selectAll query. (Issue #[1253](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1253))
+* Updated ReadMe and Wiki to remove outdated information, including that all documentation and installation instructions can now be found on the [Documentation website](https://sfdo-community-sprints.github.io/DLRS-Documentation/). 
+* Updated link to documentation on the Welcome page (Issue #[1235](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1235))
+
+**Code Contributors**
+* Scott Fenton
+* David Reed
+* Christian Szandor Knapp
+* Anthony Heber
+* Ezra LaFleur
+* Jim Bartek
 
 <br/>
-**Latest Release Version 2.17**
 
----
+## Version 2.17
 
-Install DLRS 2.17 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
+
 
 - Feature - [New creation wizard: Custom UI for creation of Lookup Rollup Summaries](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1113).
 - Feature - [List view for Rollup records within lightning app: Shows all rollups including information to quickly see if a rollup is scheduled and the schedule date](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/issues/1131).
@@ -32,34 +76,33 @@ Install DLRS 2.17 into your production, sandbox, or scratch org via [Salesforce.
 - Bug - [New Wizard throwing error if picklist exceeds 1000 objects](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1223)
 
 <br/><br/>
-**Version 2.16**
+## Version 2.16
 
----
 
-Install DLRS 2.16 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
+
 
 - Internal release
 
 <br/><br/>
-**Release Version 2.15**
+## Release Version 2.15
 
----
+
 
 Install DLRS 2.15 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
 
 <br/><br/>
-**Version 2.14**
+## Version 2.14
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000eegF&isdtp=p1), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p000000eegF&isdtp=p1)
 
 - Enhancement - Moved to API 51.0
 
 <br/><br/>
-**Release Version 2.13**
+## Release Version 2.13
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000YGN9&isdtp=p1), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000YGN9&isdtp=p1)
 
@@ -69,9 +112,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Bug - Optimizer tab would not show correctly if the user was not an Admin - now works for any user so long as they are assigned the Lookup Rollup Summary Configure permission set.
 
 <br/><br/>
-**Release Version 2.12**
+## Release Version 2.12
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000YGN4&isdtp=p1), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000YGN4&isdtp=p1)
 
@@ -90,9 +133,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 Also see [Declarative Rollup Summary Tool Update for v2.12](https://andyinthecloud.com/2020/04/05/declarative-rollup-summary-tool-update/).
 
 <br/><br/>
-**Release Version 2.11.1**
+## Release Version 2.11.1
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000001E2L5), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000001E2L5)
 
@@ -102,9 +145,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 The Cases DLRS Trigger will fail in Summer '19 if you do not upgrade to 2.11.1 until the related known issue is fixed by Salesforce. This only impacts users with the Case object DLRS Child Trigger created and active.
 
 <br/><br/>
-**Release Version 2.11**
+## Release Version 2.11
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000IyYr), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t0N000000IyYr)
 
@@ -115,9 +158,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Enhancement [Lightning Enterprise Edition](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/569)
 
 <br/><br/>
-**Release Version 2.10**
+## Release Version 2.10
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000UvwL), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000UvwL)
 
@@ -131,9 +174,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 **UPGRADE NOTE:** If you access the Rollup definitions via the standard Salesforce Custom Metadata UI under the Setup menu. Make sure to remove 'Test Code (Deprecated)' (small one) from the layout and add the new 'Test Code' field (large one). If you only ever use the Manage Rollup Summaries tab you do not need to worry about this. Also note that any test code placed in the original smaller field will be automatically migrated to the new field on next edit (via Manage Rollup Summaries tab).
 
 <br/><br/>
-**Release Version 2.9**
+## Release Version 2.9
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXnE), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXnE)
 
@@ -153,9 +196,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - There is a new Delete Log button on the Summary Logs List View layout please add it
 
 <br/><br/>
-**Release Version 2.8**
+## Release Version 2.8
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXkF), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXkF)
 
@@ -168,18 +211,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 **IMPORTANT NOTE:** Please check your Rollup Calculate Job records and if needed delete them.
 
 <br/><br/>
-**Release Version 2.7**
+## Release Version 2.7
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXk5), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXk5)
 
 - Bug [Validation Errors 'ENTITY_IS_DELETED' While Saving when Parent gets Deleted As Well](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/39)
 
 <br/><br/>
-**Release Version 2.6**
+## Release Version 2.6
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXZG), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXZG)
 
@@ -188,9 +231,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Bug [Lookup Rollup Calculate Jobs not Case-sensitive](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/347)
 
 <br/><br/>
-**Release Version 2.5**
+## Release Version 2.5
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXVO), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000MXVO)
 
@@ -201,18 +244,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Enhancement [Support ContentNote rollups (upgraded to API 37.0)](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/351)
 
 <br/><br/>
-**Release Version 2.4.2**
+## Release Version 2.4.2
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000ka9e), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000ka9e)
 
 - Bug [Install failed 2.4 update - New dependency on LookupChild's Sharing mode in Apex Unit Test](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/344)
 
 <br/><br/>
-**Release Version 2.4.1**
+## Release Version 2.4.1
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000ka90), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000ka90)
 
@@ -227,9 +270,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Enhancement [Remove from Lookup Rollup Summary Schedule Items when Parent is deleted](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/147)
 
 <br/><br/>
-**Version 2.3**
+## Version 2.3
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBqJ), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBqJ)
 
@@ -239,9 +282,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Bug [Validation Errors 'ENTITY_IS_DELETED' While Saving when Parent gets Deleted As Well](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/39)
 
 <br/><br/>
-**Version 2.2**
+## Version 2.2
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBh0), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBh0)
 
@@ -250,18 +293,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Enhancement [Multiple BR() for Concatenate](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/258)
 
 <br/><br/>
-**Version 2.1**
+## Version 2.1
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBgv), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBgv)
 
 - Bug [Manage Lookup Rollup Summaries produces error CurrencyIsoCode not valid](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/273)
 
 <br/><br/>
-**Version 2.0**
+## Version 2.0
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBgl), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBgl)
 
@@ -279,9 +322,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - List View support is available under Setup, Custom Metadata Types, Manage Records but does not invoke the new UI for editing
 
 <br/><br/>
-**Version 1.25**
+## Version 1.25
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBPs), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000cBPs)
 
@@ -297,9 +340,9 @@ This will show the following UI related to the enhancement above.
 ![New Calc Screen](https://raw.githubusercontent.com/afawcett/declarative-lookup-rollup-summaries/master/images/newscheduledcalc.png)
 
 <br/><br/>
-**Version 1.24**
+## Version 1.24
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QgPw), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QgPw)
 
@@ -310,9 +353,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 **IMPORTANT NOTE:** This release improves the query optimisation within the tool when there are multiple rollups. There is also a small change in behaviour from previous releases, relating to default ordering. If you have been using concat, first or last operations and have not specified explicit order by on the rollup, you must do from now on, it no longer defaults to the field to rollup. In prior releases the behaviour of this operation may or may not have been consistently working as expected, depending on the existence of one or more rollups.
 
 <br/><br/>
-**Version 1.23**
+## Version 1.23
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QgAc), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QgAc)
 
@@ -324,9 +367,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Bug fix for [Rollup Summary validations not being enforced on updates after fflib upgrade ](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/212)
 
 <br/><br/>
-**Version 1.22**
+## Version 1.22
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qg9t), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qg9t)
 
@@ -339,9 +382,9 @@ If you are upgrading, you will need to make the following changes to the Layout.
 - Add **Test Code See All Data** field to the layout
 
 <br/><br/>
-**Version 1.21**
+## Version 1.21
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QfxT), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QfxT)
 
@@ -356,9 +399,9 @@ If you are upgrading, you will need to make the following changes to the Layout.
 - Add **Test Code** field to the layout
 
 <br/><br/>
-**Version 1.20**
+## Version 1.20
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QfxO), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QfxO)
 
@@ -374,9 +417,9 @@ If you are upgrading, you will need to make the following changes to the Layout.
 ![Calculation Sharing Mode](https://cloud.githubusercontent.com/assets/1167760/7896771/29740d96-06bd-11e5-926f-a6fc402c85b1.png)
 
 <br/><br/>
-**Version 1.19**
+## Version 1.19
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QewZ), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QewZ)
 
@@ -385,9 +428,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Currency Fields in the Rollup causing the issues - "Master and detail fields must be the same field type (or text based) for First or Last operations"](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/121)
 
 <br/><br/>
-**Version 1.18**
+## Version 1.18
 
----
+
 
 Read more about this releae [here](http://andyinthecloud.com/2015/02/16/declarative-lookup-rollup-summaries-tool-dlrs-spring15-release/).
 
@@ -406,9 +449,9 @@ If you are upgrading, you will need to make the following changes to the Layout 
 - Add **Process Builder** picklist item to **Calculation Mode**
 
 <br/><br/>
-**Version 1.17**
+## Version 1.17
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qeej), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qeej)
 
@@ -420,18 +463,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Upgrade to API 32 (sees new Standard objects) related to attempted fix for [Error "Object does not exist" for CombinedAttachment](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/103)
 
 <br/><br/>
-**Version 1.16**
+## Version 1.16
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeZ0), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeZ0)
 
 - Fix for [RollupJob error: Cannot have more than 10 chunks in a single operation](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/51), thanks to [David Carter](https://github.com/dcarter).
 
 <br/><br/>
-**Version 1.15**
+## Version 1.15
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeSJ), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeSJ)
 
@@ -441,9 +484,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Support installation without having to have Ideas enabled](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/33)
 
 <br/><br/>
-**Version 1.14**
+## Version 1.14
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeNs), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeNs)
 
@@ -452,18 +495,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Multiple rollups on same field fail to execute](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/85)
 
 <br/><br/>
-**Version 1.13**
+## Version 1.13
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeLD), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeLD)
 
 - Fix for [Apex Error Query Exception](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/83)
 
 <br/><br/>
-**Version 1.12**
+## Version 1.12
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeFj), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QeFj)
 
@@ -472,18 +515,18 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Currency Conversion?](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/57), special thanks to [Anthony Heber](https://github.com/aheber) for submitting the enhancement to [LREngine](https://github.com/abhinavguptas/Salesforce-Lookup-Rollup-Summaries) to fix this. The result of the child aggregation is converted to the parent record currency if the child field being aggregated is a Currency type and the org is using Multi-Currency. Note currently dated exchanged rates (available through Advanced Mulit-Currency) are currently not supported.
 
 <br/><br/>
-**Version 1.11**
+## Version 1.11
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QdRT), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QdRT)
 
 - Fix for [Issue Deploy Trigger not successful, with no error (due to code coverage being low)](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/54)
 
 <br/><br/>
-**Version 1.10**
+## Version 1.10
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qbz8), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000Qbz8)
 
@@ -491,9 +534,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Issue 25 Error with Manage Child Trigger button for very long object names](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/25)
 
 <br/><br/>
-**Version 1.9 - Community Powered!**
+## Version 1.9 - Community Powered!
 
----
+
 
 Read more about this release [here](http://andyinthecloud.com/2014/04/09/new-declarative-rollup-tool-release-community-powered)
 
@@ -509,25 +552,25 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 **KNOWN INSTALL ISSUE** There appears to be an install issue identified when installing into orgs without Ideas installed for v1.9, if you encourter this enable Ideas if you can, otherwise use v1.7 until the issue is resolved.
 
 <br/><br/>
-**Version 1.8**
+## Version 1.8
 
----
+
 
 Not released
 
 <br/><br/>
-**Version 1.7**
+## Version 1.7
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QYAW), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QYAW)
 
 - Fix for [Issue 14](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/14), relating to null pointer exception
 
 <br/><br/>
-**Version 1.6 - Spring'14 Release - 9th February 2014**
+## Version 1.6 - Spring'14 Release - 9th February 2014
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QRXG), [Sandbox URL](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QRXG)
 
@@ -536,32 +579,32 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 - Fix for [Issue 11](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/11)
 
 <br/><br/>
-**Version 1.5**
+## Version 1.5
 
----
+
 
 Package [Production URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QCpr), [Sandbox URL](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tb0000000QCpr)
 
 - Fix for [Issue 7](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/7) and [Issue 8](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/8), relating to failure to report test execution errors in production org.
 
 <br/><br/>
-**Version 1.4**
+## Version 1.4
 
----
+
 
 - Fix for [Issue 3](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/4), relating to issue when deleting last child record not updating rollup fields to 0.
 
 <br/><br/>
-**Version 1.3**
+## Version 1.3
 
----
+
 
 - Fix for [Issue 2](https://github.com/afawcett/declarative-lookup-rollup-summaries/issues/2), relating to error 'purgeOnDelete option can only be used on a non-active org'
 
 <br/><br/>
-**Version 1.2**
+## Version 1.2
 
----
+
 
 - Support for Realtime calculations
 - Validation of valid fields and field types on Declarative Rollup definition fields
@@ -572,9 +615,9 @@ Package [Production URL](https://login.salesforce.com/packaging/installPackage.a
 ![Review Passed](https://raw.githubusercontent.com/afawcett/declarative-lookup-rollup-summaries/master/images/UploadedPackages.png)
 
 <br/><br/>
-**Version Beta 6**
+## Version Beta 6
 
----
+
 
 - Support for Realtime calculations
 - Limited validation on Declarative Rollup definition fields
