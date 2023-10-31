@@ -5,7 +5,7 @@ nav_order: 4
 has_children: true
 ---
 
-# Frequent Asked Questions
+# Frequently Asked Questions
 
 ## Why do I need to allow Metadata API in remote site settings?
 
