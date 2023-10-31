@@ -40,5 +40,5 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Invocable from Flow or Process Builder - This is what allows DLRS to run in Professional Edition. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Installation/configuration.html#implementation-considerations)
 
 ## DLRS History 
-[Learn about the dlrs journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
+[Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
 
