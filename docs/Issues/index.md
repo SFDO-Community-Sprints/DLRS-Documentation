@@ -24,7 +24,7 @@ To **configure** rollups with this tool your user needs a connection and permiss
 - Starting with v2.13 of the Welcome tab has been fixed and enhanced to improve the setup experience
 - Session based IP restrictions can interfere with the tool, see [here](https://github.com/afawcett/declarative-lookup-rollup-summaries#usage-information-and-known-issues).
 
-## Why did I recieve a warning that "Lookup Rollup Summary Logs Exist?
+## Why did I receive a warning that "Lookup Rollup Summary Logs Exist?
 
 **What is this?**
 
@@ -58,7 +58,13 @@ related issue [#138](https://github.com/afawcett/declarative-lookup-rollup-summa
 - Check Recent Lookup Rollup Summary Logs
 - Check Setup > Jobs > Scheduled Jobs & Apex Jobs
 
-## Why am I recieving this error "System.LimitException: dlrs:Too many query rows: 50001"
+## Why are my rollup totals out of date?
+
+- Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly.  If you have set the mode to "Scheduled", have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+- Use the `Full Calculate` button to force a refresh of the calculation; this is the best way to check that your criteria are still appropriate and that the system is finding records to update.
+- Make sure that any updates you are making to the child records will trigger your rollups.  For example, if you are using third party tools like Duplicate Check to merge or update records, the record updates may not meet the criteria to trigger DLRS Realtime jobs. You might consider adding a scheduled calculation to your realtime rollups to include records that you merge or update on a regular basis.
+
+## Why am I receiving this error "System.LimitException: dlrs:Too many query rows: 50001"
 
 DLRS usually queries from the perspective of the parents, retrieving all of the child records that match the given criteria. If the parents in a given batch have an average of 250 (50,000 / 200) children, have many DLRS jobs configured, or have lots of cascading rollups (rollup from grandchild to parent to grandparent) then DLRS can easily request a total of >50,000 records in the given transaction.
 
