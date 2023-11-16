@@ -88,4 +88,15 @@ Also note that if you have configured a new rollup since installing this version
 
 **Note:** If you do not see the Delete option for the above field - try switching to Salesforce Classic UI mode.
 
+## What are the Aggregation Operators?
 
+- **Sum** add up numerical source values (number, currency or percent field)
+- **Max** find the largest numerical source value (number, currency or percent field)
+- **Min** find the smallest numerical source value (number, currency or percent field)
+- **Avg** calculate the mean of all numerical source values (number, currency or percent field)
+- **Count** Tally up the number of child records. The most common source field for this operation is the record Id. 
+- **Count Distinct** Tally up the number of child records but exclude duplicate source values. The most common source field for this operation is the field that contains the potential duplicate values. 
+- **Concatenate** combine all the child records’ values into one long string. 
+- **Concatenate Distinct** combine all the child records’ values into one long string but exclude duplicate values. 
+- **First** find the value of the child record that ranks first according to your ‘Order by’ specification. If you don’t specify an ‘Order by’ it defaults to ordering by the source field. (see [SOQL and SOSL Reference](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_orderby.htm))
+- **Last** find the value of the child record that ranks last according to your ‘Order by’ specification. If you don’t specify an ‘Order by’ it defaults to ordering by the source field
