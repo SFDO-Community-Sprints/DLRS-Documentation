@@ -5,7 +5,7 @@ nav_order: 4
 has_children: true
 ---
 
-# Frequent Asked Questions
+# Frequently Asked Questions
 
 ## Why do I need to allow Metadata API in remote site settings?
 
@@ -24,7 +24,7 @@ To **configure** rollups with this tool your user needs a connection and permiss
 - Starting with v2.13 of the Welcome tab has been fixed and enhanced to improve the setup experience
 - Session based IP restrictions can interfere with the tool, see [here](https://github.com/afawcett/declarative-lookup-rollup-summaries#usage-information-and-known-issues).
 
-## Why did I recieve a warning that "Lookup Rollup Summary Logs Exist?
+## Why did I receive a warning that "Lookup Rollup Summary Logs Exist?
 
 **What is this?**
 
@@ -58,7 +58,13 @@ related issue [#138](https://github.com/afawcett/declarative-lookup-rollup-summa
 - Check Recent Lookup Rollup Summary Logs
 - Check Setup > Jobs > Scheduled Jobs & Apex Jobs
 
-## Why am I recieving this error "System.LimitException: dlrs:Too many query rows: 50001"
+## Why are my rollup totals out of date?
+
+- Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly.  If you have set the mode to "Scheduled", have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+- Use the `Full Calculate` button to force a refresh of the calculation; this is the best way to check that your criteria are still appropriate and that the system is finding records to update.
+- Make sure that any updates you are making to the child records will trigger your rollups.  For example, if you are using third party tools like Duplicate Check to merge or update records, the record updates may not meet the criteria to trigger DLRS Realtime jobs. You might consider adding a scheduled calculation to your realtime rollups to include records that you merge or update on a regular basis.
+
+## Why am I receiving this error "System.LimitException: dlrs:Too many query rows: 50001"
 
 DLRS usually queries from the perspective of the parents, retrieving all of the child records that match the given criteria. If the parents in a given batch have an average of 250 (50,000 / 200) children, have many DLRS jobs configured, or have lots of cascading rollups (rollup from grandchild to parent to grandparent) then DLRS can easily request a total of >50,000 records in the given transaction.
 
@@ -82,4 +88,15 @@ Also note that if you have configured a new rollup since installing this version
 
 **Note:** If you do not see the Delete option for the above field - try switching to Salesforce Classic UI mode.
 
+## What are the Aggregation Operators?
 
+- **Sum** add up numerical source values (number, currency or percent field)
+- **Max** find the largest numerical source value (number, currency or percent field)
+- **Min** find the smallest numerical source value (number, currency or percent field)
+- **Avg** calculate the mean of all numerical source values (number, currency or percent field)
+- **Count** Tally up the number of child records. The most common source field for this operation is the record Id. 
+- **Count Distinct** Tally up the number of child records but exclude duplicate source values. The most common source field for this operation is the field that contains the potential duplicate values. 
+- **Concatenate** combine all the child records’ values into one long string. 
+- **Concatenate Distinct** combine all the child records’ values into one long string but exclude duplicate values. 
+- **First** find the value of the child record that ranks first according to your ‘Order by’ specification. If you don’t specify an ‘Order by’ it defaults to ordering by the source field. (see [SOQL and SOSL Reference](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_orderby.htm))
+- **Last** find the value of the child record that ranks last according to your ‘Order by’ specification. If you don’t specify an ‘Order by’ it defaults to ordering by the source field

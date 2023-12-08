@@ -13,6 +13,11 @@ has_children: false
 
 DLRS is a mechanism for aggregating or summarizing data from child objects and displaying it on a parent object. It serves the same purpose as Rollup Summary fields, but it is much more flexible with the kind of data that can be rolled up and how criteria are formed.
 
+- **Declarative**: "clicks not code"
+- **Lookup**: relationship between a “parent” record and “child” record that does not have to be master-detail
+- **Rollup**: collecting the data from child records and doing calculations
+- **Summaries**: the result of the calculations displayed on the parent records
+
 ## What Business Problems Does DLRS Solve?
 
 In Salesforce, there are “Rollup Summary Fields” (RSFs) that exist as standard fields in your instance and allow you to calculate metrics on a related list record (child object) and then show that value on the parent object. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance. Some examples may be Total Closed Won Amount.
@@ -40,5 +45,5 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Invocable from Flow or Process Builder - This is what allows DLRS to run in Professional Edition. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Installation/configuration.html#implementation-considerations)
 
 ## DLRS History 
-[Learn about the dlrs journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
+[Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
 
