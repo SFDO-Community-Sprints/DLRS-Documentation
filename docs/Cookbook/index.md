@@ -91,7 +91,7 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 - **Variations:** Ways that you can adjust the recipe to get other similar results (example: get the last or most recent date of an event as well as the first date).
 
-- **See also:** Links to similar recipes elsewhere in the cookbook.
+- **See also:** Links to similar recipes elsewhere in the cookbook...
 
 ### Credits
 
