@@ -45,7 +45,7 @@ If you run the query **after** installing the upgrade (note that all that is dif
 
 Export those query results and map your existing records onto that spreadsheet using this mapping guide. Remove that dlrs__ header from the field names for easier mapping.
 
-[Mapping guide]([https://docs.google.com/spreadsheets/d/1U_b5AFhoAlfvLvG25SEonnLT7ulubEvL/edit#gid=224647567](https://docs.google.com/spreadsheets/d/1RsdTNe3SAtd3GuRarr_ajytwul3--0oYh7zKRij1hbg/edit?usp=sharing))
+[Mapping guide](https://docs.google.com/spreadsheets/d/1U_b5AFhoAlfvLvG25SEonnLT7ulubEvL/edit#gid=224647567](https://docs.google.com/spreadsheets/d/1RsdTNe3SAtd3GuRarr_ajytwul3--0oYh7zKRij1hbg/edit?usp=sharing)
 
 ## Insert your records.
 1. Open [Salesforce Inspector Reloaded](https://chromewebstore.google.com/detail/salesforce-inspector-relo/hpijlohoihegkfehhibggnkbjhoemldh).
