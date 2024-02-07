@@ -57,7 +57,7 @@ Export those query results and map your existing records onto that spreadsheet u
 - LookupRollupSummary2__mdt for the Object.
 - Excel for the Format
 
-![Screenshot](assets/DLRSUpgradeImport.png)
+![Import Screenshot](assets/DLRSUpgradeImport.png)
 
 4. Paste in your Excel data. Notice that the Field Mapping on the right side populates.
 - You must have a MasterLabel field!
