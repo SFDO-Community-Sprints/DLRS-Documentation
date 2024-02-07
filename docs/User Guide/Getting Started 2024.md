@@ -1,11 +1,4 @@
-<!---
----
-layout: default
-title: Getting Started 2024
-nav_order: 3
-has_children: true
----
---->
+
 
 # Getting Started
 ## Creating a New Lookup Rollup Summary
