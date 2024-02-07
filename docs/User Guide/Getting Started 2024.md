@@ -33,6 +33,7 @@ has_children: false
 All fields, both required and optional, that appear on this page are defined in the chart below.
 
 ### Information Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Lookup Rollup Summary Label | Name of your new rollup |
@@ -42,6 +43,7 @@ All fields, both required and optional, that appear on this page are defined in 
 ![DLRS Beta Information Fields](/assets/images/dlrs_beta_information_fields.png)
 
 ### Child Object Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Child Object | Pick the child object that you want to do your rollup from. |
@@ -51,6 +53,7 @@ All fields, both required and optional, that appear on this page are defined in 
 ![DLRS Beta Child Object Fields](/assets/images/dlrs_beta_child_object_fields.png)
 
 ### Parent Object Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Parent Object | The object that will hold the field where you roll up to. |
@@ -59,6 +62,7 @@ All fields, both required and optional, that appear on this page are defined in 
 ![DLRS Beta Parent Object Fields](/assets/images/dlrs_beta_parent_object_fields.png)
 
 ### Relationship Criteria Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Relationship Criteria | If you want to filter the Child Object records enter the SOQL WHERE query here (e.g. Amount >200 AND Stage = ‘Closed Won’)  |
@@ -67,6 +71,7 @@ All fields, both required and optional, that appear on this page are defined in 
 ![DLRS Beta Relationship Criteria Fields](/assets/images/dlrs_beta_relationship_criteria_fields.png)
 
 ### Rollup Details Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Rollup Type | The type of rollup being performed. Options are:<br>Sum<br>Max<br>Min<br>Avg<br>Count<br>Count Distinct<br>Concatenate<br>Concatenate Distinct<br>First<br>Last<br>Please see: [Aggregation Operators](https://sfdo-community-sprints.github.io/DLRS-Documentation/Issues/#what-are-the-aggregation-operators) to see how each Rollup Type works  |
@@ -78,6 +83,7 @@ All fields, both required and optional, that appear on this page are defined in 
 ![DLRS Beta Rollup Details Fields](/assets/images/dlrs_beta_rollup_detail_fields.png)
 
 ### Calculation Mode Fields
+
 | Name | Description |
 | ------------- | ------------- |
 | Calculation Mode | _Please see the Scheduling and Performance issues FAQ before setting the calculation mode as using the Realtime mode can run into performance issues and Apex CPU limits._<br>**Queued Job**<br>- Run a full or incremental calculate on a schedule with Scheduled Apex (uses a trigger)<br>**Realtime**<br>- Uses the child trigger to immediately calculate rollups (uses a trigger)<br>**Invocable by automation**<br>- Call the DLRS Apex Action from a Flow or other automation, either as an immediate or scheduled action (does not require a trigger)<br>**Developer**<br>- Allows you to call DLRS from your own apex without using the DLRS trigger (does not require a trigger) |
