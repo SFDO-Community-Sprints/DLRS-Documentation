@@ -2,7 +2,7 @@
 layout: default
 title: Affiliations, Relationships, Accounts, Contacts
 parent: Cookbook
-nav_order: 1
+nav_order: 
 ---
 
 # Affiliations, Relationships, Accounts and Contacts Recipes
