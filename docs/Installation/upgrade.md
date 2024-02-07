@@ -57,7 +57,7 @@ Export those query results and map your existing records onto that spreadsheet u
 - LookupRollupSummary2__mdt for the Object.
 - Excel for the Format
 
-![Screenshot](/assets/images/DLRS%20Upgrade%20Import.png)
+![Screenshot](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/assets/images/DLRS%20Upgrade%20Import.png)
 
 4. Paste in your Excel data. Notice that the Field Mapping on the right side populates.
 - You must have a MasterLabel field!
