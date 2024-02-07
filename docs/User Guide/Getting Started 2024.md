@@ -33,7 +33,7 @@ has_children: false
 All fields, both required and optional, that appear on this page are defined in the chart below.
 
 ### Information Fields
-
+Space
 | Name | Description |
 | ------------- | ------------- |
 | Lookup Rollup Summary Label | Name of your new rollup |
