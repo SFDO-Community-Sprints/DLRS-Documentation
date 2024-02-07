@@ -14,9 +14,9 @@ In about 2015, DLRS introduced the ability to store rollup definitions in Custom
 While DLRS has been using Custom Metadata (CMDT) for several years, you may have old rollups in your org that were built when it used records in a Custom Object called Lookup Rollup Summary. In previous versions, these records have continued to be used by the code, but in this new version, you will need to migrate to them to CMDT records for your rollups to work and so that you can use the new and improved wizard in our UI.
 
 ## How To Upgrade: 
-1. Start by reviewing your org. Open Setup (the gear) and check Installed Packages. You’ll see a listing for Declarative Lookup Rollup Summaries Tool. If the version is below 2.0 you will need to upgrade. Even if you have a newer version, you should evaluate if you have lingering records that need to be migrated.
-2. Review your existing rollups to see if you actually still need them all. If anything is inactive or you don’t need it anymore, this is a great chance to clean up and help your org run more efficiently.
-3.To determine if you have custom object records that you need to migrate, open Salesforce Inspector Reloaded or the Developer Console and run the following SOQL query:
+- Start by reviewing your org. Open Setup (the gear) and check Installed Packages. You’ll see a listing for Declarative Lookup Rollup Summaries Tool. If the version is below 2.0 you will need to upgrade. Even if you have a newer version, you should evaluate if you have lingering records that need to be migrated.
+- Review your existing rollups to see if you actually still need them all. If anything is inactive or you don’t need it anymore, this is a great chance to clean up and help your org run more efficiently.
+- To determine if you have custom object records that you need to migrate, open Salesforce Inspector Reloaded or the Developer Console and run the following SOQL query:
 
 > Select Id FROM dlrs__LookupRollupSummary__c 
 
@@ -26,7 +26,7 @@ If that doesn’t work, try:
 
 If you get results, you need to migrate. If not, your existing rollups are already in CMDT records!
 
-4. If you need to migrate, export the results of that query so you’ll can create new records via the [Instructions in Getting Started](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/docs/User%20Guide/index.md).
+- If you need to migrate, export the results of that query so you’ll can create new records via the [Instructions in Getting Started](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/docs/User%20Guide/index.md).
 
 Note: If you have data in the Test Code field, you will need to move that code to either the Test Code (Child Object) or Test Code (Parent Object) - or both.
 
