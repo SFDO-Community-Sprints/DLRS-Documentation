@@ -11,7 +11,7 @@ has_children: false
 
 1. Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
 
-![DLRS Beta from the App Launcher](/docs/assets/images/dlrs_beta_app_launcher.png)
+![DLRS Beta from the App Launcher]([/docs/assets/images/dlrs_beta_app_launcher.png](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/docs/assets/images/dlrs_beta_app_launcher.png)?raw=true)
 
 2. On this page, at the top of the list view, click the “New” button.
 
