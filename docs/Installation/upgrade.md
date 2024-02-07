@@ -31,7 +31,7 @@ If you get results, you need to migrate. If not, your existing rollups are alrea
 Note: If you have data in the Test Code field, you will need to move that code to either the Test Code (Child Object) or Test Code (Parent Object) - or both.
 
 
-## EXTRA CREDIT:
+## Extra Credit:
 
 Do you want to create these records via an import? You can!
 
@@ -52,20 +52,20 @@ Export those query results and map your existing records onto that spreadsheet u
 1. Open [Salesforce Inspector Reloaded](https://chromewebstore.google.com/detail/salesforce-inspector-relo/hpijlohoihegkfehhibggnkbjhoemldh).
 2. Click Data Import
 3. Choose:
-  Metadata for the API Type
-  Upload for the Action.
-  dlrs_LookupRollupSummary2__mdt for the Object.
-  Excel for the Format
+- Metadata for the API Type
+- Upload for the Action.
+- LookupRollupSummary2__mdt for the Object.
+- Excel for the Format
 
-
+![Screenshot](/assets/images/DLRS%20Upgrade%20Import.png)
 
 4. Paste in your Excel data. Notice that the Field Mapping on the right side populates.
-  You must have a MasterLabel field!
+- You must have a MasterLabel field!
 5. Skip the Id if you have one.
 6. Check that all of your fields are mapped.
 7. Run Upsert Metadata.
 8. Celebrate!
 
-## BONUS:
+## Bonus:
 
 Delete your old LookupRollupSummary records to keep your org clean now that you don’t need them.
