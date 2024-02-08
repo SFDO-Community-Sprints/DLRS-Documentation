@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Started 2024
-nav_order: 1
+nav_order: 
 parent: User Guide
 has_children: false
 ---
