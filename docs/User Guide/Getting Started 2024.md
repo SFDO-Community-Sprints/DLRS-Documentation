@@ -13,7 +13,7 @@ has_children: false
 
 <img src="../assets/images/dlrs_beta_app_launcher.png" width="100%" alt="DLRS Beta from the App Launcher">
 
-2. On this page, at the top of the list view, click the “New” button.
+2. On this page, at the top of the list view, click the “New” button. If this is the first rollup created in the org, the "Create Rollup" modal window will launch when you open this page.
 
 <img src="../assets/images/dlrs_beta_list_view_new_button.png" width="100%" alt="DLRS Beta list view and new button">
 
