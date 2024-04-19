@@ -11,7 +11,7 @@ has_children: false
 
 1. Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
 
-<img src="../assets/images/dlrs_beta_app_launcher.png" width="100%" alt="DLRS Beta from the App Launcher">
+<img src="../assets/images/dlrs_beta_app_launcher.png" width="50%" alt="DLRS Beta from the App Launcher">
 
 2. On this page, at the top of the list view, click the “New” button. If this is the first rollup created in the org, the "Create Rollup" modal window (Step 3) will launch when you open this page.
 
@@ -108,9 +108,7 @@ For more information please see [this example](https://github.com/SFDO-Community
 
 ## Creating and deploying your rule
 Once you have filled out all fields, scroll to the top of the page and click “Create”.
-<img src="../assets/images/dlrs_beta_create_button.png" width="100%" alt="DLRS Beta Create New Rule Button">
+<img src="../assets/images/dlrs_beta_create_button_v2.png" width="100%" alt="DLRS Beta Create New Rule Button">
 
 Once you have successfully created your rule, you will be greeted by similar toast messages.
-<img src="../assets/images/dlrs_beta_successful_create.png" width="100%" alt="DLRS Beta Successful Rule Creation Message">
-
-**_*This article ends here for now. We will need to create further documentation once the UI buttons in the upper right corner are connected to their underlying code._**
+<img src="../assets/images/dlrs_beta_successful_create_v3.png" width="100%" alt="DLRS Beta Successful Rule Creation Message">
