@@ -7,7 +7,11 @@ has_children: true
 
 # Current Release Notes
 
-## Latest Release Version 2.19
+## Latest Release Version 2.20
+**What's changed in v2.20?**
+This was an API update so that recently released objects (specifically in Nonprofit Cloud) are accessbile in DLRS. 
+
+## Release Version 2.19
 
 Install DLRS 2.19 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
 
