@@ -20,7 +20,7 @@ has_children: false
 3. Fill out the following fields. While not all fields listed below are required to save a rule, all fields below are required to have a working rule. <br>
         - Lookup Rollup Summary Label (Lookup Rollup Summary API Name will auto-populate) <br>
         - Child Object <br>
-        - Data Field <br>
+        - Field to Aggregate <br>
         - Relationship Field <br>
         - Parent Object <br>
         - Aggregate Result Field <br>
@@ -100,9 +100,9 @@ For more information please see [this example](https://github.com/SFDO-Community
 
 | Name | Description |
 | ------------- | ------------- |
-| Test Code (Child Object) | If you need to add additional code to flesh out your test class for the child object, you would add it here, and this code will be added to the DLRS created trigger. <br>**_dev needs to approve verbiage_** |
-| Test Code (Parent Object) | If you need to add additional code to flesh out your test class for the parent object, you would add it here, and this code will be added to the DLRS created trigger. <br>**_dev needs to approve verbiage_** |
-| Test Code Sees All Data? | If this box is unchecked, the rule author’s sharing rules will apply to the code. If the box is checked, sharing rules do not apply (system wide access). <br>**_dev needs to approve verbiage_** |
+| Test Code (Child Object) | Override the generated method body for the new test class used to test the DLRS trigger, useful if your child object needs values added, or other records created, to be successfully saved in Salesforce. |
+| Test Code (Parent Object) | Same as above, but using Parent instead of Child |
+| Test Code Sees All Data? | Checking this box tells the generated test classes that they can see your production data in the database when running tests. Not recommended but sometimes necessary. (No data will be harmed by using this setting). <br> For more information, [see here](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_seealldata_using.htm) |
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_advanced_fields.png" width="100%" alt="DLRS Beta Advanced Fields">
 
