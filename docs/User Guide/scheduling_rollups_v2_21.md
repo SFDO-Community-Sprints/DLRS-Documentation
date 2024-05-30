@@ -36,7 +36,7 @@ Depending on what Calculation Mode you have you chosen, the process to deploy yo
 ## A Note On Triggers
 While the **Developer** and **Invocable by Automation** calculation modes can be called by flows or Apex code, or scheduled using the instructions above, the other Calculation Modes do require a child trigger.
 
-The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not run every time a child is created but will be processed in bulk when Apex is scheduled. A trigger installed by DLRS makes note of each child record that gets changed and stores it in the Lookup Rollup Summary Schedule Items object. Then whenever the Apex Class “RollupJob” runs all of those items are taken care of and then the Schedule Item deleted.
+The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not run every time a child is created but will be processed in bulk when Apex is scheduled. A trigger installed by DLRS makes note of each child record that gets changed and stores it in a Lookup Rollup Summary Schedule Items record. Then whenever the Apex Class “RollupJob” runs all of those items are taken care of and then the Lookup Rollup Summary Schedule Items record is deleted.
 
 The **Realtime** Calculation Mode requires the deployment or a child trigger to run your rollup whenever a child record is saved.
 
