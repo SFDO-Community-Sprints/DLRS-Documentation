@@ -106,7 +106,7 @@ For more information please see [this example](https://github.com/SFDO-Community
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_advanced_fields.png" width="100%" alt="DLRS Beta Advanced Fields">
 
-## Creating and deploying your rule
+## Saving your newly created rule
 Once you have filled out all fields, scroll to the bottom of the page and click “Create”.
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_create_button.png" width="100%" alt="DLRS Beta Create New Rule Button">
 
