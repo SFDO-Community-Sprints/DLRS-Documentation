@@ -12,7 +12,7 @@ Once your rule is created and saved, you have several options.
 ## Full Calculation - Recalcuate Now or Schedule Recalculation
 _Both of these buttons work in all Calculation Modes (with the exception of "Realtime"), even if the rule is not active. To use either of these buttons with the "Realtime" Calculation Mode, the rule must already be activated._
 
-**Recalculate Now** - If you click this button, you will be able to run either a full recalculation or filter records to calculate upon using a SOQL query.
+**Recalculate Now** - If you click this button, you will be able to run either a full recalculation or filter parent records to calculate upon using a SOQL query.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_button_recalculate_now.png" width="50%" alt="DLRS Beta Recalculate Now button">
 
@@ -22,7 +22,7 @@ _(The "Name LIKE 'Fred%' AND Custom__c > 0" query is example text to give you an
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_full_calculate_page.png" width="100%" alt="DLRS Beta Full Calculate page">
 
-**Schedule Recalculation** - Choosing this option will take you to a page that will allow you to schedule either a full recalculation or filter the records you would like to calculate upon using a SOQL query.
+**Schedule Recalculation** - Choosing this option will take you to a page that will allow you to schedule full recalculations and also to filter the parent records for which recalculation will happen upon using a SOQL query.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_button_schedule_recalculate.png" width="50%" alt="DLRS Beta Schedule Recalculate button">
 
@@ -34,7 +34,7 @@ The example below shows a full recalculation job that would be scheduled for 2 A
 Depending on what Calculation Mode you have you chosen, the process to deploy your rule will vary slightly. Please locate your chosen Calculation Mode below.
 
 ## Developer / Invocable by Automation Calculation Modes 
-Simply choose "Save and Activate" in the path. Your rule is now ready to be called by a flow or Apex code.
+Simply choose "Save and Activate" in the path. Your rule is now ready to be called by a flow or Apex code, or to be scheduled using the instructions above.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_path_automation_and_developer_01_save_activate.png" width="100%" alt="DLRS Beta Rule Activation - Path - Developer or Invocable by Automation Calculation Modes">
 
