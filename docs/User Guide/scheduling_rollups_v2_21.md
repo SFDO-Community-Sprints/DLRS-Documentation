@@ -33,6 +33,13 @@ The example below shows a full recalculation job that would be scheduled for 2 A
 # Deploying Rules
 Depending on what Calculation Mode you have you chosen, the process to deploy your rule will vary slightly. Please locate your chosen Calculation Mode below.
 
+## A Note On Triggers
+While the **Developer** and **Invocable by Automation** calculation modes can be called by flows or Apex code, or scheduled using the instructions above, the other Calculcation Modes do require a child trigger.
+
+The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not run every time a child is created but will be processed in bulk when Apex is scheduled. A trigger installed by DLRS makes note of each child record that gets changed and stores it in the Lookup Rollup Summary Schedule Items object. Then whenever the Apex Class “RollupJob” runs all of those items are taken care of and then the Schedule Item deleted.
+
+The **Realtime** Calculation Mode requires the deployment or a child trigger to run your rollup whenever a child record is saved.
+
 ## Developer / Invocable by Automation Calculation Modes 
 Simply choose "Save and Activate" in the path. Your rule is now ready to be called by a flow or Apex code, or to be scheduled using the instructions above.
 
@@ -43,7 +50,7 @@ Please choose "Schedule Job" on the path at the top of the window.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_path_process_later_01_schedule_job.png" width="100%" alt="DLRS Beta Rule Schedule Job - Path - Watch for Changes and Process Later Calculation Mode">
 
-You can use the Process Scheduled Items wizard in the modal window to either choose a pre-designed template or create a custom schedule. You can also view currently scheduled jobs for this rollup from this window. 
+You can use the Process Scheduled Items wizard in the modal window to either choose a pre-designed template or create a custom schedule. You can also view currently scheduled jobs for all Process Scheduled Items rollups from this window. 
 
 The example below shows a template schedule job that would be scheduled for 3 AM every day.
 
