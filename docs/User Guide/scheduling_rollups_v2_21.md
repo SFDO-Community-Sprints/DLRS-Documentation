@@ -34,7 +34,7 @@ The example below shows a full recalculation job that would be scheduled for 2 A
 Depending on what Calculation Mode you have you chosen, the process to deploy your rule will vary slightly. Please locate your chosen Calculation Mode below.
 
 ## A Note On Triggers
-While the **Developer** and **Invocable by Automation** calculation modes can be called by flows or Apex code, or scheduled using the instructions above, the other Calculcation Modes do require a child trigger.
+While the **Developer** and **Invocable by Automation** calculation modes can be called by flows or Apex code, or scheduled using the instructions above, the other Calculation Modes do require a child trigger.
 
 The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not run every time a child is created but will be processed in bulk when Apex is scheduled. A trigger installed by DLRS makes note of each child record that gets changed and stores it in the Lookup Rollup Summary Schedule Items object. Then whenever the Apex Class “RollupJob” runs all of those items are taken care of and then the Schedule Item deleted.
 
