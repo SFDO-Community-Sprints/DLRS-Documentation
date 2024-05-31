@@ -67,7 +67,7 @@ And the testing team at the NYC April 24 Sprint
 
 ### Pull Requests/GutHub Issues Resolved in this Release
 
-#### Critical Changes
+**Critical Changes**
 * Change use a wrapper class to communicate with the LWCs, enabling the LWCs to be mostly namespace agnostic. [PR1441](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1441)
 * Change to not directly import PE object and fields. They are corrupted by the platform. Instead import another object and use that to discover the namespace, if present. [PR1442](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1442)
 * Improve record interaction flows with by re-opening after record save. [PR1446](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1446)
@@ -75,7 +75,7 @@ And the testing team at the NYC April 24 Sprint
 * LWC Wizard not correctly display next scheduled full calculation [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
 * LWC Wizard overwrites record for duplicated API Name [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
 
-#### Changes
+**Changes**
 * Also added loading spinner and cleaned up prop usage. [PR1451](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1451)
 * Move toast handling out of modal and add error capture [PR1453](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1453)
 * Add Apex tests for code added to support the new LWC Wizard [PR1454](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1454)
