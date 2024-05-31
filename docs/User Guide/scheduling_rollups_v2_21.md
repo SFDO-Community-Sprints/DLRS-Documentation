@@ -38,7 +38,7 @@ While the **Developer** and **Invocable by Automation** calculation modes can be
 
 The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not run every time a child is created but will be processed in bulk when Apex is scheduled. A trigger installed by DLRS makes note of each child record that gets changed and stores it in a Lookup Rollup Summary Schedule Items object record. Then whenever the Apex Class “RollupJob” runs all of those items are taken care of and then the Lookup Rollup Summary Schedule Items record is deleted.
 
-The **Realtime** Calculation Mode requires the deployment or a child trigger to run your rollup whenever a child record is saved.
+The **Realtime** Calculation Mode requires the deployment of a child trigger to run your rollup whenever a child record is saved.
 
 ## Developer / Invocable by Automation Calculation Modes 
 Simply choose "Save and Activate" in the path. Your rule is now ready to be called by a flow or Apex code, or to be scheduled using the instructions above.
