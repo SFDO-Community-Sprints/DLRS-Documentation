@@ -1,8 +1,9 @@
 ---
 layout: default
-title: Getting Started Version 2.21
-parent: About Us
+title: Getting Started - Version 2.21
 nav_order: 1
+parent: Getting Started
+has_children: false
 ---
 
 # Getting Started
