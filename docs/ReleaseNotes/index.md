@@ -38,7 +38,7 @@ Once installed there are 2 ways to access the new wizard.
 
 
 ### Documentation
-See a full walk through of the new Wizard on a [new Getting Started page for version 2.21](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)<br>
+See a full walk through of the new Wizard on the [new Getting Started for version 2.21 page](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)<br>
 For deploying and scheduling see the [Deploying and Scheduling Rollups for version 2.21 page](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html)
 
 ### Contributors
