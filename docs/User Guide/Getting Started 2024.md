@@ -112,3 +112,6 @@ Once you have filled out all fields, scroll to the bottom of the page and click 
 
 Once you have successfully created your rule, you will be greeted by similar toast messages.
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_successful_create.png" width="100%" alt="DLRS Beta Successful Rule Creation Message">
+
+## Deploying / Scheduling your newly created rule
+To deploy and/or schedule your rule, please go to the [Scheduling Rollups v2.21](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.md) article.
