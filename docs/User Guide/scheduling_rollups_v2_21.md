@@ -6,7 +6,7 @@ parent: Getting Started
 has_children: false
 ---
 
-# Deploying and Scheduling Rollups
+# Deploying and Scheduling Rollups (for Version 2.21)
 Once your rule is created and saved, you have several options.
 
 ## Full Calculation - Recalcuate Now or Schedule Recalculation
