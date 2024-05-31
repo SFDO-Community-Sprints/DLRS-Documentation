@@ -42,7 +42,7 @@ See a full walk through of the new Wizard on a [new Getting Started page for ver
 For deploying and scheduling see the [Deploying and Scheduling Rollups for version 2.21 page](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html)
 
 ### Contributors
-Thank you to the team who has worked for months on this new Wizard, especially *Anthony Heber* for leading the development effort for the redesign of the Wizard. 
+Thank you to the team who has worked for months on this new Wizard, especially **Anthony Heber** for leading the development effort for the redesign of the Wizard. 
 * Jim Bartek
 * Aaron George 
 * Scott Fenton 
