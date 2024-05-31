@@ -34,7 +34,8 @@ A few highlights of the new Wizard are:
 Once installed there are 2 ways to access the new wizard.
 1. In the Manage Lookup Rollup Summaries page, click on the Try Our New Wizard Button (as long as you are on a version that starts with a 2)
 
-2. In the App Launcher, search for Beta and select Manage Lookup Rollup Summaries (Beta) 
+2. In the App Launcher, search for Beta and select Manage Lookup Rollup Summaries (Beta)<br>
+   <img src="../assets/images/v2_21/dlrs_beta_v2_21_app_launcher.png" width="30%" alt="DLRS Beta from the App Launcher">
 
 
 ### Documentation
