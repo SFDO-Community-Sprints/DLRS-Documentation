@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Scheduling Rollups for version 2.21
+title: Getting Started - Version 2.21
 nav_order: 2
-parent: User Guide
+parent: Getting Started
 has_children: false
 ---
 
