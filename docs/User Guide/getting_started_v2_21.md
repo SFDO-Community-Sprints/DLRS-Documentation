@@ -1,9 +1,8 @@
 ---
 layout: default
-title: Getting Started - Version 2.21
+title: Getting Started Version 2.21
+parent: About Us
 nav_order: 1
-parent: Index.md
-has_children: false
 ---
 
 # Getting Started
