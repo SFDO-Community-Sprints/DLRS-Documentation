@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Release Notes
+title: Current Release Notes
 nav_order: 7
 has_children: true
 ---
