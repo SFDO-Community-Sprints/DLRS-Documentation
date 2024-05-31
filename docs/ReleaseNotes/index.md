@@ -7,56 +7,84 @@ has_children: true
 
 # Current Release Notes
 
-## Latest Release Version 2.20
-**What's changed in v2.20?**
-This was an API update so that recently released objects (specifically in Nonprofit Cloud) are accessbile in DLRS. 
+## Latest Release Version 2.21
+**Install DLRS 2.21** into your production, sandbox, or scratch org here:<br>
+Sandbox & Scratch Orgs:
+<br> [https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ)
+<br><br>
+Production & Developer Edition Orgs:
+<br> [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ)
 
-## Release Version 2.19
+[Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest) will be updated soon. 
 
-Install DLRS 2.19 into your production, sandbox, or scratch org via [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest).
+### What's changed in v2.21?
+Release 2.21 introduces a new Wizard User Interface (UI) built in Lightning Web Components as well as the ability to schedule the rollup job directly in the wizard. There are no underlying processing engine updates. 
 
-Release 2.19 is mostly a technical update with little to no changes in the User Interface. The one major change that people were watching for is that DLRS is now hyperforce ready with the removal of the reference to NA1 in a couple of URLs [[PR1358]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1358). The other critical change of note is a performance enhancement in how Rollup Configs are retrieved to keep SOQL counts low [[PR1360]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1360). 
+We are releasing the new Wizard in “Beta” at this time which means that it will not automatically become your default UI in this release. This allows you to try out the new Wizard and still be able to switch back to the old version as needed. 
 
-**What do I need to do?** </br>
-To get the new version, you only need to [install version 2.19 of the package](https://install.salesforce.org/products/dlrs/latest). There are no other steps you need to take to have access to the updates in this release.
- 
-**What’s changed in v2.19?** </br>
-Below is a full list of changes. To see detailed information, click on the pull request (PR) number at the end of the item.
+A few highlights of the new Wizard are: 
+* List view of rollups that is sortable and searchable 
+* Popup modal to edit the rollup when you click on the name from the List View
+* Updated field order and fields labels in the Wizard to optimize and clarify the creation of rollups
+* Path at the top of the rollup that displays the deployment steps needed based on the calculation mode of the rollup 
+* Updated calculation mode labels (link to updated calculation mode documentation coming soon) 
+* Schedule rollup job user interface that allows you to schedule any number of rollup jobs at whatever interval is needed in your instance 
+
+### What do I need to do?
+Once installed there are 2 ways to access the new wizard.
+1. In the Manage Lookup Rollup Summaries page, click on the Try Our New Wizard Button (as long as you are on a version that starts with a 2)
+
+2. In the App Launcher, search for Beta and select Manage Lookup Rollup Summaries (Beta) 
 
 
-### Critical Changes
-* Update a couple urls that reference na1 for hyperforce migration. [[PR1358]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1358)
-* Huge changes to how Rollup Configs are retrieved. Primarily to keep SOQL counts low in the event of recursion or chained rollups where one rollup update may cascade into another rollup. Not a big issue for most people but we do get reports of DLRS running over it's query limits from time to time. [[PR1360]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1360) This is a high risk change because this impacts nearly every aspect of the application. Will need extra QA on this including UI-based testing because this powers the config editing interfaces as well as the rollup engine. [[PR1360]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1360)
-* Resolve test guards that should have been blocked but were seeing the packaged triggers and running. [[PR1365]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1365)
-* Add direct test coverage for trigger [[PR1366]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1366)
+### Documentation
+See a full walk through of the new Wizard on a [new Getting Started page for version 2.21](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)<br>
+For deploying and scheduling see the [Deploying and Scheduling Rollups for version 2.21 page](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html)
 
-### Changes
-* Closing some ambiguity in how field validation is handled. [[PR1331]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1331)
-* Bypassing some fflib "help" that causes relationship names to resolve to fields. [[PR1331]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1331)
-* Adding in more tests focused on using CMDTs as well as exercising more validation logic. [[PR1331]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1331)
-* Enable installing DLRS in orgs with encrypted fields [[PR1345]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1345)
-* Update metadata API version as well as the lagging API version used to interface with the Metadata API (RollupController) [[PR1362]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1362)
-* Cleaned up one file and added standard guards to two others that were missing them. [[PR1365]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1365)
-* Update RollupController (which backs the Trigger Deployment VF page) so it can auto-determine the max supported API version for the current org. This breaks a dependency we have on manually updating the package each release to support new objects. [[PR1374]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1374)
-* fixed faulty file ending for custom metadata [[PR1376]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1376)
-
-### QE 
-* added more QE config data, i.e. [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-* QE App, Record Pages, Permset, tiny Apex Helper [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-* clones of LookUpChild__c and LookupParent__c to avoid dependencies of QA work on package internals [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-* adjusted cumulusci.yml [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-
-### Housekeeping
-* updated .forceignore ON PULL for files we don't care about or cannot / should not package [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-* updated default folder structure so that pulling with dx doesn't create additional folders anymore [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-* removed unnecessary files [[PR1372]](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1372)
-
-## Code Contributors
-* Scott Fenton
-* David Reed
-* Christian Szandor Knapp
-* Anthony Heber
+### Contributors
+Thank you to the team who has worked for months on this new Wizard, especially *Anthony Heber* for leading the development effort for the redesign of the Wizard. 
 * Jim Bartek
+* Aaron George 
+* Scott Fenton 
+* Brad Dins (special shout out for writing the Getting Started documentation for the new Wizard) 
+* Amanda Styles (for wring instructions on how to move from version 1 - Custom Object to version 2 - Custom Metadata) 
+* Nick Lindberg 
 * Michael Kolodner
 
+And the testing team at the NYC April 24 Sprint 
+* Ezra LaFleur
+* Tania Ortiz-Ashby
+* Jill Goldenberg
+* Aaron Crossman
+* Amanda Styles 
+* Bryan Graves 
+* Michael Kolodner
+* Alexander Lapa 
+* Emilie Mayoden
+* Shari Carlson
+* Jacky Nolan
+
+### Pull Requests/GutHub Issues Resolved in this Release
+
+#### Critical Changes
+* Change use a wrapper class to communicate with the LWCs, enabling the LWCs to be mostly namespace agnostic. [PR1441](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1441)
+* Change to not directly import PE object and fields. They are corrupted by the platform. Instead import another object and use that to discover the namespace, if present. [PR1442](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1442)
+* Improve record interaction flows with by re-opening after record save. [PR1446](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1446)
+* Change cronstrue lib to load as part of the component instead of from Static Resources [PR1451](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1451)
+* LWC Wizard not correctly display next scheduled full calculation [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* LWC Wizard overwrites record for duplicated API Name [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+
+#### Changes
+* Also added loading spinner and cleaned up prop usage. [PR1451](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1451)
+* Move toast handling out of modal and add error capture [PR1453](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1453)
+* Add Apex tests for code added to support the new LWC Wizard [PR1454](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1454)
+* Update OSS Credits for pre-existing software [PR1455](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1455)
+* Label and API Name should be limited to 40 characters and block save on error [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Clarify messaging for Outstanding Scheduled Items [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Fix typos [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Edit screen shouldn't use collapsible sections except for Advanced [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Path should reserve space to limit UI shift [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Schedule Wizard: Improve title and Tagline [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* Schedule Wizard: Manage error states for poorly configured custom and for Schedule Items at max for org [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
+* If deployment fails, editor modal should be restored to edited state [PR1468](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1468)
 
