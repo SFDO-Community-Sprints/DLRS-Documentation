@@ -9,15 +9,15 @@ has_children: false
 # Getting Started
 ## Creating a New Lookup Rollup Summary
 
-1. Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
+Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_app_launcher.png" width="50%" alt="DLRS Beta from the App Launcher">
 
-2. On this page, at the top of the list view, click the “New” button. If this is the first rollup created in the org, the "Create Rollup" modal window (Step 3) will launch when you open this page.
+On this page, at the top of the list view, click the “New” button. If this is the first rollup created in the org, the "Create Rollup" modal window (Step 3) will launch when you open this page.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_list_view_new_button_single_rule.png" width="100%" alt="DLRS Beta list view and new button">
 
-3. Fill out the following fields. While not all fields listed below are required to save a rule, all fields below are required to have a working rule. <br>
+Fill out the following fields. While not all fields listed below are required to save a rule, all fields below are required to have a working rule. <br>
         - Lookup Rollup Summary Label (Lookup Rollup Summary API Name will auto-populate) <br>
         - Child Object <br>
         - Field to Aggregate <br>
