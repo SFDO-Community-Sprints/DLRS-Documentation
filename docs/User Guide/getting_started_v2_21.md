@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Getting Started - Version 2.21
-nav_order: 
+nav_order: 1
 parent: User Guide
 has_children: false
 ---
