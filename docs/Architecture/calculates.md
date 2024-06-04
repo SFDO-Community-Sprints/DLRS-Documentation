@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DLRS Calculation
+title: DLRS Calculation Modes
 nav_order: 1
 parent: Architecture
 has_children: false
@@ -8,13 +8,11 @@ has_children: false
 
 # DLRS Calculation Modes
 
-There are four modes that you can use to change when DLRS runs, they are:
-
+There are four modes that you can use to manage how and when DLRS processes rollups, they are:
+- Watch for changes and process later (prior to version 2.21 this was called "Scheduled")
 - Realtime
-- Scheduled
-- Full Calculate
+- Invoked by Automation (prior to version 2.21 this was called "Process Builder")
 - Developer
-
 
 ## Calculation Mode: Realtime
 
