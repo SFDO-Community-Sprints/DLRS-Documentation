@@ -14,6 +14,14 @@ There are four modes that you can use to manage how and when DLRS processes roll
 - Invoked by Automation (prior to version 2.21 this was called "Process Builder")
 - Developer
 
+| Calculation Mode | What does it do? |  When does it do it? | When to use? | 
+| ------------- | ------------- | ------------- | ------------- |
+| Watch for changes + Process later | Collects all child records that are created or updated to meet your criteria and runs calculation according to [set schedule](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html) | Updates the Calculation fields when the schedule runs |  In most cases, unless you must have a real time calculation | 
+| Realtime |  Runs the calculation every time the child record changes to meet criteria. |  Updates the Calculation fields immediately. |  When you always need an up-to-date rollup | 
+| Invoked by automation |  Allows you to call the DLRS trigger in Flow or other automation. |  Updates the Calculation fields as defined in the automation. | When using DLRS as part of a declarative driven solution. <br> <br> Or when you want to only manually trigger the rollup using the Recalculate Now or Schedule Recalculation button | 
+| Developer |  Allows you to call the DLRS trigger in Apex |  Updates the Calculation fields as defined in the Apex trigger |  When using DLRS as part of a programmatic/code driven solution | 
+ 
+
 ## Calculation Mode: Realtime
 
 DLRS installs an Apex trigger on the child object. This means that as soon as a child record is created or updated the rollup will run on save and the target fields are edited. It will only run if the **Field to Aggregate** or **Criteria** fields of the Rollup job are edited.
