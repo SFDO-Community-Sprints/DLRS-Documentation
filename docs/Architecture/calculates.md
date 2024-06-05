@@ -71,7 +71,3 @@ The main use case for a scheduled Full Calculate is for rollups that have a rela
 
 If a Rollupjob/Rollup Definition for Opportunities has a filter for  ‘Last Fiscal Year’, schedule the Rollup Definition to run at least monthly to ensure that they roll over when the fiscal year changes. For only Full Calculate, whether once or scheduled, no child trigger is required. The Calculation Mode picker is set to Process Builder. (Even though you might not be using a Process Builder to trigger the rollups, this setting makes it possible for you to save and activate your Full Calculate rollup.)
 
-
-## Calculation Mode: Developer
-
-This option allows you to use Process Builder and Developer modes allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
