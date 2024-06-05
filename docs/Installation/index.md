@@ -20,22 +20,23 @@ Install the latest version (2.20) of DLRS into your production, sandbox, or scra
 
 ## Permissions
 
-When selecting what users to install for, you have 2 options: 
+### Consider User Types 
+Before selecting what users you want to install for, consider the types of users you will have in DLRS:
+1. Admin
+   - Can configure, activate and deploy rollups 
+   - Needs full read/write access to all objects in the package
+2. User
+   - Indirectly invokes the rollups
+   - Need read access to all objects 
+
+
+### Selecting Users to Install for
+In the installation process, when selecting what users to install for, you have 2 options: 
 * Install the package for Admins only and then complete the Permission section below to open up permissions for all users/profiles who need to access to edit and/or invoke rollups (outlined below)
 <br>OR<br>
 * Install for all users (no additional steps needed, however all users will have full access to all dlrs objects) 
 
 ![Install for Admins](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Install-Admins-Only.PNG)
-
-### DLRS User Types
-
-**Admin**
-- Can configure, activate and deploy rollups 
-- Needs full read/write access to all objects in the package
-
-**User**
-- Indirectly invokes the rollups
-- Need read access to all objects 
 
 ### Assigning Permission Set
 
