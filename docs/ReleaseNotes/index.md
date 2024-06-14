@@ -8,14 +8,7 @@ has_children: true
 # Current Release Notes
 
 ## Latest Release Version 2.21
-**Install DLRS 2.21** into your production, sandbox, or scratch org here:<br>
-Sandbox & Scratch Orgs:
-<br> [https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ](https://test.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ)
-<br><br>
-Production & Developer Edition Orgs:
-<br> [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p0000013oeHAAQ)
-
-[Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest) will be updated soon. 
+**Install DLRS 2.21** into your production, sandbox, or scratch org from [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest). 
 
 ### What's changed in v2.21?
 Release 2.21 introduces a new Wizard User Interface (UI) built in Lightning Web Components as well as the ability to schedule the rollup job directly in the wizard. There are no underlying processing engine updates. 
