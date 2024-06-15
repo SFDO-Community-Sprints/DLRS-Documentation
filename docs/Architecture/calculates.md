@@ -82,4 +82,10 @@ The `Schedule Recalculation` button does the same full recalculation at the `Rec
 Because a Recalculation job (either “Recalculate Now” or “Schedule Recalculation”) runs on every record, it uses server resources and can take some time. More importantly, if a Recalculation job runs during the workday on a large number of records it could result in row lock errors—which occurs when the calculation and a user are both trying to edit the same record at the same time.
 * The main use case for a scheduled Recalculate is for Rollups that have a relative time filter like ‘Last Week’, which would be defined in the Relationship Criteria field. In this case, a “Realtime” or “Watch for Changes And Process Later” won’t suffice because we wouldn’t be expecting any record updates to trigger a Rollup job.
 * For example, if a Rollup Job for Opportunities has a filter for ‘Last Fiscal Year’, you would schedule the Rollup Definition to run at least monthly to ensure that they roll over when the fiscal year changes. If you choose a full calculation, whether once or scheduled, no child trigger is required. Therefore, when you create this Rollup Definition, you would set it up as “Invocable by Automation” and then either schedule it to run monthly. Remember to schedule it to run between midnight and 6am to avoid record locks and server overload during the working day.
+<BR>
 
+**Special thanks to the DLRS team at the June 2024 London Sprint for contributing to this page**
+- Yvonne Small
+- Kate Lohinova
+- Nitzan Marinow
+- Shari Carlson
