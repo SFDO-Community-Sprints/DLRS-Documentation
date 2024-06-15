@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DLRS Calculation Modes
+title: How and When DLRS Runs
 nav_order: 1
 parent: Architecture
 has_children: false
