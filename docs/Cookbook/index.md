@@ -39,14 +39,14 @@ We provide examples of SOQL queries with our recipes to give you a starting poin
 
 ## Consider schedules and triggers to determine “doneness”
 
-It’s important to understand the different Calculation Modes and the use of the DLRS Full Calculate Scheduler (see [this link](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html))
+It’s important to understand the different Calculation Modes as well as the Recalculation options (see [How and When DLRS Calculates](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html) for details.)
 
-- The Calculation Mode picklist offers Realtime, Scheduled, Process Builder, and Developer modes.
-  - “Realtime”: this setting requires deployment of the child trigger and will run your rollups whenever a child record is saved.
-  - “Scheduled”: this setting will create helper records when a child record is saved and then those will all be processed when the Apex job RollupJob runs. You must manually set this job to run or no rollups will calculate!
-  - Process Builder and Developer modes allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
-- The Schedule Full Calculate button (at the top of a saved rollup) allows you to schedule your rollups to run (nightly, monthly, etc.) This is known as “Using the DLRS Scheduler” as opposed to being set in “Scheduled” mode. You can use this action with Process Builder or Developer Calculation Mode, without needing automation to launch the rollup.
-
+- The Calculation Mode picklist offers Realtime, Watch for Changes and Process Later (labeled Scheduled in versions prior to 2.21), Invocable by Automation (labeled Process Builder in versions prior to 2.21), and Developer modes.
+  - Realtime: this setting requires deployment of the child trigger and will run your rollups whenever a child record is saved.
+  - Watch for Changes and Process Later: this setting will create helper records when a child record is saved and then those will all be processed when the Apex job RollupJob runs. You must manually set this job to run or no rollups will calculate!
+  - Invocable by Automation and Developer modes allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
+- The Schedule Recalculation button (at the bottom of a saved rollup) allows you to schedule your rollups to run without being triggered by an edit on the child record (e.g. nightly, monthly, etc.)
+  
 ## Sample the variations
 
 Often rollup summaries come in pairs, or groups: for example, if you calculate the first value you’ll probably also need the last or most recent. If you count the number of child records, you may also want to total the amounts, or find the largest or average amount. With our recipes, we’ve given you the basic template, and then suggested variations, where the ingredients will be almost the same, except perhaps the action or the target field. You can clone Lookup Rollup Summaries in the Custom Metadata Settings, and make adjustments to set up your variations quickly and easily.
