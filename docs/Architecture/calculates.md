@@ -1,12 +1,12 @@
 ---
 layout: default
-title: How and When DLRS Runs
+title: How and When DLRS Calculates
 nav_order: 1
 parent: Architecture
 has_children: false
 ---
 
-# How and When DLRS Runs
+# How and When DLRS Calculates
 
 There are four modes that you can use to manage how and when DLRS processes rollups, they are:
 - Watch for changes and process later (labeled "Scheduled" in versions prior to 2.21) 
