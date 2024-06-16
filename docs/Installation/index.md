@@ -30,9 +30,9 @@ Before selecting what users you want to install for, consider the types of users
    - Need read access to all objects 
 
 
-### Selecting Users to Install for
+### Selecting Users to "Install for"
 In the installation process, when selecting what users to install for, you have 2 options: 
-* Install the package for Admins only and then complete the Permission section below to open up permissions for all users/profiles who need to access to edit and/or invoke rollups (outlined below)
+* Install the package for Admins only and then complete the "Assigning Permission Set" section below to open up permissions for users/profiles who need to access to edit and/or run rollups
 <br>OR<br>
 * Install for all users (no additional steps needed, however all users will have full access to all dlrs objects) 
 
@@ -62,7 +62,7 @@ Use the links below to install into a Professional Edition of Salesforce:
 **Production & Developer Edition Orgs:**  
 [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC)
 
-Note: Only the Process Builder calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
+Note: Only the `Invocable by Automation` (called Process Builder in versions prior to 2.21) calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
 ![Process Builder Sharing Mode](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Process-Builder-Sharing-Mode.PNG)
 
