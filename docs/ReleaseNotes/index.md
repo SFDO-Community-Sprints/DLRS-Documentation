@@ -41,7 +41,8 @@ Thank you to the team who has worked for months on this new Wizard, especially *
 * Aaron George 
 * Scott Fenton 
 * Brad Dins (special shout out for writing the Getting Started documentation for the new Wizard) 
-* Amanda Styles (for wring instructions on how to move from version 1 - Custom Object to version 2 - Custom Metadata) 
+* Amanda Styles (for writng instructions on how to move from version 1 - Custom Object to version 2 - Custom Metadata) 
+* Shari Carlson
 * Nick Lindberg 
 * Michael Kolodner
 
