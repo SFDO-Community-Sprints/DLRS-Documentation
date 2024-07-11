@@ -19,12 +19,16 @@ DLRS is a mechanism for aggregating or summarizing data from child objects and d
 - **Summaries**: the result of the calculations displayed on the parent records
 
 ## What Business Problems Does DLRS Solve?
+Declarative Lookup Rollup Summaries allow a much greater range of rollup summary options than exist in the standard “Rollup Summary Fields” (RSFs) or, if you use NPSP, in Customizable Rollups. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance.
 
-In Salesforce, there are “Rollup Summary Fields” (RSFs) that exist as standard fields in your instance and allow you to calculate metrics on a related list record (child object) and then show that value on the parent object. The business problem solved here is generally the ability to create a key metric or “summary” of a calculated value on a field in your Salesforce instance. Some examples may be Total Closed Won Amount.
+Where RSF’s require you to have a Master-Detail (Parent-Child) relationship, DLRS can be used to rollup data between any two objects with a linking record ID. Have a look at the [‘Cookbook’](https://sfdo-community-sprints.github.io/DLRS-Documentation/Cookbook/) for examples of rollups.
 
-There is a limit to how many RSFs that Salesforce permits you to create. With DLRS there is no such limit - you can create as many of them as needed.
-
-Additionally, the metrics available with RSFs, are limited to sum, minimum value, or maximum value as a calculated metric. There are extended “operations” such as Average, Count Distinct, Concatenate, First and Last that can be performed with DLRS.
+Unlike RSFs, there is no limitation on the amount of rollups that Salesforce permits you to create. You can create as many of them as needed.
+Additionally, the metrics available with RSFs, are limited to sum, minimum value, or maximum value as a calculated metric. There are extended “operations” that can be performed with DLRS such as:
+* Average, 
+* Count Distinct, 
+* Concatenate, and
+* First and Last.
 
 ## Features Summary
 
@@ -38,11 +42,11 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 
 ## How and When DLRS Calculates
 
-[Understanding when DLRS Calculates](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
-- Real-time trigger - Set Lookup Rollup to `Realtime` Calculation Mode.
-- Async trigger based calculations - Set Lookup Rollup to `Scheduled` Calculation Mode.
-- Scheduled full calculations - There is a button to schedule full calculations.
-- Invocable from Flow or Process Builder - This is what allows DLRS to run in Professional Edition. [Info](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Installation/configuration.html#implementation-considerations)
+[Understanding when DLRS Calculates](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html)
+- Realtime trigger - Set Rollup to `Realtime` Calculation Mode.
+- Async trigger based calculations - Set Rollup to `Watch for Changes and Process Later` (`Scheduled` in version prior to 2.21) Calculation Mode.
+- Trigger from declarative automation - `Invocable by Automation` (`Process Builder` in versions prior to 2.21) - This is also what allows DLRS to run in Professional Edition. [Info](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html)
+- Full calculations - There are buttons at the bottom of the rollup to manually recalcate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
 
 ## DLRS History 
 [Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)

@@ -7,7 +7,7 @@ has_children: true
 
 # Installation
 
-Install the latest version (2.19) of DLRS into your production, sandbox, or scratch org via:
+Install the latest version (2.21) of DLRS into your production, sandbox, or scratch org via:
 <br/><br/>
 [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest){: .btn .btn-blue }
 <br/>
@@ -20,21 +20,23 @@ Install the latest version (2.19) of DLRS into your production, sandbox, or scra
 
 ## Permissions
 
-When selecting what users to install for, you have 2 options: 
-1. Install the package for Admins only and open up permissions for all users/profiles who need to access to edit and/or invoke rollups (outlined below)
-2. Install for all users.
+### Consider User Types 
+Before selecting what users you want to install for, consider the types of users you will have in DLRS:
+1. Admin
+   - Can configure, activate and deploy rollups 
+   - Needs full read/write access to all objects in the package
+2. User
+   - Indirectly invokes the rollups
+   - Need read access to all objects 
+
+
+### Selecting Users to "Install for"
+In the installation process, when selecting what users to install for, you have 2 options: 
+* Install the package for Admins only and then complete the "Assigning Permission Set" section below to open up permissions for users/profiles who need to access to edit and/or run rollups
+<br>OR<br>
+* Install for all users (no additional steps needed, however all users will have full access to all dlrs objects) 
 
 ![Install for Admins](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Install-Admins-Only.PNG)
-
-### DLRS User Types
-
-**Admin**
-- Can configure, activate and deploy rollups 
-- Needs full read/write access to all objects in the package
-
-**User**
-- Indirectly invokes the rollups
-- Need read access to all objects 
 
 ### Assigning Permission Set
 
@@ -60,8 +62,8 @@ Use the links below to install into a Professional Edition of Salesforce:
 **Production & Developer Edition Orgs:**  
 [https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t5p000001E8vdAAC)
 
-Note: Only the Process Builder calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
+Note: Only the `Invocable by Automation` (labeled "Process Builder" in versions prior to 2.21) calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
-![Process Builder Sharing Mode](https://raw.githubusercontent.com/wiki/afawcett/declarative-lookup-rollup-summaries/images/Process-Builder-Sharing-Mode.PNG)
+<img src="../assets/images/v2_21/InvocablebyAutomation.png" width="50%" alt="Invocable by automation screenshot">
 
-
+See additional Consideration for Installed in Professional Edition on the [Implementation Considerations Page](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html).
