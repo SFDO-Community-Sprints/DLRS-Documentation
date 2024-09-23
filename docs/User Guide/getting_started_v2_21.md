@@ -6,7 +6,7 @@ parent: Getting Started
 has_children: false
 ---
 
-# Getting Started (for version 2.21)
+# Getting Started (versions 2.21 and after)
 ## Creating a New Lookup Rollup Summary
 
 Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
