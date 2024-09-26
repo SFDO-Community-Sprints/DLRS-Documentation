@@ -17,6 +17,7 @@ To **configure** rollups with this tool your user needs a connection and permiss
 - Customize Application (needed to use Manage Rollup Summaries tab to update Custom Metadata)
 
 **Note:** The above are powerful permissions [please review fully before enabling](https://help.salesforce.com/articleView?id=000198725&r=https:%2F%2Fwww.google.com%2F&type=1) - typically these are enabled for Admin users.
+**Topics:** 
 
 **Known Issues**
 
