@@ -254,6 +254,22 @@ If there aren’t any child records to include in the summary, DLRS will return 
 
 In the Realtime Calculation Mode you can’t. The calculation will run for all parent accounts.  This is possible using a Full Calculate job and Scheduled Full Calculate Job, you can filter parent records.  From those pages, enter the filter criteria for the parent account in the “Filter parent object [Object Name] records to update using WHERE clause (Optional).
 
+## I used the declarative rollup lookup summary to create a count of attachments attached to a case. It works fine with documents but doesn't seem to count .jpg and .png file types.
+
+When the DLRS definition is created with attachments (e.g. JPG, PDF, PNG) the destination field (Number_of_attachments__c in this example) will update as expected.
+
+However, when Files are uploaded (they are not Attachment records, but instead ContentDocument records that are linked to other records in Salesforce via ContentDocumentLink), we see that Number_of_attachments__c is not updating as expected. Salesforce mashes both Attachment and ContentDocument records into the Attachments related list, which may cause confusion.
+
+A possible workaround here is to create a separate Number_of_files__c field and the DLRS definition shown below.
+
+This updates as expected with a count of only those files that are linked to the case.
+
+Number_of_attachments__c and Number_of_files__c can be summed with a formula field (or number field set that can be set with a before record save flow or Apex trigger).
+You can confirm this by checking out the record's Attachments related list on a Case record that is not updating as you expect.
+- Classic: Edit, View, Del for Attachments; Preview, Download, Del for Files
+- Lightning Experience: Delete, Download for Attachments; Download, Share, Public Link, View File Details, Upload New Version, Edit File Details, Delete, Remove from Record for Files
+
+
 
 __________________________________________________________________________
 **This FAQ page was updated by the team at the September 2024 Vrtual Sprint.**  
