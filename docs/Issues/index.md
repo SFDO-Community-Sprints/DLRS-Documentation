@@ -274,7 +274,7 @@ You can confirm this by checking out the record's Attachments related list on a 
 
 Apex Text Classes run through what the code should be doing to "test" and make sure everything in the code is working as expected. They have other purposes as well, but that's enough to give context to what you need to do to resolve the issue. 
 
-You need to add a custom test method to successfully delpoy the CampaignChild Trigger. Basically, it adds creating a Campaign record in the test class (because Campaigns are required to create Campaign Members and thus are needed in the test.) 
+You need to add a custom test method to successfully delpoy the CampaignChild Trigger. Basically, it adds creating a Campaign record and a test contact in the test class (because Campaigns and Contacts are required to create Campaign Members and thus are needed in the test.) 
 
 **Steps to resolve:**  
 In the Advanced section of edit page, you'll find the Test Code (child) field. Copy and paste the following into that box and try to redeploy.  
