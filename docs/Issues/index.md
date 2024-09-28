@@ -213,6 +213,13 @@ These records in the Lookup Rollup Summary Schedule Items object are being creat
  
 If you do want to use the Deploy code to support record merging, you should also make sure you schedule the RollupJob Apex class to run on some schedule.
 
+## Why are Lookup Rollup Summary Schedule Item records being generated for a real-time rollup, and why aren’t rollups recalculating after a record merge?
+There is an undocumented behavior in DLRS when merging records—it generates a Scheduled Item. This occurs because DLRS is sometimes unable to recalculate rollup values correctly during a merge. The creation of a Scheduled Item serves as a signal to recalculate the rollup later.
+
+While the DLRS development team is considering ways to make this behavior clearer or handle it more effectively, there’s no specific ETA for improvements at this time.
+
+The recommended solution is to schedule the RollupJob class to run periodically to clean up these records. Running it once a day or even once an hour should suffice for most users. Essentially, DLRS is functioning as expected—it’s just that this behavior is not widely known.
+
 ## How efficient is it to run multiple DLRS rollups with the same criteria?
 By default, DLRS processes each rollup individually using its internal logic. However, if you configure Flow to queue all rollups within the same node, Flow’s bulkification feature could potentially process them together in a single query, reducing resource consumption.
 
