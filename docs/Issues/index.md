@@ -269,6 +269,22 @@ You can confirm this by checking out the record's Attachments related list on a 
 - Classic: Edit, View, Del for Attachments; Preview, Download, Del for Files
 - Lightning Experience: Delete, Download for Attachments; Download, Share, Public Link, View File Details, Upload New Version, Edit File Details, Delete, Remove from Record for Files
 
+## I'd like to create a roll up with a Campaign Member, but when I try to deploy the trigger I get the following error: dlrs_CampaignMemberTest.testTrigger System.DmlException: Insert failed. First exception on row 0; first error: MALFORMED_ID, Invalid campaign id: null: [CampaignId] Class.dlrs.RollupService.testHandler: line 277, column 1 Class.dlrs_CampaignMemberTest.testTrigger: line 11, column 1
+
+Apex Text Classes run through what the code should be doing to "test" and make sure everything in the code is working as expected. They have other purposes as well, but that's enough to give context to what you need to do to resolve the issue. 
+
+You need to add a custom test method to successfully delpoy the CampaignChild Trigger. Basically, it adds creating a Campaign record in the test class (because Campaigns are required to create Campaign Members and thus are needed in the test.) 
+
+**Steps to resolve:**  
+In the Advanced section of edit page, you'll find the Test Code (child) field. Copy and paste the following into that box and try to redeploy.  
+
+  Campaign camp = new Campaign(Name = 'Test Campaign');  
+        Insert camp;  
+        Contact c = new Contact(LastName = 'Test');  
+        Insert c;  
+        dlrs.RollupService.testHandler(new CampaignMember(CampaignId = camp.Id, ContactId = c.Id));  
+
+If you are in the new wizard (v 2.21 and bayond) you will need to click on the carrot arrow at the front of the section to open the Advanced section. 
 
 
 __________________________________________________________________________
