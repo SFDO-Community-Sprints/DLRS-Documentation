@@ -40,6 +40,9 @@ The **Watch for Changes and Process Later** Calculation Mode Roll-ups will not r
 
 The **Realtime** Calculation Mode requires the deployment of a child trigger to run your rollup whenever a child record is saved.
 
+### Merged Records and Scheduled Items
+Merged records may create scheduled items because it was a problem to recalculate the rollup in real-time for that scenario. When records are merged, the system may not be able to immediately recalculate the rollup due to the complexity and potential conflicts that can arise during the merge process. Therefore, the system creates scheduled items to handle the recalculation at a later time, ensuring that the rollup is accurately updated without causing performance issues or errors during the merge.
+
 ## Developer / Invocable by Automation Calculation Modes 
 Simply choose "Save and Activate" in the path. Your rule is now ready to be called by a flow or Apex code, or to be scheduled using the instructions above.
 
@@ -84,4 +87,3 @@ This will take you to the Manage Apex Trigger page. Scroll to the bottom of the 
 Once you have deployed the trigger, please choose "Activate" on the path at the top of the window. This will activate the rollup rule. Rollups will be updated in realtime as records are created or updated.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_path_realtime_02_save_activate.png" width="100%" alt="DLRS Beta Rule Activation - Path - Realtime Calculation Mode">
-
