@@ -41,6 +41,6 @@ This is like pressing the "Calculate" button.  It does an entire recalculation o
 
 # Process Builder - Scheduled Actions
 **Calculate Mode field set to Process Builder, No Trigger Required** 
-You can use Process Builder with a Scheduled Action, instead of an Immediate Action, and control the delay in processing. It will call the Parent account and recalculate the specified rollup. Create a `Call Apex` action in Process Builder and select the DLRS `Calculates a rollup` class.
+You can use Process Builder or Flow with a Scheduled Action, instead of an Immediate Action, and control the delay in processing. It will call the Parent account and recalculate the specified rollup. Create a `Call Apex` action in Process Builder or Flow and select the DLRS `Calculates a rollup` class.
 
 
