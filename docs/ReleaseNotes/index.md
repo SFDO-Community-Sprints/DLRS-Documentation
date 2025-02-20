@@ -11,7 +11,7 @@ has_children: true
 **Install DLRS 2.22** into your production, sandbox, or scratch org from [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest). 
 
 ### What's changed in v2.22?
-Release 2.22 was only an API version update to stay inline with Salesforce's latest release.
+Release 2.22 was basically an API update to stay inline with Salesforce's latest release.
 
 ## Release Version 2.21
 
