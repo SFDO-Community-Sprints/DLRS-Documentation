@@ -6,7 +6,7 @@ parent: Installation
 has_children: false
 ---
 
-# Upgrading the Package
+# Upgrading from 1.X to 2.X
 
 In about 2015, DLRS introduced the ability to store rollup definitions in Custom Metadata rather than in a Custom Object. This is great news for anyone who wants to use their rollups in a Sandbox or deploy rollups from a Sandbox to Production. You may be wondering: what do you need to do to upgrade from the older version that uses custom objects to the newer version with custom meta data? 
 
