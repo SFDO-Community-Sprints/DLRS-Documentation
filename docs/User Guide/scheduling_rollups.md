@@ -1,12 +1,12 @@
 ---
 layout: default
-title: What you need to know about Scheduling Rollups
-nav_order: 2
+title: Scheduling Rollups
+nav_order: 4
 parent: User Guide
 has_children: false
 ---
 
-# Scheduling Options
+# Scheduling Options (prior to v 2.21)
 
 <br/>
 Depending on your needs there are three ways to schedule, please read carefully.
