@@ -17,11 +17,11 @@ has_children: false
 2. Click Manage. 
    1. If no records exist, click New and then Save to create the record. Once the record is saved click Edit.
    
-      <img src="../assets/images/DLRSNoCustomSetting.png" width="50%" alt="No Custom Setting">
+      <img src="../assets/images/DLRSNoCustomSetting.png" width="65%" alt="No Custom Setting">
        
    2. If the record already exists and the settings are visible, click Edit.
 
-      <img src="../assets/images/DLRSCustomSetting.png" width="50%" alt="Custom Setting">
+      <img src="../assets/images/DLRSCustomSetting.png" width="65%" alt="Custom Setting">
        
 3. Check the “Disable DLRS Globally”checkbox and click Save.
    
