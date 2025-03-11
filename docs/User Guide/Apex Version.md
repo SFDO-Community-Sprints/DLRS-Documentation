@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Update Apex Version
-nav_order: 5
+nav_order: 6
 parent: Getting Started
 has_children: false
 ---
