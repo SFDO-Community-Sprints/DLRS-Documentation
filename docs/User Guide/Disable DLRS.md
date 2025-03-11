@@ -25,7 +25,7 @@ has_children: false
        
 3. Check the “Disable DLRS Globally”checkbox and click Save.
    
-   <img src="../assets/images/DLRSCustomSettingEdit.png" width="75%" alt="Edit Custom Setting">
+   <img src="../assets/images/DLRSCustomSettingEdit.png" width="65%" alt="Edit Custom Setting">
 
 # Disable DLRS for Individual Users
 
@@ -40,32 +40,35 @@ Disable DLRS for Individual Users using a Custom Permission and field on the DLR
     4. Click Save.
     5. Copy the API Name of the Custom Permission. (You will need this later.)
 2. Create Permission Set.
-    6. Go to Set up > Permission Sets.
-    7. Click New.
-    8. Enter Permission Set details.
-        3. Label: DLRS Disablement
-        4. API Name will populate
-        5. Description: Assign to individual users to allow for individual DLRS to be disabled for specific users.
-    9. Click Save.
-    10. Go to the Custom Permissions Section of the Permission Set.
-    11. Click Edit.
-    12. Move the DLRS Disablement to the “Enabled Custom Permissions.” 
-    13. Click Save.
+    1. Go to Set up > Permission Sets.
+    2. Click New.
+    3. Enter Permission Set details.
+        1. Label: DLRS Disablement
+        2. API Name will populate
+        3. Description: Assign to individual users to allow for individual DLRS to be disabled for specific users.
+    4. Click Save.
+    5. Go to the Custom Permissions Section of the Permission Set.
+    6. Click Edit.
+    7. Move the DLRS Disablement to the “Enabled Custom Permissions.” 
+    8. Click Save.
 3. Assign Permission Set.
-    14. At the top of the Permission Set you created, click Manage Assignments button.
-    15. Click Add Assignment.
-    16. Search for and Select the user you would like to disable DLRS rollups for.
-    17. Click Next.
-    18. Enter expiration date, if applicable.
-    19. Click Assign.
-    20. Copy the API Name of the Permission Set.
+    1. At the top of the Permission Set you created, click Manage Assignments button.
+    2. Click Add Assignment.
+    3. Search for and Select the user you would like to disable DLRS rollups for.
+    4. Click Next.
+    5. Enter expiration date, if applicable.
+    6. Click Assign.
+    7. Copy the API Name of the Permission Set.
 4. Update Rollup record.
-    21. On the Manage Lookup Rollup Summaries tab.
-    22. Click Try Our New Wizard (to access the new DLRS layouts).
-    23. Select the Rollup that you want to Disable for anyone with the Permission Set.
-    24. Click the Advanced header to open the Advanced section.
-    25. Paste the API name of the Permission Set in the “Custom Permission name to bypass this rollup.” 
-    26. Click Save.
+    1. On the Manage Lookup Rollup Summaries tab.
+    2. Click Try Our New Wizard (to access the new DLRS layouts).
+    3. Select the Rollup that you want to Disable for anyone with the Permission Set.
+    4. Click the Advanced header to open the Advanced section.
+    5. Paste the API name of the Permission Set in the “Custom Permission name to bypass this rollup.”
+       
+        <img src="../assets/images/DLRSCustmPermissionField.png" width="65%" alt="Custom Permission Field">
+        
+    6. Click Save.
 
 **Note:** If you need to bypass different rollups for different sets of users, you will need to create multiple Custom Permissions and Permission Sets.  
 
