@@ -17,14 +17,10 @@ Release 2.23 introduces 3 major updates to the DLRS functionality:
 2. Disable DLRS for individual Users using a Custom Permission
 3. Disable problem emails from background jobs
 
-Also included in this release were several items to enhance the testing and quality assurance process for the DLRS team as well as maintaining the API versioning and a bug fix related to merging. 
+Also included in this release were several items to enhance the testing and quality assurance process for the DLRS team as well as maintaining the API versioning and a bug fix related to merging. **Review the full list of changes below.**
 
-Review the full list of changes below.
-
-
-[Documentation on Disabling Problem Emails](https://docs.google.com/document/d/1BOr4Hhc08E3MgQvKNc2iKsbg6aMrCnsb-W6O3m6E0Is/edit?usp=sharing) 
-
-[Documentation on Disabling DLRS](https://docs.google.com/document/d/1BOr4Hhc08E3MgQvKNc2iKsbg6aMrCnsb-W6O3m6E0Is/edit?usp=sharing) 
+[Documentation on Disabling Problem Emails](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Disable%20Problem%20Emails.html) <br>
+[Documentation on Disabling DLRS](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Disable%20DLRS.html) 
 
 
 Thank you to everyone who contributed to this release
