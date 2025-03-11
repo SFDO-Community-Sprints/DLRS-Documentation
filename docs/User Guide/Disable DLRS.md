@@ -12,7 +12,7 @@ has_children: false
 
 1. Go to Set up > Custom Settings and locate the Declarative Lookup Rollup Summaries custom setting.
    
-   <img src="../assets/images/DLRSCustomSettingList.png" width="65%" alt="DLRS Custom Setting List">
+   <img src="../assets/images/DLRSCustomSettingList.png" width="75%" alt="DLRS Custom Setting List">
    
 2. Click Manage. 
    1. If no records exist, click New and then Save to create the record. Once the record is saved click Edit.
@@ -25,7 +25,7 @@ has_children: false
        
 3. Check the “Disable DLRS Globally”checkbox and click Save.
    
-   <img src="DLRSCustomSettingEdit.png" width="65%" alt="Edit Custom Setting">
+   <img src="DLRSCustomSettingEdit.png" width="75%" alt="Edit Custom Setting">
 
 # Disable DLRS for Individual Users
 
