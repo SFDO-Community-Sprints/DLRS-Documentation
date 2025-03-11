@@ -54,7 +54,9 @@ If you updated the Apex Triggers in a Sandbox, you would need to create a change
 
 
 ### Option 2: Use Developer Console to update API version 
-Note: This process will need to be done in a sandbox and then you would need to create a change set, include both the triggers and the Apex test classes you’ve updated, and deploy the changes to production. 
+Community member, Bill Corkill, created a [step by step video for this Option using Dev Console](https://www.youtube.com/watch?v=a0i4ziUo2qI). 
+
+**Note:** This process will need to be done in a sandbox and then you would need to create a change set, include both the triggers and the Apex test classes you’ve updated, and deploy the changes to production. 
 
 1. Select Developer Console from the cog drop down menu when logged in
 2. From the File menu select Open and select Triggers
