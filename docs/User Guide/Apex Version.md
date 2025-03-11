@@ -31,10 +31,16 @@ We recommend that you make the update in a sandbox environment and then deploy t
 1. Review the deployed Apex triggers in your system and determine which Apex triggers need to be updated. 
     1. To find the DLRS triggers, go to Set up > Apex Triggers.
     2. All DLRS triggers will start with dlrs_ and you can review the API version of that trigger in the list as well.
-    3. Note the name of the object in the trigger that needs to be updated. E.g. Account, Opportunity, Your_Custom_Object__c, etc.  
+    3. Note the name of the object in the trigger that needs to be updated. E.g. Account, Opportunity, Your_Custom_Object__c, etc.
+
+       <img src="../assets/images/DLRSTriggerList.png" width="75%" alt="DLRS Trigger List">
+
     4. You may also want to review the deployed DLRS Test Classes, in order to understand what will need to be included in the change set.
         1. Go to Set up > Apex Classes
-        2. The test classes related to DLRS all start with dlrs_. \
+        2. The test classes related to DLRS all start with dlrs_.
+
+           <img src="../assets/images/DLRSApexClassList.png" width="75%" alt="DLRS Apex Class List">
+           
 2. Go to the Manage Lookup Rollup Summaries tab and click on “Try Our New Wizard” 
 3. Review your existing rollups and select one rollup from each Parent-Child object pairing and open it in edit modal. For example, If you have three rollups where the child object is Opportunity and the parent object is Account, select one of those rollups and open it in the edit modal. 
 4. Click on the drop down at the bottom of the modal and select <span style="text-decoration:underline;">Manage Triggers</span>.
@@ -57,6 +63,9 @@ Note: This process will need to be done in a sandbox and then you would need to 
 5. For DLRS test classes repeat the process, but select Classes
 
 Example:
+
+<img src="../assets/images/DLRSDevConsoleAPIVersion.png" width="75%" alt="DLRS Dev Console API Version">
+
 
 Tip: Check “Hide Managed Packages” to reduce the items in the list. You can also use the Filter field to narrow down the trigger or class you are looking for.
 
