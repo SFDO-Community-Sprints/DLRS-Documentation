@@ -23,8 +23,9 @@ has_children: false
 
       <img src="../assets/images/DLRSCustomSetting.png" width="50%" alt="Custom Setting">
        
-3. Check the “Disable DLRS Globally”checkbox and click Save. 
-   <img src="DLRSCustomSettingEdit.png width="65%" alt="Edit Custom Setting">
+3. Check the “Disable DLRS Globally”checkbox and click Save.
+   
+   <img src="DLRSCustomSettingEdit.png" width="65%" alt="Edit Custom Setting">
 
 # Disable DLRS for Individual Users
 
