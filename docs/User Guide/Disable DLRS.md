@@ -10,7 +10,7 @@ has_children: false
 
 **Note**: This setting will disable ALL existing and newly created DLRS rollups in your system. This should be used to temporarily stop the rollups in particular situations, for example data migrations or troubleshooting. 
 
-1. Go to Set up > Custom Settings and locate the Declarative Lookup Rollup Summaries custom setting. \
+1. Go to Set up > Custom Settings and locate the Declarative Lookup Rollup Summaries custom setting.
 
 2. Click Manage. 
    1. If no records exist, click New and then Save to create the record. Once the record is saved click Edit.
@@ -20,7 +20,7 @@ has_children: false
 
 # Disable DLRS for Individual Users
 
-Disable DLRS for Individual Users using a Custom Permission and field on the DLRS rollup record.  \
+Disable DLRS for Individual Users using a Custom Permission and field on the DLRS rollup record.
 
 1. Create Custom Permission.
     1. Go to Set up > Custom Permissions.
