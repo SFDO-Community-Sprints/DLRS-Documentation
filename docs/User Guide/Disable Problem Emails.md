@@ -25,6 +25,6 @@ It is not recommended to leave this setting in place permanently. The purpose of
 
 4. Check the “Disable Problem Emails”checkbox and click Save.
 
-   <img src="../assets/images/DLRSCustomSetting.png" width="65%" alt="Custom Setting">
+   <img src="../assets/images/DLRSDisableProblemEmail.png" width="65%" alt="Disable Problem Email">
    
 **Note: this is not a solution to the errors, it is just a way to stop the emails, to allow time to resolve the errors.**
