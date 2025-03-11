@@ -15,7 +15,7 @@ has_children: false
 2. Click Manage. 
    1. If no records exist, click New and then Save to create the record. Once the record is saved click Edit.
    2. If the record already exists and the settings are visible, click Edit.
-   3. Check the “Disable DLRS Globally”checkbox and click Save. 
+3. Check the “Disable DLRS Globally”checkbox and click Save. 
 
 
 # Disable DLRS for Individual Users
