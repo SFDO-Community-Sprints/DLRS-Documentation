@@ -12,7 +12,21 @@ This is not *technically* required when you install DLRS, but we believe it to b
 
 To schedule RollupJob you have two choices:
 
-1. Setup>Apex Classes>Schedule Apex
+1. If you are on version 2.21 or higher we recommend using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab. (If you are not yet on 2.21, might we suggest that you (upgrade now)[https://install.salesforce.org/products/dlrs/latest] ...)
+
+   Go to the Beta tab.
+
+   Click Manage RollupJob
+
+   Configure New Job Frequencies>Templates
+
+   Template: Once Every Day
+
+   Hour of the Day: [middle of the night]
+
+   Click Schedule
+
+2. Setup>Apex Classes>Schedule Apex
    Job Name: [choose your convention. We recommend “RollupJob - Overnight”]
 
    Apex Class: RollupJob
@@ -27,16 +41,4 @@ To schedule RollupJob you have two choices:
 
    Preferred Start Time: [If you’re only doing once per day, put it in the middle of the night.]
 
-3. Using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab.
 
-   Go to the Beta tab.
-
-   Click Manage RollupJob
-
-   Configure New Job Frequencies>Templates
-
-   Template: Once Every Day
-
-   Hour of the Day: [middle of the night]
-
-   Click Schedule
