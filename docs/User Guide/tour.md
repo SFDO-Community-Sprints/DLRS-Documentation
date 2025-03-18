@@ -10,7 +10,7 @@ has_children: false
 
 ## Declarative Lookup Rollup Summary
 
-The DLRS app can be found in the app draw or the “waffle” in the top left hand corner. Just like any other Lightning App you can find all of the related tabs all in one place. Here we have the welcome page and along the top we can see Tools, Manage, Logs and List View. We can use this app to create, edit and view all of our DLRS.
+The DLRS app can be found in the app launcher or the “waffle” in the top left hand corner. Just like any other Lightning App you can find all of the related tabs all in one place. Here we have the welcome page and along the top we can see Tools, Manage, Logs and List View. We can use this app to create, edit and view all of our DLRS.
 
 ![screenshot_1](/DLRS-Documentation/assets/dlrs_tour_1.png)
 
