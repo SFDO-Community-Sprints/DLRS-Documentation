@@ -157,7 +157,7 @@ As noted [here](https://sfdo-community-sprints.github.io/DLRS-Documentation/User
 
 While the DLRS development team is considering ways to make this behavior clearer or handle it more effectively, there’s no specific ETA for improvements at this time.
 
-The recommended solution is to schedule the RollupJob class to run periodically to clean up these records. Running it once a day or even once an hour should suffice for most users. Essentially, DLRS is functioning as expected—it’s just that this behavior is not widely known.
+The recommended solution is to schedule the RollupJob class to run periodically to clean up these records. Running it once a day or even once an hour should suffice for most users. [This is a post-install step we recommend.](https://sfdo-community-sprints.github.io/DLRS-Documentation/Post%20Install%20Steps/Post%20Install%20Steps.html) Essentially, DLRS is functioning as expected—it’s just that this behavior is not widely known.
 
 
 ### Why are my rollup totals out of date?
