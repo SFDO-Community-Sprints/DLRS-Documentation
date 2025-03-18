@@ -101,7 +101,7 @@ However, keep in mind that rollup fields don’t automatically recalculate when 
 
 ### How do I optimize DLRS? I am running into Apex CPU Limits or other performance issues!
 
-DLRS gives you many options for controlling how it runs. It can run in realtime synchronously from a DLRS Trigger, your own Trigger, or Process Builder. It can also be run asynchronously with it’s [Scheduled Incremental Mode or Scheduled Full Calculate Mode](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html). Additionally you can use Process Builder and a Scheduled Action with a delay such as `0 Hours from now` which will happen typically within a few minutes.
+DLRS gives you many options for controlling how it runs. It can run in realtime synchronously from a DLRS Trigger, your own Trigger, Process Builder, or Flow. It can also be run asynchronously with its [Scheduled Incremental Mode or Scheduled Full Calculate Mode](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html). Additionally you can use Flow and a Scheduled Action with a delay such as `0 Hours from now` which will happen typically within a few minutes.
 
 Strongly consider whether you need DLRS to run in realtime or not. Also consider whether you want to deploy the DLRS trigger or call the DLRS Trigger Handler from your own trigger framework. Consider calling `dlrs.RollupService.triggerHandler()` directly.
 
@@ -159,9 +159,9 @@ The recommended solution is to schedule the RollupJob class to run periodically 
 
 ### Why are my rollup totals out of date?
 
-- [ ] Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly. If you have set the mode to “Scheduled”, have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
-- [ ] Use the `Full Calculate` button to force a refresh of the calculation; this is the best way to check that your criteria are still appropriate and that the system is finding records to update.
-- [ ] Make sure that any updates you are making to the child records will trigger your rollups. For example, if you are using third party tools like Duplicate Check to merge or update records, the record updates may not meet the criteria to trigger DLRS Realtime jobs. You might consider adding a scheduled calculation to your realtime rollups to include records that you merge or update on a regular basis.
+- Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly. If you have set the mode to “Scheduled”, have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+- Use the `Full Calculate` button to force a refresh of the calculation; this is the best way to check that your criteria are still appropriate and that the system is finding records to update.
+- Make sure that any updates you are making to the child records will trigger your rollups. For example, if you are using third party tools like Duplicate Check to merge or update records, the record updates may not meet the criteria to trigger DLRS Realtime jobs. You might consider adding a scheduled calculation to your realtime rollups to include records that you merge or update on a regular basis.
 
 
 ### Lookup Rollup summaries status showing as failed, but when I check, the summaries haven’t failed at all. In this case your rollup summary job may already be running.
