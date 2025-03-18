@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Relationship Criteria (SOQL Queries)
-nav_order: 2
-parent: Architecture
+nav_order: 4
+parent: User Guide 
 has_children: false
 ---
 
