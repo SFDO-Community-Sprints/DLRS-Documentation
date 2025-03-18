@@ -80,10 +80,7 @@ I need to make some modifications to the existing rollup summary, particularly u
 
 
 ### What are the Aggregation Operators?
-
-
-
-- [ ] Please see “[Getting Started](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)”
+Please see “[Getting Started](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)”
 
 
 ### Can I build a roll-up where one of the relationship fields is a formula field referencing a parent object?
