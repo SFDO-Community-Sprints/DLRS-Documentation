@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Post Install Steps
-nav_order: 
-has_children: false
+nav_order: 3
+has_children: true
 ---
 
 # Post Install Steps
