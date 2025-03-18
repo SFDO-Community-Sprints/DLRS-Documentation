@@ -12,7 +12,7 @@ This is not *technically* required when you install DLRS, but we believe it to b
 
 To schedule RollupJob you have two choices:
 
-1. If you are on version 2.21 or higher we recommend using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab. (If you are not yet on 2.21, might we suggest that you (upgrade now)[https://install.salesforce.org/products/dlrs/latest] ...)
+1. If you are on version 2.21 or higher we recommend using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab. (If you are not yet on 2.21, might we suggest that you [upgrade now](https://install.salesforce.org/products/dlrs/latest) ...)
 
    Go to the Beta tab.
 
