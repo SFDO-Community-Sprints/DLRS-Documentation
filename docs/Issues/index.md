@@ -153,7 +153,7 @@ Relationship Criteria does not determine when a rollup runs - they determine whi
 
 ### Why are Lookup Rollup Summary Schedule Item records being generated for a real-time rollup, and why aren’t rollups recalculating after a record merge?
 
-There is an undocumented behavior in DLRS when merging records—it generates a Scheduled Item. This occurs because DLRS is sometimes unable to recalculate rollup values correctly during a merge. The creation of a Scheduled Item serves as a signal to recalculate the rollup later.
+As noted [here](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Merging.html), when merging records DLRS generates a Scheduled Item. This occurs because DLRS is sometimes unable to recalculate rollup values correctly during a merge. The creation of a Scheduled Item serves as a signal to recalculate the rollup later.
 
 While the DLRS development team is considering ways to make this behavior clearer or handle it more effectively, there’s no specific ETA for improvements at this time.
 
