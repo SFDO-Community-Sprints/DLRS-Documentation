@@ -19,10 +19,9 @@ To schedule RollupJob you have two choices:
    Frequency: Set this to at least once per day.
    Start: [might as well start today!]
    End: [set this WAYYYYY out into the future]
+   Preferred Start Time: [If you’re only doing once per day, put it in the middle of the night.]
 
-Preferred Start Time: [If you’re only doing once per day, put it in the middle of the night.]
-
-2. Using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab.
+3. Using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab.
    Go to the Beta tab.
    Click Manage RollupJob
    Configure New Job Frequencies>Templates
