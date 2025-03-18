@@ -15,4 +15,4 @@ To recalculate these items, you must have configured the RollupJob apex class to
 
 This is one of the least understood (or thought about) functions of DLRS. In particular, orgs that only have realtime rollups or rollups on their own schedules often find that they have Lookup Rollup Summary Schedule Items but they have no idea how those were created.
 
-This is the main reason we strongly recommend the [post-install step of scheduling RollupJob at least daily (https://sfdo-community-sprints.github.io/DLRS-Documentation/Post%20Install%20Steps/Post%20Install%20Steps.html#schedule-rollupjob-apex-class-at-least-once-per-day).
+This is the main reason we strongly recommend the [post-install step of scheduling RollupJob at least daily](https://sfdo-community-sprints.github.io/DLRS-Documentation/Post%20Install%20Steps/Post%20Install%20Steps.html#schedule-rollupjob-apex-class-at-least-once-per-day).
