@@ -2,7 +2,7 @@
 layout: default
 title: How and When DLRS Calculates
 nav_order: 1
-parent: Architecture
+parent: User Guide
 has_children: false
 ---
 
