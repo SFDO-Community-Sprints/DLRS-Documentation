@@ -9,7 +9,7 @@ has_children: false
 # Getting Started
 ## Creating a New Lookup Rollup Summary
 
-1. Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
+1. Open the “Manage Lookup Rollup Summaries (Beta)” tab from the App Launcher.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_app_launcher.png" width="50%" alt="DLRS Beta from the App Launcher">
 
