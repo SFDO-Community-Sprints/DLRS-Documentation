@@ -74,7 +74,7 @@ You can also call a DLRS rollup from a flow or other declarative automation via 
 
 ### Editing DLRS after Child Trigger has been deployed - do I need to remove and re-deploy the child trigger?
 
-I need to make some modifications to the existing rollup summary, particularly updating the field in the relationship criteria. Is saving a rollup summary enough, or do I also need to manage child trigger? No, you do not need to redeploy the trigger, saving the updated rollup configuration is enough.
+I need to make some modifications to the existing rollup summary, particularly updating the field in the relationship criteria. Is saving a rollup summary enough, or do I also need to manage child trigger? **No, you do not need to redeploy the trigger, saving the updated rollup configuration is enough.**
 
 *Topics: childTrigger*
 
