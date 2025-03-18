@@ -83,7 +83,7 @@ I need to make some modifications to the existing rollup summary, particularly u
 Please see “[Getting Started](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)”
 
 
-### Can I build a roll-up where one of the relationship fields is a formula field referencing a parent object?
+### Can I build a rollup where one of the relationship fields is a formula field referencing a parent object?
 
 Depending on your use case, there are a few options. If you use the “Invocable by Automation” mode through a Flow (it is just an Invocable Action) then you can use Flow to tell DLRS when to recalculate the rollup. If you know your logic then you could intelligently prompt a recalculation for specific rollups for specific parent records.
 
@@ -139,13 +139,13 @@ Relationship Criteria does not determine when a rollup runs - they determine whi
 
 ### How do I know if my scheduled Calculation Mode is working?
 
-- [ ] Make sure your trigger is deployed and you can manually run your summary with the Calculate button
-- [ ] Make sure you see the Related List: Lookup Rollup Summary Schedule Items at the bottom of your Summary
-- [ ] Go and manually edit a child record’s Relationship Field or any Relationship Criteria field and save the record
-- [ ] Now you should see a record listed in the Lookup Rollup Summary Schedule Items list
-- [ ] Let your schedule run
-- [ ] Check Recent Lookup Rollup Summary Logs
-- [ ] Check Setup > Jobs > Scheduled Jobs & Apex Jobs
+- Make sure your trigger is deployed and you can manually run your summary with the Calculate button
+- Make sure you see the Related List: Lookup Rollup Summary Schedule Items at the bottom of your Summary
+- Go and manually edit a child record’s Relationship Field or any Relationship Criteria field and save the record
+- Now you should see a record listed in the Lookup Rollup Summary Schedule Items list
+- Let your schedule run
+- Check Recent Lookup Rollup Summary Logs
+- Check Setup > Jobs > Scheduled Jobs & Apex Jobs
 
 
 ### Why are Lookup Rollup Summary Schedule Item records being generated for a real-time rollup, and why aren’t rollups recalculating after a record merge?
