@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Implementation Considerations
+title: Installation Considerations
 nav_order: 1
 parent: Installation
 has_children: false
 ---
 
-# Implementation Considerations
+# Installation Considerations
 
 <br/>
 
