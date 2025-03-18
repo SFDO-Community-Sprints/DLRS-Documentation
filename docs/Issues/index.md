@@ -85,7 +85,7 @@ Please see “[Getting Started](https://sfdo-community-sprints.github.io/DLRS-Do
 
 ### Can I build a roll-up where one of the relationship fields is a formula field referencing a parent object?
 
-Depending on your use case, your options include:you could have a few options.If you use the “Invocable by Automation” mode through a Flow (it is just an Invocable Action) then you can use Flow to tell DLRS when to recalculate the rollup. If you know your logic then you could intelligently prompt a recalculation for specific rollups for specific parent records.
+Depending on your use case, there are a few options. If you use the “Invocable by Automation” mode through a Flow (it is just an Invocable Action) then you can use Flow to tell DLRS when to recalculate the rollup. If you know your logic then you could intelligently prompt a recalculation for specific rollups for specific parent records.
 
 Other options, put a random text field on the record and just put a random value in there, or a number and increment the number. You can then tell the rollup via Relationship Criteria Fields that this field should be monitored, anytime you change the value to anything different then it will fire the rollup. That would give you a lot of ways to update that value and force the rollup to update.
 
