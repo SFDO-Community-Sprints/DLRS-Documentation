@@ -7,7 +7,7 @@ has_children: true
 
 # Getting Started
 
-**NOTE:** This set of instructions uses the "old wizard" in Visualforce, which is fully functional. But there is a new LWC-based rollup creation and management wizard that is technically still in beta. Directions for gettings started with that new wizard are [here] (https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html).
+**NOTE:** This set of instructions uses the "old wizard" in Visualforce, which is fully functional. But there is a new LWC-based rollup creation and management wizard that is technically still in beta. Directions for "getting started" using the new wizard are [here] (https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html).
 
 ## Creating a New Lookup Rollup Summary
 
