@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Challenges with Code Coverage
-nav_order: 3
-parent: Architecture
+nav_order: 6
+parent: User Guide
 has_children: false
 ---
 
