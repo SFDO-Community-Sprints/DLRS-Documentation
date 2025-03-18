@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Merging
-nav_order: 4
+nav_order: 5
 parent: User Guide
 has_children: false
 ---
