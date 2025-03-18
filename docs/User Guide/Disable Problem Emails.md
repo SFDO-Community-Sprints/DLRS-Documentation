@@ -2,7 +2,7 @@
 layout: default
 title: Disable Problem Emails
 nav_order: 4
-parent: Getting Started
+parent: User Guide
 has_children: false
 ---
 
