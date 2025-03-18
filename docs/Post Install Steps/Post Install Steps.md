@@ -6,7 +6,7 @@ has_children: true
 ---
 
 # Post Install Steps
-This is not *technically* required when you install DLRS, but we believe it to be extremely important.  We would not want any org to fail to do these steps unknowingly and thus leave behind errors or unclean data. In particular, if you don’t have RollupJob scheduled, rollups may not properly recalculate after record [merges][https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Merging.html].
+This is not *technically* required when you install DLRS, but we believe it to be extremely important.  We would not want any org to fail to do these steps unknowingly and thus leave behind errors or unclean data. In particular, if you don’t have RollupJob scheduled, rollups may not properly recalculate after record [merges](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Merging.html).
 
 # <span style="text-decoration:underline;">Schedule ‘RollupJob’ Apex class at least once per day</span>
 
