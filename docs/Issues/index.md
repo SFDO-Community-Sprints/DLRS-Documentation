@@ -126,8 +126,8 @@ The Relationship Criteria field only applies to Child Records and not Parent Rec
 
 If you want to filter parent records, you have to use Schedule Full Calculate. That will avoid updating any parents that are filtered out.
 
-- [ ] Change the calculation mode to Invocable by Automation.
-- [ ] Here is the [Schedule Full Calculate documentation](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html#full-calculation---recalcuate-now-or-schedule-recalculation) to set up if you want to exclude parent records from the rollup
+- Change the calculation mode to Invocable by Automation.
+- Here is the [Schedule Full Calculate documentation](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html#full-calculation---recalcuate-now-or-schedule-recalculation) to set up if you want to exclude parent records from the rollup
 
 *Topics: Filter, relationship criteria*
 
