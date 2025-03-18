@@ -174,9 +174,9 @@ Go to the Lookup Rollup Calculate Jobs tab and you should see a record in that o
 
 How do you find Lookup Rollup Calculate Jobs?
 
-- [ ] If you are in the Declarative Lookup Rollup App, go to the nine-dot square on the left side of your tab line.
-- [ ] Click the square and in the search box, Type Lookup Rollup.
-- [ ] You’ll see the Lookup Rollup Calculate Jobs. Click on it and delete the other job that’s running and add it back to be calculated.
+- If you are in the Declarative Lookup Rollup App, go to the nine-dot square on the left side of your tab line.
+- Click the square and in the search box, Type Lookup Rollup.
+- You’ll see the Lookup Rollup Calculate Jobs. Click on it and delete the other job that’s running and add it back to be calculated.
 
 *Topics: rollup job*
 
@@ -214,8 +214,8 @@ This updates as expected with a count of only those files that are linked to the
 
 Number_of_attachments__c and Number_of_files__c can be summed with a formula field (or number field set that can be set with a before record save flow or Apex trigger). You can confirm this by checking out the record’s Attachments related list on a Case record that is not updating as you expect.
 
-- [ ] Classic: Edit, View, Del for Attachments; Preview, Download, Del for Files
-- [ ] Lightning Experience: Delete, Download for Attachments; Download, Share, Public Link, View File Details, Upload New Version, Edit File Details, Delete, Remove from Record for Files
+- Classic: Edit, View, Del for Attachments; Preview, Download, Del for Files
+- Lightning Experience: Delete, Download for Attachments; Download, Share, Public Link, View File Details, Upload New Version, Edit File Details, Delete, Remove from Record for Files
 
 
 ## Error and Warning Messages
@@ -227,37 +227,17 @@ A batch Apex job related to the RollupJob class will fail if the user is inactiv
 
 Scheduling of jobs changes slightly based on what version you are on. If you are on DLRS version v2.21 or above, these are the steps to follow
 
-- [ ] From the new Manage Lookup Summaries (Beta) Page, click on the rollup you are wanting to change
-- [ ] From the Rollup, click on Schedule Job in the path at the top.
-- [ ] Once in the Process Scheduled Items screen, find the schedule in the Existing Schedules of RollupJob you want to delete, in the dropdown carrot at the end of the line select Delete.
-- [ ] [Here is a document](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html#deploying-and-scheduling-rollups-for-version-221) for further information on scheduling jobs (v2.21 or above)
+- From the new Manage Lookup Summaries (Beta) Page, click on the rollup you are wanting to change
+- From the Rollup, click on Schedule Job in the path at the top.
+- Once in the Process Scheduled Items screen, find the schedule in the Existing Schedules of RollupJob you want to delete, in the dropdown carrot at the end of the line select Delete.
+- [Here is a document](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html#deploying-and-scheduling-rollups-for-version-221) for further information on scheduling jobs (v2.21 or above)
 
 If you are on DLRS version v2.20 or below, these are the steps to follow:
 
-- [ ] Delete the scheduled job:
-- [ ] 
-
-<table>
-  <tr>
-   <td>
-    Go to Setup
-   </td>
-   <td>
-    Scheduled Jobs
-   </td>
-   <td>
-    «Name of RollupJob»
-   </td>
-   <td>
-    Del
-   </td>
-  </tr>
-</table>
-
-
-- [ ] To add the new scheduled job: From the old Manage Lookup Summaries Page, select the rollup you are wanting to change from the drop down. Select Schedule Full Calculate
-- [ ] Set the schedule as you would like and select Schedule Recurring Full Calculate Job
-- [ ] [Here is a document](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/#activating-new-lookup-rollup-summary) for further information on scheduling jobs (v2.20 or below)
+- Delete the scheduled job: Go to Setup > Scheduled Jobs > Name of Rollup job
+- To add the new scheduled job: From the old Manage Lookup Summaries Page, select the rollup you are wanting to change from the drop down. Select Schedule Full Calculate
+- Set the schedule as you would like and select Schedule Recurring Full Calculate Job
+- [Here is a document](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/#activating-new-lookup-rollup-summary) for further information on scheduling jobs (v2.20 or below)
 
 It is highly recommended to upgrade to the latest version of DLRS as it is easier to make these and all changes via the wizard (rather than Setup).
 
@@ -307,14 +287,12 @@ If you are in the new wizard (v 2.21 and beyond) you will need to click on the c
 These records in the Lookup Rollup Summary Schedule Items object are being created when a trigger is deployed (so Calc Mode is either “Scheduled” OR “Realtime) and the box *Deploy code to support record merging is checked* when deploying the trigger.
 
 What is happening here:
-
-- [ ] The DLRS rollups referenced in the Lookup Rollup Summary Schedule Items records are not in Scheduled mode and never have been.
-- [ ] The “Parent Record” for all of the Lookup Rollup Summary Schedule Items records will merge all the records
+- The DLRS rollups referenced in the Lookup Rollup Summary Schedule Items records are not in Scheduled mode and never have been.
+- The “Parent Record” for all of the Lookup Rollup Summary Schedule Items records will merge all the records
 
 Solution:
-
-- [ ] Remove the trigger, re-deploy it, and uncheck Deploy code to support record merging , not that no new Lookup Rollup Summary Schedule Items records should be created post-merging.
-- [ ] [Full solution documentation can be found here](https://andyinthecloud.com/2016/06/19/declarative-rollup-tool-summer-release/)
+- Remove the trigger, re-deploy it, and uncheck Deploy code to support record merging , not that no new Lookup Rollup Summary Schedule Items records should be created post-merging.
+- [Full solution documentation can be found here](https://andyinthecloud.com/2016/06/19/declarative-rollup-tool-summer-release/)
 
 If you do want to use the Deploy code to support record merging, you should also make sure you schedule the RollupJob Apex class to run on some schedule.
 
@@ -334,11 +312,9 @@ dlrs.RollupService.RollupValidationException: Scheduled rollups are running in l
 
 
 What do I do?
-
-
-- [ ] Run a report or create list view on the Lookup Rollup Summary Schedule Items object that filters for records that do not contain a value in the `Lookup Rollup Summary 2` field. If you have records like this its possible they are very old, since this field has been being populated since v1.15 and beyond. If you want you can delete these records and re-run a full calculate for the associated Rollups.
-- [ ] Next you need to go to the Object Manager in Setup and find the Lookup Rollup Summary Schedule Items object. Locate the field Lookup Rollup Summary (its a Master-Detail) with the API name `dlrs__LookupRollupSummary__c`.
-- [ ] Delete this field and don’t worry about accidentally deleting others the platform will block this. This will not effect any other data in your org as it is was purely used for the operation of the tool in prior releases and is now no longer needed.
+- Run a report or create list view on the Lookup Rollup Summary Schedule Items object that filters for records that do not contain a value in the `Lookup Rollup Summary 2` field. If you have records like this its possible they are very old, since this field has been being populated since v1.15 and beyond. If you want you can delete these records and re-run a full calculate for the associated Rollups.
+- Next you need to go to the Object Manager in Setup and find the Lookup Rollup Summary Schedule Items object. Locate the field Lookup Rollup Summary (its a Master-Detail) with the API name `dlrs__LookupRollupSummary__c`.
+- Delete this field and don’t worry about accidentally deleting others the platform will block this. This will not effect any other data in your org as it is was purely used for the operation of the tool in prior releases and is now no longer needed.
 
 Note: If you do not see the Delete option for the above field - try switching to Salesforce Classic UI mode.
 
