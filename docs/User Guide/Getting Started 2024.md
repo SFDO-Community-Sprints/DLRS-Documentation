@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started - Version 2.21
 nav_order: 
-parent: User Guide
+parent: Getting Started
 has_children: false
 ---
 
