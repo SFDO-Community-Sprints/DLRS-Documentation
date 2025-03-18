@@ -55,10 +55,10 @@ In Realtime mode, DLRS installs an Apex trigger on the child object. This means 
 ## Invocable by Automation (labeled Process Builder in versions prior to 2.21) 
 Invocable by automation mode option allows you to call the DLRS trigger in declarative automation, like Flow, either as an immediate or scheduled action. This does not require you to deploy a child trigger.
 
-Because the child trigger is not required this calculation mode can also be used if you would like to manually trigger the rollup using the Recalculate Now button or use the Schedule Recalculation button to schedule a full recalculation. 
+Because the child trigger is not required, this calculation mode can also be used if you would like to manually trigger the rollup using the Recalculate Now button or use the Schedule Recalculation button to schedule a full recalculation. 
 
 ### Considerations for Invocable by Automation 
-* This mode is not triggered by an edit on the child object. It must either be referenced in automation, manually triggered by clicking on the Recalculate Now button or scheduled using the Schedule Recalculation button. 
+* This mode is not triggered by an edit on the child object. It must either be referenced in automation, manually triggered by clicking on the Recalculate Now button, or scheduled using the Schedule Recalculation button. 
 
 ## Developer 
 The ‘Developer’ mode option allows you to call the DLRS trigger in Apex. This can be useful if you wish to use the DLRS calculation as part of a larger Apex action. 
@@ -75,7 +75,7 @@ Full recalculate is when DLRS loops through every existing child record and calc
 The `Recalculate Now` button does a full recalculation of the rollup looping through every existing child record and calculating the rollup on the parent, regardless of whether the child record has been edited or not.
 
 ### Schedule Recalculation Button (labeled Schedule Full Calculate in versions prior to 2.21) 
-The `Schedule Recalculation` button does the same full recalculation at the `Recalculate Now` button, it simply does that full recalculation at a scheduled time that you set. 
+The `Schedule Recalculation` button does the same full recalculation as the `Recalculate Now` button, it simply does that full recalculation at a scheduled time that you set. 
 
 ### Considerations for Recalculate Now/Schedule Recalculation
 * In general, Recalculation should be run between midnight and 6am to avoid conflict with daytime operations.
