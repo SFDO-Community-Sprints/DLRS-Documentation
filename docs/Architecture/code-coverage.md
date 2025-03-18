@@ -6,7 +6,9 @@ parent: User Guide
 has_children: false
 ---
 
-# Problem
+# Challenges with Code Coverage 
+
+## Problem
 
 The tool works its magic because it dynamically deploys an Apex Trigger into the org that differs the actual processing of the rollup into the package. The processing is driven by the Rollup definitions the user defines. The tool, like a real developer, is subject to the same Apex deployment rules (e.g. code coverage) and requires an Apex Test to cover the trigger code it generates.
 
@@ -14,13 +16,13 @@ As it's a machine generated test it's not very bright. Often it's just enough to
 
 This can be seen variably, as trigger execution order is not fixed on the platform, so sometimes the generated trigger may fire first and other times not. Also this issue is mostly only seen when you're deploying to production (either via Change Set or using Manage Child Trigger in production) because only production insists on test coverage, so the problem may go unnoticed in Sandbox.
 
-# More Light on the Problem
+## More Light on the Problem
 
 The generated test just needs the generated trigger to fire, just once, and it does not need the child record to actually insert. As such it catches all exceptions to avoid test failures that it doesn't really care about (since the packaged rollup code has plenty of testing in it and it's not testing any other trigger code on the object either). As such in previous versions of the tool generated tests made it hard to see the underlying problem. This has been addressed in the latest version of the tool, but you may need to refresh the generated test in Sandbox by using Manage Child Triggers to remove and deploy. You can see if you've got a new style generated test, by looking for dlrs.RollupService.handleTest in the generated test code.
 
 Once you have a new style generated test in Sandbox, if you try to either explicitly run the test from the Apex Test Execution page under Setup or Developer Console, you can see if you've got any coverage or errors that would preventing it going into production. Note due to the trigger order of execution behaviour above, you may not still see any problems. It's only when trying to push to production or use the Manage Child Trigger page in production you may finally see the error preventing code coverage.
 
-# Solutions Today
+## Solutions Today
 
 In order to address errors preventing code coverage, it's likely you will need a developer to help. If you're lucky it may just be a need to run the Change Set or Manage Child Trigger deployments by another user that satisfies whatever other Apex Trigger validation logic is throwing the error.
 
@@ -45,7 +47,7 @@ Study the errors you get and adjust the second line to populate required fields 
        new Opportunity(SomeRequiredField__c = 'AValue', SomeOtherRequiredField__c = 'AnotherValue'));
     Database.rollback(sp);
 
-# Solutions Going Forward
+## Solutions Going Forward
 
 Looking forward i'm keen to make a few enhancements in this area to ease these types of problems.
 
