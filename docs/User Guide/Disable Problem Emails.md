@@ -8,7 +8,7 @@ has_children: false
 
 # Disable “Problem” Emails using a Custom Setting
 
-It is not recommended to leave this setting in place permanently. The purpose of the settings is to provide a reprieve from the error emails to allow your organization time to troubleshoot and resolve the underlying cause of the errors without the repetitive error emails causing limit issues.
+**It is not recommended to leave this setting in place permanently.** The purpose of this setting is to provide a reprieve from the error emails to allow your organization time to troubleshoot and resolve the underlying cause of the errors without the repetitive error emails causing limit issues.
 
 1. Go to Set up > Custom Settings and locate the Declarative Lookup Rollup Summaries custom setting.
 
