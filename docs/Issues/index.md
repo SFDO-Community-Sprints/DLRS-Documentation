@@ -15,7 +15,7 @@ has_children: true
 
 ### Is DLRS safe to install in a Salesforce production environment?
 
-There can be concerns about installing Declarative Lookup Rollup Summaries (DLRS) in a Salesforce production environment as it is an open source application. However, this does not introduce an inherent security risk. It is safe to install DLRS in your production org and it is recommended you do so via [download on the AppExchange](https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3000000B45gWEAR).
+There can be concerns about installing Declarative Lookup Rollup Summaries (DLRS) in a Salesforce production environment as it is an open source application. However, this does not introduce an inherent security risk. It is safe to install DLRS in your production org and it is recommended you do so via [download Metadeploy](https://install.salesforce.org/products/dlrs/latest).
 
 DLRS’s managed package has gone through Salesforce’s rigorous [AppExchange security review](https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/security_review_overview.htm). This means that Salesforce’s security team has reviewed the code and determined it correctly respected various security guidelines, including user permissions. DLRS has the equivalent security expectation and holds the same trust assurances as any commercially installed package on the AppExchange.
 
