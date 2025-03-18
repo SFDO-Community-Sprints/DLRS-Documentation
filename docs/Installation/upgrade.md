@@ -26,7 +26,7 @@ If that doesn’t work, try:
 
 If you get results, you need to migrate. If not, your existing rollups are already in CMDT records!
 
-- If you need to migrate, export the results of that query so you’ll can create new records via the [Instructions in Getting Started](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/docs/User%20Guide/index.md](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/).
+- If you need to migrate, export the results of that query so you’ll can create new records via the [Instructions in Getting Started](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/).
 
 Note: If you have data in the Test Code field, you will need to move that code to either the Test Code (Child Object) or Test Code (Parent Object) - or both.
 
