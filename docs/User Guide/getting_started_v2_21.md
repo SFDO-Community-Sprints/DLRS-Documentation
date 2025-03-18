@@ -9,6 +9,8 @@ has_children: false
 # Getting Started using the DLRS Wizard (in versions 2.21 and after)
 ## Creating a New Lookup Rollup Summary
 
+(Not technically a DLRS step. But you must first create the field on the parent object that is going to store your rollup results. You will need this field to exist when creating your rollup.)
+
 Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_app_launcher.png" width="50%" alt="DLRS Beta from the App Launcher">
@@ -23,7 +25,7 @@ Fill out the following fields. While not all fields listed below are required to
         - Field to Aggregate <br>
         - Relationship Field <br>
         - Parent Object <br>
-        - Aggregate Result Field <br>
+        - Aggregate Result Field (the field you created first, above <br>
         - Rollup Type <br>
         - Calculation Mode <br>
         - Calculation Sharing Mode <br>
