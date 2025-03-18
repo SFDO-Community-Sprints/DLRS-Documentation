@@ -8,6 +8,8 @@ has_children: true
 # Getting Started
 ## Creating a New Lookup Rollup Summary
 
+(0. Not technically a DLRS step. But you must first create the field on the parent object that is going to store your rollup results. You will need this field to exist when creating your rollup.)
+
 1. Open the DLRS (Declarative Lookup Rollup Summaries) App. Click the third tab 'Manage Lookup Rollup Summaries'.
 
 ![DLRS Lookup Relation Fields](/DLRS-Documentation/assets/DLRSLookupRelationFields.png)
@@ -22,7 +24,7 @@ has_children: true
         - Relationship Field<br>
         - Field to Aggregate<br>
         - Aggregate Operation<br>
-        - Aggregate Result Field<br>
+        - Aggregate Result Field (The field you created in Step 0, above.)<br>
         - Calculation Mode<br>
         - Calculation Sharing Mode<br>
 
