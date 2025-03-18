@@ -14,17 +14,29 @@ To schedule RollupJob you have two choices:
 
 1. Setup>Apex Classes>Schedule Apex
    Job Name: [choose your convention. We recommend “RollupJob - Overnight”]
+
    Apex Class: RollupJob
+
    Schedule Using: [select either method]
+
    Frequency: Set this to at least once per day.
+
    Start: [might as well start today!]
+
    End: [set this WAYYYYY out into the future]
+
    Preferred Start Time: [If you’re only doing once per day, put it in the middle of the night.]
 
 3. Using the scheduler on the **DLRS Manage Lookup Rollup Summaries (Beta)** tab.
+
    Go to the Beta tab.
+
    Click Manage RollupJob
+
    Configure New Job Frequencies>Templates
+
    Template: Once Every Day
+
    Hour of the Day: [middle of the night]
+
    Click Schedule
