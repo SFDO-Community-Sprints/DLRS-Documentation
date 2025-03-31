@@ -43,6 +43,9 @@ In this mode, DLRS would not run instantly. When the Rollup Definition is deploy
 * For example, if you set up a DLRS to count the number of open cases per account and you know that most clients would report a case infrequently and that the account executive reports on the number of open cases for their accounts once a month, you would set up the schedule to run every two weeks or before a certain date in the month. 
 * If you want to review the records awaiting processing, it’s easy to create a report based on the Lookup Rollup Summary Schedule Items object. 
 
+### Merged Records and Scheduled Items
+Merged records may create scheduled items because it was a problem to recalculate the rollup in real-time for that scenario. When records are merged, the system may not be able to immediately recalculate the rollup due to the complexity and potential conflicts that can arise during the merge process. Therefore, the system creates scheduled items to handle the recalculation at a later time, ensuring that the rollup is accurately updated without causing performance issues or errors during the merge.
+
 ## Realtime
 In Realtime mode, DLRS installs an Apex trigger on the child object. This means the rollup runs immediately when a child record is created or updated, and the target fields are edited. It only triggers if the Field to Aggregate or Criteria fields of the Rollup job are changed.
 
