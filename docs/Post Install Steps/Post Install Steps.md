@@ -23,7 +23,7 @@ To schedule RollupJob you have two choices:
 
 2. The second option will work no matter what version you are using.
    
-   Go to Setup>Apex Classes>Schedule Apex
+   Go to Setup>Scheduled Jobs>Schedule Apex
    - Job Name: [choose your convention. We recommend “RollupJob - Overnight”]
    - Apex Class: RollupJob
    - Schedule Using: [select either method]
