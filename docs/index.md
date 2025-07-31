@@ -32,7 +32,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 
 ## When to set DLRS to run and How
 
-- IMAGE GOES HERE
+![Logo](assets/images/flowchart.png)
 
 
 
