@@ -30,7 +30,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 * Concatenate, and
 * First and Last.
 
-## When to set DLRS to run and How
+## When should I set DLRS to run and How do I do it?
 
 ![Logo](assets/images/flowchart.png)
 
