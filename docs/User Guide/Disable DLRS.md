@@ -24,8 +24,9 @@ Available in version 2.23
 
       <img src="../assets/images/DLRSCustomSetting.png" width="65%" alt="Custom Setting">
        
-3. Check the “Disable DLRS Globally”checkbox and click Save.
+3. Check the “Disable DLRS Globally” checkbox and click Save.
    
+
       
 
 # Disable DLRS for Individual Users
