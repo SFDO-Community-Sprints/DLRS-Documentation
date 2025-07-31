@@ -35,13 +35,14 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 ![Logo](assets/images/flowchart.png)
 
 **Sorry we couldn't get clickable links into the image! Use these**:
-- [Link 1](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html#watch-for-changes-and-process-later-calculation-mode)
+- [Link 1](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-watch-for-changes-and-process-later)
 - [Link 2](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Merging.html)
 - [Considerations Link 1](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-realtime)
-- [Considerations Link 2](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-recalculate-nowschedule-recalculation)
+- [Considerations Link 2](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-realtime)
 - [Considerations Link 3](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-recalculate-nowschedule-recalculation)
-- [Considerations Link 4](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-invocable-by-automation)
-- [Considerations Link 5](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-developer)
+- [Considerations Link 4](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-recalculate-nowschedule-recalculation)
+- [Considerations Link 5](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-invocable-by-automation)
+- [Considerations Link 6](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-developer)
 
 ## Features Summary
 
