@@ -30,6 +30,12 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 * Concatenate, and
 * First and Last.
 
+## When to set DLRS to run and How
+
+- IMAGE GOES HERE
+
+
+
 ## Features Summary
 
 - Rollup information between Lookup relationships not previously possible without writing Apex Triggers
@@ -46,7 +52,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Realtime trigger - Set Rollup to `Realtime` Calculation Mode.
 - Async trigger based calculations - Set Rollup to `Watch for Changes and Process Later` (`Scheduled` in version prior to 2.21) Calculation Mode.
 - Trigger from declarative automation - `Invocable by Automation` (`Process Builder` in versions prior to 2.21) - This is also what allows DLRS to run in Professional Edition. [Info](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html)
-- Full calculations - There are buttons at the bottom of the rollup to manually recalcate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
+- Full calculations - There are buttons at the bottom of the rollup to manually recalculate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
 
 ## DLRS History 
 [Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
