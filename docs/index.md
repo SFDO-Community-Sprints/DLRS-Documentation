@@ -30,6 +30,20 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 * Concatenate, and
 * First and Last.
 
+## When should I set DLRS to run and How do I do it?
+
+![Logo](assets/images/flowchart.png)
+
+**Sorry we couldn't get clickable links into the image! Use these**:
+- [Link 1](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-watch-for-changes-and-process-later)
+- [Link 2](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/Merging.html)
+- [Considerations Link 1](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-realtime)
+- [Considerations Link 2](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-realtime)
+- [Considerations Link 3](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-recalculate-nowschedule-recalculation)
+- [Considerations Link 4](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-recalculate-nowschedule-recalculation)
+- [Considerations Link 5](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-invocable-by-automation)
+- [Considerations Link 6](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html#considerations-for-developer)
+
 ## Features Summary
 
 - Rollup information between Lookup relationships not previously possible without writing Apex Triggers
@@ -46,7 +60,7 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 - Realtime trigger - Set Rollup to `Realtime` Calculation Mode.
 - Async trigger based calculations - Set Rollup to `Watch for Changes and Process Later` (`Scheduled` in version prior to 2.21) Calculation Mode.
 - Trigger from declarative automation - `Invocable by Automation` (`Process Builder` in versions prior to 2.21) - This is also what allows DLRS to run in Professional Edition. [Info](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html)
-- Full calculations - There are buttons at the bottom of the rollup to manually recalcate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
+- Full calculations - There are buttons at the bottom of the rollup to manually recalculate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
 
 ## DLRS History 
 [Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)
