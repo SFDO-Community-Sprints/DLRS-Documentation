@@ -7,6 +7,7 @@ has_children: false
 ---
 
 # Disable DLRS Globally using a Custom Setting
+Available in version 2.23
 
 **Note**: This setting will disable ALL existing and newly created DLRS rollups in your system. This should be used to temporarily stop the rollups in particular situations, for example data migrations or troubleshooting. 
 
