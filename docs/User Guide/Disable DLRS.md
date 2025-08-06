@@ -30,6 +30,7 @@ Available in version 2.23
       
 
 # Disable DLRS for Individual Users
+Available in version 2.23
 
 Disable DLRS for Individual Users using a Custom Permission and field on the DLRS rollup record.
 
@@ -76,6 +77,7 @@ Disable DLRS for Individual Users using a Custom Permission and field on the DLR
 
 
 # Disable DLRS using Apex API Method
+Available in version 2.23
 
 There is a new method that allows DLRS to be disabled in Apex.
 
