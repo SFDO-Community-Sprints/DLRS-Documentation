@@ -55,41 +55,39 @@ Note: If you have data in the Test Code field, you will need to move that code t
 
 Now you can install the updated version of DLRS via [Salesforce.org MetaDeploy ](https://install.salesforce.org/products/dlrs/latest). (Follow the step by step instructions under the [My current version is 2.0 or above process above](#My-current-version-is-2.0-or-above). 
 
-#### Extra Credit:
-
-Do you want to create these records via an import? You can!
+### Extra Credit if current version is below 2.0: Do you want to create the Lookup Rollup Summary records via an import? You can!
 
 **Steps:**<br>
-Open up Salesforce Inspector Reloaded or the Dev Console and run the following SOQL query:
+1. Open up Salesforce Inspector Reloaded or the Dev Console and run the following SOQL query:
 
-If you run the query **before** installing the upgrade:
-> Select Id, dlrs__Active__c, dlrs__AggregateAllRows__c, dlrs__AggregateOperation__c, dlrs__AggregateResultField__c, dlrs__CalculationMode__c, dlrs__CalculationSharingMode__c,   dlrs__ChildObject__c, dlrs__ConcatenateDelimiter__c, dlrs__Description__c, dlrs__FieldToAggregate__c, dlrs__FieldToOrderBy__c, DeveloperName, dlrs__ParentObject__c, dlrs__RelationshipCriteria__c, dlrs__RelationshipCriteriaFields__c, dlrs__RelationshipField__c, dlrs__RowLimit__c, dlrs__TestCode__c, dlrs__TestCodeSeeAllData__c, MasterLabel FROM dlrs__LookupRollupSummary2__mdt 
+   If you run the query **before** installing the upgrade:
+   > Select Id, dlrs__Active__c, dlrs__AggregateAllRows__c, dlrs__AggregateOperation__c, dlrs__AggregateResultField__c, dlrs__CalculationMode__c,    dlrs__CalculationSharingMode__c,   dlrs__ChildObject__c, dlrs__ConcatenateDelimiter__c, dlrs__Description__c, dlrs__FieldToAggregate__c, dlrs__FieldToOrderBy__c, DeveloperName, dlrs__ParentObject__c, dlrs__RelationshipCriteria__c, dlrs__RelationshipCriteriaFields__c, dlrs__RelationshipField__c, dlrs__RowLimit__c, dlrs__TestCode__c, dlrs__TestCodeSeeAllData__c, MasterLabel FROM dlrs__LookupRollupSummary2__mdt 
 
-If you run the query **after** installing the upgrade (note that all that is different is the namespace dlrs is missing):
-> Select Id, Active__c, AggregateAllRows__c, AggregateOperation__c, AggregateResultField__c, CalculationMode__c, CalculationSharingMode__c, ChildObject__c, ConcatenateDelimiter__c, Description__c, FieldToAggregate__c, FieldToOrderBy__c, DeveloperName, ParentObject__c, RelationshipCriteria__c, RelationshipCriteriaFields__c, RelationshipField__c, RowLimit__c, TestCode__c, TestCodeSeeAllData__c FROM LookupRollupSummary2__mdt 
+   If you run the query **after** installing the upgrade (note that the only difference is the namespace dlrs is missing):
+   > Select Id, Active__c, AggregateAllRows__c, AggregateOperation__c, AggregateResultField__c, CalculationMode__c, CalculationSharingMode__c, ChildObject__c, ConcatenateDelimiter__c, Description__c, FieldToAggregate__c, FieldToOrderBy__c, DeveloperName, ParentObject__c, RelationshipCriteria__c, RelationshipCriteriaFields__c, RelationshipField__c, RowLimit__c, TestCode__c, TestCodeSeeAllData__c FROM LookupRollupSummary2__mdt 
 
-Export those query results and map your existing records onto that spreadsheet using this mapping guide. Remove that dlrs__ header from the field names for easier mapping.
+2. Export those query results and map your existing records onto that spreadsheet using this mapping guide. Remove that dlrs__ header from the field names for easier mapping.
 
-[Mapping Guide](https://docs.google.com/spreadsheets/d/1RsdTNe3SAtd3GuRarr_ajytwul3--0oYh7zKRij1hbg/edit#gid=224647567)
+   [Mapping Guide](https://docs.google.com/spreadsheets/d/1RsdTNe3SAtd3GuRarr_ajytwul3--0oYh7zKRij1hbg/edit#gid=224647567)
 
-#### Insert your records.
-1. Open [Salesforce Inspector Reloaded](https://chromewebstore.google.com/detail/salesforce-inspector-relo/hpijlohoihegkfehhibggnkbjhoemldh).
-2. Click Data Import
-3. Choose:
-   - Metadata for the API Type
-   - Upload for the Action.
-   - LookupRollupSummary2__mdt for the Object.
-   - Excel for the Format
+3. Insert your records.
+   1. Open [Salesforce Inspector Reloaded](https://chromewebstore.google.com/detail/salesforce-inspector-relo/hpijlohoihegkfehhibggnkbjhoemldh).
+   2. Click Data Import
+   3. Choose:
+      - Metadata for the API Type
+      - Upload for the Action.
+      - LookupRollupSummary2__mdt for the Object.
+      - Excel for the Format
 
-![Import Screenshot](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/assets/DLRSUpgradeImportScreenshot.png?raw=true)
+      ![Import Screenshot](https://github.com/SFDO-Community-Sprints/DLRS-Documentation/blob/main/assets/DLRSUpgradeImportScreenshot.png?raw=true)
 
-4. Paste in your Excel data. Notice that the Field Mapping on the right side populates.
-   - You must have a MasterLabel field!
-5. Skip the Id if you have one.
-6. Check that all of your fields are mapped.
-7. Run Upsert Metadata.
-8. Celebrate!
+   4. Paste in your Excel data. Notice that the Field Mapping on the right side populates.
+      - You must have a MasterLabel field!
+   5. Skip the Id if you have one.
+   6. Check that all of your fields are mapped.
+   7. Run Upsert Metadata.
+   8. Celebrate!
 
-#### Bonus:
+**Bonus:**
 
 Delete your old LookupRollupSummary records to keep your org clean now that you don’t need them.
