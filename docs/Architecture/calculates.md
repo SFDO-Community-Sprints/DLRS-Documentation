@@ -112,3 +112,10 @@ Because a Recalculation job (either “Recalculate Now” or “Schedule Recalcu
 - Kate Lohinova
 - Nitzan Marinow
 - Shari Carlson
+
+**And thanks for the DLRS team at the July 2025 Virtual Sprint for contributing the diagrams to this page**
+  
+- Kyle Broeckel
+- Quratulain Tariq
+- Nick Lindberg
+- Michael Kolodner
