@@ -21,7 +21,7 @@ has_children: false
 
     2. If the record already exists and the settings are visible, click Edit.
   
-       <img src="../assets/images/DLRSCustomSetting.png" width="65%" alt="Custom Setting">
+       <img src="../assets/images/DLRSCustomSettingExists.png" width="65%" alt="Custom Setting">
 
 4. Check the “Disable Problem Emails”checkbox and click Save.
 
