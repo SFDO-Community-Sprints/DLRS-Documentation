@@ -1,6 +1,6 @@
 # DLRS Documentation
 
-![Logo](assets/images/DLRS_New_Badge_2022.png)
+![Logo](docs/assets/images/DLRS_New_Badge_2022.png)
 
 ## Description
 
