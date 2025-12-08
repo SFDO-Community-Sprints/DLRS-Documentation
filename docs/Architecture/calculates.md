@@ -58,6 +58,7 @@ In Realtime mode, DLRS installs an Apex trigger on the child object. This means 
 * **Performance Impact**: Realtime mode can degrade Salesforce performance, as every update to the Fields to Aggregate or Criteria on a child record triggers DLRS.
 * **Use Cases**: Realtime mode is useful for immediate data updates. For instance, if a Rollup job counts Tasks on an Opportunity and isn't set to Realtime, logging a call won't immediately update the Task count, potentially confusing users.
 * **Automation Conflicts**: Realtime mode can cause performance issues, especially if it runs alongside other automations (e.g., Flow or Process Builder), leading to looping automations and hitting Salesforce governor limits.
+* **Merge Behavior**: Realtime mode does not usually generate Schedule Item records, but when records are merged DLRS is not able to immediately recalculate rollups due to the complexity and potential conflicts during the merge process. In this case, Schedule Items will be created so that recalculation can happen the next time Rollup Job runs. This is one reason we recommend users always have a daily Rollup Job schedule in place, even if not using Watch for Changes and Process Later mode ([instructions here](https://sfdo-community-sprints.github.io/DLRS-Documentation/Post%20Install%20Steps/Post%20Install%20Steps.html)).
 
 <BR>
 
