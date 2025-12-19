@@ -78,11 +78,6 @@ I need to make some modifications to the existing rollup summary, particularly u
 
 *Topics: childTrigger*
 
-
-### What are the Aggregation Operators?
-Please see “[Getting Started](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/getting_started_v2_21.html)”
-
-
 ### Can I build a rollup where one of the relationship fields is a formula field referencing a parent object?
 
 Depending on your use case, there are a few options. If you use the “Invocable by Automation” mode through a Flow (it is just an Invocable Action) then you can use Flow to tell DLRS when to recalculate the rollup. If you know your logic then you could intelligently prompt a recalculation for specific rollups for specific parent records.
