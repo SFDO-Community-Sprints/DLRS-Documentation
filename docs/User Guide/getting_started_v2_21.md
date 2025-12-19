@@ -79,7 +79,7 @@ All fields, both required and optional, that appear on this page are defined in 
 
 | Name | Description |
 | ------------- | ------------- |
-| Rollup Type | The type of rollup being performed. Options are:<br>Sum<br>Max<br>Min<br>Avg<br>Count<br>Count Distinct<br>Concatenate<br>Concatenate Distinct<br>First<br>Last<br>Please see: [Aggregation Operators](https://sfdo-community-sprints.github.io/DLRS-Documentation/Issues/#what-are-the-aggregation-operators) to see how each Rollup Type works  |
+| Rollup Type | The type of rollup being performed. Options are:<br>Sum<br>Max<br>Min<br>Avg<br>Count<br>Count Distinct<br>Concatenate<br>Concatenate Distinct<br>First<br>Last  |
 | Concatenate Delimiter | If using ‘Concatenate’ or ‘Concatenate Distinct’ in Aggregate Operation, the delimiter is used to separate the values e.g. , (comma) : (semi-colon) etc. To include linebreaks, spaces, and tabs in your delimiter, use BR(), SP(), and TB() respectively. |
 | Field(s) to Order By | Useful if concatenating. |
 | Row Limit | How many rows to include in the rollup. |
