@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Disable DLRS
-nav_order: 7
+nav_order: 8
 parent: User Guide
 has_children: false
 ---

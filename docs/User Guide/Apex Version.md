@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Update Apex Version
-nav_order: 8
+nav_order: 9
 parent: User Guide
 has_children: false
 ---

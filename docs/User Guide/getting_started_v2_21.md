@@ -6,19 +6,20 @@ parent: Getting Started
 has_children: false
 ---
 
-# Getting Started using the DLRS Wizard (in versions 2.21 and after)
+# Getting Started using the DLRS Wizard (in versions 2.21 and later)
 ## Creating a New Lookup Rollup Summary
 
-(Not technically a DLRS step. But you must first create the field on the parent object that is going to store your rollup results. You will need this field to exist when creating your rollup.)
+Before proceeding, be sure to create the field on the parent object to store your rollup results. This will be required when creating your rollup.
 
-Open the “Manage Lookup Rollup Summaries (Beta)” from the App Launcher.
+To begin creating a new rollup, open the DLRS (Declarative Lookup Rollup Summaries) App and navigate to the 'Manage Lookup Rollup Summaries (Beta)' tab.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_app_launcher.png" width="50%" alt="DLRS Beta from the App Launcher">
 
-On this page, at the top of the list view, click the “New” button. If this is the first rollup created in the org, the "Create Rollup" modal window (Step 3) will launch when you open this page.
+On this page, at the top of the list view, click the “New” button. Note: If this is the first rollup created in the org, the "Create Rollup" modal window (Step 3) will launch when you open this page.
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_list_view_new_button_single_rule.png" width="100%" alt="DLRS Beta list view and new button">
 
+### Required fields
 Fill out the following fields. While not all fields listed below are required to save a rule, all fields below are required to have a working rule. <br>
         - Lookup Rollup Summary Label (Lookup Rollup Summary API Name will auto-populate) <br>
         - Child Object <br>
@@ -34,6 +35,7 @@ Below is an example of a simple rule. <br>
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_basic_complete_example_rule.png" width="100%" alt="DLRS Beta Basic Complete Example Rule">
 
+## Detailed Overview of Fields
 All fields, both required and optional, that appear on this page are defined in the chart below.
 
 ### Information Fields
@@ -42,7 +44,7 @@ All fields, both required and optional, that appear on this page are defined in 
 | ------------- | ------------- |
 | Lookup Rollup Summary Label | Name of your new rollup |
 | Lookup Rollup Summary API Name | API Name of your new rollup. This is automatically populated from the Lookup Rollup Summary Label. |
-| Description | Fill this in to help yourself and others remember what this rule is for. |
+| Description | Brief summary of use case for rollup. |
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_information_fields.png" width="100%" alt="DLRS Beta Information Fields">
 
@@ -50,9 +52,9 @@ All fields, both required and optional, that appear on this page are defined in 
 
 | Name | Description |
 | ------------- | ------------- |
-| Child Object | Pick the child object that you want to do your rollup from. |
-| Field to Agregate | The field on the child object that you will be performing a rollup on. |
-| Relationship field | Lists all fields, with relationship fields listed first. You can use any field you need. |
+| Child Object | The child object that you want to do your rollup from. |
+| Field to Aggregate | The field on the child object that you will be performing a rollup on. |
+| Relationship Field | This is the field that holds the ID or relationship from the child to the parent. |
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_child_object_fields.png" width="100%" alt="DLRS Beta Child Object Fields">
 
@@ -79,10 +81,10 @@ All fields, both required and optional, that appear on this page are defined in 
 
 | Name | Description |
 | ------------- | ------------- |
-| Rollup Type | The type of rollup being performed. Options are:<br>Sum<br>Max<br>Min<br>Avg<br>Count<br>Count Distinct<br>Concatenate<br>Concatenate Distinct<br>First<br>Last  |
-| Concatenate Delimiter | If using ‘Concatenate’ or ‘Concatenate Distinct’ in Aggregate Operation, the delimiter is used to separate the values e.g. , (comma) : (semi-colon) etc. To include linebreaks, spaces, and tabs in your delimiter, use BR(), SP(), and TB() respectively. |
+| Rollup Type | The type of rollup being performed. Options are: <br><br>**Sum** - Calculates the sum of your Field to Aggregate from all of the child records returned. Only works on numeric based fields. <br><br>**Max** - Selects only the highest value of the Field to Aggregate from all of the child records returned. Only works on numeric based fields. <br><br>**Min** - Selects only the lowest value of the Field to Aggregate from all of the child records returned. Only works on numeric based fields. <br><br>**Avg** - Calculates the MEAN of the Field to Aggregate from all of the child records it finds. Only works on numeric based fields. <br><br>**Count** - Counts total rows/amount of child records returned. Note: when using Count, it is normally best to use the ID field as your Field To Aggregate. <br><br>**Count Distinct** - Calculates DISTINCT count of the values in your Field to Aggregate. Example: if the returned values are (A, A, A, B, C) in a count it would be 5 but in a count distinct it would only return 3 as there are only 3 distinct values (A, B, C). <br><br>**Concatenate** - Collects values in your Field to Aggregate and places them consecutively into the Aggregate Result Field. Only works on text fields. Example: if the returned values from the Field to Aggregate are (Apple, Apple, Apple, Orange), Concatenate will return "AppleAppleAppleOrange". To instruct DLRS on how to split up the values (comma, dash, semicolon), use the Concatenate Delimiter section below. <br><br>**Concatenate Distinct** - Collects values in your Field to Aggregate and places only the DISTINCT values consecutively into the Aggregate Result Field. Only works on text fields. Example: if the returned values from the Field to Aggregate are (Apple, Apple, Apple, Orange), Concatenate Distinct will return "AppleOrange". To instruct DLRS on how to split up the values (comma, dash, semicolon), use the Concatenate Delimiter section below. <br><br>**First** - Selects the FIRST record from all the child records returned, based on how the results are sorted, then uses the Field to Aggregate from that record. Works with any type of field. Note: use Field(s) to Order By to instruct DLRS on how to sort results. <br><br>**Last** - Selects the LAST record from all the child records returned, based on how the results are sorted, then uses the Field to Aggregate from that record. Works with any type of field. Note: use Field(s) to Order By to instruct DLRS on how to sort results. |
+| Concatenate Delimiter | If using 'Concatenate' or 'Concatenate Distinct' in Aggregate Operation, the delimiter is used to separate the values. Multiple delimiters can be used in combination. Common options are:<br><br>**,** (comma) - A standard delimiter for separating values in a text list.<br><br>**;** (semi-colon) - Another common delimiter, often used for multi-picklist fields or when you want to differentiate values visually.<br><br>**SP()** (space) - You can use this to add a space between concatenated values. Note: using SP() is the only way to insert whitespace on concatenated text fields. Example: Concatenating the values (Apple, Apple, Apple, Orange) with the delimiter ";" will return "Apple;Apple;Apple;Orange". Using the delimiter ";SP()" will return "Apple; Apple; Apple; Orange". Can be used in both long text and rich text fields.<br><br>**TB()** (tab) - Inserts a tab character between values. Can be used in both long text and rich text fields.<br><br>**BR()** (line break) - Inserts a new line between each concatenated value, useful for displaying values in a multi-line format. Can only be used in a long text field and cannot be used in a rich text field (use &lt;br&gt;).<br><br>**&lt;br&gt;** (line break tag) - An HTML line break tag. Note: using &lt;br&gt; is the only way to insert a line break in a rich text field.<br><br>**&lt;p&gt;** (paragraph tag) - An HTML paragraph tag. Note: using &lt;p&gt; is the only way to insert a paragraph break in a rich text field. |
 | Field(s) to Order By | Useful if concatenating. |
-| Row Limit | How many rows to include in the rollup. |
+| Row Limit | How many rows to include in the rollup. Only applies when using the Last or Concatenate Distinct operators. |
 
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_rollup_detail_fields.png" width="100%" alt="DLRS Beta Rollup Details Fields">
 
@@ -112,8 +114,21 @@ For more information please see [this example](https://github.com/SFDO-Community
 Once you have filled out all fields, scroll to the bottom of the page and click “Create”.
 <img src="../assets/images/v2_21/dlrs_beta_v2_21_create_button.png" width="100%" alt="DLRS Beta Create New Rule Button">
 
-Once you have successfully created your rule, you will be greeted by similar toast messages.
-<img src="../assets/images/v2_21/dlrs_beta_v2_21_successful_create.png" width="100%" alt="DLRS Beta Successful Rule Creation Message">
+Once you have successfully created your rule, you should receive a success message, similar to the one below.
+<img src="../assets/images/v2_21/dlrs_beta_v2_21_successful_create.png" width="100%" alt="DLRS Beta Successful Rule Creation Message: Deployment Completed! Metadata saved successfully">
 
 ## Deploying / Scheduling your newly created rule
 To deploy and/or schedule your rule, please go to the [Scheduling Rollups v2.21](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html) article.
+
+
+**Special thanks to the DLRS team at the January 2026 Virtual Sprint for contributing to this page**
+Kyle Sebastian
+Quratulain Tariq
+Aaron Crosman
+Erica Wong
+Amber Crispin
+Megan Lutz
+Caitlyn Duer 
+Shari Carlson
+Kyle Broeckel
+
