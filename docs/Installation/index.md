@@ -56,11 +56,11 @@ In the installation process, when selecting what users to install for, you have 
 
 Use the links below to install into a Professional Edition of Salesforce:
 
-**Sandbox & Scratch Orgs:**  
-[https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cBQWYA2](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cBQWYA2)
+**Sandbox & Scratch Orgs:**
+[https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU)
 
-**Production & Developer Edition Orgs:**  
-[https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cBQWYA2](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cBQWYA2)
+**Production & Developer Edition Orgs:**
+[https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU)
 
 Note: Only the `Invocable by Automation` (labeled "Process Builder" in versions prior to 2.21) calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
