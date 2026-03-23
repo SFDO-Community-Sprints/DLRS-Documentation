@@ -7,9 +7,25 @@ has_children: true
 
 # Current Release Notes
 
-## Release version 2.24
+## Release version 2.25
 
-Install DLRS 2.24 into your production, sandbox, or scratch org via [Salesforce MetaDeploy](https://install.salesforce.org/products/dlrs/latest) to access the updates. There are no post installation steps needed.
+Install DLRS 2.25 into your production, sandbox, or scratch org via [Salesforce MetaDeploy](https://install.salesforce.org/products/dlrs/latest) to access the updates. There are no post installation steps needed.
+
+### What's changed in v2.25?
+Release 2.25 is a quick fix addressing a Trigger Management bug introduced in v2.24.
+See below for a full overview of the updates included in recent releases (2.24 and 2.25).
+
+## Pull Requests/Issues Resolved in this Release
+
+### Critical Changes
+* Fix Trigger Management bug in v2.24 [[PR1581](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1581)]
+
+### Changes
+* Minor updates to Apex MetadataService to support API v66.0 [[PR1581](https://github.com/SFDO-Community/declarative-lookup-rollup-summaries/pull/1581)]
+
+---
+
+## Release version 2.24
 
 ### What's changed in v2.24?
 Release 2.24 focuses on making debugging easier by providing improved error notification emails for batch and scheduled rollup jobs.
