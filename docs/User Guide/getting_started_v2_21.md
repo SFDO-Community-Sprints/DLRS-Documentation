@@ -120,15 +120,15 @@ Once you have successfully created your rule, you should receive a success messa
 ## Deploying / Scheduling your newly created rule
 To deploy and/or schedule your rule, please go to the [Scheduling Rollups v2.21](https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html) article.
 
-
+---
 **Special thanks to the DLRS team at the January 2026 Virtual Sprint for contributing to this page**
-Kyle Sebastian
-Quratulain Tariq
-Aaron Crosman
-Erica Wong
-Amber Crispin
-Megan Lutz
-Caitlyn Duer 
-Shari Carlson
-Kyle Broeckel
+- Kyle Sebastian
+- Quratulain Tariq
+- Aaron Crosman
+- Erica Wong
+- Amber Crispin
+- Megan Lutz
+- Caitlyn Duer 
+- Shari Carlson
+- Kyle Broeckel
 
