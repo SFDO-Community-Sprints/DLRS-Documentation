@@ -29,3 +29,15 @@ out
 
 # CumulusCI
 /test_results.*
+
+# Ruby (for local test site hosting)
+*.gem
+.bundle
+vendor
+Gemfile
+Gemfile.lock
+.ruby-version
+
+# Local test site files
+_site
+_site_docs
