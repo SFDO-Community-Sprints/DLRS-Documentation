@@ -53,7 +53,7 @@ To configure rollups with this tool your user needs a connection and permissions
 * Author Apex (needed to use Manage Child Triggers button)
 * Customize Application (needed to use Manage Rollup Summaries tab to update Custom Metadata)
 
-*Note*: The above are powerful permissions [please review fully before enabling](https://help.salesforce.com/articleView?id=000198725&r=https:%2F%2Fwww.google.com%2F&type=1) - typically these are enabled for Admin users. Topics:
+*Note*: The above are powerful permissions — please review fully before enabling - typically these are enabled for Admin users. Topics:
 
 Known Issues:
 * Release v2.12 Welcome tab incorrectly stated in some cases the Remote Site was created when it was not
@@ -154,7 +154,7 @@ The recommended solution is to schedule the RollupJob class to run periodically 
 
 ### Why are my rollup totals out of date?
 
-- Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly. If you have set the mode to “Scheduled”, have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community.github.io/declarative-lookup-rollup-summaries/Architecture/calculates.html)
+- Check the Calculation Mode field on your DLRS job. Realtime jobs should run every time a record is updated, and Scheduled jobs can be set to run daily, weekly, or monthly. If you have set the mode to “Scheduled”, have you created a Scheduled Apex Job to refresh the calculations? - see [DLRS Calculation](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html)
 - Use the `Full Calculate` button to force a refresh of the calculation; this is the best way to check that your criteria are still appropriate and that the system is finding records to update.
 - Make sure that any updates you are making to the child records will trigger your rollups. For example, if you are using third party tools like Duplicate Check to merge or update records, the record updates may not meet the criteria to trigger DLRS Realtime jobs. You might consider adding a scheduled calculation to your realtime rollups to include records that you merge or update on a regular basis.
 

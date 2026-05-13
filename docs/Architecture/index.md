@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Architecture
-nav_order: 
-has_children: true
+nav_exclude: true
+has_children: false
 ---
 
 Needs Content
