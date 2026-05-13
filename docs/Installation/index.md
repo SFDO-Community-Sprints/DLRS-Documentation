@@ -7,7 +7,7 @@ has_children: true
 
 # Installation
 
-Install the latest version (2.24) of DLRS into your production, sandbox, or scratch org via:
+Install the latest version (2.25) of DLRS into your production, sandbox, or scratch org via:
 <br/><br/>
 [Salesforce.org MetaDeploy](https://install.salesforce.org/products/dlrs/latest){: .btn .btn-blue }
 <br/>
@@ -57,10 +57,10 @@ In the installation process, when selecting what users to install for, you have 
 Use the links below to install into a Professional Edition of Salesforce:
 
 **Sandbox & Scratch Orgs:**
-[https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU)
+[https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM](https://test.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM)
 
 **Production & Developer Edition Orgs:**
-[https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cC9IYAU)
+[https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM)
 
 Note: Only the `Invocable by Automation` (labeled "Process Builder" in versions prior to 2.21) calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
 
