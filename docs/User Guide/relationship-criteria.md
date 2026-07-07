@@ -2,8 +2,9 @@
 layout: default
 title: Relationship Criteria (SOQL Queries)
 nav_order: 5
-parent: User Guide 
+parent: User Guide
 has_children: false
+permalink: /Architecture/relationship-criteria.html
 ---
 
 # How to Construct Relationship Criteria (SOQL Queries)

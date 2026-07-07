@@ -2,7 +2,7 @@
 layout: default
 title: Submit a bug
 nav_order: 1
-parent: Issues/FAQ
+parent: FAQ
 has_children: false
 ---
 
