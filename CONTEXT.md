@@ -54,8 +54,7 @@ All site content and Jekyll config live under `docs/`; the repository root holds
 │   ├── Installation/
 │   ├── Getting Started/
 │   ├── Post Install Steps/
-│   ├── User Guide/
-│   ├── Architecture/
+│   ├── User Guide/ (includes former Architecture pages)
 │   ├── Cookbook/
 │   ├── Issues/
 │   ├── ReleaseNotes/
@@ -83,12 +82,11 @@ The documentation is organized into the following main sections (order matches s
 2. **Installation** (`docs/Installation/`) - Installation guides and configuration
 3. **Getting Started** (`docs/Getting Started/`) - Step-by-step tutorials
 4. **Post Install Steps** (`docs/Post Install Steps/`) - Configuration after installing the package
-5. **User Guide** (`docs/User Guide/`) - Detailed usage instructions
-6. **Architecture** (`docs/Architecture/`) - Technical details about how DLRS calculates
-7. **Cookbook** (`docs/Cookbook/`) - Real-world use case examples
-8. **Issues** (`docs/Issues/`) - Troubleshooting and bug reporting
-9. **Release Notes** (`docs/ReleaseNotes/`) - Version history
-10. **About Us & Contribution** (`docs/About Us & Contribution/`) - Community information
+5. **User Guide** (`docs/User Guide/`) - Detailed usage instructions, including the technical "how and when DLRS calculates" pages that were formerly a separate Architecture section
+6. **Cookbook** (`docs/Cookbook/`) - Real-world use case examples
+7. **Issues** (`docs/Issues/`) - Troubleshooting and bug reporting (section title is **FAQ** in the nav)
+8. **Release Notes** (`docs/ReleaseNotes/`) - Version history
+9. **About Us & Contribution** (`docs/About Us & Contribution/`) - Community information
 
 ### Assets & Images
 - **Single location**: All images live under `docs/assets/images/` (earlier scattered copies in root `assets/`, `images/`, etc. have been removed).
@@ -123,6 +121,7 @@ The documentation is organized into the following main sections (order matches s
   - `title: [Page Title]`
   - `nav_order: [Number]` for ordering
   - `has_children: true/false` for navigation structure
+  - `permalink: [/path.html]` (optional) to pin a fixed URL independent of the file's location — see Page URLs and `permalink` under Links & Images for more info
 
 ### Documentation Style
 - Step-by-step tutorials with numbered lists
@@ -145,8 +144,34 @@ relative to the current page: most pages sit one level deep in a section folder 
 ```
 
 Don't hardcode the baseurl (`/DLRS-Documentation/...`) or use a bare root path (`/assets/...`):
-the first is brittle, the second 404s in production. A few older pages still hardcode it — fine to
-leave, but prefer relative for new content.
+the first is brittle, the second 404s in production. Relative paths are the standard for **new**
+content.
+
+Note that some existing pages link with fully-qualified absolute URLs (e.g.
+`https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html`)
+rather than relative paths.
+
+### Page URLs and `permalink`
+By default Jekyll derives each page's URL from its file path — this repo sets no site-wide
+`permalink` pattern in `_config.yml`, so `docs/User Guide/foo.md` is served at `…/User Guide/foo.html`.
+
+A `permalink:` in a page's frontmatter overrides that default and fixes the page to a specific URL,
+independent of where the file sits in the folder tree. This is core Jekyll — it requires no plugin
+and no `_config.yml` change. The value is root-relative; do not include the baseurl (GitHub Pages
+prepends it) and keep the `.html` extension:
+
+```yaml
+permalink: /Architecture/calculates.html
+```
+
+Use it to keep a page's published URL stable when its file is moved or renamed, so existing links
+(including hardcoded absolute ones and external bookmarks) keep resolving. Some pages therefore
+live in one folder while serving from a URL that reflects a different path — preserve their
+`permalink` when editing frontmatter unless you specifically intend to change the URL.
+
+To intentionally change a URL while keeping the old one working, the `jekyll-redirect-from` plugin
+(present in `Gemfile.lock`; enable via a `plugins:` list in `_config.yml`) can redirect the old URL
+to the new one.
 
 Advanced/rarely needed: Jekyll's `relative_url` filter and `{% link %}` tag can build
 baseurl-aware absolute paths, but they use Liquid and aren't used anywhere in this repo.
