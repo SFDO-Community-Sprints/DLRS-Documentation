@@ -44,3 +44,15 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 # logo: "/assets/images/dlrs-badge.png"
 
 # "favicon.ico" used to change default favicon
+
+########################################################
+# Callout boxes (colored note/warning/legacy blocks).
+# Attach to a blockquote with a {: .name } line, e.g. {: .legacy }
+callouts:
+  note:
+    color: blue
+  legacy:
+    title: Older versions
+    color: blue
+  warning:
+    color: red

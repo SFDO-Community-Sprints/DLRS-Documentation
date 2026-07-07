@@ -62,7 +62,9 @@ Use the links below to install into a Professional Edition of Salesforce:
 **Production & Developer Edition Orgs:**
 [https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM](https://login.salesforce.com/packaging/installPackage.apexp?p0=04tKA000000cCA1YAM)
 
-Note: Only the `Invocable by Automation` (labeled "Process Builder" in versions prior to 2.21) calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
+Note: Only the `Invocable by Automation` calculation mode is compatible with the Professional Edition because of the use of Apex Triggers in all other calculation modes.
+
+{% include callouts/legacy-modes.html %}
 
 <img src="../assets/images/v2_21/InvocablebyAutomation.png" width="50%" alt="Invocable by automation screenshot">
 
