@@ -135,12 +135,12 @@ Use **plain relative paths** for internal links and images — no Liquid or filt
 relative to the current page: most pages sit one level deep in a section folder and use a single
 `../`; the root page `docs/index.md` sits alongside `assets/` and uses none.
 
-```markdown
+```
 ![Rollup config](../assets/images/v2_21/rollup.png)   <!-- image -->
 [Installation guide](../Installation/)                 <!-- internal link -->
 [DLRS Community](https://trailhead.salesforce.com/...) <!-- external link: full URL -->
 ```
-```html
+```
 <img src="../assets/images/v2_21/rollup.png" alt="Rollup config" width="600"> <!-- when you need to size an image -->
 ```
 
@@ -154,20 +154,21 @@ baseurl-aware absolute paths, but they use Liquid and aren't used anywhere in th
 ## Building & Running Locally
 This is a GitHub Pages compatible Jekyll site. The live site builds and deploys automatically; you only need a local setup to preview changes before pushing.
 
-**Prerequisites:**
-- Ruby 3.3.9 (pinned in `.ruby-version`; install via a version manager such as rbenv, asdf, or mise — Bundler does not install Ruby itself)
-- Bundler matching `Gemfile.lock`'s `BUNDLED WITH` (currently 4.0.11): `gem install bundler:4.0.11`
-- A C toolchain for native gem extensions (Xcode Command Line Tools on macOS)
+**1. Install Ruby** — version 3.3.x, via a version manager (rbenv, asdf, or mise), which picks up
+the pinned version from `.ruby-version`. Bundler (the `bundle` command used in the next steps)
+ships with Ruby, so you don't install it separately.
 
-**First Time Setup:**
-Install dependencies into a project-local folder (avoids sudo issues). The `Gemfile`, `Gemfile.lock`, and `.ruby-version` files are committed, so contributors get a reproducible dependency set — no need to create a Gemfile by hand.
-```bash
+**2. Install Ruby gems needed by GitHub Pages** — into a project-local folder (avoids sudo issues). `bundle install` reads the list of gems needed, at their exact pinned versions, from the committed `Gemfile` and `Gemfile.lock`.
+```
 bundle config set path 'vendor/bundle'
 bundle install
 ```
+If `bundle install` reports a Bundler version mismatch, install the version named at the bottom of
+`Gemfile.lock` under `BUNDLED WITH` (e.g. `gem install bundler:<that-version>`). If a native gem
+fails to compile, install a C toolchain (Xcode Command Line Tools on macOS).
 
-**Serve the site:**
-```bash
+**3. Serve the site**
+```
 # Serve the site (matches GitHub Pages configuration)
 bundle exec jekyll serve --source docs --baseurl="/DLRS-Documentation"
 ```
@@ -187,7 +188,7 @@ Then open your browser to: **http://localhost:4000/DLRS-Documentation/**. Jekyll
   they respect the baseurl — see Content Conventions → Links & Images.
 
 **Keeping dependencies current:**
-```bash
+```
 # Keep GitHub Pages gem updated for compatibility
 bundle update github-pages
 ```
