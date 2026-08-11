@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cookbook Contribution Guidelines
-nav_order: 1
+nav_order: 3
 parent: About Us & Contribution
 has_children: false
 ---

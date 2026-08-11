@@ -4,6 +4,7 @@ title: Getting Started - Version 2.21
 nav_order: 1
 parent: Getting Started
 has_children: false
+permalink: "/User Guide/getting_started_v2_21.html"
 ---
 
 # Getting Started using the DLRS Wizard (in versions 2.21 and later)

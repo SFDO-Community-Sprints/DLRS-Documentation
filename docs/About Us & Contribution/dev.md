@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Developer Setup
-nav_order: 2
+nav_order: 4
 parent: About Us & Contribution
 has_children: false
 ---

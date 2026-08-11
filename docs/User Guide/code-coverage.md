@@ -4,6 +4,7 @@ title: Challenges with Code Coverage
 nav_order: 10
 parent: User Guide
 has_children: false
+permalink: /Architecture/code-coverage.html
 ---
 
 # Challenges with Code Coverage 

@@ -4,6 +4,7 @@ title: How and When DLRS Calculates
 nav_order: 1
 parent: User Guide
 has_children: false
+permalink: /Architecture/calculates.html
 ---
 
 # How and When DLRS Calculates

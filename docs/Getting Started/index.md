@@ -15,7 +15,7 @@ has_children: true
 
 2. Open the DLRS (Declarative Lookup Rollup Summaries) App. Click the third tab 'Manage Lookup Rollup Summaries'.
 
-![DLRS Lookup Relation Fields](/DLRS-Documentation/assets/images/DLRSLookupRelationFields.png)
+    ![DLRS Lookup Relation Fields](/DLRS-Documentation/assets/images/DLRSLookupRelationFields.png)
 
 3. At the top of the page, in the dropdown for ‘Select Lookup Rollup Summary’ select ‘Create new…’. 
 

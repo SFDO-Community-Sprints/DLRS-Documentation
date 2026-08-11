@@ -31,12 +31,12 @@ out
 /test_results.*
 
 # Ruby (for local test site hosting)
+# NOTE: Gemfile, Gemfile.lock, and .ruby-version are intentionally committed
+# so contributors get a reproducible local-preview environment. Only the
+# per-machine build outputs below are ignored.
 *.gem
 .bundle
 vendor
-Gemfile
-Gemfile.lock
-.ruby-version
 
 # Local test site files
 _site
