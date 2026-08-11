@@ -94,7 +94,7 @@ assumes it's done.
 ```
 bundle exec jekyll serve --safe --source docs --baseurl="/DLRS-Documentation"
 ```
-Then open your browser to: **http://localhost:4000/DLRS-Documentation/**. Jekyll rebuilds automatically as you edit.
+Then open `http://localhost:4000/DLRS-Documentation/` in your browser. Jekyll rebuilds automatically as you edit.
 
 **What each flag does:**
 - `bundle exec` — runs Jekyll with the gems pinned in `Gemfile.lock`, rather than any other Ruby

@@ -94,6 +94,6 @@ What each part does:
   root. GitHub fills this in automatically; locally you supply it so links and images resolve the
   same way they will once published.
 
-Then open **http://localhost:4000/DLRS-Documentation/**. Jekyll rebuilds automatically as you edit.
+Then open `http://localhost:4000/DLRS-Documentation/` in your browser. Jekyll rebuilds automatically as you edit.
 
 
