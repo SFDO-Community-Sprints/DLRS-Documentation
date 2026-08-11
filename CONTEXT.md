@@ -1,64 +1,65 @@
 # DLRS Documentation Site - Context
 
 ## Project Overview
-This is the documentation repository for **DLRS (Declarative Lookup Rollup Summaries)**, an open-source Salesforce package commonly used in the nonprofit sector. DLRS provides a mechanism for aggregating or summarizing data from child objects and displaying it on parent objects, similar to Rollup Summary fields but with much greater flexibility.
+This is the documentation repository for **DLRS (Declarative Lookup Rollup Summaries)**, an open-source Salesforce package. DLRS provides a mechanism for aggregating or summarizing data from child objects and displaying it on parent objects, similar to Rollup Summary fields but with much greater flexibility.
 
 A few things that shape how this repo is written and maintained:
-- The primary audience is Salesforce admins configuring DLRS for their own org — not the end users who simply see the resulting rollup values. Content assumes familiarity with Salesforce administration (objects, fields, relationships, automation).
-- Heavy emphasis on visual documentation with screenshots.
-- Multiple versions of the documentation exist, noting transitions between DLRS versions.
+- The primary audience is Salesforce admins and consultants configuring DLRS for orgs — not the end users who simply see the resulting rollup values. Content assumes familiarity with Salesforce administration (objects, fields, relationships, automation).
 - Community-driven, with contribution guidelines and links to the Trailblazer Community and other external Salesforce resources.
+- Emphasis on visual documentation with screenshots.
 
 ### DLRS Capabilities
 - **Declarative**: "Clicks not code" approach
 - **Flexible Relationships**: Works with Lookup relationships, not just Master-Detail
 - **Extended Operations**: Beyond standard Sum/Min/Max - includes Average, Count Distinct, Concatenate, First/Last
-- **Multiple Calculation Modes**: Realtime, Scheduled, Process Builder/Automation, Developer API
+- **Multiple Calculation Modes**: Watch for Changes and Process Later, Realtime, Invocable by Automation, Developer
 
 ### Calculation Modes
-1. **Realtime** - Triggers immediately on record changes
-2. **Watch for Changes and Process Later** - Async bulk processing
-3. **Invocable by Automation** - Called from Flow/Process Builder
-4. **Developer** - API for custom Apex integration
-5. **Schedule Full Calculate** - Scheduled full recalculations
+Four modes control how and when a rollup processes. Two were renamed in version 2.21, and the old
+labels still appear in pre-2.21 pages and in orgs running earlier versions:
 
-### Professional Edition Support
-Special considerations for Salesforce Professional Edition, which only supports "Invocable by Automation" mode due to Apex trigger limitations.
+1. **Watch for Changes and Process Later** - Async bulk processing on a schedule; the recommended
+   default, since it doesn't fire on every child record change (labeled "Scheduled" before 2.21)
+2. **Realtime** - Installs an Apex trigger on the child object; recalculates immediately on change
+3. **Invocable by Automation** - Called from Flow or other automation; deploys no child trigger
+   (labeled "Process Builder" before 2.21)
+4. **Developer** - Called from Apex, for programmatic solutions
 
-## Documentation Site Technical Stack
-- **Static Site Generator**: Jekyll with the "Just the Docs" remote theme
-- **Content Format**: Markdown files converted to HTML
-- **Hosting**: GitHub Pages project site — https://sfdo-community-sprints.github.io/DLRS-Documentation/
-- **Repository**: https://github.com/SFDO-Community-Sprints/DLRS-Documentation/
+Separate from the calculation mode, any rollup can be fully recalculated on demand or on a set
+schedule via the **Recalculate Now** and **Schedule Recalculation** buttons. This is a capability
+of the rollup, not a fifth mode.
 
-**Production build versions** — controlled by GitHub Pages, not by this repo. The authoritative
-list is https://pages.github.com/versions/ (as of Aug 2025):
-- `github-pages` gem 232 → Jekyll 3.10.0, Ruby 3.3.4
+`docs/User Guide/calculates.md` is the authoritative page for this.
 
-**Local preview environment** — what this repo pins for contributors previewing changes. It does
-*not* have to match production exactly; keep the `github-pages` gem in sync so the build behaves
-the same:
-- Ruby 3.3.9 (`.ruby-version`; install via rbenv/asdf/mise) — any 3.3.x is fine; production uses 3.3.4
-- Bundler 4.0.11 (`Gemfile.lock` `BUNDLED WITH`)
-- Exact gem versions resolved in the committed `Gemfile.lock`
+## Documentation Site Overview
 
-## Repository Structure
-All site content and Jekyll config live under `docs/`; the repository root holds only project-level files.
+### How the site is built
+- **Jekyll** converts the Markdown files in `docs/` into published HTML.
+- **Just the Docs**, a remote theme pinned to a release tag in `docs/_config.yml`, supplies the
+  page layout, navigation sidebar, and search.
+- **GitHub Pages** builds and deploys automatically on every push to `main`. There is no build step
+  to run by hand and no workflow file in the repo — GitHub runs the build internally.
+- Page titles, URLs, nav order, and section nesting come from **YAML frontmatter** in each Markdown
+  file rather than from a central config.
+
+### Repository structure
+The `docs/` folder holds everything used to generate the site. 
+Files outside `docs/` are contributor tooling and repo housekeeping; changing them doesn't change the published site.
 
 ```
 /
-├── docs/ (all site content and config — served with --source docs)
+├── docs/ (all site content and config)
 │   ├── _config.yml (Jekyll configuration for GitHub Pages)
-│   ├── _includes/ (custom head + reusable callout snippets)
-│   ├── index.md (overview page)
+│   ├── _includes/ (custom head snippet)
+│   ├── index.md (homepage)
 │   ├── Installation/
-│   ├── Getting Started/
 │   ├── Post Install Steps/
+│   ├── Getting Started/
 │   ├── User Guide/ (includes former Architecture pages)
+│   ├── Issues/ (titled "FAQ" in the nav)
 │   ├── Cookbook/
-│   ├── Issues/
-│   ├── ReleaseNotes/
 │   ├── About Us & Contribution/
+│   ├── ReleaseNotes/
 │   ├── assets/images/ (all site images)
 │   └── favicon.ico
 ├── README.md (repo info + local-preview setup for contributors)
@@ -66,54 +67,61 @@ All site content and Jekyll config live under `docs/`; the repository root holds
 ├── LICENSE
 ├── .gitignore
 ├── Gemfile / Gemfile.lock / .ruby-version (committed Ruby env for reproducible local previews)
-└── CONTEXT.md (this file — agent-neutral project notes for contributors and AI assistants)
+└── CONTEXT.md (this file — project notes for contributors and AI assistants)
 ```
 
-> Historical note: the repo root previously contained unused Jekyll files
-> (`_config.yml`, `home.md`, `site.webmanifest`, `_includes/`, `assets/`, and
-> favicon PNGs) left over from an earlier layout. These have since been removed —
-> the root now holds only the project-level files listed above, and everything
-> Jekyll processes lives under `docs/`.
+## Content Contribution Guide
 
-### Documentation Sections (`docs/` directory)
-The documentation is organized into the following main sections (order matches site navigation):
+### Adding New Documentation
+1. Create a Markdown file in the appropriate `docs/` subdirectory
+2. Add proper YAML frontmatter with navigation properties (see Content Conventions)
+3. Follow existing naming conventions and structure
+4. Add relevant screenshots to `docs/assets/images/` if needed
+
+### Publishing Changes
+Pushing to `main` builds and deploys the site automatically. 
+However, contributors don't push to main directly: they should create a git branch to hold the draft changes,
+then create a PR for review.
+
+## Previewing Locally
+This is not required for contribution, but it can be helpful to preview changes while working.
+
+**First-time setup** — installing rbenv, the pinned Ruby, and the gems — is documented in the
+README under *Local Contributor Setup*. Follow it once per machine; the rest of this section
+assumes it's done.
+
+**Serve the site** (the everyday command, run from the repo root):
+```
+bundle exec jekyll serve --safe --source docs --baseurl="/DLRS-Documentation"
+```
+Then open your browser to: **http://localhost:4000/DLRS-Documentation/**. Jekyll rebuilds automatically as you edit.
+
+**What each flag does:**
+- `bundle exec` — runs Jekyll with the gems pinned in `Gemfile.lock`, rather than any other Ruby
+  tooling that happens to be on your machine.
+- `--safe` — turns off custom Ruby plugins and ignores symlinked files, which is what GitHub's build
+  does too. Without it, you could add something that works in your preview but would be disabled on the live site.
+- `--source docs` — the site's files live in `docs/`, which is also the folder GitHub Pages builds
+  from.
+- `--baseurl="/DLRS-Documentation"` — the published site sits under that path rather than at a domain
+  root. GitHub fills this in automatically; locally you supply it so links and images resolve the
+  same way they will once published.
+
+### Nav Sections
+The documentation is organized into the following main sections, in site navigation order.
 
 1. **Overview** (`docs/index.md`) - Main landing page explaining what DLRS is
 2. **Installation** (`docs/Installation/`) - Installation guides and configuration
-3. **Getting Started** (`docs/Getting Started/`) - Step-by-step tutorials
-4. **Post Install Steps** (`docs/Post Install Steps/`) - Configuration after installing the package
-5. **User Guide** (`docs/User Guide/`) - Detailed usage instructions, including the technical "how and when DLRS calculates" pages that were formerly a separate Architecture section
-6. **Cookbook** (`docs/Cookbook/`) - Real-world use case examples
-7. **Issues** (`docs/Issues/`) - Troubleshooting and bug reporting (section title is **FAQ** in the nav)
-8. **Release Notes** (`docs/ReleaseNotes/`) - Version history
-9. **About Us & Contribution** (`docs/About Us & Contribution/`) - Community information
+3. **Post Install Steps** (`docs/Post Install Steps/`) - Configuration after installing the package
+4. **Getting Started** (`docs/Getting Started/`) - Step-by-step tutorials
+5. **User Guide** (`docs/User Guide/`) - Detailed usage instructions
+6. **FAQ** (`docs/Issues/`) - Troubleshooting and bug reporting
+7. **Cookbook** (`docs/Cookbook/`) - Real-world use case examples
+8. **About Us & Contribution** (`docs/About Us & Contribution/`) - Community information
+9. **Current Release Notes** (`docs/ReleaseNotes/`) - Version history
 
-### Assets & Images
-- **Single location**: All images live under `docs/assets/images/` (earlier scattered copies in root `assets/`, `images/`, etc. have been removed).
-- Screenshots are used extensively to illustrate UI steps, alongside process diagrams that explain calculation modes.
-- Consistent naming convention for DLRS UI screenshots.
-- Version-specific subdirectories group screenshots by release (e.g., `v2_21/` for version 2.21).
-
-## Site Configuration
-
-### Jekyll Theme
-- Uses "just-the-docs/just-the-docs" remote theme
-- Light color scheme
-- Search enabled with custom configuration
-- Navigation structure based on frontmatter (`nav_order`, `has_children`)
-
-### Custom Includes
-- `docs/_includes/head_custom.html` - Injected into the theme's `<head>`
-- `docs/_includes/callouts/` - Reusable callout/note snippets (e.g. `legacy-modes.html`), referenced from pages via Liquid `{% include %}`
-
-### Navigation Features
-- Hierarchical navigation with parent/child pages
-- Site search functionality
-- "Back to top" links
-- Last edit timestamps
-- Links to GitHub repository
-
-## Content Conventions
+Section landing pages are named `index.md`, with one exception: `Post Install Steps/` uses
+`Post Install Steps.md`. Look for that file when editing the section's parent page.
 
 ### Markdown Files
 - All content pages use YAML frontmatter with:
@@ -123,117 +131,89 @@ The documentation is organized into the following main sections (order matches s
   - `has_children: true/false` for navigation structure
   - `permalink: [/path.html]` (optional) to pin a fixed URL independent of the file's location — see Page URLs and `permalink` under Links & Images for more info
 
-### Documentation Style
-- Step-by-step tutorials with numbered lists
-- Extensive use of screenshots for UI guidance (stored under `docs/assets/images/`; see Assets & Images)
-- Code examples for SOQL criteria and API names
-- Warning boxes and notes for important information
+### Images
+All images live under `docs/assets/images/`.
 
-### Links & Images
-Use **plain relative paths** for internal links and images — no Liquid or filters. Paths are
-relative to the current page: most pages sit one level deep in a section folder and use a single
-`../`; the root page `docs/index.md` sits alongside `assets/` and uses none.
+### Links
+
+Syntax:
+Links are written as `[Label](path)`. Images use the same form with a leading `!`, where the label
+becomes the alt text: `![Alt text](path)`.
+
+Recommended link paths:
+Use **plain relative paths**, written from the page's own location. Nearly every content page sits
+one folder deep, so paths begin by stepping up one level:
+- Images: `../assets/images/image_name`
+- Pages in other site sections: `../section_name/page_name` 
+
+Examples:
+
+**Image**
 
 ```
-![Rollup config](../assets/images/v2_21/rollup.png)   <!-- image -->
-[Installation guide](../Installation/)                 <!-- internal link -->
-[DLRS Community](https://trailhead.salesforce.com/...) <!-- external link: full URL -->
+![Rollup config](../assets/images/v2_21/rollup.png)
 ```
+
+**Internal link**
+
 ```
-<img src="../assets/images/v2_21/rollup.png" alt="Rollup config" width="600"> <!-- when you need to size an image -->
+[Installation guide](../Installation/)
+```
+
+**External link** — use the full URL
+
+```
+[DLRS Community](https://trailhead.salesforce.com/...)
+```
+
+**Sized image** — use HTML when you need to control the width
+
+```
+<img src="../assets/images/v2_21/rollup.png" alt="Rollup config" width="600">
 ```
 
 Don't hardcode the baseurl (`/DLRS-Documentation/...`) or use a bare root path (`/assets/...`):
-the first is brittle, the second 404s in production. Relative paths are the standard for **new**
-content.
+the first is brittle, the second 404s in production.
 
-Note that some existing pages link with fully-qualified absolute URLs (e.g.
-`https://sfdo-community-sprints.github.io/DLRS-Documentation/User%20Guide/scheduling_rollups_v2_21.html`)
-rather than relative paths.
-
-### Page URLs and `permalink`
-By default Jekyll derives each page's URL from its file path — this repo sets no site-wide
-`permalink` pattern in `_config.yml`, so `docs/User Guide/foo.md` is served at `…/User Guide/foo.html`.
+### Page URLs and permalink
+By default Jekyll derives each page's URL from its file path.
 
 A `permalink:` in a page's frontmatter overrides that default and fixes the page to a specific URL,
-independent of where the file sits in the folder tree. This is core Jekyll — it requires no plugin
-and no `_config.yml` change. The value is root-relative; do not include the baseurl (GitHub Pages
-prepends it) and keep the `.html` extension:
+independent of where the file sits in the folder tree. 
+
+Use it to keep a page's published URL stable when its file is moved or renamed, so existing links
+(including hardcoded absolute ones and external bookmarks) don't break. Some pages therefore
+live in one folder while serving from a URL that reflects a different path — preserve their
+`permalink` when editing frontmatter unless you specifically intend to change the URL.
 
 ```yaml
 permalink: /Architecture/calculates.html
 ```
 
-Use it to keep a page's published URL stable when its file is moved or renamed, so existing links
-(including hardcoded absolute ones and external bookmarks) keep resolving. Some pages therefore
-live in one folder while serving from a URL that reflects a different path — preserve their
-`permalink` when editing frontmatter unless you specifically intend to change the URL.
+This is core Jekyll — it requires no plugin and no `_config.yml` change. 
+The value is root-relative; do not include the baseurl (GitHub Pages prepends it) and keep the `.html` extension.
 
 To intentionally change a URL while keeping the old one working, the `jekyll-redirect-from` plugin
-(present in `Gemfile.lock`; enable via a `plugins:` list in `_config.yml`) can redirect the old URL
-to the new one.
+(present in `Gemfile.lock`; enable via a `plugins:` list in `_config.yml`) could be used instead to
+redirect the old URL to the new one.
 
-Advanced/rarely needed: Jekyll's `relative_url` filter and `{% link %}` tag can build
-baseurl-aware absolute paths, but they use Liquid and aren't used anywhere in this repo.
+## Site Technical Details
 
-## Building & Running Locally
-This is a GitHub Pages compatible Jekyll site. The live site builds and deploys automatically; you only need a local setup to preview changes before pushing.
+## Technical Stack
+- **Static Site Generator**: Jekyll with the "Just the Docs" remote theme, pinned to a release tag in `_config.yml`
+- **Content Format**: Markdown files converted to HTML
+- **Runtime**: Jekyll is a Ruby program, so building the site requires a Ruby version plus a set of
+  gems — `kramdown` does the Markdown-to-HTML conversion, and others handle search, SEO tags, and
+  fetching the remote theme
+- **Hosting**: GitHub Pages project site — https://sfdo-community-sprints.github.io/DLRS-Documentation/
+- **Repository**: https://github.com/SFDO-Community-Sprints/DLRS-Documentation/
 
-**1. Install Ruby** — version 3.3.x, via a version manager (rbenv, asdf, or mise), which picks up
-the pinned version from `.ruby-version`. Bundler (the `bundle` command used in the next steps)
-ships with Ruby, so you don't install it separately.
+### Production build versions
+The Ruby and gem versions GitHub uses to build the live site are controlled by GitHub Pages, not by
+this repo. The authoritative list is https://pages.github.com/versions/
+(available as `versions.json` at that URL for scripted checks):
+- `github-pages` gem 232 → Jekyll 3.10.0, kramdown 2.4.0, Ruby 3.3.4
 
-**2. Install Ruby gems needed by GitHub Pages** — into a project-local folder (avoids sudo issues). `bundle install` reads the list of gems needed, at their exact pinned versions, from the committed `Gemfile` and `Gemfile.lock`.
-```
-bundle config set path 'vendor/bundle'
-bundle install
-```
-If `bundle install` reports a Bundler version mismatch, install the version named at the bottom of
-`Gemfile.lock` under `BUNDLED WITH` (e.g. `gem install bundler:<that-version>`). If a native gem
-fails to compile, install a C toolchain (Xcode Command Line Tools on macOS).
-
-**3. Serve the site**
-```
-# Serve the site (matches GitHub Pages configuration)
-bundle exec jekyll serve --source docs --baseurl="/DLRS-Documentation"
-```
-Then open your browser to: **http://localhost:4000/DLRS-Documentation/**. Jekyll rebuilds automatically as you edit.
-
-**Serving notes:**
-- The `--source docs` flag is required because all site content and config live in `docs/`.
-- **Baseurl is NOT set in `docs/_config.yml`.** In production, the `github-pages` gem
-  auto-injects `baseurl: /DLRS-Documentation` (derived from the repo name). Locally there is
-  no such injection, so you pass `--baseurl="/DLRS-Documentation"` by hand to reproduce the
-  production URL structure and open the site at `http://localhost:4000/DLRS-Documentation/`.
-  Omitting it serves a working site at the domain root (`localhost:4000/`) but won't catch
-  subpath link issues — prefer the explicit baseurl for a production-faithful preview.
-- `--source` (where files live) and `--baseurl` (URL path prefix) are independent flags; they
-  do not conflict.
-- Always test locally before pushing to GitHub. Internal links and images should be authored so
-  they respect the baseurl — see Content Conventions → Links & Images.
-
-**Keeping dependencies current:**
-```
-# Keep GitHub Pages gem updated for compatibility
-bundle update github-pages
-```
-
-## Deployment
-- **Type**: Project Pages (repository-specific GitHub Pages site)
-- **URL Pattern**: `username.github.io/project-name` (https://sfdo-community-sprints.github.io/DLRS-Documentation/)
-- **Source**: Automatic deployment from the `main` branch — GitHub Pages builds the Jekyll site on every push.
-- **Branch**: `main` (modern default, previously `master`)
-
-## Common Contributor Tasks
-
-### Adding New Documentation
-1. Create a Markdown file in the appropriate `docs/` subdirectory
-2. Add proper YAML frontmatter with navigation properties (see Content Conventions)
-3. Follow existing naming conventions and structure
-4. Add relevant screenshots to `docs/assets/images/` if needed
-
-### Updating Navigation
-Navigation is controlled by `nav_order` values in frontmatter and `has_children` for parent pages.
-
-### Publishing Changes
-Pushing to `main` builds and deploys the site automatically (see Deployment). Preview locally first using Building & Running Locally.
+### Local preview environment — what this repo pins for contributors previewing changes:
+- The local preview uses the same "github-pages" gem that GitHub uses for the live site.
+- `Gemfile.lock` freezes the "github-pages" gem version. Compare against https://pages.github.com/versions/ now and then, and run `bundle update github-pages` to catch up.
