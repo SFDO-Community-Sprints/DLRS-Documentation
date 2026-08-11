@@ -5,14 +5,9 @@ parent: Cookbook
 nav_order: 2
 ---
 # Campaign, Registrations, and Applications Recipes
-* [Contact: Count All Campaign Memberships](#contact-count-all-campaign-memberships)
-* [Contact: Count Campaign Memberships by Type](#contact-count-campaign-memberships-by-type)
-* [Contact: Campaign of First Donation](#contact-campaign-of-first-donation)
-* [Account: First Event Purchased Date](#account-first-event-purchased-date)
-* [Contact: Current Program Engagement Status](#contact-current-program-engagement-status)
-* [Contact: List of Years Engaged in Programs](#contact-list-of-years-engaged-in-programs)
 
-## Contact: Count All Campaign Memberships
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-count-all-campaign-memberships">Contact: Count All Campaign Memberships</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -45,7 +40,10 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 <!-- Edited by Kathy Waterworth 05/05/2022 -->
 
-## Contact: Count Campaign Memberships by Type
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-count-campaign-memberships-by-type">Contact: Count Campaign Memberships by Type</h2> <span class="op">Count</span> <span class="mode mode-scheduled">Scheduled</span></summary>
 
 **Description:**
 > This is a variation of the overall campaign type counts. This is just one recipe, but it could be used for several different variations such as Direct Mail Fundraising; Email Fundraising; Social Fundraising; Advocacy; etc.
@@ -77,7 +75,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 <!-- Edited by Caroline Renard 04/02/2023 -->
 
-## Contact: Campaign of First Donation
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-campaign-of-first-donation">Contact: Campaign of First Donation</h2> <span class="op">First</span> <span class="mode mode-scheduled">Scheduled</span></summary>
 
 **Description**
 
@@ -110,7 +111,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 **Contributed by** Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
-## Account: First Event Purchased Date
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-first-event-purchased-date">Account: First Event Purchased Date</h2> <span class="op">Min</span> <span class="mode">Process Builder</span></summary>
 
 **Description**
 
@@ -144,7 +148,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 **Contributed by** Caroline Renard, [Data Geeks Lab](https://www.datageekslab.com)
 
-## Contact: Current Program Engagement Status
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-current-program-engagement-status">Contact: Current Program Engagement Status</h2> <span class="op">Last</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -179,7 +186,10 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 <!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
-## Contact: List of Years Engaged in Programs
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-list-of-years-engaged-in-programs">Contact: List of Years Engaged in Programs</h2> <span class="op">Concatenate Distinct</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -219,3 +229,5 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 <!-- Edited by Jillian Nii 05/05/2022 -->
+
+</details>

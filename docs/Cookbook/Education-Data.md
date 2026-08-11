@@ -6,15 +6,9 @@ nav_order: 6
 ---
 
 # Education Data Architecture Recipes
-* [Contact: Finding Last Completed Program Enrollment](#contact-finding-last-completed-program-enrollment)
-* [Contact: Finding Count of Completed Program Enrollments](#contact-finding-count-of-completed-program-enrollments)
-* [Course: Finding Next Course Offering Date](#course-finding-next-course-offering-date)
-* [Contact: Find Completed Courses](#contact-find-completed-courses)
-* [Course Offering: Find Total Enrollment Count](#course-offering-find-total-enrollment-count)
 
-
-
-## Contact: Finding Last Completed Program Enrollment
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-finding-last-completed-program-enrollment">Contact: Finding Last Completed Program Enrollment</h2> <span class="op">Last</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description:**
 > On Contact, show date of most recently completed program enrollment for the student.
@@ -44,7 +38,10 @@ nav_order: 6
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
 
-## Contact: Finding Count of Completed Program Enrollments
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-finding-count-of-completed-program-enrollments">Contact: Finding Count of Completed Program Enrollments</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description:**
 > On Contact, show the count of completed program enrollments for the student.
@@ -73,7 +70,11 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
-## Course: Finding Next Course Offering Date
+
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="course-finding-next-course-offering-date">Course: Finding Next Course Offering Date</h2> <span class="op">Min</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description:**
 > On Course, list the next course offering date.
@@ -98,7 +99,10 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
 
-## Contact: Find Completed Courses
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-find-completed-courses">Contact: Find Completed Courses</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description:**
 > On Contact, list the number of completed courses for a student.
@@ -125,7 +129,10 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
 
-## Course Offering: Find Total Enrollment Count
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="course-offering-find-total-enrollment-count">Course Offering: Find Total Enrollment Count</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description:**
 > On Course Offering, show the number of enrollments.
@@ -154,3 +161,5 @@ Nick Lindberg, [University of Minnesota - Carlson School of Management](https://
 
 **Contributed By**
 Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
+
+</details>

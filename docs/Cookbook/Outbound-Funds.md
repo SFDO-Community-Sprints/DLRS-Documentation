@@ -5,13 +5,9 @@ parent: Cookbook
 nav_order: 5
 ---
 # Outbound Funds Recipes
-* [Funding Program: Count Applications Submitted](#funding-program-count-applications-submitted)
-* [Funding Program: Sum of Recommended Amount](#funding-program-sum-of-recommended-amount)
-* [Account: Sum of Awarded Grants](#account-sum-of-awarded-grants)
-* [Account: Largest Grant Received](#account-largest-grant-received)
-* [Account: Last Grant Received](#account-last-grant-received)
 
-## Funding Program: Count Applications Submitted
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="funding-program-count-applications-submitted">Funding Program: Count Applications Submitted</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -39,7 +35,10 @@ nav_order: 5
 
 **Contributed By** Serkan Bilgi, [Traction on Demand](https://www.tractionondemand.com/)
 
-## Funding Program: Sum of Recommended Amount
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="funding-program-sum-of-recommended-amount">Funding Program: Sum of Recommended Amount</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -67,7 +66,10 @@ nav_order: 5
 
 **Contributed By** Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-## Account: Sum of Awarded Grants
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-sum-of-awarded-grants">Account: Sum of Awarded Grants</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -97,7 +99,10 @@ nav_order: 5
 **Contributed By**
 Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-## Account: Largest Grant Received
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-largest-grant-received">Account: Largest Grant Received</h2> <span class="op">Max</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -125,7 +130,10 @@ Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 **Contributed By**
 Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
-## Account: Last Grant Received
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-last-grant-received">Account: Last Grant Received</h2> <span class="op">Max</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -153,3 +161,5 @@ Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
 
 **Contributed By**
 Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
+
+</details>

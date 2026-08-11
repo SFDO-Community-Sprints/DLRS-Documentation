@@ -5,14 +5,9 @@ parent: Cookbook
 nav_order: 4
 ---
 # Opportunities, Payments and Allocations Recipes
-* [Opportunity: Sum of Paid Payments This Financial Year](#opportunity-sum-of-paid-payments-this-financial-year)
-* [Opportunity: Sum of Paid Payments This Relative Fiscal Year](#opportunity-sum-of-paid-payments-this-relative-fiscal-year)
-* [Opportunity: List GAU Allocations](#opportunity-list-gau-allocations)
-* [Contact: Sum of won Tribute Gifts](#contact-sum-of-won-tribute-gifts)
-* [Campaign: Total Amount Won from Opportunity Record Type or Lead Source](#campaign-total-amount-won-from-opportunity-record-type-or-lead-source)
-* [Contact: Current Active Recurring Donations](#contact-current-active-recurring-donations)
 
-## Opportunity: Sum of Paid Payments This Financial Year
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="opportunity-sum-of-paid-payments-this-financial-year">Opportunity: Sum of Paid Payments This Financial Year</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -34,7 +29,7 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 |                Aggregate Operation | `SUM`                                                                                                                                                                                                                                               |
 |             Aggregate Result Field | `DLRS_Payments_This_Year__c`                                                                                                                                                                                                                        |
 |                   Calculation Mode | `Realtime`                                                                                                                                                                                                                                          |
-|          Schedule vs Child Trigger | `Deploy the child trigger for a realtime update whenever a payment is marked paid AND click Schedule Full Calculate to have all records recalculated on the first of each month, so that the relative date filter for the year is kept up to date.` |
+|          Schedule vs Child Trigger | Deploy the child trigger for a realtime update whenever a payment is marked paid AND click Schedule Full Calculate to have all records recalculated on the first of each month, so that the relative date filter for the year is kept up to date. |
 
 **Variations**
 
@@ -46,7 +41,10 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 
 **Contributed By** Jared Henning, [Salesforce.com](https://salesforce.com/)
 
-## Opportunity: Sum of Paid Payments This Relative Fiscal Year
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="opportunity-sum-of-paid-payments-this-relative-fiscal-year">Opportunity: Sum of Paid Payments This Relative Fiscal Year</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 > This is a variation of the original "Opportunity: Sum of Paid Payments This Financial Year" for orgs that need to track gifts that are paid or scheduled outside of the dates of their fiscal year. This would be for orgs who have this happen enough that particular infrastructure is created for it.
@@ -84,8 +82,10 @@ if(month(today())>=10,YEAR(TODAY())+1,YEAR(TODAY()))-VALUE(SUBSTITUTE(Fiscal_Yea
 **Contributed By**
 Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
+</details>
 
-## Opportunity: List GAU Allocations
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="opportunity-list-gau-allocations">Opportunity: List GAU Allocations</h2> <span class="op">Concatenate Distinct</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -117,7 +117,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 **Contributed By**
 Rachel Sinex, [Pedal Lucid](https://www.pedallucid.com/) _and_ Maida Rider, [Jesuit Refugee Service](https://jrsusa.org/)
 
-## Contact: Sum of won Tribute Gifts
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-sum-of-won-tribute-gifts">Contact: Sum of Won Tribute Gifts</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -140,7 +143,10 @@ Rachel Sinex, [Pedal Lucid](https://www.pedallucid.com/) _and_ Maida Rider, [Jes
 **Contributed By**
 Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
-## Campaign: Total Amount Won from Opportunity Record Type or Lead Source
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="campaign-total-amount-won-from-opportunity-record-type-or-lead-source">Campaign: Total Amount Won from Opportunity Record Type or Lead Source</h2> <span class="op">Sum</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -168,7 +174,10 @@ Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
 **Contributed By** Laurel Taylor, [Town Hall Seattle](https://townhallseattle.org/) _and_ Amy Utkan, [BRDPro](https://brdpro.com/)
 
-## Contact: Current Active Recurring Donations
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-current-active-recurring-donations">Contact: Current Active Recurring Donations</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -194,3 +203,5 @@ Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
 
 **Contributed By**
 Marc Baizman, [Salesforce.com](https://www.salesforce.com/)
+
+</details>

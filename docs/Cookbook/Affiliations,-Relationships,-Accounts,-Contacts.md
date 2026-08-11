@@ -6,13 +6,9 @@ nav_order: 1
 ---
 
 # Affiliations, Relationships, Accounts and Contacts Recipes
-* [Contact: Count Current Board Member Affiliation](#contact-count-current-board-member-affiliation)
-* [Contact: Concatenate Special Relationship to Org](#contact-concatenate-special-relationship-to-organization)
-* [Contact: Count Relationships to Accounts](#contact-count-relationships-to-accounts)
-* [Account: Count Number of Contacts](#account-count-number-of-contacts)
-* [Account: Address Type Count](#account-address-type-count)
 
-## Contact: Count Current Board Member Affiliation
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-count-current-board-member-affiliation">Contact: Count Current Board Member Affiliation</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -45,8 +41,11 @@ nav_order: 1
 
 **Contributed By** Hua Ping Tan, [Belmar Consulting Group](https://www.belmar.ca/)
 
+</details>
 
-## Contact: Concatenate Special Relationship to Organization
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-concatenate-special-relationship-to-organization">Contact: Concatenate Special Relationship to Organization</h2> <span class="op">Concatenate Distinct</span> <span class="mode mode-realtime">Realtime</span></summary>
+
 **Description**
 >This is a variation on the board member count rollup using text instead of count. This can help track from a contact level who is on the board, staff, and volunteers if those are being tracked by affiliations. This rollup is generally good for end users to see a quick list of important interactions with your org and for ease of use with reporting. 
 
@@ -77,8 +76,10 @@ This could also be used to track former relationships, by modifying the Status v
 **Contributor**
 Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
+</details>
 
-## Contact: Count Relationships to Accounts
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-count-relationships-to-accounts">Contact: Count Relationships to Accounts</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -107,7 +108,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 **Contributed By**
 Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
 
-## Account: Count Number of Contacts
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-count-number-of-contacts">Account: Count Number of Contacts</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -130,7 +134,10 @@ Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
 **Contributed By**
 Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 
-## Account: Address Type Count
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-address-type-count">Account: Address Type Count</h2> <span class="op">Count</span> <span class="mode mode-scheduled">Scheduled</span></summary>
 
 **Description**
 
@@ -156,3 +163,5 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 
 **Contributed By**
 Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
+
+</details>

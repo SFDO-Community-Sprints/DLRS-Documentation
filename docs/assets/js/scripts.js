@@ -34,7 +34,38 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     setIframeVideo()
+
+    openDetailsForHash();
+    window.addEventListener('hashchange', openDetailsForHash);
 });
+
+// If the URL fragment targets an element inside a closed <details> (e.g. a
+// deep link to a collapsed cookbook recipe), expand it so the browser can
+// scroll there. Chrome does this natively; Firefox/Safari don't reliably.
+function openDetailsForHash() {
+    if (!location.hash || location.hash.length < 2) return;
+    let target;
+    try {
+        target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    } catch (e) {
+        return;
+    }
+    if (!target) return;
+    let details = target.closest('details');
+    let opened = false;
+    while (details) {
+        if (!details.open) {
+            details.open = true;
+            opened = true;
+        }
+        details = details.parentElement && details.parentElement.closest('details');
+    }
+    // Re-scroll: on initial load the browser may have given up while the
+    // target was still display:none inside the closed details.
+    if (opened) {
+        target.scrollIntoView();
+    }
+}
 
 function setIframeVideo() {
     const contentIFrames = document.querySelectorAll('#main-content iframe');

@@ -5,12 +5,9 @@ parent: Cookbook
 nav_order: 7
 ---
 # Students, Scores and Attendance Recipes using Custom Objects
-* [Account: Count of Student Applications This Year](#account-count-of-student-applications-this-year)
-* [Contact: Current Traction Rec Membership Type](#contact-current-traction-rec-membership-type)
-* [Contact: Authorized Pickup Contacts](#contact-authorized-pickup-contacts)
-* [Report Card: Calculate Grade Point Average (GPA)](#report-card-calculate-grade-point-average-gpa)
 
-## Account: Count of Student Applications This Year
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="account-count-of-student-applications-this-year">Account: Count of Student Applications This Year</h2> <span class="op">Count</span> <span class="mode mode-scheduled">Scheduled</span></summary>
 
 **Description**
 
@@ -42,7 +39,10 @@ nav_order: 7
 
 **Contributed By** Michael Kolodner, [Kolodner.com LLC](https://kolodner.com/) for client: [The Academy Group](https://theacademygroup.com/)
 
-## Contact: Current Traction Rec Membership Type
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-current-traction-rec-membership-type">Contact: Current Traction Rec Membership Type</h2> <span class="op">Concatenate Distinct</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -69,7 +69,10 @@ nav_order: 7
 **Contributed By**
 John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
-## Contact: Authorized Pickup Contacts
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-authorized-pickup-contacts">Contact: Authorized Pickup Contacts</h2> <span class="op">Concatenate</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -92,7 +95,10 @@ John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 **Contributed By**
 John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 
-## Report Card: Calculate Grade Point Average (GPA)
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="report-card-calculate-grade-point-average-gpa">Report Card: Calculate Grade Point Average (GPA)</h2> <span class="op">Average</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -120,3 +126,5 @@ John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
 Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 <!-- Edited by Jillian Nii 5/5/22 -->
+
+</details>

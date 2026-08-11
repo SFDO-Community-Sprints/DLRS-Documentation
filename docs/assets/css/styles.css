@@ -136,7 +136,9 @@
     padding: 18px 24px 14px 21px; /* 3px border + 21px = 24px, aligns with body text */
     border-left: 3px solid var(--recipe-accent);
     border-bottom: 1px solid var(--recipe-border);
-    font-size: 19px;
+    /* !important required: the theme's type scale sets heading sizes with
+       !important (h2 { font-size: 1.5rem !important } at desktop widths) */
+    font-size: 19px !important;
     letter-spacing: -0.01em;
 }
 
@@ -222,6 +224,42 @@
     gap: 10px;
 }
 .recipe-toggle > summary::-webkit-details-marker { display: none; }
+/* Recipe titles are real headings (<h2 id="...">) INSIDE the summary, so
+   in-page anchors, the document outline, and screen-reader heading nav all
+   survive the collapse. Visually they must read as the summary row text,
+   so strip the theme's heading type scale and spacing. */
+.recipe-toggle > summary h2,
+.recipe-toggle > summary h3 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* !important required: the theme's type scale sets heading sizes with
+       !important (h2 { font-size: 1.5rem !important } at desktop widths) */
+    font-size: inherit !important;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    /* inline-flex + order lets the theme's anchor-heading link (injected
+       BEFORE the title text) render AFTER it: the text becomes an anonymous
+       flex item at default order 0, the link is pushed to order 1 */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+/* The theme absolutely positions the permalink icon at left:-1.5rem with a
+   full-height hit area — inside the summary row that lands exactly on the
+   chevron and steals its clicks. Reflow it as a trailing inline icon that
+   appears when hovering anywhere on the row. */
+.recipe-toggle > summary .anchor-heading {
+    position: static;
+    order: 1;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+}
+.recipe-toggle > summary:hover .anchor-heading svg {
+    visibility: visible;
+}
 /* chevron drawn with CSS so authors don't hand-write markup */
 .recipe-toggle > summary::before {
     content: "";
@@ -245,9 +283,18 @@
     font-family: monospace;
 }
 /* margin-left:auto on the FIRST tag absorbs the free space, so both tags
-   move to the right together (was on .mode, which right-aligned only itself) */
-.recipe-toggle .op { background: #eeeff1; color: #4a555f; margin-left: auto; }
+   move to the right together (was on .mode, which right-aligned only itself)
+
+   Tag colors are light tints of the Just the Docs light-scheme palette
+   (purple #5e41d0 / link #7253ed, green #026e57, yellow #f7d12e), so the
+   chips read as theme-native without importing a new brand color.
+   .op is decorative (always purple); .mode is semantic — add mode-realtime
+   or mode-scheduled to color-code the calculation mode; bare .mode stays
+   neutral grey for anything else. */
+.recipe-toggle .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
 .recipe-toggle .mode { background: #f1f2f4; color: #5f5c68; }
+.recipe-toggle .mode-realtime { background: #ddefea; color: #02593f; }
+.recipe-toggle .mode-scheduled { background: #fdf3cf; color: #755d00; }
 /* opened body */
 .recipe-toggle[open] > summary { border-bottom: 1px solid var(--recipe-border); }
 .recipe-toggle > *:not(summary):first-of-type { margin-top: 12px; }

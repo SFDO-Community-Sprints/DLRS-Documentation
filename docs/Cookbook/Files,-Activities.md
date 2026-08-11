@@ -6,11 +6,9 @@ nav_order: 3
 ---
 
 # Files and Activities Recipes
-* [Object: Count Attached Files with Certain Text in their Name](#object-count-attached-files-with-certain-text-in-their-name)
-* [Contact: Completed Log-a-Call Activities LastYear](#contact-completed-log-a-call-activities-lastyear)
-* [Require Receipts on Expense Reports](#require-receipts-on-expense-reports)
 
-## Object: Count Attached Files with Certain Text in their Name
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="object-count-attached-files-with-certain-text-in-their-name">Object: Count Attached Files with Certain Text in their Name</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -41,7 +39,10 @@ nav_order: 3
 
 **Contributed by** Jon LaRosa, [LaRosa Consulting](https://trailblazer.me/id/jonlarosa)
 
-## Contact: Completed Log-a-Call Activities LastYear
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="contact-completed-log-a-call-activities-lastyear">Contact: Completed Log-a-Call Activities LastYear</h2> <span class="op">Count</span> <span class="mode mode-scheduled">Scheduled</span></summary>
 
 **Description**
 
@@ -76,7 +77,10 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 
 <!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
-## Require Receipts on Expense Reports
+</details>
+
+<details class="recipe-toggle" markdown="1">
+<summary><h2 id="require-receipts-on-expense-reports">Require Receipts on Expense Reports</h2> <span class="op">Count</span> <span class="mode mode-realtime">Realtime</span></summary>
 
 **Description**
 
@@ -110,3 +114,5 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 
 <!-- Edited by Kathy Waterworth 05/05/2022 -->
+
+</details>
