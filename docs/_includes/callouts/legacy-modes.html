@@ -1,0 +1,15 @@
+{%- comment -%}
+Reusable "older versions" callout for Calculation Mode label changes.
+Drop {% include callouts/legacy-modes.html %} on any page that mentions the
+modes and would benefit from a pre-2.21 naming reminder. Edit the mapping here
+once. Requires the `legacy` callout defined under `callouts:` in _config.yml.
+
+One file per callout message: multi-line markdown bodies (like the list below)
+render correctly from an include but not from a string parameter, so each
+distinct message lives in its own file under _includes/callouts/.
+{%- endcomment -%}
+
+{: .legacy }
+> On a version before 2.21? Two Calculation Modes were labeled differently:
+> - **Watch for Changes and Process Later** was **Scheduled**
+> - **Invocable by Automation** was **Process Builder**

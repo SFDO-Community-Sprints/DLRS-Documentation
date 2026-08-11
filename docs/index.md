@@ -58,9 +58,11 @@ Additionally, the metrics available with RSFs, are limited to sum, minimum value
 
 [Understanding when DLRS Calculates](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html)
 - Realtime trigger - Set Rollup to `Realtime` Calculation Mode.
-- Async trigger based calculations - Set Rollup to `Watch for Changes and Process Later` (`Scheduled` in version prior to 2.21) Calculation Mode.
-- Trigger from declarative automation - `Invocable by Automation` (`Process Builder` in versions prior to 2.21) - This is also what allows DLRS to run in Professional Edition. [Info](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html)
+- Async trigger based calculations - Set Rollup to `Watch for Changes and Process Later` Calculation Mode.
+- Trigger from declarative automation - `Invocable by Automation` - This is also what allows DLRS to run in Professional Edition. [Info](https://sfdo-community-sprints.github.io/DLRS-Documentation/Installation/configuration.html)
 - Full calculations - There are buttons at the bottom of the rollup to manually recalculate (`Recalculate Now`) or schedule a full recalculation (`Schedule Recalculation`).
+
+{% include callouts/legacy-modes.html %}
 
 ## DLRS History 
 [Learn about the DLRS journey through past community posts.](https://sfdo-community-sprints.github.io/DLRS-Documentation/About%20Us%20&%20Contribution/dlrsHistory.html)

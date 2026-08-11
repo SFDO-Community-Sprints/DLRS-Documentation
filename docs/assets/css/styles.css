@@ -1,3 +1,17 @@
+/* ============================================================
+   Image popout modal
+   Click any content image to open it full-size on a dimmed
+   overlay; click the × to close.
+
+   Usage — nothing to author. assets/js/scripts.js selects every
+   <img> inside #main-content, adds the .imagePopout class, and
+   wires the click handler automatically (it also builds the
+   #imageModal / #modal-image / #modal-close DOM these rules
+   target). So the modal applies universally to all content
+   images — the only author-facing lever is the image's alt text,
+   which becomes the #modal-caption when present.
+   ============================================================ */
+
 /* Style the Image Used to Trigger the Modal */
 .imagePopout {
     border-radius: 5px;
@@ -80,3 +94,329 @@
         width: 100%;
     }
 }
+
+/* ============================================================
+   Cookbook recipe card  ("Spec Sheet" component)
+   Usage — wrap a recipe in a div so Kramdown still renders the
+   Markdown inside it:
+
+     <div class="recipe" markdown="1">
+     ### Contact: Count Current Board Member Affiliation
+     **Description**
+     > ...
+     | Field | Value |
+     | ----- | ----- |
+     | Parent Object | `Contact` |
+     ...
+     **Contributed By** Name, Company
+     </div>
+
+   Everything below styles the standard elements Markdown produces
+   (h3, p, strong, blockquote, table) once they sit inside .recipe.
+   ============================================================ */
+.recipe {
+    --recipe-accent: #55606b; /* neutral slate — reads as container chrome, not a semantic color */
+    --recipe-border: #e6e3e6;
+    --recipe-surface: #ffffff;
+    --recipe-muted: #5f5c68;
+    --recipe-foot-bg: #f7f7f8;
+    background: var(--recipe-surface);
+    border: 1px solid var(--recipe-border);
+    border-radius: 8px;
+    overflow: hidden; /* clip the full-bleed header/footer to the rounded corners */
+    padding: 0 24px;
+    margin: 2rem 0;
+}
+
+/* Recipe name: the first heading becomes the card header, with an accent
+   bar on its left edge only (card itself keeps a plain hairline border) */
+.recipe > h2:first-child,
+.recipe > h3:first-child {
+    margin: 0 -24px 16px;
+    padding: 18px 24px 14px 21px; /* 3px border + 21px = 24px, aligns with body text */
+    border-left: 3px solid var(--recipe-accent);
+    border-bottom: 1px solid var(--recipe-border);
+    /* !important required: the theme's type scale sets heading sizes with
+       !important (h2 { font-size: 1.5rem !important } at desktop widths) */
+    font-size: 19px !important;
+    letter-spacing: -0.01em;
+}
+
+/* Bold inline labels (**Description**, **Preparation**, etc.) read as sub-heads */
+.recipe p > strong:first-child:last-child {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--recipe-accent);
+    margin-top: 6px;
+}
+
+/* Description / preparation blockquotes: quiet indented notes */
+.recipe blockquote {
+    margin: 8px 0 16px;
+    color: var(--recipe-muted);
+}
+
+/* Field/Value table styled as a spec sheet */
+.recipe table {
+    width: 100%;
+    margin: 6px 0 16px;
+    font-size: 15.5px;
+    font-variant-numeric: tabular-nums;
+}
+.recipe table th:first-child,
+.recipe table td:first-child {
+    color: var(--recipe-muted);
+    font-weight: 500;
+    white-space: nowrap;
+}
+/* keep code pills in step with the larger value text (not the theme's tiny default) */
+.recipe table code,
+.recipe-toggle table code {
+    font-size: 0.9em;
+}
+
+/* Contributor credit: the closing line reads as a footer on a light grey band */
+.recipe > p:last-child {
+    margin: 8px -24px 0;
+    padding: 13px 24px;
+    background: var(--recipe-foot-bg);
+    border-top: 1px solid var(--recipe-border);
+    font-size: 13.5px;
+    color: var(--recipe-muted);
+}
+.recipe > p:last-child strong { color: inherit; }
+
+/* ============================================================
+   Cookbook recipe — collapsible variant ("Compact Index")
+   For long pages: each recipe collapses to a header row, opens
+   on click. Native <details>, no JavaScript.
+
+     <details class="recipe-toggle" markdown="1">
+     <summary>Opportunity: Sum of Won Amounts <span class="op">Sum</span></summary>
+
+     **Description** ...
+     | Field | Value | ...
+     </details>
+   ============================================================ */
+.recipe-toggle {
+    --recipe-accent: #55606b;
+    --recipe-border: #e6e3e6;
+    --recipe-muted: #5f5c68;
+    --recipe-foot-bg: #f7f7f8;
+    border: 1px solid var(--recipe-border);
+    border-radius: 8px;
+    margin: 10px 0;
+    background: #fff;
+    overflow: hidden;
+    padding: 0 18px; /* horizontal inset for the opened body; summary breaks back out below */
+}
+.recipe-toggle > summary {
+    list-style: none;
+    cursor: pointer;
+    margin: 0 -18px; /* cancel the container padding so the row spans full width */
+    padding: 13px 18px;
+    font-weight: 600;
+    font-size: 15.5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.recipe-toggle > summary::-webkit-details-marker { display: none; }
+/* Recipe titles are real headings (<h2 id="...">) INSIDE the summary, so
+   in-page anchors, the document outline, and screen-reader heading nav all
+   survive the collapse. Visually they must read as the summary row text,
+   so strip the theme's heading type scale and spacing. */
+.recipe-toggle > summary h2,
+.recipe-toggle > summary h3 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* !important required: the theme's type scale sets heading sizes with
+       !important (h2 { font-size: 1.5rem !important } at desktop widths) */
+    font-size: inherit !important;
+    font-weight: inherit;
+    line-height: inherit;
+    letter-spacing: normal;
+    /* inline-flex + order lets the theme's anchor-heading link (injected
+       BEFORE the title text) render AFTER it: the text becomes an anonymous
+       flex item at default order 0, the link is pushed to order 1 */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+/* The theme absolutely positions the permalink icon at left:-1.5rem with a
+   full-height hit area — inside the summary row that lands exactly on the
+   chevron and steals its clicks. Reflow it as a trailing inline icon that
+   appears when hovering anywhere on the row. */
+.recipe-toggle > summary .anchor-heading {
+    position: static;
+    order: 1;
+    width: 1em;
+    height: 1em;
+    padding: 0;
+}
+.recipe-toggle > summary:hover .anchor-heading svg {
+    visibility: visible;
+}
+/* chevron drawn with CSS so authors don't hand-write markup */
+.recipe-toggle > summary::before {
+    content: "";
+    flex: none;
+    width: 6px; height: 6px;
+    border-right: 2px solid var(--recipe-accent);
+    border-bottom: 2px solid var(--recipe-accent);
+    transform: rotate(-45deg);
+    transition: transform .18s ease;
+}
+.recipe-toggle[open] > summary::before { transform: rotate(45deg); }
+.recipe-toggle > summary:hover { background: #f6f6f7; }
+/* operation / mode tags an author can drop in the summary */
+.recipe-toggle .op,
+.recipe-toggle .mode {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: .02em;
+    font-family: monospace;
+}
+/* margin-left:auto on the FIRST tag absorbs the free space, so both tags
+   move to the right together (was on .mode, which right-aligned only itself)
+
+   Tag colors are light tints of the Just the Docs light-scheme palette
+   (purple #5e41d0 / link #7253ed, green #026e57, yellow #f7d12e), so the
+   chips read as theme-native without importing a new brand color.
+   .op is decorative (always purple); .mode is semantic — add mode-realtime
+   or mode-scheduled to color-code the calculation mode; bare .mode stays
+   neutral grey for anything else. */
+.recipe-toggle .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
+.recipe-toggle .mode { background: #f1f2f4; color: #5f5c68; }
+.recipe-toggle .mode-realtime { background: #ddefea; color: #02593f; }
+.recipe-toggle .mode-scheduled { background: #fdf3cf; color: #755d00; }
+/* opened body */
+.recipe-toggle[open] > summary { border-bottom: 1px solid var(--recipe-border); }
+.recipe-toggle > *:not(summary):first-of-type { margin-top: 12px; }
+.recipe-toggle > *:not(summary):last-child { margin-bottom: 14px; }
+.recipe-toggle p > strong:first-child:last-child {
+    display: inline-block;
+    font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--recipe-accent);
+}
+.recipe-toggle blockquote { color: var(--recipe-muted); }
+.recipe-toggle table { width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
+.recipe-toggle table th:first-child,
+.recipe-toggle table td:first-child { color: var(--recipe-muted); font-weight: 500; white-space: nowrap; }
+/* Contributor credit on a grey band, matching the Option A footer.
+   Placed after the :last-child margin rule above so it wins on source order. */
+.recipe-toggle > p:last-child {
+    margin: 10px -18px 0;
+    padding: 11px 18px;
+    background: var(--recipe-foot-bg);
+    border-top: 1px solid var(--recipe-border);
+    font-size: 13.5px;
+    color: var(--recipe-muted);
+}
+.recipe-toggle > p:last-child strong { color: inherit; font-weight: 600; }
+
+@media (prefers-reduced-motion: reduce) {
+    .recipe-toggle > summary::before { transition: none; }
+}
+/* ============================================================
+   Recipe finder  (Cookbook/search.md)
+   Filter chips + linked result rows over the recipes collection.
+   Reuses the recipe-card tag palette (.op purple, .mode grey /
+   mode-realtime green / mode-scheduled yellow) so the finder and
+   the cards read as one system. With JS disabled every row stays
+   visible; JS only toggles the `hidden` attribute per row.
+   ============================================================ */
+.recipe-finder {
+    --recipe-accent: #55606b;
+    --recipe-border: #e6e3e6;
+    --recipe-surface: #ffffff;
+    --recipe-muted: #5f5c68;
+    --recipe-foot-bg: #f7f7f8;
+}
+.recipe-finder-facet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    margin: 0 0 10px;
+}
+.recipe-finder-facet-label {
+    flex: none;
+    min-width: 11em;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--recipe-accent);
+}
+/* chips: same visual language as the card tags, but interactive */
+.recipe-finder-chip {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 5px;
+    letter-spacing: .02em;
+    font-family: monospace;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: #f1f2f4;
+    color: #5f5c68;
+}
+.recipe-finder-chip.op { background: #ede9fb; color: #4e26af; }
+.recipe-finder-chip.mode-realtime { background: #ddefea; color: #02593f; }
+.recipe-finder-chip.mode-scheduled { background: #fdf3cf; color: #755d00; }
+.recipe-finder-chip:hover { border-color: currentColor; }
+.recipe-finder-chip.active {
+    border-color: currentColor;
+    box-shadow: inset 0 0 0 1px currentColor;
+}
+.recipe-finder-count {
+    margin: 14px 0 6px;
+    font-size: 13.5px;
+    color: var(--recipe-muted);
+}
+/* result rows: hairline-bordered list echoing the card chrome */
+.recipe-finder-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    border: 1px solid var(--recipe-border);
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--recipe-surface);
+}
+.recipe-finder-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    margin: 0;
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--recipe-border);
+}
+.recipe-finder-row:last-child { border-bottom: 0; }
+.recipe-finder-row:nth-child(even) { background: var(--recipe-foot-bg); }
+.recipe-finder-row > a { font-weight: 500; }
+.recipe-finder-category {
+    font-size: 12px;
+    color: var(--recipe-muted);
+}
+/* tag chips inside rows: same palette as the card summary tags */
+.recipe-finder-row .op,
+.recipe-finder-row .mode {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 5px;
+    letter-spacing: .02em;
+    font-family: monospace;
+}
+.recipe-finder-row .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
+.recipe-finder-row .mode { background: #f1f2f4; color: #5f5c68; }
+.recipe-finder-row .mode-realtime { background: #ddefea; color: #02593f; }
+.recipe-finder-row .mode-scheduled { background: #fdf3cf; color: #755d00; }

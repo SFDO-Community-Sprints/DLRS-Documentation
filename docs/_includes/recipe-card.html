@@ -1,0 +1,11 @@
+{%- comment -%}
+Renders one cookbook recipe (a document from the `recipes` collection) as a
+collapsible card. Usage: {% include recipe-card.html recipe=recipe %}
+The h2 id comes from the recipe's `anchor` front matter and must stay stable —
+external deep links depend on it.
+{%- endcomment -%}
+{%- assign r = include.recipe -%}
+<details class="recipe-toggle">
+<summary><h2 id="{{ r.anchor }}">{{ r.title }}</h2> <span class="op">{{ r.op }}</span> <span class="mode{% if r.mode_class == "realtime" %} mode-realtime{% elsif r.mode_class == "scheduled" %} mode-scheduled{% endif %}">{{ r.mode }}</span></summary>
+{{ r.content | markdownify }}
+</details>
