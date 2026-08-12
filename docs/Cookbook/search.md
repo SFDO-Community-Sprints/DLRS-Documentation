@@ -7,80 +7,107 @@ nav_order: 0
 
 # Find a Recipe
 
-Filter the cookbook's recipes by calculation mode and aggregate operation.
-Within a group, picking several chips widens the match (OR); picks across
-groups narrow it (AND). Click a recipe to jump straight to it.
+Filter the cookbook's recipes by calculation mode and aggregate operation, then jump straight to the recipe you need. Links open the recipe's page with its card expanded.
 
-<div class="recipe-finder">
+<div class="recipe-search" id="recipe-search">
 
-<div class="recipe-finder-facet">
-<span class="recipe-finder-facet-label">Calculation Mode</span>
-<button type="button" class="recipe-finder-chip mode mode-realtime" data-facet="mode" data-value="realtime">Realtime</button>
-<button type="button" class="recipe-finder-chip mode mode-scheduled" data-facet="mode" data-value="scheduled">Scheduled</button>
-<button type="button" class="recipe-finder-chip mode" data-facet="mode" data-value="other">Other</button>
+<div class="recipe-search-filters">
+<div class="recipe-search-facet" data-facet="mode">
+<span class="recipe-search-facet-label">Calculation Mode</span>
+<button type="button" class="recipe-chip is-active" data-value="">All</button>
+<button type="button" class="recipe-chip chip-realtime" data-value="realtime">Realtime</button>
+<button type="button" class="recipe-chip chip-scheduled" data-value="scheduled">Scheduled</button>
+<button type="button" class="recipe-chip chip-other" data-value="other">Other</button>
 </div>
-
-<div class="recipe-finder-facet">
-<span class="recipe-finder-facet-label">Aggregate Operation</span>
+<div class="recipe-search-facet" data-facet="op">
+<span class="recipe-search-facet-label">Aggregate Operation</span>
+<button type="button" class="recipe-chip is-active" data-value="">All</button>
 {% assign ops = site.recipes | map: "op" | uniq | sort %}
-{%- for op in ops %}
-<button type="button" class="recipe-finder-chip op" data-facet="op" data-value="{{ op }}">{{ op }}</button>
-{%- endfor %}
+{% for op in ops %}<button type="button" class="recipe-chip chip-op" data-value="{{ op }}">{{ op }}</button>
+{% endfor %}</div>
 </div>
 
-{% assign all = site.recipes | sort: "title" %}
-<p class="recipe-finder-count" id="recipe-finder-count">{{ all.size }} of {{ all.size }} recipes</p>
+<p class="recipe-search-count" id="recipe-search-count" data-total="{{ site.recipes | size }}">{{ site.recipes | size }} of {{ site.recipes | size }} recipes</p>
 
-<ul class="recipe-finder-list">
-{%- for recipe in all %}
-<li class="recipe-finder-row" data-op="{{ recipe.op }}" data-mode="{{ recipe.mode_class }}">
-<a href="{{ site.baseurl }}/Cookbook/{{ recipe.category_url }}#{{ recipe.anchor }}">{{ recipe.title }}</a>
-<span class="recipe-finder-category">{{ recipe.category_label }}</span>
-<span class="op">{{ recipe.op }}</span>
-<span class="mode{% if recipe.mode_class == "realtime" %} mode-realtime{% elsif recipe.mode_class == "scheduled" %} mode-scheduled{% endif %}">{{ recipe.mode }}</span>
-</li>
-{%- endfor %}
-</ul>
+<div class="recipe-search-results" id="recipe-search-results">
+{% assign all = site.recipes | sort: "title" %}
+{% for r in all %}<a class="recipe-search-row" href="{{ site.baseurl }}/Cookbook/{{ r.category_url }}#{{ r.anchor }}" data-op="{{ r.op }}" data-mode="{{ r.mode_class }}">
+<span class="recipe-search-row-main">
+<span class="recipe-search-row-title">{{ r.title }}</span>
+<span class="recipe-search-row-category">{{ r.category_label }}</span>
+</span>
+<span class="op">{{ r.op }}</span>
+<span class="mode{% if r.mode_class == 'realtime' %} mode-realtime{% elsif r.mode_class == 'scheduled' %} mode-scheduled{% endif %}">{{ r.mode }}</span>
+</a>
+{% endfor %}</div>
+
+<p class="recipe-search-empty" id="recipe-search-empty" hidden>No recipes match the selected filters.</p>
 
 </div>
 
 <script>
 (function () {
-    var chips = document.querySelectorAll('.recipe-finder-chip');
-    var rows = document.querySelectorAll('.recipe-finder-row');
-    var count = document.getElementById('recipe-finder-count');
-    var total = rows.length;
+  var root = document.getElementById('recipe-search');
+  if (!root) return; /* no-op anywhere this markup isn't present */
 
-    function selected(facet) {
-        var values = [];
-        chips.forEach(function (chip) {
-            if (chip.dataset.facet === facet && chip.classList.contains('active')) {
-                values.push(chip.dataset.value);
-            }
-        });
-        return values;
-    }
+  var rows = Array.prototype.slice.call(
+    root.querySelectorAll('.recipe-search-row')
+  );
+  var countEl = document.getElementById('recipe-search-count');
+  var emptyEl = document.getElementById('recipe-search-empty');
+  var total = parseInt(countEl.getAttribute('data-total'), 10) || rows.length;
 
-    function apply() {
-        var modes = selected('mode');
-        var ops = selected('op');
-        var shown = 0;
-        rows.forEach(function (row) {
-            var ok = (modes.length === 0 || modes.indexOf(row.dataset.mode) !== -1) &&
-                     (ops.length === 0 || ops.indexOf(row.dataset.op) !== -1);
-            row.hidden = !ok;
-            if (ok) shown++;
-        });
-        count.textContent = shown + ' of ' + total + ' recipes';
-    }
+  /* Active selections per facet; an empty set means "All". */
+  var active = { mode: [], op: [] };
+
+  function applyFilters() {
+    var visible = 0;
+    rows.forEach(function (row) {
+      var modeOk = active.mode.length === 0 ||
+        active.mode.indexOf(row.getAttribute('data-mode')) !== -1;
+      var opOk = active.op.length === 0 ||
+        active.op.indexOf(row.getAttribute('data-op')) !== -1;
+      var show = modeOk && opOk; /* facets AND together */
+      row.hidden = !show;
+      if (show) visible++;
+    });
+    countEl.textContent = visible + ' of ' + total + ' recipes';
+    emptyEl.hidden = visible !== 0;
+  }
+
+  root.querySelectorAll('.recipe-search-facet').forEach(function (facet) {
+    var name = facet.getAttribute('data-facet');
+    var chips = Array.prototype.slice.call(
+      facet.querySelectorAll('.recipe-chip')
+    );
+    var allChip = chips.filter(function (c) {
+      return c.getAttribute('data-value') === '';
+    })[0];
 
     chips.forEach(function (chip) {
-        chip.addEventListener('click', function () {
-            chip.classList.toggle('active');
-            chip.setAttribute('aria-pressed', chip.classList.contains('active'));
-            apply();
+      chip.addEventListener('click', function () {
+        var value = chip.getAttribute('data-value');
+        if (value === '') {
+          active[name] = []; /* "All" clears the facet */
+        } else {
+          var i = active[name].indexOf(value);
+          if (i === -1) active[name].push(value); /* values within a facet OR */
+          else active[name].splice(i, 1);
+        }
+        chips.forEach(function (c) {
+          var v = c.getAttribute('data-value');
+          var on = v === '' ? active[name].length === 0
+                            : active[name].indexOf(v) !== -1;
+          c.classList.toggle('is-active', on);
+          c.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
-        chip.setAttribute('aria-pressed', 'false');
+        applyFilters();
+      });
+      chip.setAttribute('aria-pressed',
+        chip === allChip ? 'true' : 'false');
     });
+  });
+
+  applyFilters();
 })();
 </script>
