@@ -195,3 +195,98 @@ Amanda Styles
 
 **Contributed By**
 Marc Baizman
+
+## Campaign: Campaign Hierarchies of Opportunities
+
+**Description**
+
+> This recipe marks a Contact as an Active Sustainer based on whether or not the Contact's most recent Recurring Donations is Active.
+
+**Objects, Fields, Relationships**
+
+|                     Field | Value                                         |
+| ------------------------: | --------------------------------------------- |
+|             Parent Object | `Campaign`                                 |
+|              Child Object | `Opportunity`                         |
+|        Relationship Field | `CampaignId`                        |
+|     Relationship Criteria | `Has_Parent_Campaign__c = TRUE AND (StageName = 'Pledged' OR StageName = 'Accounting Received' OR StageName = 'Distribution Received' OR StageName='Stewardship' OR StageName='Approved')  `                                        |
+| Relationship Criteria Fields       | `StageName`                                                 |
+|        Field to Aggregate | `Amount`             |
+|         Field to Order By | n/a |
+|       Aggregate Operation | `SUM`                        |
+|    Aggregate Result Field | `Total_Revenue_of_Received_Gifts__c`                |
+|          Calculation Mode | `Watch for Changes and Process Later `                                      |
+| Schedule vs Child Trigger | Deploy the Child Trigger                      |
+
+**Preparation**
+
+> Has_Parent_Campaign__c is a Formula field that checks if the related Campaign has a ParentId.
+
+
+**Contributed By**
+Aron Schor
+
+
+## Contact: Tag Contact as a Major Sustainer
+
+**Description**
+
+> This recipe marks a Contact as a Major Donor based on whether or not any of the Contact's Active Recurring Donations reaches a certain Amount.
+
+**Objects, Fields, Relationships**
+
+|                     Field | Value                                         |
+| ------------------------: | --------------------------------------------- |
+|             Parent Object | `Contact`                                 |
+|              Child Object | `npe03__Recurring_Donation__c`                         |
+|        Relationship Field | `npe03__Contact__c`                        |
+|     Relationship Criteria | `Major_Sustainer_Calculation__c > 0`                                        |
+| Relationship Criteria Fields       | `Major_Sustainer_Calculation__c`                                                 |
+|        Field to Aggregate | `Major_Sustainer_Calculation__c`             |
+|         Field to Order By | n/a |
+|       Aggregate Operation | `SUM`                        |
+|    Aggregate Result Field | `Major_Sustainer__c`                |
+|          Calculation Mode | `Watch for Changes and Process Later `                                      |
+| Schedule vs Child Trigger | Deploy the Child Trigger                      |
+
+**Preparation**
+
+> Major_Sustainer_Calculation__c is a Formula field that gives a value of 1 if the Recurring Donation reflects an annual Amount (npe03__Amount__c) a certain number or higher, based on Amount and Installment Period (npe03__Installment_Period__c) and is Active (npsp__Status__c).
+
+
+**Contributed By**
+Aron Schor
+
+
+## Contact: Tag Contact as an Active Sustainer
+
+**Description**
+
+> This recipe marks a Contact as an Active Sustainer based on whether or not the Contact's most recent Recurring Donations is Active.
+
+**Objects, Fields, Relationships**
+
+|                     Field | Value                                         |
+| ------------------------: | --------------------------------------------- |
+|             Parent Object | `Contact`                                 |
+|              Child Object | `npe03__Recurring_Donation__c`                         |
+|        Relationship Field | `npe03__Contact__c`                        |
+|     Relationship Criteria | `Active_Sustainer__c = TRUE`                                        |
+| Relationship Criteria Fields       | `Active_Sustainer__c`                                                 |
+|        Field to Aggregate | `Active_Sustainer__c`             |
+|         Field to Order By | n/a |
+|       Aggregate Operation | `LAST`                        |
+|    Aggregate Result Field | `Active_Sustainer__c`                |
+|          Calculation Mode | `Invocable by Automation`                                      |
+| Schedule vs Child Trigger | Schedule, Child Trigger not deployed                      |
+
+**Preparation**
+
+> Active_Sustainer__c is a Recurring Donation formula field that uses npsp__Status__c = Active, along with another field unique to our org..
+
+
+**Contributed By**
+Aron Schor
+
+
+
