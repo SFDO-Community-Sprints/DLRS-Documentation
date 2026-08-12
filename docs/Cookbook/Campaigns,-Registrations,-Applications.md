@@ -16,7 +16,7 @@ nav_order: 2
 
 **Description**
 
-> Counts the number of campaigns a contact has been involved in. This is not possible with a standard rollup summary field because you can't create one on Contact record to summarize Campaign Member records.
+> This recipe counts the number of campaigns a contact has been involved in. This is not possible with a standard rollup summary field because you can't create one on Contact object to summarize Campaign Member records.
 
 **Objects, Fields, Relationships**
 
@@ -28,7 +28,7 @@ nav_order: 2
 | Relationship Criteria (SOQL Query) | n/a                           |
 | Relationship Criteria Fields       | n/a                           |
 | Field to Aggregate                 | `Id`                          |
-| Order By Field                     | n/a                           |
+| Field(s) to Order By               | n/a                           |
 | Aggregate Operation                | `COUNT`                       |
 | Aggregate Result Field             | `DLRS_CampaignMemberships__c` |
 | Calculation Mode                   | `Realtime`                    |
@@ -38,12 +38,11 @@ nav_order: 2
 
 - You could count only the number of "responded" statuses using SOQL criteria "HasResponded = true"
 - If your org standardizes campaign member status options, you could also make counts of memberships in various statuses.
-- You could also count specific types of Campaigns, by adding criteria for Campaign Type - see next recipe.
+- You could also count specific types of Campaigns, by adding criteria for Campaign Type (see next recipe).
 
 **Contributed By**
-Michael Kolodner, [Kolodner.com](https://kolodner.com/)
+Michael Kolodner
 
-<!-- Edited by Kathy Waterworth 05/05/2022 -->
 
 ## Contact: Count Campaign Memberships by Type
 
@@ -57,25 +56,26 @@ Michael Kolodner, [Kolodner.com](https://kolodner.com/)
 | Parent Object | `Contact` |
 | Child Object | `CampaignMember` |
 | Relationship Field |`ContactId` |
-| Relationship Criteria (SOQL Query) |`Campaign Type = ‘Direct Mail’ AND HasResponded = ‘TRUE’`
-| Relationship Criteria Fields | `Campaign Type, HasResponded` |
+| Relationship Criteria  |`Campaign_Type__c = ‘Direct Mail’ AND HasResponded = ‘TRUE’` |
+| Relationship Criteria Fields | `Campaign_Type__c, HasResponded` |
 | Field to Aggregate |`Id` |
-| Order By Field | n/a |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `COUNT` |
 | Aggregate Result Field |  `DLRS_Count_of_<direct_mail>_Campaign_Responses__c` |
-| Calculation Mode | `Scheduled`
-| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furiously campaign members can come in.
+| Calculation Mode | `Invocable by Automation` |
+| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furiously campaign members can come in. |
 
-**Any test code or other preparations needed:**
+**Any other preparations needed:**
+> Create formula field for Campaign Type on Campaign Member object.
+- Field Name:: Campaign Type (Campaign_Type__c)
+- Formula: Text(Campaign.Type)
 > Adding the picklist values you want to use for Campaign Type. 
 
 **Variations:**
->You could use other Campaign Type values, such as Email Fundraising, Social Fundraising, Event, etc. and set up the fields as a suite for segmentation.
+- You could use other Campaign Type values, such as Email Fundraising, Social Fundraising, Event, etc. and set up the fields as a suite for segmentation.
 
 **Contributed By**
-Beth Hintze, [Attain Partners](https://attainpartners.com/)
-
-<!-- Edited by Caroline Renard 04/02/2023 -->
+Beth Hintze
 
 ## Contact: Campaign of First Donation
 
@@ -89,13 +89,13 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 | ------- | -------- |
 |             Parent Object | `Contact`                                                                                                                                                                                    |
 |              Child Object | `Opportunity`                                                                                                                                                                                |
-|        Relationship Field | `Primary Contact`                                                                                                                                                                            |
+|        Relationship Field | `npsp__Primary_Contact__c`                                                                                                                                                                   |
 |     Relationship Criteria | None                                                                                                                                                                                         |
-|        Field to Aggregate | `CampaignID`                                                                                                                                                                                 |
+|        Field to Aggregate | `CampaignId`                                                                                                                                                                                 |
 |         Field to Order By | `CloseDate`                                                                                                                                                                                  |
-|       Aggregate Operation | `First`                                                                                                                                                                                      |
+|       Aggregate Operation | `FIRST`                                                                                                                                                                                      |
 |    Aggregate Result Field | `DLRS_First_Campaign_Supported__c`                                                                                                                                                           |
-|          Calculation Mode | Scheduled                                                                                                                                                                                    |
+|          Calculation Mode | `Watch for Changes and Process Later`                                                                                                                                                        |
 | Schedule vs Child Trigger | Deploy the Child Trigger, and since this is unlikely to be urgent and would not change after creation, this roll-up is a good fit for scheduling to run with the DLRS calculation scheduler. |
 
 **Preparation**
@@ -108,13 +108,13 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 - Show the first or last Campaign on Account instead, using Account as the relationship field.
 
-**Contributed by** Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
+**Contributed by** Amanda Styles
 
 ## Account: First Event Purchased Date
 
 **Description**
 
-> Rolls up the date of the first event that someone in a household has purchased a ticket for. The ticket record must be active, and the amount paid for the ticket must be greater than $0. This version is specifically for _PatronManager_ users, and summarizes custom Ticket Order Item records, but you could use it for any custom objects that represent tickets or registrations.
+> this recipe rolls up the date of the first event that someone in a household has purchased a ticket for. The ticket record must be active, and the amount paid for the ticket must be greater than $0. This version is specifically for _**PatronManager**_ users, and summarizes custom Ticket Order Item records, but you could use it for any custom objects that represent tickets or registrations.
 
 **Objects, Fields, Relationships**
 
@@ -126,10 +126,10 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 | Relationship Criteria (SOQL Query) | `PatronTicket__Status__c = 'Active' AND PatronTicket__EffectiveTicketPrice__c > 0`                                                                                                                                                                     |
 |       Relationship Criteria Fields | `PatronTicket__Status__c` `PatronTicket__EffectiveTicketPrice__c`                                                                                                                                                                                      |
 |                 Field to Aggregate | `Event_Instance_As_Date__c`                                                                                                                                                                                                                            |
-|                     Order By Field | n/a                                                                                                                                                                                                                                                    |
+|               Field(s) to Order By | n/a                                                                                                                                                                                                                                                    |
 |                Aggregate Operation | `MIN`                                                                                                                                                                                                                                                  |
 |             Aggregate Result Field | `DLRS_First_Purchased_Event_Date__c`                                                                                                                                                                                                                   |
-|                   Calculation Mode | `Process Builder`                                                                                                                                                                                                                                      |
+|                   Calculation Mode | `Invocable by Automation `           |
 |          Schedule vs Child Trigger | Run on a schedule every morning at 5am, and don’t deploy the Child Trigger (since there are a lot of other triggers involved in a ticket purchase). It seems to be fine to have this field updated once a day, as it is mostly used in annual reports. |
 
 **Preparation**
@@ -142,13 +142,13 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 - Rollup on `Contact` instead of `Account`. Substitute the parent object with Contact, and adjust the relationship and target fields.
 
-**Contributed by** Caroline Renard, [Data Geeks Lab](https://www.datageekslab.com)
+**Contributed by** Caroline Renard
 
 ## Contact: Current Program Engagement Status
 
 **Description**
 
-> Shows the current status of a program engagement (or any object that may have an open and closed option). Multiple other use cases for this rollup as this function will work with any field.
+> This recipe shows the current status of a program engagement (or any custom object that may have an open and closed option). Multiple other use cases for this rollup as this function will work with any field.
 
 **Objects, Fields, Relationships**
 
@@ -156,11 +156,11 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 | ------- | -------- |
 | Parent Object                      | `Contact`                                |
 | Child Object                       | `Program_Engagement__c`                  |
-| Relationship Field                 | `Member__c` (this is the contact lookup) |
+| Relationship Field                 | `Member__c` (this is a custom contact lookup) |
 | Relationship Criteria (SOQL Query) | n/a                                      |
 | Relationship Criteria Fields       | n/a                                      |
 | Field to Aggregate                 | `Intake_Status__c`                       |
-| Order By Field                     | `CreatedDate`                            |
+| Field(s) to Order By               | `CreatedDate`                            |
 | Aggregate Operation                | `LAST`                                   |
 | Aggregate Result Field             | `Current_PE_Status__c`                   |
 | Calculation Mode                   | `Realtime`                               |
@@ -172,12 +172,11 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 
 **Variations**
 
-- Multiple use cases when you want to display the first or last of something on the main contact page (or any other parent page), helps with ease of reporting and having some check and balances as well as adding guardrails into automation or new record creation, etc
+- Multiple use cases when you want to display the first or last of something on the main contact page (or any other parent page), helps with ease of reporting and having some check and balances as well as adding guardrails into automation or new record creation, etc.
 
 **Contributed By**
-Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
+Heath Parks
 
-<!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
 ## Contact: List of Years Engaged in Programs
 
@@ -194,15 +193,15 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 | Parent Object                      | `Contact`                                        |
 | Child Object                       | `Program_Engagement__c`                          |
 | Relationship Field                 | `Member__c` (this is the contact lookup)         |
-| Relationship Criteria (SOQL Query) | n/a                                              |
+| Relationship Criteria              | n/a                                              |
 | Relationship Criteria Fields       | n/a                                              |
 | Field to Aggregate                 | `Engagement_Year__c`                             |
-| Order By Field                     | `Engagement_Date__c`                             |
+| Field(s) to Order By               | `Engagement_Date__c`                             |
 | Aggregate Operation                | `CONCATENATE DISTINCT`                           |
 | Aggregate Result Field             | `DLRS_Engagement_Year_s__c`                      |
 | Concatenate Delimiter              | comma “,” or semicolon “;” to separate the years |
-| Calculation Mode                   | `Realtime or Process Bulder`                     |
-| Schedule vs Child Trigger          | `Child Trigger deployed for Realtime`            |
+| Calculation Mode                   | `Realtime`                                       |
+| Schedule vs Child Trigger          | `Child Trigger`                                  |
 
 **Preparation**
 
@@ -216,6 +215,5 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 - This rollup would work well as a nightly or even weekly scheduled calculation, as well as in realtime.
 
 **Contributed By**
-Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
+Heath Parks
 
-<!-- Edited by Jillian Nii 05/05/2022 -->
