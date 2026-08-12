@@ -23,9 +23,10 @@ nav_order: 1
 |                              Field | Value                                                            |
 | ---------------------------------: | ---------------------------------------------------------------- |
 |                      Parent Object | `Contact`                                                        |
-|                       Child Object | `NPSP Affiliation`                                               |
+|                       Child Object | `npe5__Affiliation__c`                                           |
+|                       Relationship | `npe5__Contact__c`                                               |
 | Relationship Criteria (SOQL Query) | `npe5__Role__c = ‘Board Member’ AND npe5__Status__c = ‘Current’` |
-|       Relationship Criteria Fields | `npe5__Role__c` `Status`                                         |
+|       Relationship Criteria Fields | `npe5__Role__c` `npe5__Status__c`                                         |
 |                 Field to Aggregate | `Id`                                                             |
 |                  Field to Order By | n/a                                                              |
 |                Aggregate Operation | `COUNT`                                                          |
@@ -43,7 +44,7 @@ nav_order: 1
 
 - You could also have a checkbox formula field on the contact object for easy reporting. If the rollup value >=1, then the checkbox is checked (true), meaning they are a board member. If the rollup is 0, then the checkbox is unchecked (false).
 
-**Contributed By** Hua Ping Tan, [Belmar Consulting Group](https://www.belmar.ca/)
+**Contributed By** Hua Ping Tan
 
 
 ## Contact: Concatenate Special Relationship to Organization
@@ -59,23 +60,23 @@ nav_order: 1
 | Relationship Field |`npe5__Contact__c` |
 | Relationship Criteria (SOQL Query) |`(npe5__Status__c = 'Current') AND (npe5__Organization__c = '_Your Org's 18 Digit Account ID_')` |
 | Relationship Criteria Fields | `npe5__Status__c, npe5__Organization__c` |
-| Field to Aggregate |`Role_Text_Formula__c` |
-| Order By Field | n/a |
+| Field to Aggregate |`npe5__Role__c` |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `CONCATENATE DISTINCT` |
+| Concatenate Delimiter |  `,` |
 | Aggregate Result Field |  `DLRS_Special_Relationship_to_(Org Name)__c` |
 | Calculation Mode | `Realtime`
 | Schedule vs Child Trigger | Child Trigger deployed.
 
-**Any test code or other preparations needed:**
+**Any other preparations needed:**
 - Create role picklist values for Board Member, Volunteer, Staff, etc, in the Role Text Formula field
-- Create the account for your organization, and get the Account Id.
-- In this example, I relabeled the standard Affiliations Role field to ‘Title’, and created a new Role Text picklist, because we didn't want to use the Related Opportunity Contact role and trigger out-of-the-box automation on opportunities
+- If needed, create the account for your organization, and get the Account Id that you will use in the Relationship Criteria field.
 
 **Variations:**
 This could also be used to track former relationships, by modifying the Status value in the Relationship Criteria.
 
 **Contributor**
-Beth Hintze, [Attain Partners](https://attainpartners.com/)
+Beth Hintze
 
 
 ## Contact: Count Relationships to Accounts
@@ -94,7 +95,7 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 | Relationship Criteria (SOQL Query) | n/a                         |
 | Relationship Criteria Fields       | n/a                         |
 | Field to Aggregate                 | `Id`                        |
-| Order By Field                     | n/a                         |
+| Field(s) to Order By               | n/a                         |
 | Aggregate Operation                | `COUNT`                     |
 | Aggregate Result Field             | `Count_of_Relationships__c` |
 | Calculation Mode                   | `Realtime`                  |
@@ -105,23 +106,25 @@ Beth Hintze, [Attain Partners](https://attainpartners.com/)
 > It took me a little while to realize the field I needed to summarize was Id. Normally for the Count function with DLRS I summarize “Name” but AccountContactRelation doesn’t have a name field!
 
 **Contributed By**
-Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
+Sarah Pilzer
 
 ## Account: Count Number of Contacts
 
 **Description**
 
-> Count number of Contacts associated with an Account.
+> This recipe will do a count of the number of Contacts associated with an Account.
+
+**Objects, Fields, Relationships**
 
 | Field                             | Value          |
 | ---------------------------------- | ------------------------ |
 | Parent Object                      | `Account`                |
 | Child Object                       | `Contact`                |
-| Relationship Field                 | `Account`                |
+| Relationship Field                 | `AccountId                |
 | Relationship Criteria (SOQL Query) | n/a                      |
 | Relationship Criteria Fields       | n/a                      |
 | Field to Aggregate                 | `Id`                     |
-| Order By Field                     | n/a                      |
+| Field(s) to Order By               | n/a                      |
 | Aggregate Operation                | `COUNT`                  |
 | Aggregate Result Field             | `Count_of_Contacts__c`   |
 | Calculation Mode                   | `Realtime`               |
@@ -134,7 +137,9 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 
 **Description**
 
-> Counts the number of Address Types associated with an Account. We use the Address Type field to indicate specific purposes for addresses, including Acknowledgements, Direct Mail, and Event Invitations. This rollup counts how many addresses have a specific type value, 'Direct Mail' in this case, to check that the value exists.
+> This recipe counts the number of Address Types associated with an Account. We use the Address Type field to indicate specific purposes for addresses, including Acknowledgements, Direct Mail, and Event Invitations. This rollup counts how many addresses have a specific type value, 'Direct Mail' in this case, to check that the value exists.
+
+**Objects, Fields, Relationships**
 
 | Field                             | Value                             |
 | ---------------------------------- | --------------------------------------- |
@@ -144,7 +149,7 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 | Relationship Criteria (SOQL Query) | `npsp__Address_Type__c = ‘Direct Mail’` |
 | Relationship Criteria Fields       | `npsp__Address_Type__c`                 |
 | Field to Aggregate                 | `Id`                                    |
-| Order By Field                     | n/a                                     |
+| Field(s) to Order                  | n/a                                     |
 | Aggregate Operation                | `COUNT`                                 |
 | Aggregate Result Field             | `Count_of_DirectMail Address__c`        |
 | Calculation Mode                   | `Scheduled`                             |
@@ -155,4 +160,4 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 > I think I would do an incremental scheduled batch if I did this again.
 
 **Contributed By**
-Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
+Amanda Styles
