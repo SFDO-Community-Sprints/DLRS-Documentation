@@ -46,6 +46,15 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 # "favicon.ico" used to change default favicon
 
 ########################################################
+# Cookbook recipes: one markdown file per recipe under docs/_recipes/, with
+# structured front matter (title, anchor, category, order, op, mode, ...).
+# The Cookbook category pages assemble them via _includes/recipe-card.html and
+# Cookbook/search.md filters them; the collection itself emits no pages.
+collections:
+  recipes:
+    output: false
+
+########################################################
 # Callout boxes (colored note/warning/legacy blocks).
 # Attach to a blockquote with a {: .name } line, e.g. {: .legacy }
 callouts:
