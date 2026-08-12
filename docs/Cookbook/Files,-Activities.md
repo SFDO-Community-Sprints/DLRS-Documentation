@@ -14,7 +14,7 @@ nav_order: 3
 
 **Description**
 
-> Salesforce Files are incredibly useful, but hard to report on. One of the first things you need to figure out in working with them is that the “File” itself is actually a ContentDocument and it is shared onto a record with a ContentDocumentLink. Sometimes you just need to know how many files are connected to a record (or if there are any files at all). This recipe counts the number of Files related to a record that have the specific text “resume” somewhere in the title of the file. So you can use this to determine if a job application has an attached résumé or not. Replace the name “resume” with something else and you’ve got endless variations available.
+> Salesforce Files are incredibly useful, but hard to report on. One of the first things you need to figure out in working with them is that the “File” itself is actually a ContentDocument record and it is shared onto a record via a ContentDocumentLink record. Sometimes you just need to know how many files are connected to a record (or if there are any files at all). This recipe counts the number of Files related to a record that have the specific text “resume” somewhere in the title of the file. So you can use this to determine if a job application has an attached résumé or not. Replace the name “resume” with something else and you’ve got endless variations available.
 
 **Objects, Fields, Relationships**
 
@@ -22,8 +22,9 @@ nav_order: 3
 | ------------------------: | --------------------------------------------- |
 |             Parent Object | Can be used on any object, standard or custom |
 |              Child Object | `ContentDocumentLink`                         |
+|        Relationship Field | `LinkedIdentityId`                            |
 |     Relationship Criteria | `ContentDocument.Title LIKE '%resume%'`       |
-|             Rollup Action | `Count`                                       |
+|     Relationship Criteria Field | `ContentDocument.Title                  |
 |        Field to Aggregate | `Id`                                          |
 |         Field to Order By | N/A                                           |
 |       Aggregate Operation | `COUNT`                                       |
@@ -39,13 +40,13 @@ nav_order: 3
 
 - In SQL Query: replace "resume" with any appropriate text and potentially move/remove the % symbols.
 
-**Contributed by** Jon LaRosa, [LaRosa Consulting](https://trailblazer.me/id/jonlarosa)
+**Contributed by** Jon LaRosa
 
 ## Contact: Completed Log-a-Call Activities LastYear
 
 **Description**
 
-> Counts the number of completed log-a-call activities for a contact over the past year. Was used to get an idea of how many times we were logging a call for a contact to gauge engagement and "high touch".
+> This recipe counts the number of completed log-a-call activities for a contact over the past year. Was used to get an idea of how many times users are logging a call for a contact to gauge engagement and "high touch".
 
 **Objects, Fields, Relationships**
 
@@ -54,14 +55,14 @@ nav_order: 3
 | Parent Object                      | `Contact`                                                              |
 | Child Object                       | `Task`                                                                 |
 | Relationship Field                 | `WhoID`                                                                |
-| Relationship Criteria (SOQL Query) | `Status='Completed' AND TaskSubtype='Call' AND ActivityDate=LAST_YEAR` |
+| Relationship Criteria              | `Status='Completed' AND TaskSubtype='Call' AND ActivityDate=LAST_YEAR` |
 | Relationship Criteria Fields       | `Status, TaskSubtype, ActivityDate`                                    |
 | Field to Aggregate                 | `Id`                                                                   |
-| Order By Field                     | n/a                                                                    |
+| Field(s) to Order By               | n/a                                                                    |
 | Aggregate Operation                | `COUNT`                                                                |
 | Aggregate Result Field             | `Completed_Activities_LY__c`                                           |
-| Calculation Mode                   | `Scheduled`                                                            |
-| Schedule vs Child Trigger          | Schedule, No Child Trigger.                                            |
+| Calculation Mode                   | `Invocable by Automation `                                             |
+| Schedule vs Child Trigger          | Schedule via Full Recalculation, No Child Trigger                      |
 
 **Preparation**
 
@@ -71,16 +72,15 @@ nav_order: 3
 
 - Multiple variations for based on record type for task, can also be used to track high value contacts/donors etc to make sure that key people are being touched regularly over time, etc
 
-**Contributed By**
-Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
+**Contributed By** 
+Heath Parks 
 
-<!-- Kathy Waterworth 05/05/2022  Email: heath.parks@northpeak.com -->
 
 ## Require Receipts on Expense Reports
 
 **Description**
 
-> Counts the number of attached Files on a custom object (Expense Report). Though this won't guarantee that the files are actually receipts, it can be used as part of a check to make sure that expense reports are complete before sending them to managers for checking and approval.
+> This recipe counts the number of attached Files on a custom object (Expense Report). Though this won't guarantee that the files are actually receipts, it can be used as part of a check to make sure that expense reports are complete before sending them to managers for checking and approval.
 >
 > This simplified example is based on use in real life at my prior job. In that org we had a Monthly Expense Report object and child Expense Report Items. We asked people to upload files onto the top-level object and prevented putting the Monthly Expense Report into the approval process if there was not at least one attached File. (Some people would scan multiple receipts into a single PDF, so we couldn't assume a 1:1 count of files to receipts.)
 
@@ -91,10 +91,10 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 | Parent Object                      | `Expense_Report__c`               |
 | Child Object                       | `ContentDocumentLink`             |
 | Relationship Field                 | `LinkedEntityId`                  |
-| Relationship Criteria (SOQL Query) | n/a                               |
+| Relationship Criteria              | n/a                               |
 | Relationship Criteria Fields       | n/a                               |
 | Field to Aggregate                 | `Id`                              |
-| Order By Field                     | n/a                               |
+| Field(s) to Order By               | n/a                               |
 | Aggregate Operation                | `COUNT`                           |
 | Aggregate Result Field             | `DLRS_Count_Attached_Receipts__c` |
 | Calculation Mode                   | `Realtime`                        |
@@ -107,6 +107,6 @@ Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
 - The User Story here, for capturing receipts on expense reports, is a good example of how working with Files is tricky. We can use the count of attached files to ensure that some file has been attached. But there is nothing to stop someone from attaching the first jpg they find on their desktop, rather than an actual receipt. So in this case, we had to make sure that managers would spot check their team's expense reports. But this at least allowed us to prevent submission of expense reports with no attached receipts at all.
 
 **Contributed By**
-Michael Kolodner, [Kolodner.com](https://kolodner.com/)
+Michael Kolodner
 
-<!-- Edited by Kathy Waterworth 05/05/2022 -->
+
