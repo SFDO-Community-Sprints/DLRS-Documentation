@@ -65,8 +65,8 @@ nav_order: 1
 | Aggregate Operation | `CONCATENATE DISTINCT` |
 | Concatenate Delimiter |  `,` |
 | Aggregate Result Field |  `DLRS_Special_Relationship_to_(Org Name)__c` |
-| Calculation Mode | `Realtime`
-| Schedule vs Child Trigger | Child Trigger deployed.
+| Calculation Mode | `Realtime` |
+| Schedule vs Child Trigger | `Child Trigger deployed` |
 
 **Any other preparations needed:**
 - Create role picklist values for Board Member, Volunteer, Staff, etc, in the Role Text Formula field
@@ -120,7 +120,7 @@ Sarah Pilzer
 | ---------------------------------- | ------------------------ |
 | Parent Object                      | `Account`                |
 | Child Object                       | `Contact`                |
-| Relationship Field                 | `AccountId                |
+| Relationship Field                 | `AccountId`              |
 | Relationship Criteria (SOQL Query) | n/a                      |
 | Relationship Criteria Fields       | n/a                      |
 | Field to Aggregate                 | `Id`                     |
@@ -152,8 +152,8 @@ Michael Kolodner, for client: [Clean Air Council](https://cleanair.org/)
 | Field(s) to Order                  | n/a                                     |
 | Aggregate Operation                | `COUNT`                                 |
 | Aggregate Result Field             | `Count_of_DirectMail Address__c`        |
-| Calculation Mode                   | `Scheduled`                             |
-| Schedule vs Child Trigger          | `Run on a schedule`                     |
+| Calculation Mode                   | `Watch for Changes and Process Later`   |
+| Schedule vs Child Trigger          | `Child Trigger deployed`                    |
 
 **Preparation**
 
