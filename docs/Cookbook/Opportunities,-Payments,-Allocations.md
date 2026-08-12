@@ -11,6 +11,9 @@ nav_order: 4
 * [Contact: Sum of won Tribute Gifts](#contact-sum-of-won-tribute-gifts)
 * [Campaign: Total Amount Won from Opportunity Record Type or Lead Source](#campaign-total-amount-won-from-opportunity-record-type-or-lead-source)
 * [Contact: Current Active Recurring Donations](#contact-current-active-recurring-donations)
+* [Campaign: Campaign Hierarchies of Opportunities](#campaign-campaign-hierarchies-of-opportunities)
+* [Contact: Tag Contact as a Major Sustainer](#contact-tag-contact-as-a-major-sustainer)
+* [Contact: Tag Contact as an Active Sustainer](#contact-tag-contact-as-an-active-sustainer)
 
 ## Opportunity: Sum of Paid Payments This Financial Year
 
