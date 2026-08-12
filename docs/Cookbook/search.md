@@ -57,16 +57,16 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
   var emptyEl = document.getElementById('recipe-search-empty');
   var total = parseInt(countEl.getAttribute('data-total'), 10) || rows.length;
 
-  /* Active selections per facet; an empty set means "All". */
-  var active = { mode: [], op: [] };
+  /* Single selection per facet; an empty string means "All". */
+  var active = { mode: '', op: '' };
 
   function applyFilters() {
     var visible = 0;
     rows.forEach(function (row) {
-      var modeOk = active.mode.length === 0 ||
-        active.mode.indexOf(row.getAttribute('data-mode')) !== -1;
-      var opOk = active.op.length === 0 ||
-        active.op.indexOf(row.getAttribute('data-op')) !== -1;
+      var modeOk = active.mode === '' ||
+        active.mode === row.getAttribute('data-mode');
+      var opOk = active.op === '' ||
+        active.op === row.getAttribute('data-op');
       var show = modeOk && opOk; /* facets AND together */
       row.hidden = !show;
       if (show) visible++;
@@ -80,31 +80,21 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
     var chips = Array.prototype.slice.call(
       facet.querySelectorAll('.recipe-chip')
     );
-    var allChip = chips.filter(function (c) {
-      return c.getAttribute('data-value') === '';
-    })[0];
 
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
         var value = chip.getAttribute('data-value');
-        if (value === '') {
-          active[name] = []; /* "All" clears the facet */
-        } else {
-          var i = active[name].indexOf(value);
-          if (i === -1) active[name].push(value); /* values within a facet OR */
-          else active[name].splice(i, 1);
-        }
+        /* re-clicking the selected chip deselects back to "All" */
+        active[name] = active[name] === value ? '' : value;
         chips.forEach(function (c) {
-          var v = c.getAttribute('data-value');
-          var on = v === '' ? active[name].length === 0
-                            : active[name].indexOf(v) !== -1;
+          var on = c.getAttribute('data-value') === active[name];
           c.classList.toggle('is-active', on);
           c.setAttribute('aria-pressed', on ? 'true' : 'false');
         });
         applyFilters();
       });
       chip.setAttribute('aria-pressed',
-        chip === allChip ? 'true' : 'false');
+        chip.getAttribute('data-value') === '' ? 'true' : 'false');
     });
   });
 
