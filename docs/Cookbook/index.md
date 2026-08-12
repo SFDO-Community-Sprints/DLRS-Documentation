@@ -13,7 +13,7 @@ Just like a “kitchen” cookbook, we’ve laid out the ingredients and the ste
 
 The introduction below explains how the recipes are laid out, and the examples are grouped in sections around similar issues - see the links in the navigation sidebar. We hope you’ll find these helpful for your work!
 
-The DLRS Cookbook was started at an Open Source Community Sprint in October 2021 by a group of seasoned DLRS users who wanted to share examples of rollups that have worked well for them. This is just the beginning of the collection: please help us to expand the range of examples by contributing a recipe of your own, using this [form](https://docs.google.com/forms/d/e/1FAIpQLSc3DN1YwA0fTHTlWbF2xjy4sd_e3cuy_6vyoZoLOv586EQwfA/viewform).
+The DLRS Cookbook was started at an Open Source Community Sprint in October 2021 by a group of seasoned DLRS users who wanted to share examples of rollups that have worked well for them. This is just the beginning of the collection: please help us to expand the range of examples by contributing a recipe of your own, using this [form](https://docs.google.com/forms/d/e/1FAIpQLSciAby6-jsOTA41vf0psLF2x6A5L0RzZeBqfOGKohZoisN2mw/viewform).
 
 ## Read the whole recipe
 
@@ -30,7 +30,7 @@ You can use the name and description of each recipe to decide if it will work fo
 
 ## Know your SOQL
 
-If your rollups are going to have any kind of filter on the child records, you will need to express that filter as a SOQL query. Start learning about SOQL [here on Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/soql-for-admins). [Workbench](https://workbench.developerforce.com/login.php) also has a SOQL query builder. In particular, relative dates in SOQL queries can be difficult to remember:
+If your rollups are going to have any kind of filter on the child records, you will need to express that filter as a SOQL query. Start learning about SOQL [here on Trailhead](https://trailhead.salesforce.com/en/content/learn/modules/soql-for-admins). [Workbench](https://workbench.developerforce.com/login.php) and [Salesforce Inspector Reloaded](https://chromewebstore.google.com/detail/salesforce-inspector-relo/hpijlohoihegkfehhibggnkbjhoemldh?pli=1) also have a SOQL query builder. In particular, relative dates in SOQL queries can be difficult to remember:
 
 - [Relative Dates (Salesforce Help)](https://help.salesforce.com/s/articleView?language=en_US&id=filter_dates_relative.htm)
 - [About Relative Dates](https://admin.salesforce.com/blog/2019/five-things-salesforce-admins-can-do-with-relative-dates)
@@ -41,15 +41,15 @@ We provide examples of SOQL queries with our recipes to give you a starting poin
 
 It’s important to understand the different Calculation Modes as well as the Recalculation options (see [How and When DLRS Calculates](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html) for details.)
 
-- The Calculation Mode picklist offers Realtime, Watch for Changes and Process Later (labeled Scheduled in versions prior to 2.21), Invocable by Automation (labeled Process Builder in versions prior to 2.21), and Developer modes.
-  - Realtime: this setting requires deployment of the child trigger and will run your rollups whenever a child record is saved.
-  - Watch for Changes and Process Later: this setting will create helper records when a child record is saved and then those will all be processed when the Apex job RollupJob runs. You must manually set this job to run or no rollups will calculate!
-  - Invocable by Automation and Developer modes allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
-- The Schedule Recalculation button (at the bottom of a saved rollup) allows you to schedule your rollups to run without being triggered by an edit on the child record (e.g. nightly, monthly, etc.)
+- The **Calculation Mode** picklist offers Realtime, Watch for Changes and Process Later (labeled Scheduled in versions prior to 2.21), Invocable by Automation (labeled Process Builder in versions prior to 2.21), and Developer modes.
+  - Realtime: This setting requires deployment of the child trigger and will run your rollups whenever a child record is saved.
+  - Watch for Changes and Process Later: This setting will create helper records when a child record is saved and then those will all be processed when the Apex job RollupJob runs. You must manually set this job to run or no rollups will calculate!
+  - Invocable by Automation and Developer: These settings allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
+- The **Schedule Recalculation** button (at the bottom of a saved rollup) allows you to schedule your rollups to run without being triggered by an edit on the child record (e.g. nightly, monthly, etc.).
   
 ## Sample the variations
 
-Often rollup summaries come in pairs, or groups: for example, if you calculate the first value you’ll probably also need the last or most recent. If you count the number of child records, you may also want to total the amounts, or find the largest or average amount. With our recipes, we’ve given you the basic template, and then suggested variations, where the ingredients will be almost the same, except perhaps the action or the target field. You can clone Lookup Rollup Summaries in the Custom Metadata Settings, and make adjustments to set up your variations quickly and easily.
+Often rollup summaries come in pairs or groups: for example, if you calculate the first value, you’ll probably also need the last or most recent. If you count the number of child records, you may also want to total the amounts, or find the largest or average amount. With our recipes, we’ve given you the basic template, and then suggested variations, where the ingredients will be almost the same, except perhaps the action or the target field. You can clone Lookup Rollup Summaries in the Custom Metadata Settings, and make adjustments to set up your variations quickly and easily.
 
 ## Share your results!
 
@@ -57,7 +57,7 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 # How to Read our Template
 
-- **Page:** We’ve grouped similar recipes together on separate pages. A page will be either a topic, a package or a parent object.
+- **Page:** We’ve grouped similar recipes together on separate pages. A page will be either a topic, a package, or a parent object.
 
 - **Suggested Rollup Name:** We’ve suggested a name for the rollup based on the naming convention we mentioned in the Prepare Your Ingredients section.
 
@@ -77,9 +77,9 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 - **Field to Aggregate:** The field that you are counting or totaling in your calculation. For a straightforward count, you’ll use the record Id.
 
-- **Field to Order By:** When calculating a first or last value, or concatenating several values, you’ll need to tell the rollup summary the order in which to review the records (example: Close Date or Created Date).
+- **Field(s) to Order By:** When calculating a first or last value, or concatenating several values, you’ll need to tell the rollup summary the order in which to review the records (example: Close Date or Created Date).
 
-- **Aggregate Operation:** Options here are Count, Count Distinct, Sum, Average, Min, Max, First, Last, Concatenate and Concatenate Distinct (for more details about what each option does, see here: https://dandonin.com/2017/03/16/how-to-dlrs/)
+- **Aggregate Operation:** Options here are Count, Count Distinct, Sum, Average, Min, Max, First, Last, Concatenate and Concatenate Distinct (for more details about what each option does, see here: https://dandonin.com/2017/03/16/how-to-dlrs/).
 
 - **Aggregate Result Field:** The target field on your parent object where the results will be displayed.
 
@@ -91,12 +91,12 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 - **Variations:** Ways that you can adjust the recipe to get other similar results (example: get the last or most recent date of an event as well as the first date).
 
-- **See also:** Links to similar recipes elsewhere in the cookbook...
+- **See also:** Links to similar recipes elsewhere in the cookbook.
 
 ### Credits
 
 > Thanks to the top chefs/editing team for their time and commitment to this project: especially _Marc Baizman_, _Shari Carlson_, _Beth Hintze_, _Michael Kolodner_, _Nick Lindberg_, _Jodi Nemser-Abrahams_, _Jillian Nii_, _Caroline Renard_, _Rachel Sinex_, _Amanda Styles_ and _Kathy Waterworth_.
 >
-> Tip of the hat to _Ruth Mar Tam_ for the inspiration of the headings from her wonderful [Baked to Order Cookbook](https://cooktildelicious.com/baked-to-order-cookbook/)
+> Tip of the hat to _Ruth Mar Tam_ for the inspiration of the headings from her wonderful [Baked to Order Cookbook](https://cooktildelicious.com/baked-to-order-cookbook/).
 >
 > Tip of the hat to _Andrew Adamyk_ for his Markdown conversion help.
