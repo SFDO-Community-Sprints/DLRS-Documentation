@@ -392,6 +392,18 @@
 }
 
 /* --- result rows: collapsed-card lookalikes --- */
+/* real <ul>/<li> for list semantics. The theme styles lists as
+   `.main-content ul` and draws bullets itself via `ul > li::before`,
+   so the resets need the extra ancestor to out-rank it. */
+.recipe-search .recipe-search-results {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.recipe-search .recipe-search-item { margin: 0; padding: 0; }
+.recipe-search .recipe-search-item::before { content: none; }
+/* author styles beat the UA's [hidden] rule, so restate it */
+.recipe-search .recipe-search-item[hidden] { display: none; }
 .recipe-search-row {
     display: flex;
     align-items: center;
@@ -412,7 +424,6 @@
     text-decoration: none;
 }
 .recipe-search-row:hover .recipe-search-row-title { text-decoration: underline; }
-.recipe-search-row[hidden] { display: none; }
 .recipe-search-row-main {
     display: flex;
     flex-direction: column;

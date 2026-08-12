@@ -27,11 +27,13 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 {% endfor %}</div>
 </div>
 
-<p class="recipe-search-count" id="recipe-search-count" data-total="{{ site.recipes | size }}">{{ site.recipes | size }} of {{ site.recipes | size }} recipes</p>
+<p class="recipe-search-count" id="recipe-search-count" role="status" aria-live="polite" data-total="{{ site.recipes | size }}">{{ site.recipes | size }} of {{ site.recipes | size }} recipes</p>
 
-<div class="recipe-search-results" id="recipe-search-results">
+<!-- role="list" restates the semantics list-style:none strips in Safari/VoiceOver -->
+<ul class="recipe-search-results" id="recipe-search-results" role="list">
 {% assign all = site.recipes | sort: "title" %}
-{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% unless mc == 'realtime' or mc == 'scheduled' %}{% assign mc = 'other' %}{% endunless %}<a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}" data-op="{{ r.operation }}" data-mode="{{ mc }}">
+{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% unless mc == 'realtime' or mc == 'scheduled' %}{% assign mc = 'other' %}{% endunless %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
+<a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}">
 <span class="recipe-search-row-main">
 <span class="recipe-search-row-title">{{ r.title }}</span>
 <span class="recipe-search-row-category">{{ cat_page.title }}</span>
@@ -39,7 +41,8 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <span class="op">{{ r.operation }}</span>
 <span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}">{{ r.mode }}</span>
 </a>
-{% endfor %}</div>
+</li>
+{% endfor %}</ul>
 
 <p class="recipe-search-empty" id="recipe-search-empty" hidden>No recipes match the selected filters.</p>
 
@@ -50,8 +53,10 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
   var root = document.getElementById('recipe-search');
   if (!root) return; /* no-op anywhere this markup isn't present */
 
+  /* filter the <li> items, not the links inside them, so assistive
+     tech's "item N of M" counts stay in step with what's visible */
   var rows = Array.prototype.slice.call(
-    root.querySelectorAll('.recipe-search-row')
+    root.querySelectorAll('.recipe-search-item')
   );
   var countEl = document.getElementById('recipe-search-count');
   var emptyEl = document.getElementById('recipe-search-empty');
