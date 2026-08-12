@@ -1,13 +1,8 @@
 ---
 title: "Contact: Current Program Engagement Status"
-anchor: "contact-current-program-engagement-status"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "Last"
+operation: "Last"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

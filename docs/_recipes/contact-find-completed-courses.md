@@ -1,13 +1,8 @@
 ---
 title: "Contact: Find Completed Courses"
-anchor: "contact-find-completed-courses"
 category: "education-data"
-category_url: "Education-Data.html"
-category_label: "Education Data Architecture"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description:**

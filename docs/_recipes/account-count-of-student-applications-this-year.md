@@ -1,13 +1,8 @@
 ---
 title: "Account: Count of Student Applications This Year"
-anchor: "account-count-of-student-applications-this-year"
 category: "students-scores-attendance"
-category_url: "Students,-Scores,-Attendance.html"
-category_label: "Students, Scores, Attendance"
-op: "Count"
+operation: "Count"
 mode: "Scheduled"
-mode_class: "scheduled"
-parent_object: "Account"
 ---
 
 **Description**

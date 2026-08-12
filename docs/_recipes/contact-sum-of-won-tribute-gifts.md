@@ -1,13 +1,8 @@
 ---
 title: "Contact: Sum of Won Tribute Gifts"
-anchor: "contact-sum-of-won-tribute-gifts"
 category: "opportunities-payments-allocations"
-category_url: "Opportunities,-Payments,-Allocations.html"
-category_label: "Opportunities, Payments, Allocations"
-op: "Sum"
+operation: "Sum"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

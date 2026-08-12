@@ -1,13 +1,8 @@
 ---
 title: "Account: Largest Grant Received"
-anchor: "account-largest-grant-received"
 category: "outbound-funds"
-category_url: "Outbound-Funds.html"
-category_label: "Outbound Funds"
-op: "Max"
+operation: "Max"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Account"
 ---
 
 **Description**

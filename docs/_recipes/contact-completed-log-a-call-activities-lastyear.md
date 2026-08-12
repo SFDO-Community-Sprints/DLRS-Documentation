@@ -1,13 +1,8 @@
 ---
 title: "Contact: Completed Log-a-Call Activities LastYear"
-anchor: "contact-completed-log-a-call-activities-lastyear"
 category: "files-activities"
-category_url: "Files,-Activities.html"
-category_label: "Files, Activities"
-op: "Count"
+operation: "Count"
 mode: "Scheduled"
-mode_class: "scheduled"
-parent_object: "Contact"
 ---
 
 **Description**

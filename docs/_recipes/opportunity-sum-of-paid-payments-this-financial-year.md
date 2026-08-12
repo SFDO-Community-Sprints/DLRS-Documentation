@@ -1,13 +1,8 @@
 ---
 title: "Opportunity: Sum of Paid Payments This Financial Year"
-anchor: "opportunity-sum-of-paid-payments-this-financial-year"
 category: "opportunities-payments-allocations"
-category_url: "Opportunities,-Payments,-Allocations.html"
-category_label: "Opportunities, Payments, Allocations"
-op: "Sum"
+operation: "Sum"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Opportunity"
 ---
 
 **Description**

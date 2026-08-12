@@ -2,6 +2,7 @@
 layout: default
 title: Files, Activities
 parent: Cookbook
+category: files-activities
 nav_order: 3
 ---
 

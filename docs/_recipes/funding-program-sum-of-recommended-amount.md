@@ -1,13 +1,8 @@
 ---
 title: "Funding Program: Sum of Recommended Amount"
-anchor: "funding-program-sum-of-recommended-amount"
 category: "outbound-funds"
-category_url: "Outbound-Funds.html"
-category_label: "Outbound Funds"
-op: "Sum"
+operation: "Sum"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "outfunds__Funding_Program__c"
 ---
 
 **Description**

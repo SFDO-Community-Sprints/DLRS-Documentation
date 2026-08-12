@@ -1,13 +1,8 @@
 ---
 title: "Contact: Current Traction Rec Membership Type"
-anchor: "contact-current-traction-rec-membership-type"
 category: "students-scores-attendance"
-category_url: "Students,-Scores,-Attendance.html"
-category_label: "Students, Scores, Attendance"
-op: "Concatenate Distinct"
+operation: "Concatenate Distinct"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

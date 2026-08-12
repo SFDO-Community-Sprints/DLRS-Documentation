@@ -1,13 +1,8 @@
 ---
 title: "Account: Address Type Count"
-anchor: "account-address-type-count"
 category: "affiliations-relationships-accounts-contacts"
-category_url: "Affiliations,-Relationships,-Accounts,-Contacts.html"
-category_label: "Affiliations, Relationships, Accounts, Contacts"
-op: "Count"
+operation: "Count"
 mode: "Scheduled"
-mode_class: "scheduled"
-parent_object: "Account"
 ---
 
 **Description**

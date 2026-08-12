@@ -22,7 +22,7 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <div class="recipe-search-facet" data-facet="op">
 <span class="recipe-search-facet-label">Aggregate Operation</span>
 <button type="button" class="recipe-chip is-active" data-value="">All</button>
-{% assign ops = site.recipes | map: "op" | uniq | sort %}
+{% assign ops = site.recipes | map: "operation" | uniq | sort %}
 {% for op in ops %}<button type="button" class="recipe-chip chip-op" data-value="{{ op }}">{{ op }}</button>
 {% endfor %}</div>
 </div>
@@ -31,13 +31,13 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 
 <div class="recipe-search-results" id="recipe-search-results">
 {% assign all = site.recipes | sort: "title" %}
-{% for r in all %}<a class="recipe-search-row" href="{{ site.baseurl }}/Cookbook/{{ r.category_url }}#{{ r.anchor }}" data-op="{{ r.op }}" data-mode="{{ r.mode_class }}">
+{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% unless mc == 'realtime' or mc == 'scheduled' %}{% assign mc = 'other' %}{% endunless %}<a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}" data-op="{{ r.operation }}" data-mode="{{ mc }}">
 <span class="recipe-search-row-main">
 <span class="recipe-search-row-title">{{ r.title }}</span>
-<span class="recipe-search-row-category">{{ r.category_label }}</span>
+<span class="recipe-search-row-category">{{ cat_page.title }}</span>
 </span>
-<span class="op">{{ r.op }}</span>
-<span class="mode{% if r.mode_class == 'realtime' %} mode-realtime{% elsif r.mode_class == 'scheduled' %} mode-scheduled{% endif %}">{{ r.mode }}</span>
+<span class="op">{{ r.operation }}</span>
+<span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}">{{ r.mode }}</span>
 </a>
 {% endfor %}</div>
 

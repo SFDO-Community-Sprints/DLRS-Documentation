@@ -1,13 +1,8 @@
 ---
 title: "Contact: Count Campaign Memberships by Type"
-anchor: "contact-count-campaign-memberships-by-type"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "Count"
+operation: "Count"
 mode: "Scheduled"
-mode_class: "scheduled"
-parent_object: "Contact"
 ---
 
 **Description:**

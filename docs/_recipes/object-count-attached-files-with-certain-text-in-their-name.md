@@ -1,13 +1,8 @@
 ---
 title: "Object: Count Attached Files with Certain Text in their Name"
-anchor: "object-count-attached-files-with-certain-text-in-their-name"
 category: "files-activities"
-category_url: "Files,-Activities.html"
-category_label: "Files, Activities"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Can be used on any object, standard or custom"
 ---
 
 **Description**

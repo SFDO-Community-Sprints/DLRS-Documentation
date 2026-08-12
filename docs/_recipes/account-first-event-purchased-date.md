@@ -1,13 +1,8 @@
 ---
 title: "Account: First Event Purchased Date"
-anchor: "account-first-event-purchased-date"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "Min"
+operation: "Min"
 mode: "Process Builder"
-mode_class: "other"
-parent_object: "Account"
 ---
 
 **Description**

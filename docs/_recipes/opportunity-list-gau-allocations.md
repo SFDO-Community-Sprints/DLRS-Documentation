@@ -1,13 +1,8 @@
 ---
 title: "Opportunity: List GAU Allocations"
-anchor: "opportunity-list-gau-allocations"
 category: "opportunities-payments-allocations"
-category_url: "Opportunities,-Payments,-Allocations.html"
-category_label: "Opportunities, Payments, Allocations"
-op: "Concatenate Distinct"
+operation: "Concatenate Distinct"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Opportunity"
 ---
 
 **Description**

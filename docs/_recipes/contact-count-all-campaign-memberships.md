@@ -1,13 +1,8 @@
 ---
 title: "Contact: Count All Campaign Memberships"
-anchor: "contact-count-all-campaign-memberships"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

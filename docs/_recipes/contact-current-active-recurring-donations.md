@@ -1,13 +1,8 @@
 ---
 title: "Contact: Current Active Recurring Donations"
-anchor: "contact-current-active-recurring-donations"
 category: "opportunities-payments-allocations"
-category_url: "Opportunities,-Payments,-Allocations.html"
-category_label: "Opportunities, Payments, Allocations"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

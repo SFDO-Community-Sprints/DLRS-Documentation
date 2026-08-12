@@ -1,13 +1,8 @@
 ---
 title: "Course Offering: Find Total Enrollment Count"
-anchor: "course-offering-find-total-enrollment-count"
 category: "education-data"
-category_url: "Education-Data.html"
-category_label: "Education Data Architecture"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "hed__Course_Offering__c"
 ---
 
 **Description:**

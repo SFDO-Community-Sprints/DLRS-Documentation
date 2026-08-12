@@ -1,13 +1,8 @@
 ---
 title: "Contact: Count Relationships to Accounts"
-anchor: "contact-count-relationships-to-accounts"
 category: "affiliations-relationships-accounts-contacts"
-category_url: "Affiliations,-Relationships,-Accounts,-Contacts.html"
-category_label: "Affiliations, Relationships, Accounts, Contacts"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

@@ -1,13 +1,8 @@
 ---
 title: "Contact: List of Years Engaged in Programs"
-anchor: "contact-list-of-years-engaged-in-programs"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "Concatenate Distinct"
+operation: "Concatenate Distinct"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

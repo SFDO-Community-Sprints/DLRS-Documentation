@@ -1,13 +1,8 @@
 ---
 title: "Contact: Finding Count of Completed Program Enrollments"
-anchor: "contact-finding-count-of-completed-program-enrollments"
 category: "education-data"
-category_url: "Education-Data.html"
-category_label: "Education Data Architecture"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description:**

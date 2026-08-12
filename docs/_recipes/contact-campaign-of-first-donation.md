@@ -1,13 +1,8 @@
 ---
 title: "Contact: Campaign of First Donation"
-anchor: "contact-campaign-of-first-donation"
 category: "campaigns-registrations-applications"
-category_url: "Campaigns,-Registrations,-Applications.html"
-category_label: "Campaigns, Registrations, Applications"
-op: "First"
+operation: "First"
 mode: "Scheduled"
-mode_class: "scheduled"
-parent_object: "Contact"
 ---
 
 **Description**

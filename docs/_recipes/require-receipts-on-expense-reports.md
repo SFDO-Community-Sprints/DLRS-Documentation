@@ -1,13 +1,8 @@
 ---
 title: "Require Receipts on Expense Reports"
-anchor: "require-receipts-on-expense-reports"
 category: "files-activities"
-category_url: "Files,-Activities.html"
-category_label: "Files, Activities"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Expense_Report__c"
 ---
 
 **Description**

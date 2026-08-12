@@ -1,13 +1,8 @@
 ---
 title: "Report Card: Calculate Grade Point Average (GPA)"
-anchor: "report-card-calculate-grade-point-average-gpa"
 category: "students-scores-attendance"
-category_url: "Students,-Scores,-Attendance.html"
-category_label: "Students, Scores, Attendance"
-op: "Average"
+operation: "Average"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "School_Report_Card__c"
 ---
 
 **Description**

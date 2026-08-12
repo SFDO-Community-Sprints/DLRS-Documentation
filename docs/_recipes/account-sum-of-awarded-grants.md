@@ -1,13 +1,8 @@
 ---
 title: "Account: Sum of Awarded Grants"
-anchor: "account-sum-of-awarded-grants"
 category: "outbound-funds"
-category_url: "Outbound-Funds.html"
-category_label: "Outbound Funds"
-op: "Sum"
+operation: "Sum"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Account"
 ---
 
 **Description**

@@ -1,13 +1,8 @@
 ---
 title: "Funding Program: Count Applications Submitted"
-anchor: "funding-program-count-applications-submitted"
 category: "outbound-funds"
-category_url: "Outbound-Funds.html"
-category_label: "Outbound Funds"
-op: "Count"
+operation: "Count"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Funding Program"
 ---
 
 **Description**

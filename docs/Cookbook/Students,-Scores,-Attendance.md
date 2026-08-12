@@ -2,6 +2,7 @@
 layout: default
 title: Students, Scores, Attendance
 parent: Cookbook
+category: students-scores-attendance
 nav_order: 7
 ---
 

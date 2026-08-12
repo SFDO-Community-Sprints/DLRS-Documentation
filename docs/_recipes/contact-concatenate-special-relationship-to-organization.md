@@ -1,13 +1,8 @@
 ---
 title: "Contact: Concatenate Special Relationship to Organization"
-anchor: "contact-concatenate-special-relationship-to-organization"
 category: "affiliations-relationships-accounts-contacts"
-category_url: "Affiliations,-Relationships,-Accounts,-Contacts.html"
-category_label: "Affiliations, Relationships, Accounts, Contacts"
-op: "Concatenate Distinct"
+operation: "Concatenate Distinct"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

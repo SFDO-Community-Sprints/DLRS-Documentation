@@ -1,13 +1,8 @@
 ---
 title: "Contact: Authorized Pickup Contacts"
-anchor: "contact-authorized-pickup-contacts"
 category: "students-scores-attendance"
-category_url: "Students,-Scores,-Attendance.html"
-category_label: "Students, Scores, Attendance"
-op: "Concatenate"
+operation: "Concatenate"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Contact"
 ---
 
 **Description**

@@ -1,13 +1,8 @@
 ---
 title: "Campaign: Total Amount Won from Opportunity Record Type or Lead Source"
-anchor: "campaign-total-amount-won-from-opportunity-record-type-or-lead-source"
 category: "opportunities-payments-allocations"
-category_url: "Opportunities,-Payments,-Allocations.html"
-category_label: "Opportunities, Payments, Allocations"
-op: "Sum"
+operation: "Sum"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "Campaign"
 ---
 
 **Description**

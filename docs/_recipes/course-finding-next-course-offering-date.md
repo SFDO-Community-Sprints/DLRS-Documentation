@@ -1,13 +1,8 @@
 ---
 title: "Course: Finding Next Course Offering Date"
-anchor: "course-finding-next-course-offering-date"
 category: "education-data"
-category_url: "Education-Data.html"
-category_label: "Education Data Architecture"
-op: "Min"
+operation: "Min"
 mode: "Realtime"
-mode_class: "realtime"
-parent_object: "hed__Course__c"
 ---
 
 **Description:**
