@@ -18,15 +18,15 @@ mode: "Realtime"
 | Parent Object                      | `Contact`                                        |
 | Child Object                       | `Program_Engagement__c`                          |
 | Relationship Field                 | `Member__c` (this is the contact lookup)         |
-| Relationship Criteria (SOQL Query) | n/a                                              |
+| Relationship Criteria              | n/a                                              |
 | Relationship Criteria Fields       | n/a                                              |
 | Field to Aggregate                 | `Engagement_Year__c`                             |
-| Order By Field                     | `Engagement_Date__c`                             |
+| Field(s) to Order By               | `Engagement_Date__c`                             |
 | Aggregate Operation                | `CONCATENATE DISTINCT`                           |
 | Aggregate Result Field             | `DLRS_Engagement_Year_s__c`                      |
 | Concatenate Delimiter              | comma “,” or semicolon “;” to separate the years |
-| Calculation Mode                   | `Realtime or Process Bulder`                     |
-| Schedule vs Child Trigger          | `Child Trigger deployed for Realtime`            |
+| Calculation Mode                   | `Realtime`                                       |
+| Schedule vs Child Trigger          | `Child Trigger`                                  |
 
 **Preparation**
 
@@ -40,6 +40,4 @@ mode: "Realtime"
 - This rollup would work well as a nightly or even weekly scheduled calculation, as well as in realtime.
 
 **Contributed By**
-Heath Parks, [North Peak Solutions](https://www.northpeak.com/)
-
-<!-- Edited by Jillian Nii 05/05/2022 -->
+Heath Parks

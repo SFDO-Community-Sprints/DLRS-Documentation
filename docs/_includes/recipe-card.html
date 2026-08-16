@@ -6,9 +6,16 @@ part of the recipe's public URL — never rename a published recipe file, or
 external deep links to it will break.
 {%- endcomment -%}
 {%- assign r = include.recipe -%}
-{%- comment -%} mode class derives from mode; anything unrecognized keeps the plain grey .mode style {%- endcomment -%}
+{%- comment -%} mode class derives from mode ("Watch for Changes and Process
+Later" shortens to mode-watch); anything unrecognized keeps the plain grey
+.mode style {%- endcomment -%}
 {%- assign mc = r.mode | downcase -%}
+{%- case mc -%}
+{%- when "realtime" -%}{%- assign mcls = " mode-realtime" -%}
+{%- when "watch for changes and process later" -%}{%- assign mcls = " mode-watch" -%}
+{%- else -%}{%- assign mcls = "" -%}
+{%- endcase -%}
 <details class="recipe-toggle">
-<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ r.operation }}</span> <span class="mode{% if mc == "realtime" or mc == "scheduled" %} mode-{{ mc }}{% endif %}">{{ r.mode }}</span></summary>
+<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ r.operation }}</span> <span class="mode{{ mcls }}">{{ r.mode }}</span></summary>
 {{ r.content | markdownify }}
 </details>

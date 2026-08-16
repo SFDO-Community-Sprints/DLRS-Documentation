@@ -7,17 +7,19 @@ mode: "Realtime"
 
 **Description**
 
-> Count number of Contacts associated with an Account.
+> This recipe will do a count of the number of Contacts associated with an Account.
+
+**Objects, Fields, Relationships**
 
 | Field                             | Value          |
 | ---------------------------------- | ------------------------ |
 | Parent Object                      | `Account`                |
 | Child Object                       | `Contact`                |
-| Relationship Field                 | `Account`                |
+| Relationship Field                 | `AccountId`              |
 | Relationship Criteria (SOQL Query) | n/a                      |
 | Relationship Criteria Fields       | n/a                      |
 | Field to Aggregate                 | `Id`                     |
-| Order By Field                     | n/a                      |
+| Field(s) to Order By               | n/a                      |
 | Aggregate Operation                | `COUNT`                  |
 | Aggregate Result Field             | `Count_of_Contacts__c`   |
 | Calculation Mode                   | `Realtime`               |

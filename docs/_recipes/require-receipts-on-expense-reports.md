@@ -7,7 +7,7 @@ mode: "Realtime"
 
 **Description**
 
-> Counts the number of attached Files on a custom object (Expense Report). Though this won't guarantee that the files are actually receipts, it can be used as part of a check to make sure that expense reports are complete before sending them to managers for checking and approval.
+> This recipe counts the number of attached Files on a custom object (Expense Report). Though this won't guarantee that the files are actually receipts, it can be used as part of a check to make sure that expense reports are complete before sending them to managers for checking and approval.
 >
 > This simplified example is based on use in real life at my prior job. In that org we had a Monthly Expense Report object and child Expense Report Items. We asked people to upload files onto the top-level object and prevented putting the Monthly Expense Report into the approval process if there was not at least one attached File. (Some people would scan multiple receipts into a single PDF, so we couldn't assume a 1:1 count of files to receipts.)
 
@@ -18,10 +18,10 @@ mode: "Realtime"
 | Parent Object                      | `Expense_Report__c`               |
 | Child Object                       | `ContentDocumentLink`             |
 | Relationship Field                 | `LinkedEntityId`                  |
-| Relationship Criteria (SOQL Query) | n/a                               |
+| Relationship Criteria              | n/a                               |
 | Relationship Criteria Fields       | n/a                               |
 | Field to Aggregate                 | `Id`                              |
-| Order By Field                     | n/a                               |
+| Field(s) to Order By               | n/a                               |
 | Aggregate Operation                | `COUNT`                           |
 | Aggregate Result Field             | `DLRS_Count_Attached_Receipts__c` |
 | Calculation Mode                   | `Realtime`                        |
@@ -34,6 +34,4 @@ mode: "Realtime"
 - The User Story here, for capturing receipts on expense reports, is a good example of how working with Files is tricky. We can use the count of attached files to ensure that some file has been attached. But there is nothing to stop someone from attaching the first jpg they find on their desktop, rather than an actual receipt. So in this case, we had to make sure that managers would spot check their team's expense reports. But this at least allowed us to prevent submission of expense reports with no attached receipts at all.
 
 **Contributed By**
-Michael Kolodner, [Kolodner.com](https://kolodner.com/)
-
-<!-- Edited by Kathy Waterworth 05/05/2022 -->
+Michael Kolodner

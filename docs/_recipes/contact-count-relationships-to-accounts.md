@@ -19,7 +19,7 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | n/a                         |
 | Relationship Criteria Fields       | n/a                         |
 | Field to Aggregate                 | `Id`                        |
-| Order By Field                     | n/a                         |
+| Field(s) to Order By               | n/a                         |
 | Aggregate Operation                | `COUNT`                     |
 | Aggregate Result Field             | `Count_of_Relationships__c` |
 | Calculation Mode                   | `Realtime`                  |
@@ -30,4 +30,4 @@ mode: "Realtime"
 > It took me a little while to realize the field I needed to summarize was Id. Normally for the Count function with DLRS I summarize “Name” but AccountContactRelation doesn’t have a name field!
 
 **Contributed By**
-Sarah Pilzer, [Country Dance & Song Society](https://www.cdss.org/)
+Sarah Pilzer

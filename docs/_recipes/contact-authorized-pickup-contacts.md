@@ -13,15 +13,16 @@ mode: "Realtime"
 | ---------------------------------: | ------------------------------------- |
 | Parent Object                      | `Contact`                                                  |
 | Child Object                       | `TREX1__Authorized_Pickup__c`                              |
-| Relationship Field                 | `ContactId`                                                |
+| Relationship Field                 | `TREX1__Contact__c`                                        |
 | Relationship Criteria (SOQL Query) | `TREX1__End_Date__c >= Today OR TREX1__End_Date__c = NULL` |
 | Relationship Criteria Fields       | `TREX1__End_Date__c`                                       |
 | Field to Aggregate                 | `Authorized_Pickup_Name__c`                                |
-| Order By Field                     | n/a                                                        |
+| Field(s) to Order By               | n/a                                                        |
 | Aggregate Operation                | `CONCATENATE`                                              |
+| Concatenate Delimiter              | `,`                                                        |
 | Aggregate Result Field             | `Authorized_Pickups__c`                                    |
 | Calculation Mode                   | `Realtime`                                                 |
-| Schedule vs Child Trigger          | `Child Trigger deployed`                                   |
+| Schedule vs Child Trigger          | Child Trigger deployed                                     |
 
 **Contributed By**
-John McInnes, [Traction Rec, Uncommon Purpose](http://www.uncommonpurpose.com)
+John McInnes

@@ -14,9 +14,10 @@ mode: "Realtime"
 |                              Field | Value                                                            |
 | ---------------------------------: | ---------------------------------------------------------------- |
 |                      Parent Object | `Contact`                                                        |
-|                       Child Object | `NPSP Affiliation`                                               |
+|                       Child Object | `npe5__Affiliation__c`                                           |
+|                       Relationship | `npe5__Contact__c`                                               |
 | Relationship Criteria (SOQL Query) | `npe5__Role__c = ‘Board Member’ AND npe5__Status__c = ‘Current’` |
-|       Relationship Criteria Fields | `npe5__Role__c` `Status`                                         |
+|       Relationship Criteria Fields | `npe5__Role__c` `npe5__Status__c`                                         |
 |                 Field to Aggregate | `Id`                                                             |
 |                  Field to Order By | n/a                                                              |
 |                Aggregate Operation | `COUNT`                                                          |
@@ -34,4 +35,4 @@ mode: "Realtime"
 
 - You could also have a checkbox formula field on the contact object for easy reporting. If the rollup value >=1, then the checkbox is checked (true), meaning they are a board member. If the rollup is 0, then the checkbox is unchecked (false).
 
-**Contributed By** Hua Ping Tan, [Belmar Consulting Group](https://www.belmar.ca/)
+**Contributed By** Hua Ping Tan

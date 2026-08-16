@@ -293,12 +293,12 @@
    (purple #5e41d0 / link #7253ed, green #026e57, yellow #f7d12e), so the
    chips read as theme-native without importing a new brand color.
    .op is decorative (always purple); .mode is semantic — add mode-realtime
-   or mode-scheduled to color-code the calculation mode; bare .mode stays
+   or mode-watch to color-code the calculation mode; bare .mode stays
    neutral grey for anything else. */
 .recipe-toggle .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
 .recipe-toggle .mode { background: #f1f2f4; color: #5f5c68; }
 .recipe-toggle .mode-realtime { background: #ddefea; color: #02593f; }
-.recipe-toggle .mode-scheduled { background: #fdf3cf; color: #755d00; }
+.recipe-toggle .mode-watch { background: #fdf3cf; color: #755d00; }
 /* opened body */
 .recipe-toggle[open] > summary { border-bottom: 1px solid var(--recipe-border); }
 .recipe-toggle > *:not(summary):first-of-type { margin-top: 12px; }
@@ -378,7 +378,7 @@
 }
 .recipe-chip:hover { background: #f6f6f7; }
 /* Active chips take the same tints as the tags they filter on:
-   op chips purple, realtime green, scheduled amber, other grey. */
+   op chips purple, realtime green, watch amber, other grey. */
 .recipe-chip.is-active {
     background: #f1f2f4;
     border-color: #c9ccd1;
@@ -386,7 +386,7 @@
 }
 .recipe-chip.chip-op.is-active { background: #ede9fb; border-color: #c9bcf0; color: #4e26af; }
 .recipe-chip.chip-realtime.is-active { background: #ddefea; border-color: #a9d6c9; color: #02593f; }
-.recipe-chip.chip-scheduled.is-active { background: #fdf3cf; border-color: #ecd98a; color: #755d00; }
+.recipe-chip.chip-watch.is-active { background: #fdf3cf; border-color: #ecd98a; color: #755d00; }
 
 /* --- live count --- */
 .recipe-search-count {
@@ -453,7 +453,7 @@
 .recipe-search-row .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
 .recipe-search-row .mode { background: #f1f2f4; color: #5f5c68; }
 .recipe-search-row .mode-realtime { background: #ddefea; color: #02593f; }
-.recipe-search-row .mode-scheduled { background: #fdf3cf; color: #755d00; }
+.recipe-search-row .mode-watch { background: #fdf3cf; color: #755d00; }
 
 .recipe-search-empty {
     margin: 14px 0;

@@ -7,7 +7,7 @@ mode: "Realtime"
 
 **Description**
 
-> Calculates total dollars committed to date for a funding program (but not yet awarded) in the Outbound Funds package. The rollup uses the Recommended Amount fields on Funding Request, so that the total can be shown on the Funding Program record.
+> This calculates total dollars committed to date for a funding program (but not yet awarded) in the Outbound Funds package. The rollup uses the Recommended Amount fields on Funding Request, so that the total can be shown on the Funding Program record.
 
 **Objects, Fields, Relationships**
 
@@ -20,13 +20,13 @@ mode: "Realtime"
 | Relationship Criteria Fields | `outfunds__Recommended_Amount__c`   |
 |           Field to Aggregate | `outfunds__Recommended_Amount__c`   |
 |            Field to Order By | n/a                                 |
-|          Aggregate Operation | `Sum`                               |
+|          Aggregate Operation | `SUM`                               |
 |       Aggregate Result Field | `DLRS_Committed_to_Date__c`         |
-|             Calculation Mode | Realtime                            |
+|             Calculation Mode | `Realtime`                          |
 |    Schedule vs Child Trigger | Deploy the Child Trigger            |
 
 **Variations**
 
 - For the sum of dollars awarded, change the Field to Aggregate to: `outfunds__Awarded_Amount__c`
 
-**Contributed By** Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
+**Contributed By** Sheri Gurock

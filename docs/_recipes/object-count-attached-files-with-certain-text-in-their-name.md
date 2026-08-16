@@ -7,7 +7,7 @@ mode: "Realtime"
 
 **Description**
 
-> Salesforce Files are incredibly useful, but hard to report on. One of the first things you need to figure out in working with them is that the “File” itself is actually a ContentDocument and it is shared onto a record with a ContentDocumentLink. Sometimes you just need to know how many files are connected to a record (or if there are any files at all). This recipe counts the number of Files related to a record that have the specific text “resume” somewhere in the title of the file. So you can use this to determine if a job application has an attached résumé or not. Replace the name “resume” with something else and you’ve got endless variations available.
+> Salesforce Files are incredibly useful, but hard to report on. One of the first things you need to figure out in working with them is that the “File” itself is actually a ContentDocument record and it is shared onto a record via a ContentDocumentLink record. Sometimes you just need to know how many files are connected to a record (or if there are any files at all). This recipe counts the number of Files related to a record that have the specific text “resume” somewhere in the title of the file. So you can use this to determine if a job application has an attached résumé or not. Replace the name “resume” with something else and you’ve got endless variations available.
 
 **Objects, Fields, Relationships**
 
@@ -15,8 +15,9 @@ mode: "Realtime"
 | ------------------------: | --------------------------------------------- |
 |             Parent Object | Can be used on any object, standard or custom |
 |              Child Object | `ContentDocumentLink`                         |
+|        Relationship Field | `LinkedIdentityId`                            |
 |     Relationship Criteria | `ContentDocument.Title LIKE '%resume%'`       |
-|             Rollup Action | `Count`                                       |
+|     Relationship Criteria Field | `ContentDocument.Title                  |
 |        Field to Aggregate | `Id`                                          |
 |         Field to Order By | N/A                                           |
 |       Aggregate Operation | `COUNT`                                       |
@@ -32,4 +33,4 @@ mode: "Realtime"
 
 - In SQL Query: replace "resume" with any appropriate text and potentially move/remove the % symbols.
 
-**Contributed by** Jon LaRosa, [LaRosa Consulting](https://trailblazer.me/id/jonlarosa)
+**Contributed by** Jon LaRosa

@@ -18,11 +18,11 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | `hed__Status__c !='Drop' AND hed__Status__c !='Transfer' AND hed__Status__c !='Waitlist' AND hed__Status__c !='Withdrawn'` |
 | Relationship Criteria Fields | `hed__Status__c` |
 | Field to Aggregate |`Name` |
-| Order By Field | n/a |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `COUNT` |
 | Aggregate Result Field |  `DLRS_Total_Enrollments__c` |
 | Calculation Mode | `Realtime`
-| Schedule vs Child Trigger | `Child Trigger deployed`
+| Schedule vs Child Trigger | Child Trigger deployed
 
 **Any test code or other preparations needed:**
 > The rollup can also be scheduled to run nightly if a child record is deleted for some reason.  
@@ -31,4 +31,4 @@ mode: "Realtime"
 > Show the count of dropped or withdrawn enrollments by adjusting the Relationship Criteria.
 
 **Contributed By**
-Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
+Nick Lindberg

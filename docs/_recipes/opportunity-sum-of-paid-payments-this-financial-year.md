@@ -15,16 +15,16 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 
 | Field | Value |
 | ------- | -------- |
-|                      Parent Object | `Opportunity`                                                                                                                                                                                                                                       |
-|                       Child Object | `npe01__OppPayment__c`                                                                                                                                                                                                                              |
-|                 Relationship Field | `npe01__Opportunity__c`                                                                                                                                                                                                                             |
-| Relationship Criteria (SOQL Query) | `npe01__Paid__c = True AND npe01__Payment_Date__c = THIS_YEAR`                                                                                                                                                                                      |
-|       Relationship Criteria Fields | `npe01__Paid__c, npe01__Payment_Date__c`                                                                                                                                                                                                            |
-|                 Field to Aggregate | `npe01__Payment_Amount__c`                                                                                                                                                                                                                          |
-|                  Field to Order By | `n/a`                                                                                                                                                                                                                                               |
-|                Aggregate Operation | `SUM`                                                                                                                                                                                                                                               |
-|             Aggregate Result Field | `DLRS_Payments_This_Year__c`                                                                                                                                                                                                                        |
-|                   Calculation Mode | `Realtime`                                                                                                                                                                                                                                          |
+|                      Parent Object | `Opportunity`                                                                  |
+|                       Child Object | `npe01__OppPayment__c`                                                         |
+|                 Relationship Field | `npe01__Opportunity__c`                                                        |
+| Relationship Criteria (SOQL Query) | `npe01__Paid__c = True AND npe01__Payment_Date__c = THIS_YEAR`                 |
+|       Relationship Criteria Fields | `npe01__Paid__c, npe01__Payment_Date__c`                                       |
+|                 Field to Aggregate | `npe01__Payment_Amount__c`                                                     |
+|               Field(s) to Order By | n/a                                                                          |
+|                Aggregate Operation | `SUM`                                                                          |
+|             Aggregate Result Field | `DLRS_Payments_This_Year__c`                                                   |
+|                   Calculation Mode | `Realtime`                                                                     |
 |          Schedule vs Child Trigger | Deploy the child trigger for a realtime update whenever a payment is marked paid AND click Schedule Full Calculate to have all records recalculated on the first of each month, so that the relative date filter for the year is kept up to date. |
 
 **Variations**
@@ -35,4 +35,4 @@ This rollup example uses the [Nonprofit Success Pack (NPSP)](https://www.salesfo
 
 - Unpaid payment records, so you can see outstanding balance.
 
-**Contributed By** Jared Henning, [Salesforce.com](https://salesforce.com/)
+**Contributed By** Jared Henning

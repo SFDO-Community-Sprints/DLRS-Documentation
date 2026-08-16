@@ -18,14 +18,14 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | `hed__Status__c='Completed'` |
 | Relationship Criteria Fields | `hed__Status__c` |
 | Field to Aggregate |`Name` |
-| Order By Field | n/a |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `COUNT` |
 | Aggregate Result Field |  `DLRS_Completed_Courses__c` |
 | Calculation Mode | `Realtime`
-| Schedule vs Child Trigger | `Child Trigger deployed`
+| Schedule vs Child Trigger | Child Trigger deployed
 
 **Variations:**
 > Show the count of incomplete courses by adjusting the Relationship Criteria (!= 'Completed', for example).
 
 **Contributed By**
-Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
+Nick Lindberg

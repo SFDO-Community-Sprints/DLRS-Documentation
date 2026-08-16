@@ -2,7 +2,7 @@
 title: "Contact: Count Campaign Memberships by Type"
 category: "campaigns-registrations-applications"
 operation: "Count"
-mode: "Scheduled"
+mode: "Invocable by Automation"
 ---
 
 **Description:**
@@ -15,22 +15,23 @@ mode: "Scheduled"
 | Parent Object | `Contact` |
 | Child Object | `CampaignMember` |
 | Relationship Field |`ContactId` |
-| Relationship Criteria (SOQL Query) |`Campaign Type = ‘Direct Mail’ AND HasResponded = ‘TRUE’`
-| Relationship Criteria Fields | `Campaign Type, HasResponded` |
+| Relationship Criteria  |`Campaign_Type__c = ‘Direct Mail’ AND HasResponded = ‘TRUE’` |
+| Relationship Criteria Fields | `Campaign_Type__c, HasResponded` |
 | Field to Aggregate |`Id` |
-| Order By Field | n/a |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `COUNT` |
 | Aggregate Result Field |  `DLRS_Count_of_<direct_mail>_Campaign_Responses__c` |
-| Calculation Mode | `Scheduled`
-| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furiously campaign members can come in.
+| Calculation Mode | `Invocable by Automation` |
+| Schedule vs Child Trigger | `Schedule, No Child Trigger`. This could be done in real time, but it's probably best to do a scheduled batch because of how fast and furiously campaign members can come in. |
 
-**Any test code or other preparations needed:**
+**Any other preparations needed:**
+> Create formula field for Campaign Type on Campaign Member object.
+- Field Name:: Campaign Type (Campaign_Type__c)
+- Formula: Text(Campaign.Type)
 > Adding the picklist values you want to use for Campaign Type. 
 
 **Variations:**
->You could use other Campaign Type values, such as Email Fundraising, Social Fundraising, Event, etc. and set up the fields as a suite for segmentation.
+- You could use other Campaign Type values, such as Email Fundraising, Social Fundraising, Event, etc. and set up the fields as a suite for segmentation.
 
 **Contributed By**
-Beth Hintze, [Attain Partners](https://attainpartners.com/)
-
-<!-- Edited by Caroline Renard 04/02/2023 -->
+Beth Hintze

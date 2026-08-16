@@ -18,16 +18,14 @@ mode: "Realtime"
 | Parent Object                      | `School_Report_Card__c`                                                                                         |
 | Child Object                       | `Grade__c`                                                                                                      |
 | Relationship Field                 | `School_Report_Card__c`                                                                                         |
-| Relationship Criteria (SOQL Query) | `(Course_Type__c = 'Math' OR Course_Type__c = 'English') AND Interim_Final__c = 'Final' AND GPA_Pts__c != null` |
+| Relationship Criteria              | `(Course_Type__c = 'Math' OR Course_Type__c = 'English') AND Interim_Final__c = 'Final' AND GPA_Pts__c != null` |
 | Relationship Criteria Fields       | `Course_Type__c, Interim_Final__c, GPA_Pts__c `                                                                 |
 | Field to Aggregate                 | `GPA_Pts__c`                                                                                                    |
-| Order By Field                     | n/a                                                                                                             |
+| Field(s) to Order By               | n/a                                                                                                             |
 | Aggregate Operation                | `AVERAGE`                                                                                                       |
 | Aggregate Result Field             | `DLRS_CoreGPA__c`                                                                                               |
 | Calculation Mode                   | `Realtime`                                                                                                      |
 | Schedule vs Child Trigger          | Child Trigger deployed.                                                                                         |
 
 **Contributed By**
-Michael Kolodner, [Kolodner.com](https://kolodner.com/)
-
-<!-- Edited by Jillian Nii 5/5/22 -->
+Michael Kolodner

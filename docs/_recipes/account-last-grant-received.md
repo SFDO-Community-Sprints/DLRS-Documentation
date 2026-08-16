@@ -7,7 +7,7 @@ mode: "Realtime"
 
 **Description**
 
-> Shows the last or most recent amount awarded to an Applying Organization (Account).
+> This recipe shows the last or most recent amount awarded to an Applying Organization (Account) in the Outbound Funds Package.
 
 |                        Field | Value                               |
 | ---------------------------: | ----------------------------------- |
@@ -17,11 +17,11 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | `outfunds__Awarded_Amount__c > 0` |
 | Relationship Criteria Fields       | `outfunds__Awarded_Amount__c`     |
 | Field to Aggregate                 | `outfunds__Awarded_Date__c`       |
-| Order By Field                     | n/a                               |
+| Field(s) to Order By               | n/a                               |
 | Aggregate Operation                | `MAX`                             |
 | Aggregate Result Field             | `DLRS_Date_of_Last_Grant__c`      |
 | Calculation Mode                   | `Realtime`                        |
-| Schedule vs Child Trigger          | `Child Trigger deployed`          |
+| Schedule vs Child Trigger          | Child Trigger deployed          |
 
 **Variations**
 
@@ -30,4 +30,4 @@ mode: "Realtime"
 - Substitute Applying Organization with Applying Contact to show the same summaries on a Contact record.
 
 **Contributed By**
-Sheri Gurock, [The Beker Foundation](https://thebekerfoundation.org/)
+Sheri Gurock

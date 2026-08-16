@@ -18,12 +18,12 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | `hed__Start_Date__c >= TODAY AND Class_Status__c != 'Cancelled Section'` |
 | Relationship Criteria Fields | `hed__Start_Date__c, Class_Status__c ` |
 | Field to Aggregate |`hed__Start_Date__c` |
-| Order By Field | n/a |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `MIN` |
 | Aggregate Result Field |  `DLRS_Next_Course_Offering_Date__c` |
 | Calculation Mode | `Realtime`
-| Schedule vs Child Trigger | `Child Trigger deployed`
+| Schedule vs Child Trigger | Child Trigger deployed
 
 
 **Contributed By**
-Nick Lindberg, [University of Minnesota - Carlson School of Management](https://carlsonschool.umn.edu/)
+Nick Lindberg

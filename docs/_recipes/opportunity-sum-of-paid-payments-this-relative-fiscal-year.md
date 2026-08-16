@@ -19,14 +19,14 @@ mode: "Realtime"
 | Parent Object | `Opportunity` |
 | Child Object | `npe01__OppPayment__c` |
 | Relationship Field | `npe01__Opportunity__c` |
-| Relationship Criteria (SOQL Query) | `npe01__Paid__c = True AND Fiscal_Year_Relative_Number__c = 0` |
+| Relationship  | `npe01__Paid__c = True AND Fiscal_Year_Relative_Number__c = 0` |
 | Relationship Criteria Fields | `npe01__Paid__c, Fiscal_Year_Relative_Number__c` |
 | Field to Aggregate | `npe01__Payment_Amount__c` |
-| Field to Order By | `n/a` |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `SUM` |
 | Aggregate Result Field | `DLRS_Total_Payments_This_Year__c` |
 | Calculation Mode |  `Realtime` |
-| Schedule vs Child Trigger |   `Deploy the child trigger for a realtime update whenever a payment is marked paid AND click Schedule Full Calculate to have all records recalculated on the first of each month, so that the relative date filter for the year is kept up to date.`
+| Schedule vs Child Trigger |   Deploy the child trigger for a realtime update whenever a payment is marked paid AND click Schedule Full Calculate to have all records recalculated on the first of each month, so that the relative date filter for the year is kept up to date.
 
 **Any test code or other preparations needed:**
 > Creating two fields
@@ -39,4 +39,4 @@ if(month(today())>=10,YEAR(TODAY())+1,YEAR(TODAY()))-VALUE(SUBSTITUTE(Fiscal_Yea
 >This version is based on paid payments this year, but it could also be made for payments last year or two years ago. 
 
 **Contributed By**
-Beth Hintze, [Attain Partners](https://attainpartners.com/)
+Beth Hintze

@@ -19,14 +19,14 @@ mode: "Realtime"
 | Relationship Criteria (SOQL Query) | `RecordType.Name = Donation AND Stage <> ‘Closed Lost’` _or_ `LeadSource = ‘Web’` |
 | Relationship Criteria Fields       | `RecordType.Name, Stage` _or_ `LeadSource`                                        |
 | Field to Aggregate                 | `Amount`                                                                          |
-| Order By Field                     | n/a                                                                               |
+| Field(s) to Order By               | n/a                                                                               |
 | Aggregate Operation                | `SUM`                                                                             |
 | Aggregate Result Field             | `Total_Related_Donations__c` _or_ `Opportunities_from_Web_Source__c`              |
 | Calculation Mode                   | `Realtime`                                                                        |
-| Schedule vs Child Trigger          | `Child Trigger deployed`                                                          |
+| Schedule vs Child Trigger          | Child Trigger deployed                                                          |
 
 **Variations**
 
 > Count Opportunities where a matching gift has been received ( Relationship Criteria: Matching_Gift_Status = ‘Received’, Aggregate Operation: `COUNT`)
 
-**Contributed By** Laurel Taylor, [Town Hall Seattle](https://townhallseattle.org/) _and_ Amy Utkan, [BRDPro](https://brdpro.com/)
+**Contributed By** Laurel Taylor _and_ Amy Utkan

@@ -17,20 +17,20 @@ mode: "Realtime"
 | Relationship Field |`npe5__Contact__c` |
 | Relationship Criteria (SOQL Query) |`(npe5__Status__c = 'Current') AND (npe5__Organization__c = '_Your Org's 18 Digit Account ID_')` |
 | Relationship Criteria Fields | `npe5__Status__c, npe5__Organization__c` |
-| Field to Aggregate |`Role_Text_Formula__c` |
-| Order By Field | n/a |
+| Field to Aggregate |`npe5__Role__c` |
+| Field(s) to Order By | n/a |
 | Aggregate Operation | `CONCATENATE DISTINCT` |
+| Concatenate Delimiter |  `,` |
 | Aggregate Result Field |  `DLRS_Special_Relationship_to_(Org Name)__c` |
-| Calculation Mode | `Realtime`
-| Schedule vs Child Trigger | Child Trigger deployed.
+| Calculation Mode | `Realtime` |
+| Schedule vs Child Trigger | `Child Trigger deployed` |
 
-**Any test code or other preparations needed:**
+**Any other preparations needed:**
 - Create role picklist values for Board Member, Volunteer, Staff, etc, in the Role Text Formula field
-- Create the account for your organization, and get the Account Id.
-- In this example, I relabeled the standard Affiliations Role field to ‘Title’, and created a new Role Text picklist, because we didn't want to use the Related Opportunity Contact role and trigger out-of-the-box automation on opportunities
+- If needed, create the account for your organization, and get the Account Id that you will use in the Relationship Criteria field.
 
 **Variations:**
 This could also be used to track former relationships, by modifying the Status value in the Relationship Criteria.
 
 **Contributor**
-Beth Hintze, [Attain Partners](https://attainpartners.com/)
+Beth Hintze

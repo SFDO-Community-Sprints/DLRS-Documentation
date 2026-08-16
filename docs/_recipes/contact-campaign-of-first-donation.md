@@ -2,7 +2,7 @@
 title: "Contact: Campaign of First Donation"
 category: "campaigns-registrations-applications"
 operation: "First"
-mode: "Scheduled"
+mode: "Watch for Changes and Process Later"
 ---
 
 **Description**
@@ -15,13 +15,13 @@ mode: "Scheduled"
 | ------- | -------- |
 |             Parent Object | `Contact`                                                                                                                                                                                    |
 |              Child Object | `Opportunity`                                                                                                                                                                                |
-|        Relationship Field | `Primary Contact`                                                                                                                                                                            |
+|        Relationship Field | `npsp__Primary_Contact__c`                                                                                                                                                                   |
 |     Relationship Criteria | None                                                                                                                                                                                         |
-|        Field to Aggregate | `CampaignID`                                                                                                                                                                                 |
+|        Field to Aggregate | `CampaignId`                                                                                                                                                                                 |
 |         Field to Order By | `CloseDate`                                                                                                                                                                                  |
-|       Aggregate Operation | `First`                                                                                                                                                                                      |
+|       Aggregate Operation | `FIRST`                                                                                                                                                                                      |
 |    Aggregate Result Field | `DLRS_First_Campaign_Supported__c`                                                                                                                                                           |
-|          Calculation Mode | Scheduled                                                                                                                                                                                    |
+|          Calculation Mode | `Watch for Changes and Process Later`                                                                                                                                                        |
 | Schedule vs Child Trigger | Deploy the Child Trigger, and since this is unlikely to be urgent and would not change after creation, this roll-up is a good fit for scheduling to run with the DLRS calculation scheduler. |
 
 **Preparation**
@@ -34,4 +34,4 @@ mode: "Scheduled"
 
 - Show the first or last Campaign on Account instead, using Account as the relationship field.
 
-**Contributed by** Amanda Styles, [Traction on Demand](https://www.tractionondemand.com/)
+**Contributed by** Amanda Styles
