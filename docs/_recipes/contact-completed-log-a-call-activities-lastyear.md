@@ -22,7 +22,7 @@ mode: "Invocable by Automation"
 | Field(s) to Order By               | n/a                                                                    |
 | Aggregate Operation                | `COUNT`                                                                |
 | Aggregate Result Field             | `Completed_Activities_LY__c`                                           |
-| Calculation Mode                   | `Invocable by Automation `                                             |
+| Calculation Mode                   | `Invocable by Automation`                                             |
 | Schedule vs Child Trigger          | Schedule via Full Recalculation, No Child Trigger                      |
 
 **Preparation**

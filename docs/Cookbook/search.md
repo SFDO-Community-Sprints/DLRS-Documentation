@@ -32,7 +32,11 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <!-- role="list" restates the semantics list-style:none strips in Safari/VoiceOver -->
 <ul class="recipe-search-results" id="recipe-search-results" role="list">
 {% assign all = site.recipes | sort: "title" %}
-{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% case mc %}{% when 'realtime' %}{% when 'watch for changes and process later' %}{% assign mc = 'watch' %}{% when 'invocable by automation' %}{% assign mc = 'invocable' %}{% else %}{% assign mc = 'other' %}{% endcase %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
+{% comment %} A recipe whose `category:` matches no Cookbook page has nowhere
+to link to, so skip its row (it won't appear on any category page either).
+The count above still includes it, so a "36 of 37" mismatch is the visible
+signal that a recipe file has a typo'd category. {% endcomment %}
+{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% if cat_page %}{% assign mc = r.mode | downcase %}{% case mc %}{% when 'realtime' %}{% when 'watch for changes and process later' %}{% assign mc = 'watch' %}{% when 'invocable by automation' %}{% assign mc = 'invocable' %}{% else %}{% assign mc = 'other' %}{% endcase %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
 <a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}">
 <span class="recipe-search-row-main">
 <span class="recipe-search-row-title">{{ r.title }}</span>
@@ -42,7 +46,7 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}"{% if mc == 'watch' %} title="{{ r.mode }}"{% endif %}>{% if mc == 'watch' %}Watch for Changes{% else %}{{ r.mode }}{% endif %}</span>
 </a>
 </li>
-{% endfor %}</ul>
+{% endif %}{% endfor %}</ul>
 
 <p class="recipe-search-empty" id="recipe-search-empty" hidden>No recipes match the selected filters.</p>
 

@@ -22,7 +22,7 @@ mode: "Watch for Changes and Process Later"
 |         Field to Order By | n/a |
 |       Aggregate Operation | `SUM`                        |
 |    Aggregate Result Field | `Total_Revenue_of_Received_Gifts__c`                |
-|          Calculation Mode | `Watch for Changes and Process Later `                                      |
+|          Calculation Mode | `Watch for Changes and Process Later`                                      |
 | Schedule vs Child Trigger | Deploy the Child Trigger                      |
 
 **Preparation**

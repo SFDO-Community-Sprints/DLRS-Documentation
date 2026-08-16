@@ -47,7 +47,7 @@ gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into t
 
 ########################################################
 # Cookbook recipes: one markdown file per recipe under docs/_recipes/, with
-# structured front matter (title, anchor, category, order, op, mode, ...).
+# structured front matter (title, category, operation, mode).
 # The Cookbook category pages assemble them via _includes/recipe-card.html and
 # Cookbook/search.md filters them; the collection itself emits no pages.
 collections:

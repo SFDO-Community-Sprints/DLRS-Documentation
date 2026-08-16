@@ -22,7 +22,7 @@ mode: "Watch for Changes and Process Later"
 |                  Field to Order By | n/a              |
 |                Aggregate Operation | `COUNT`              |
 |             Aggregate Result Field | `DLRS_Applications_This_Year__c`   |
-|                   Calculation Mode | `Watch for Changes and Process Later `    |
+|                   Calculation Mode | `Watch for Changes and Process Later`    |
 |          Schedule vs Child Trigger | Deploy the Child Trigger, and also set using the full Recalculation to recalculate monthly (to keep the relative date up-to-date) |
 
 **Preparation**

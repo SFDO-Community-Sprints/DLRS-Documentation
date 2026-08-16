@@ -29,7 +29,7 @@ mode: "Realtime"
 
 - You could count only the number of "responded" statuses using SOQL criteria "HasResponded = true"
 - If your org standardizes campaign member status options, you could also make counts of memberships in various statuses.
-- You could also count specific types of Campaigns, by adding criteria for Campaign Type (see next recipe).
+- You could also count specific types of Campaigns, by adding criteria for Campaign Type (see the "Contact: Count Campaign Memberships by Type" recipe).
 
 **Contributed By**
 Michael Kolodner

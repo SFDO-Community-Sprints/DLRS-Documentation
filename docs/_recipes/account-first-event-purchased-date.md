@@ -22,7 +22,7 @@ mode: "Invocable by Automation"
 |               Field(s) to Order By | n/a                                                                                                                                                                                                                                                    |
 |                Aggregate Operation | `MIN`                                                                                                                                                                                                                                                  |
 |             Aggregate Result Field | `DLRS_First_Purchased_Event_Date__c`                                                                                                                                                                                                                   |
-|                   Calculation Mode | `Invocable by Automation `           |
+|                   Calculation Mode | `Invocable by Automation`           |
 |          Schedule vs Child Trigger | Run on a schedule every morning at 5am, and don’t deploy the Child Trigger (since there are a lot of other triggers involved in a ticket purchase). It seems to be fine to have this field updated once a day, as it is mostly used in annual reports. |
 
 **Preparation**
