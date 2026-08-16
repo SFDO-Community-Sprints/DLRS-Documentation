@@ -7,15 +7,20 @@ external deep links to it will break.
 {%- endcomment -%}
 {%- assign r = include.recipe -%}
 {%- comment -%} mode class derives from mode ("Watch for Changes and Process
-Later" shortens to mode-watch); anything unrecognized keeps the plain grey
-.mode style {%- endcomment -%}
+Later" shortens to mode-watch, "Invocable by Automation" to mode-invocable);
+anything unrecognized keeps the plain grey .mode style. The Watch chip shows
+the natural shorthand "Watch for Changes" to keep chips compact — the full
+official name stays in the tooltip and in the recipe's own spec table.
+{%- endcomment -%}
 {%- assign mc = r.mode | downcase -%}
+{%- assign mdisp = r.mode -%}
 {%- case mc -%}
 {%- when "realtime" -%}{%- assign mcls = " mode-realtime" -%}
-{%- when "watch for changes and process later" -%}{%- assign mcls = " mode-watch" -%}
+{%- when "watch for changes and process later" -%}{%- assign mcls = " mode-watch" -%}{%- assign mdisp = "Watch for Changes" -%}
+{%- when "invocable by automation" -%}{%- assign mcls = " mode-invocable" -%}
 {%- else -%}{%- assign mcls = "" -%}
 {%- endcase -%}
 <details class="recipe-toggle">
-<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ r.operation }}</span> <span class="mode{{ mcls }}">{{ r.mode }}</span></summary>
+<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ r.operation }}</span> <span class="mode{{ mcls }}"{% if mdisp != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mdisp }}</span></summary>
 {{ r.content | markdownify }}
 </details>

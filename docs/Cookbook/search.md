@@ -16,8 +16,8 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <span class="recipe-search-facet-label">Calculation Mode</span>
 <button type="button" class="recipe-chip is-active" data-value="">All</button>
 <button type="button" class="recipe-chip chip-realtime" data-value="realtime">Realtime</button>
-<button type="button" class="recipe-chip chip-watch" data-value="watch">Watch for Changes and Process Later</button>
-<button type="button" class="recipe-chip chip-other" data-value="other">Other</button>
+<button type="button" class="recipe-chip chip-watch" data-value="watch" title="Watch for Changes and Process Later">Watch for Changes</button>
+<button type="button" class="recipe-chip chip-invocable" data-value="invocable">Invocable by Automation</button>
 </div>
 <div class="recipe-search-facet" data-facet="op">
 <span class="recipe-search-facet-label">Aggregate Operation</span>
@@ -32,14 +32,14 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <!-- role="list" restates the semantics list-style:none strips in Safari/VoiceOver -->
 <ul class="recipe-search-results" id="recipe-search-results" role="list">
 {% assign all = site.recipes | sort: "title" %}
-{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% case mc %}{% when 'realtime' %}{% when 'watch for changes and process later' %}{% assign mc = 'watch' %}{% else %}{% assign mc = 'other' %}{% endcase %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
+{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% assign mc = r.mode | downcase %}{% case mc %}{% when 'realtime' %}{% when 'watch for changes and process later' %}{% assign mc = 'watch' %}{% when 'invocable by automation' %}{% assign mc = 'invocable' %}{% else %}{% assign mc = 'other' %}{% endcase %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
 <a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}">
 <span class="recipe-search-row-main">
 <span class="recipe-search-row-title">{{ r.title }}</span>
 <span class="recipe-search-row-category">{{ cat_page.title }}</span>
 </span>
 <span class="op">{{ r.operation }}</span>
-<span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}">{{ r.mode }}</span>
+<span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}"{% if mc == 'watch' %} title="{{ r.mode }}"{% endif %}>{% if mc == 'watch' %}Watch for Changes{% else %}{{ r.mode }}{% endif %}</span>
 </a>
 </li>
 {% endfor %}</ul>
