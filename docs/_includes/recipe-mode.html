@@ -1,0 +1,27 @@
+{%- comment -%}
+Single source of truth for calculation-mode presentation. Give it a raw mode
+value (from a recipe's front matter) and it prints one of two things:
+
+  {% include recipe-mode.html mode=r.mode %}             -> filter key
+  {% include recipe-mode.html mode=r.mode out="label" %} -> display text
+
+Keys are realtime | watch | invocable | other; they drive the CSS classes
+(mode-<key> on tags, chip-<key> on filter chips) and the search page's
+data-mode/data-value filtering. Labels are the official mode names, except
+where a shorthand keeps chips compact ("Watch for Changes") — callers show
+the full name in a title tooltip whenever label differs from the raw value.
+An unrecognized mode gets key "other" (neutral grey styling) and its raw
+value as the label. Capture the output; add new modes here, nowhere else.
+
+Internal variables are rm_-prefixed because Jekyll includes assign into the
+caller's scope — short names would silently clobber the caller's variables.
+{%- endcomment -%}
+{%- assign rm_raw = include.mode | downcase | strip -%}
+{%- assign rm_key = "other" -%}
+{%- assign rm_label = include.mode -%}
+{%- case rm_raw -%}
+{%- when "realtime" -%}{%- assign rm_key = "realtime" -%}
+{%- when "watch for changes and process later" -%}{%- assign rm_key = "watch" -%}{%- assign rm_label = "Watch for Changes" -%}
+{%- when "invocable by automation" -%}{%- assign rm_key = "invocable" -%}
+{%- endcase -%}
+{%- if include.out == "label" -%}{{ rm_label }}{%- else -%}{{ rm_key }}{%- endif -%}

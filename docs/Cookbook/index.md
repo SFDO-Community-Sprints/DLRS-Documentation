@@ -41,11 +41,13 @@ We provide examples of SOQL queries with our recipes to give you a starting poin
 
 It’s important to understand the different Calculation Modes as well as the Recalculation options (see [How and When DLRS Calculates](https://sfdo-community-sprints.github.io/DLRS-Documentation/Architecture/calculates.html) for details.)
 
-- The **Calculation Mode** picklist offers Realtime, Watch for Changes and Process Later (labeled Scheduled in versions prior to 2.21), Invocable by Automation (labeled Process Builder in versions prior to 2.21), and Developer modes.
+- The **Calculation Mode** picklist offers Realtime, Watch for Changes and Process Later, Invocable by Automation, and Developer modes.
   - Realtime: This setting requires deployment of the child trigger and will run your rollups whenever a child record is saved.
   - Watch for Changes and Process Later: This setting will create helper records when a child record is saved and then those will all be processed when the Apex job RollupJob runs. You must manually set this job to run or no rollups will calculate!
   - Invocable by Automation and Developer: These settings allow you to cause the rollups to calculate using automation, so you can avoid deploying the child trigger.
 - The **Schedule Recalculation** button (at the bottom of a saved rollup) allows you to schedule your rollups to run without being triggered by an edit on the child record (e.g. nightly, monthly, etc.).
+
+{% include callouts/legacy-modes.html %}
   
 ## Sample the variations
 
@@ -83,7 +85,7 @@ Please share your culinary creations! We hope to keep adding to this resource, s
 
 - **Aggregate Result Field:** The target field on your parent object where the results will be displayed.
 
-- **Calculation Mode:** Options are: Realtime, Scheduled, Process Builder, Developer (see the Consider schedules and triggers to determine “doneness” section for more details)
+- **Calculation Mode:** Options are: Realtime, Watch for Changes and Process Later, Invocable by Automation, Developer (see the Consider schedules and triggers to determine “doneness” section for more details)
 
 - **Schedule vs Child Trigger:** Refers to the actions to deploy the Child Trigger or use the Schedule Full Calculate option (see the Consider schedules and triggers to determine “doneness” section for more details)
 

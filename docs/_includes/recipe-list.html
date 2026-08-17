@@ -1,0 +1,11 @@
+{%- comment -%}
+Renders every recipe belonging to this category page as collapsible cards,
+alphabetical by title. The category comes from the page's own `category:`
+front matter, so pages never repeat their slug here. Recipes live in
+docs/_recipes/ — one file per recipe, tied to a page by matching `category`
+values. Edit or add recipes there; category pages just include this.
+{%- endcomment -%}
+{% assign recipes = site.recipes | where: "category", page.category | sort: "title" %}
+{% for recipe in recipes %}
+{% include recipe-card.html recipe=recipe %}
+{% endfor %}

@@ -1,0 +1,38 @@
+---
+title: "Contact: Count Current Board Member Affiliation"
+category: "affiliations-relationships-accounts-contacts"
+operation: "Count"
+mode: "Realtime"
+---
+
+**Description**
+
+> Identify on the Contact record their active affiliation, such as if they are a board member or sponsor. This rollup is based on information on the Role field in a Contact’s related Affiliations.
+
+**Objects, Fields, Relationships**
+
+|                              Field | Value                                                            |
+| ---------------------------------: | ---------------------------------------------------------------- |
+|                      Parent Object | `Contact`                                                        |
+|                       Child Object | `npe5__Affiliation__c`                                           |
+|                       Relationship | `npe5__Contact__c`                                               |
+| Relationship Criteria (SOQL Query) | `npe5__Role__c = ‘Board Member’ AND npe5__Status__c = ‘Current’` |
+|       Relationship Criteria Fields | `npe5__Role__c` `npe5__Status__c`                                         |
+|                 Field to Aggregate | `Id`                                                             |
+|                  Field to Order By | n/a                                                              |
+|                Aggregate Operation | `COUNT`                                                          |
+|             Aggregate Result Field | `Current_Board_Count__c`                                         |
+|                   Calculation Mode | `Realtime`                                                       |
+|          Schedule vs Child Trigger | `Child Trigger deployed`                                         |
+
+**Preparation**
+
+> Customize `npe5__Role__c` (Role on Affiliation) to include Board Member or any other roles you want to roll up to the Contact.
+
+**Variations**
+
+- Use different roles for the rollup, such as sponsor. If you only want to rollup the role from the Contact’s Primary Affiliation, you can add “AND npe5_Primary__c=TRUE” to the Relationship Criteria SOQL query.
+
+- You could also have a checkbox formula field on the contact object for easy reporting. If the rollup value >=1, then the checkbox is checked (true), meaning they are a board member. If the rollup is 0, then the checkbox is unchecked (false).
+
+**Contributed By** Hua Ping Tan

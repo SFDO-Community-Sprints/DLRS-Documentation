@@ -1,0 +1,18 @@
+{%- comment -%}
+Renders one cookbook recipe (a document from the `recipes` collection) as a
+collapsible card. Usage: {% include recipe-card.html recipe=recipe %}
+The h2 id derives from the recipe's filename (its slug), so the filename is
+part of the recipe's public URL — never rename a published recipe file, or
+external deep links to it will break.
+{%- endcomment -%}
+{%- assign r = include.recipe -%}
+{%- comment -%} mode key/label both come from recipe-mode.html — the single
+source of truth for mode presentation (CSS class, chip shorthand, tooltip).
+{%- endcomment -%}
+{%- capture mkey -%}{%- include recipe-mode.html mode=r.mode -%}{%- endcapture -%}
+{%- capture mlabel -%}{%- include recipe-mode.html mode=r.mode out="label" -%}{%- endcapture -%}
+{%- capture olabel -%}{%- include recipe-op.html operation=r.operation out="label" -%}{%- endcapture -%}
+<details class="recipe-toggle">
+<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ olabel }}</span> <span class="mode{% unless mkey == "other" %} mode-{{ mkey }}{% endunless %}"{% if mlabel != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mlabel }}</span></summary>
+{{ r.content | markdownify }}
+</details>

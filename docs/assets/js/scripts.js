@@ -34,7 +34,60 @@ document.addEventListener('DOMContentLoaded', function (event) {
     }
 
     setIframeVideo()
+
+    openDetailsForHash();
+    window.addEventListener('hashchange', openDetailsForHash);
+
+    window.addEventListener('beforeprint', openRecipeCardsForPrint);
+    window.addEventListener('afterprint', restoreRecipeCardsAfterPrint);
 });
+
+// Collapsed recipe cards would print as bare title rows: closed <details>
+// content isn't rendered at all, so no @media print rule can reveal it.
+// Instead, open every closed card just before printing and re-close exactly
+// those cards afterwards, preserving whatever the reader had expanded.
+let cardsOpenedForPrint = [];
+function openRecipeCardsForPrint() {
+    cardsOpenedForPrint = [];
+    document.querySelectorAll('details.recipe-toggle:not([open])').forEach(function (details) {
+        details.open = true;
+        cardsOpenedForPrint.push(details);
+    });
+}
+function restoreRecipeCardsAfterPrint() {
+    cardsOpenedForPrint.forEach(function (details) {
+        details.open = false;
+    });
+    cardsOpenedForPrint = [];
+}
+
+// If the URL fragment targets an element inside a closed <details> (e.g. a
+// deep link to a collapsed cookbook recipe), expand it so the browser can
+// scroll there. Chrome does this natively; Firefox/Safari don't reliably.
+function openDetailsForHash() {
+    if (!location.hash || location.hash.length < 2) return;
+    let target;
+    try {
+        target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    } catch (e) {
+        return;
+    }
+    if (!target) return;
+    let details = target.closest('details');
+    let opened = false;
+    while (details) {
+        if (!details.open) {
+            details.open = true;
+            opened = true;
+        }
+        details = details.parentElement && details.parentElement.closest('details');
+    }
+    // Re-scroll: on initial load the browser may have given up while the
+    // target was still display:none inside the closed details.
+    if (opened) {
+        target.scrollIntoView();
+    }
+}
 
 function setIframeVideo() {
     const contentIFrames = document.querySelectorAll('#main-content iframe');
