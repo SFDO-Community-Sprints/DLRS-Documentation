@@ -96,100 +96,7 @@
 }
 
 /* ============================================================
-   Cookbook recipe card  ("Spec Sheet" component)
-   Usage — wrap a recipe in a div so Kramdown still renders the
-   Markdown inside it:
-
-     <div class="recipe" markdown="1">
-     ### Contact: Count Current Board Member Affiliation
-     **Description**
-     > ...
-     | Field | Value |
-     | ----- | ----- |
-     | Parent Object | `Contact` |
-     ...
-     **Contributed By** Name, Company
-     </div>
-
-   Everything below styles the standard elements Markdown produces
-   (h3, p, strong, blockquote, table) once they sit inside .recipe.
-   ============================================================ */
-.recipe {
-    --recipe-accent: #55606b; /* neutral slate — reads as container chrome, not a semantic color */
-    --recipe-border: #e6e3e6;
-    --recipe-surface: #ffffff;
-    --recipe-muted: #5f5c68;
-    --recipe-foot-bg: #f7f7f8;
-    background: var(--recipe-surface);
-    border: 1px solid var(--recipe-border);
-    border-radius: 8px;
-    overflow: hidden; /* clip the full-bleed header/footer to the rounded corners */
-    padding: 0 24px;
-    margin: 2rem 0;
-}
-
-/* Recipe name: the first heading becomes the card header, with an accent
-   bar on its left edge only (card itself keeps a plain hairline border) */
-.recipe > h2:first-child,
-.recipe > h3:first-child {
-    margin: 0 -24px 16px;
-    padding: 18px 24px 14px 21px; /* 3px border + 21px = 24px, aligns with body text */
-    border-left: 3px solid var(--recipe-accent);
-    border-bottom: 1px solid var(--recipe-border);
-    /* !important required: the theme's type scale sets heading sizes with
-       !important (h2 { font-size: 1.5rem !important } at desktop widths) */
-    font-size: 19px !important;
-    letter-spacing: -0.01em;
-}
-
-/* Bold inline labels (**Description**, **Preparation**, etc.) read as sub-heads */
-.recipe p > strong:first-child:last-child {
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--recipe-accent);
-    margin-top: 6px;
-}
-
-/* Description / preparation blockquotes: quiet indented notes */
-.recipe blockquote {
-    margin: 8px 0 16px;
-    color: var(--recipe-muted);
-}
-
-/* Field/Value table styled as a spec sheet */
-.recipe table {
-    width: 100%;
-    margin: 6px 0 16px;
-    font-size: 15.5px;
-    font-variant-numeric: tabular-nums;
-}
-.recipe table th:first-child,
-.recipe table td:first-child {
-    color: var(--recipe-muted);
-    font-weight: 500;
-    white-space: nowrap;
-}
-/* keep code pills in step with the larger value text (not the theme's tiny default) */
-.recipe table code,
-.recipe-toggle table code {
-    font-size: 0.9em;
-}
-
-/* Contributor credit: the closing line reads as a footer on a light grey band */
-.recipe > p:last-child {
-    margin: 8px -24px 0;
-    padding: 13px 24px;
-    background: var(--recipe-foot-bg);
-    border-top: 1px solid var(--recipe-border);
-    font-size: 13.5px;
-    color: var(--recipe-muted);
-}
-.recipe > p:last-child strong { color: inherit; }
-
-/* ============================================================
-   Cookbook recipe — collapsible variant ("Compact Index")
+   Cookbook recipe card — collapsible ("Compact Index")
    For long pages: each recipe collapses to a header row, opens
    on click. Native <details>, no JavaScript.
 
@@ -272,11 +179,27 @@
 }
 .recipe-toggle[open] > summary::before { transform: rotate(45deg); }
 .recipe-toggle > summary:hover { background: #f6f6f7; }
-/* operation / mode tags an author can drop in the summary */
-.recipe-toggle .op,
-.recipe-toggle .mode {
-    /* chips never shrink or wrap internally — a long title wraps instead,
-       and the chips stay single-line pills */
+/* One palette for op/mode tag tints, shared by card summaries, search-result
+   rows, and active filter chips (the chip rules add their border colors).
+   Tints are light washes of the Just the Docs light-scheme palette
+   (purple #5e41d0 / link #7253ed, green #026e57, yellow #f7d12e), so the
+   chips read as theme-native without importing a new brand color.
+   A new mode key needs one token trio here plus one rule in each of the
+   .mode-* and .chip-* groups below — the hex values live only here. */
+:root {
+    --tag-op-bg: #ede9fb;        --tag-op-fg: #4e26af;       --tag-op-border: #c9bcf0;
+    --tag-neutral-bg: #f1f2f4;   --tag-neutral-fg: #5f5c68;
+    --tag-realtime-bg: #ddefea;  --tag-realtime-fg: #02593f;  --tag-realtime-border: #a9d6c9;
+    --tag-watch-bg: #fdf3cf;     --tag-watch-fg: #755d00;     --tag-watch-border: #ecd98a;
+    --tag-invocable-bg: #dde7f6; --tag-invocable-fg: #1d4f93; --tag-invocable-border: #aecbee;
+}
+
+/* operation / mode tag pills — one base rule for both places they appear:
+   card summaries (.recipe-toggle) and search-result rows (.recipe-search-row) */
+.recipe-toggle .op, .recipe-toggle .mode,
+.recipe-search-row .op, .recipe-search-row .mode {
+    /* pills never shrink or wrap internally — a long title wraps instead,
+       and the pills stay single-line */
     flex: none;
     white-space: nowrap;
     font-size: 11px;
@@ -287,19 +210,15 @@
     font-family: monospace;
 }
 /* margin-left:auto on the FIRST tag absorbs the free space, so both tags
-   move to the right together (was on .mode, which right-aligned only itself)
-
-   Tag colors are light tints of the Just the Docs light-scheme palette
-   (purple #5e41d0 / link #7253ed, green #026e57, yellow #f7d12e), so the
-   chips read as theme-native without importing a new brand color.
-   .op is decorative (always purple); .mode is semantic — add mode-realtime,
-   mode-watch, or mode-invocable to color-code the calculation mode; bare
+   move to the right together (was on .mode, which right-aligned only itself).
+   .op is decorative (always purple); .mode is semantic — mode-realtime,
+   mode-watch, or mode-invocable color-codes the calculation mode; bare
    .mode stays neutral grey for anything else. */
-.recipe-toggle .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
-.recipe-toggle .mode { background: #f1f2f4; color: #5f5c68; }
-.recipe-toggle .mode-realtime { background: #ddefea; color: #02593f; }
-.recipe-toggle .mode-watch { background: #fdf3cf; color: #755d00; }
-.recipe-toggle .mode-invocable { background: #dde7f6; color: #1d4f93; }
+.recipe-toggle .op, .recipe-search-row .op { background: var(--tag-op-bg); color: var(--tag-op-fg); margin-left: auto; }
+.recipe-toggle .mode, .recipe-search-row .mode { background: var(--tag-neutral-bg); color: var(--tag-neutral-fg); }
+.recipe-toggle .mode-realtime, .recipe-search-row .mode-realtime { background: var(--tag-realtime-bg); color: var(--tag-realtime-fg); }
+.recipe-toggle .mode-watch, .recipe-search-row .mode-watch { background: var(--tag-watch-bg); color: var(--tag-watch-fg); }
+.recipe-toggle .mode-invocable, .recipe-search-row .mode-invocable { background: var(--tag-invocable-bg); color: var(--tag-invocable-fg); }
 /* opened body */
 .recipe-toggle[open] > summary { border-bottom: 1px solid var(--recipe-border); }
 .recipe-toggle > *:not(summary):first-of-type { margin-top: 12px; }
@@ -313,6 +232,8 @@
 .recipe-toggle table { width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
 .recipe-toggle table th:first-child,
 .recipe-toggle table td:first-child { color: var(--recipe-muted); font-weight: 500; white-space: nowrap; }
+/* keep code pills in step with the larger value text (not the theme's tiny default) */
+.recipe-toggle table code { font-size: 0.9em; }
 /* Contributor credit on a grey band, matching the Option A footer.
    Placed after the :last-child margin rule above so it wins on source order. */
 .recipe-toggle > p:last-child {
@@ -385,10 +306,10 @@
     border-color: #c9ccd1;
     color: #383644;
 }
-.recipe-chip.chip-op.is-active { background: #ede9fb; border-color: #c9bcf0; color: #4e26af; }
-.recipe-chip.chip-realtime.is-active { background: #ddefea; border-color: #a9d6c9; color: #02593f; }
-.recipe-chip.chip-watch.is-active { background: #fdf3cf; border-color: #ecd98a; color: #755d00; }
-.recipe-chip.chip-invocable.is-active { background: #dde7f6; border-color: #aecbee; color: #1d4f93; }
+.recipe-chip.chip-op.is-active { background: var(--tag-op-bg); border-color: var(--tag-op-border); color: var(--tag-op-fg); }
+.recipe-chip.chip-realtime.is-active { background: var(--tag-realtime-bg); border-color: var(--tag-realtime-border); color: var(--tag-realtime-fg); }
+.recipe-chip.chip-watch.is-active { background: var(--tag-watch-bg); border-color: var(--tag-watch-border); color: var(--tag-watch-fg); }
+.recipe-chip.chip-invocable.is-active { background: var(--tag-invocable-bg); border-color: var(--tag-invocable-border); color: var(--tag-invocable-fg); }
 
 /* --- live count --- */
 .recipe-search-count {
@@ -441,22 +362,8 @@
     font-weight: 500;
     color: var(--recipe-muted);
 }
-/* op/mode tags: same recipe as .recipe-toggle's, re-scoped for rows */
-.recipe-search-row .op,
-.recipe-search-row .mode {
-    flex: none;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 9px;
-    border-radius: 5px;
-    letter-spacing: .02em;
-    font-family: monospace;
-}
-.recipe-search-row .op { background: #ede9fb; color: #4e26af; margin-left: auto; }
-.recipe-search-row .mode { background: #f1f2f4; color: #5f5c68; }
-.recipe-search-row .mode-realtime { background: #ddefea; color: #02593f; }
-.recipe-search-row .mode-watch { background: #fdf3cf; color: #755d00; }
-.recipe-search-row .mode-invocable { background: #dde7f6; color: #1d4f93; }
+/* (op/mode tag pills on rows are styled by the shared rules in the
+   .recipe-toggle section — same base pill + --tag-* tints.) */
 
 .recipe-search-empty {
     margin: 14px 0;
