@@ -15,16 +15,19 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 <div class="recipe-search-facet" data-facet="mode">
 <span class="recipe-search-facet-label">Calculation Mode</span>
 <button type="button" class="recipe-chip is-active" data-value="">All</button>
-<button type="button" class="recipe-chip chip-realtime" data-value="realtime">Realtime</button>
-<button type="button" class="recipe-chip chip-watch" data-value="watch" title="Watch for Changes and Process Later">Watch for Changes</button>
-<button type="button" class="recipe-chip chip-invocable" data-value="invocable">Invocable by Automation</button>
-</div>
+{% assign modes = site.recipes | map: "mode" | uniq | sort %}
+{% for m in modes %}{% capture mkey %}{% include recipe-mode.html mode=m %}{% endcapture %}{% capture mlabel %}{% include recipe-mode.html mode=m out="label" %}{% endcapture %}<button type="button" class="recipe-chip chip-{{ mkey }}" data-value="{{ mkey }}"{% if mlabel != m %} title="{{ m }}"{% endif %}>{{ mlabel }}</button>
+{% endfor %}</div>
 <div class="recipe-search-facet" data-facet="op">
 <span class="recipe-search-facet-label">Aggregate Operation</span>
 <button type="button" class="recipe-chip is-active" data-value="">All</button>
+{% comment %} Chips are deduped on the normalized key (recipe-op.html), so
+case/whitespace variants of one operation share a single chip; the delimited
+seen-string prevents substring collisions ("count" vs "count distinct"). {% endcomment %}
 {% assign ops = site.recipes | map: "operation" | uniq | sort %}
-{% for op in ops %}<button type="button" class="recipe-chip chip-op" data-value="{{ op }}">{{ op }}</button>
-{% endfor %}</div>
+{% assign seen_ops = "|" %}
+{% for op in ops %}{% capture okey %}{% include recipe-op.html operation=op %}{% endcapture %}{% capture oflag %}|{{ okey }}|{% endcapture %}{% unless seen_ops contains oflag %}{% assign seen_ops = seen_ops | append: okey | append: "|" %}{% capture olabel %}{% include recipe-op.html operation=op out="label" %}{% endcapture %}<button type="button" class="recipe-chip chip-op" data-value="{{ okey }}">{{ olabel }}</button>
+{% endunless %}{% endfor %}</div>
 </div>
 
 <p class="recipe-search-count" id="recipe-search-count" role="status" aria-live="polite" data-total="{{ site.recipes | size }}">{{ site.recipes | size }} of {{ site.recipes | size }} recipes</p>
@@ -36,14 +39,14 @@ Filter the cookbook's recipes by calculation mode and aggregate operation, then 
 to link to, so skip its row (it won't appear on any category page either).
 The count above still includes it, so a "36 of 37" mismatch is the visible
 signal that a recipe file has a typo'd category. {% endcomment %}
-{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% if cat_page %}{% assign mc = r.mode | downcase %}{% case mc %}{% when 'realtime' %}{% when 'watch for changes and process later' %}{% assign mc = 'watch' %}{% when 'invocable by automation' %}{% assign mc = 'invocable' %}{% else %}{% assign mc = 'other' %}{% endcase %}<li class="recipe-search-item" data-op="{{ r.operation }}" data-mode="{{ mc }}">
+{% for r in all %}{% assign cat_page = site.pages | where: "category", r.category | first %}{% if cat_page %}{% capture mkey %}{% include recipe-mode.html mode=r.mode %}{% endcapture %}{% capture mlabel %}{% include recipe-mode.html mode=r.mode out="label" %}{% endcapture %}{% capture okey %}{% include recipe-op.html operation=r.operation %}{% endcapture %}{% capture olabel %}{% include recipe-op.html operation=r.operation out="label" %}{% endcapture %}<li class="recipe-search-item" data-op="{{ okey }}" data-mode="{{ mkey }}">
 <a class="recipe-search-row" href="{{ cat_page.url | relative_url }}#{{ r.slug }}">
 <span class="recipe-search-row-main">
 <span class="recipe-search-row-title">{{ r.title }}</span>
 <span class="recipe-search-row-category">{{ cat_page.title }}</span>
 </span>
-<span class="op">{{ r.operation }}</span>
-<span class="mode{% unless mc == 'other' %} mode-{{ mc }}{% endunless %}"{% if mc == 'watch' %} title="{{ r.mode }}"{% endif %}>{% if mc == 'watch' %}Watch for Changes{% else %}{{ r.mode }}{% endif %}</span>
+<span class="op">{{ olabel }}</span>
+<span class="mode{% unless mkey == 'other' %} mode-{{ mkey }}{% endunless %}"{% if mlabel != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mlabel }}</span>
 </a>
 </li>
 {% endif %}{% endfor %}</ul>

@@ -1,0 +1,21 @@
+{%- comment -%}
+Companion to recipe-mode.html for the aggregate-operation facet. Operations
+have no fixed vocabulary and no per-value color coding, so there is no
+mapping table — this include only normalizes and guards:
+
+  {% include recipe-op.html operation=r.operation %}             -> filter key
+  {% include recipe-op.html operation=r.operation out="label" %} -> display text
+
+The key (downcased/stripped) makes filtering tolerant of case/whitespace
+drift in contributed front matter — "count" and "Count" filter as one
+family — while the label keeps the author's casing. A missing or empty
+operation gets key "other" / label "Other" so pills and chips never render
+blank. Capture the output.
+
+Internal variables are ro_-prefixed because Jekyll includes assign into the
+caller's scope — short names would silently clobber the caller's variables.
+{%- endcomment -%}
+{%- assign ro_key = include.operation | default: "" | downcase | strip -%}
+{%- assign ro_label = include.operation | default: "" | strip -%}
+{%- if ro_key == "" -%}{%- assign ro_key = "other" -%}{%- assign ro_label = "Other" -%}{%- endif -%}
+{%- if include.out == "label" -%}{{ ro_label }}{%- else -%}{{ ro_key }}{%- endif -%}

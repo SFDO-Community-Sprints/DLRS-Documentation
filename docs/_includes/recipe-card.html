@@ -6,21 +6,13 @@ part of the recipe's public URL — never rename a published recipe file, or
 external deep links to it will break.
 {%- endcomment -%}
 {%- assign r = include.recipe -%}
-{%- comment -%} mode class derives from mode ("Watch for Changes and Process
-Later" shortens to mode-watch, "Invocable by Automation" to mode-invocable);
-anything unrecognized keeps the plain grey .mode style. The Watch chip shows
-the natural shorthand "Watch for Changes" to keep chips compact — the full
-official name stays in the tooltip and in the recipe's own spec table.
+{%- comment -%} mode key/label both come from recipe-mode.html — the single
+source of truth for mode presentation (CSS class, chip shorthand, tooltip).
 {%- endcomment -%}
-{%- assign mc = r.mode | downcase -%}
-{%- assign mdisp = r.mode -%}
-{%- case mc -%}
-{%- when "realtime" -%}{%- assign mcls = " mode-realtime" -%}
-{%- when "watch for changes and process later" -%}{%- assign mcls = " mode-watch" -%}{%- assign mdisp = "Watch for Changes" -%}
-{%- when "invocable by automation" -%}{%- assign mcls = " mode-invocable" -%}
-{%- else -%}{%- assign mcls = "" -%}
-{%- endcase -%}
+{%- capture mkey -%}{%- include recipe-mode.html mode=r.mode -%}{%- endcapture -%}
+{%- capture mlabel -%}{%- include recipe-mode.html mode=r.mode out="label" -%}{%- endcapture -%}
+{%- capture olabel -%}{%- include recipe-op.html operation=r.operation out="label" -%}{%- endcapture -%}
 <details class="recipe-toggle">
-<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ r.operation }}</span> <span class="mode{{ mcls }}"{% if mdisp != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mdisp }}</span></summary>
+<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ olabel }}</span> <span class="mode{% unless mkey == "other" %} mode-{{ mkey }}{% endunless %}"{% if mlabel != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mlabel }}</span></summary>
 {{ r.content | markdownify }}
 </details>
