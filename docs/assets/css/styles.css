@@ -227,6 +227,11 @@
     gap: 0.35em;
 }
 .recipe-permalink svg { width: 1em; height: 1em; flex: none; }
+/* every card is opened for printing (see scripts.js), and a link to the
+   recipe is no use on paper */
+@media print {
+    .recipe-permalink { display: none; }
+}
 .recipe-toggle blockquote { color: var(--recipe-muted); }
 .recipe-toggle table { width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
 .recipe-toggle table th:first-child,

@@ -41,3 +41,6 @@ vendor
 # Local test site files
 _site
 _site_docs
+
+# Agent files
+.claude/
