@@ -134,7 +134,9 @@
 /* Recipe titles are real headings (<h2 id="...">) INSIDE the summary, so
    in-page anchors, the document outline, and screen-reader heading nav all
    survive the collapse. Visually they must read as the summary row text,
-   so strip the theme's heading type scale and spacing. */
+   so strip the theme's heading type scale and spacing. The theme's permalink
+   icon is also suppressed on these headings (class="no_anchor" in
+   recipe-card.html): a link inside the toggle breaks it for screen readers. */
 .recipe-toggle > summary h2,
 .recipe-toggle > summary h3 {
     margin: 0;
@@ -146,24 +148,6 @@
     font-weight: inherit;
     line-height: inherit;
     letter-spacing: normal;
-    /* inline-flex lays the title text and the permalink icon that follows
-       it (see _layouts/default.html) out as one centered row */
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3em;
-}
-/* The theme absolutely positions the permalink icon at left:-1.5rem with a
-   full-height hit area — inside the summary row that lands exactly on the
-   chevron and steals its clicks. Reflow it as a trailing inline icon that
-   appears when hovering anywhere on the row. */
-.recipe-toggle > summary .anchor-heading {
-    position: static;
-    width: 1em;
-    height: 1em;
-    padding: 0;
-}
-.recipe-toggle > summary:hover .anchor-heading svg {
-    visibility: visible;
 }
 /* chevron drawn with CSS so authors don't hand-write markup */
 .recipe-toggle > summary::before {
@@ -226,6 +210,23 @@
     font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
     color: var(--recipe-accent);
 }
+/* "Link to this recipe" — stands in for the heading permalink icon, which
+   can't live inside the summary toggle. Floats to the top right of the opened
+   body so it shares a line with the first section label. */
+.recipe-toggle > .recipe-permalink {
+    float: right;
+    margin-bottom: 0;
+    font-size: 13.5px;
+}
+/* the link is now the body's first <p>, so restore the top spacing the
+   :first-of-type rule above used to give the first section label */
+.recipe-toggle > .recipe-permalink + * { margin-top: 12px; }
+.recipe-permalink a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
+}
+.recipe-permalink svg { width: 1em; height: 1em; flex: none; }
 .recipe-toggle blockquote { color: var(--recipe-muted); }
 .recipe-toggle table { width: 100%; font-size: 15px; font-variant-numeric: tabular-nums; }
 .recipe-toggle table th:first-child,
