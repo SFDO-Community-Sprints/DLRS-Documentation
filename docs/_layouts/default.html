@@ -1,0 +1,62 @@
+---
+layout: table_wrappers
+---
+{%- comment -%}
+LOCAL OVERRIDE of the Just the Docs theme's _layouts/default.html, copied from
+the v0.12.0 release (the tag pinned as remote_theme in _config.yml).
+
+Exactly one line differs from the theme: the anchor_headings include below.
+The theme puts each heading's permalink icon BEFORE the heading text and names
+it with aria-labelledby pointing at its own parent heading. Screen readers then
+read every heading twice, and on cookbook recipe cards (where the heading sits
+inside the <summary> toggle) Enter lands on the link, not the toggle, so a
+card can be opened but never closed. Here the link comes AFTER the text
+(no beforeHeading) and has its own aria-label. Verified with NVDA.
+
+When bumping remote_theme: re-copy the theme's new _layouts/default.html and
+re-apply this one change — or delete this file if the theme has fixed it.
+{%- endcomment -%}
+
+<!DOCTYPE html>
+
+<html lang="{{ site.lang | default: 'en-US' }}">
+{% include head.html %}
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  {% include icons/icons.html %}
+  {% if page.nav_enabled == true %}
+    {% include components/sidebar.html %}
+  {% elsif layout.nav_enabled == true and page.nav_enabled == nil %}
+    {% include components/sidebar.html %}
+  {% elsif site.nav_enabled != false and layout.nav_enabled == nil and page.nav_enabled == nil %}
+    {% include components/sidebar.html %}
+  {% endif %}
+  <div class="main" id="top">
+    {% include components/header.html %}
+    <div class="main-content-wrap">
+      {% include components/breadcrumbs.html %}
+      <div id="main-content" class="main-content">
+        <main>
+          {% if site.heading_anchors != false %}
+            {% include vendor/anchor_headings.html html=content anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-label=\"Link to this section\"" %}
+          {% else %}
+            {{ content }}
+          {% endif %}
+
+          {% if page.has_toc != false %}
+            {% include components/children_nav.html %}
+          {% endif %}
+        </main>
+        {% include components/footer.html %}
+      </div>
+    </div>
+    {% if site.search_enabled != false %}
+      {% include components/search_footer.html %}
+    {% endif %}
+  </div>
+
+  {% if site.mermaid %}
+    {% include components/mermaid.html %}
+  {% endif %}
+</body>
+</html>
