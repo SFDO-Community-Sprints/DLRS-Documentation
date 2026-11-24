@@ -1,9 +1,17 @@
 {%- comment -%}
-Renders one cookbook recipe (a document from the `recipes` collection) as a
-collapsible card. Usage: {% include recipe-card.html recipe=recipe %}
-The h2 id derives from the recipe's filename (its slug), so the filename is
-part of the recipe's public URL — never rename a published recipe file, or
-external deep links to it will break.
+Renders one cookbook recipe (a document from the `recipes` collection) as a collapsible card. 
+
+Usage: {% include recipe-card.html recipe=recipe %}
+The h2 id derives from the recipe's filename, so be aware that changing a filename
+may break external links to that recipe.
+
+Accessibility: the h2 carries class="no_anchor" to opt recipe cards out of the theme's
+default of adding link icons to headers.
+We don't want the icon in this case because a link inside the <summary> toggle
+can capture a screen reader's Enter key and block the user from being able to close the card.
+
+Instead, the card uses the recipe-permalink class to place a link in the card body.
+
 {%- endcomment -%}
 {%- assign r = include.recipe -%}
 {%- comment -%} mode key/label both come from recipe-mode.html — the single
@@ -13,6 +21,7 @@ source of truth for mode presentation (CSS class, chip shorthand, tooltip).
 {%- capture mlabel -%}{%- include recipe-mode.html mode=r.mode out="label" -%}{%- endcapture -%}
 {%- capture olabel -%}{%- include recipe-op.html operation=r.operation out="label" -%}{%- endcapture -%}
 <details class="recipe-toggle">
-<summary><h2 id="{{ r.slug }}">{{ r.title }}</h2> <span class="op">{{ olabel }}</span> <span class="mode{% unless mkey == "other" %} mode-{{ mkey }}{% endunless %}"{% if mlabel != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mlabel }}</span></summary>
+<summary><h2 id="{{ r.slug }}" class="no_anchor">{{ r.title }}</h2> <span class="op">{{ olabel }}</span> <span class="mode{% unless mkey == "other" %} mode-{{ mkey }}{% endunless %}"{% if mlabel != r.mode %} title="{{ r.mode }}"{% endif %}>{{ mlabel }}</span></summary>
+<p class="recipe-permalink"><a href="#{{ r.slug }}"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg>Link to this recipe</a></p>
 {{ r.content | markdownify }}
 </details>
