@@ -1,15 +1,17 @@
 {%- comment -%}
-Renders one cookbook recipe (a document from the `recipes` collection) as a
-collapsible card. Usage: {% include recipe-card.html recipe=recipe %}
-The h2 id derives from the recipe's filename (its slug), so the filename is
-part of the recipe's public URL — never rename a published recipe file, or
-external deep links to it will break.
+Renders one cookbook recipe (a document from the `recipes` collection) as a collapsible card. 
 
-Accessibility: the h2 carries class="no_anchor" so the theme does NOT inject
-its heading permalink icon here. That icon is a link, and a link inside the
-<summary> toggle can capture a screen reader's Enter key so the card can't be
-closed. no_anchor only suppresses the icon — the id stays, so #slug URLs still
-work. The "Link to this recipe" link in the opened body replaces the icon.
+Usage: {% include recipe-card.html recipe=recipe %}
+The h2 id derives from the recipe's filename, so be aware that changing a filename
+may break external links to that recipe.
+
+Accessibility: the h2 carries class="no_anchor" to opt recipe cards out of the theme's
+default of adding link icons to headers.
+We don't want the icon in this case because a link inside the <summary> toggle
+can capture a screen reader's Enter key and block the user from being able to close the card.
+
+Instead, the card uses the recipe-permalink class to place a link in the card body.
+
 {%- endcomment -%}
 {%- assign r = include.recipe -%}
 {%- comment -%} mode key/label both come from recipe-mode.html — the single

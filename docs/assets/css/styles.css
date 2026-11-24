@@ -134,9 +134,7 @@
 /* Recipe titles are real headings (<h2 id="...">) INSIDE the summary, so
    in-page anchors, the document outline, and screen-reader heading nav all
    survive the collapse. Visually they must read as the summary row text,
-   so strip the theme's heading type scale and spacing. The theme's permalink
-   icon is also suppressed on these headings (class="no_anchor" in
-   recipe-card.html): a link inside the toggle breaks it for screen readers. */
+   so strip the theme's heading type scale and spacing. */
 .recipe-toggle > summary h2,
 .recipe-toggle > summary h3 {
     margin: 0;
@@ -210,9 +208,7 @@
     font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
     color: var(--recipe-accent);
 }
-/* "Link to this recipe" — stands in for the heading permalink icon, which
-   can't live inside the summary toggle. Floats to the top right of the opened
-   body so it shares a line with the first section label. */
+/* "Link to this recipe" — replacement for the theme's heading permalink icon. */
 .recipe-toggle > .recipe-permalink {
     float: right;
     margin-bottom: 0;
@@ -227,8 +223,7 @@
     gap: 0.35em;
 }
 .recipe-permalink svg { width: 1em; height: 1em; flex: none; }
-/* every card is opened for printing (see scripts.js), and a link to the
-   recipe is no use on paper */
+/* Hide recipe link text when printing*/
 @media print {
     .recipe-permalink { display: none; }
 }
